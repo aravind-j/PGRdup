@@ -1,3 +1,19 @@
+# Version 0.2.3.2 - First submission
+
+* The memtest errors in the package have been corrected.
+
+### Test environments
+* local Windows 7 Ultimate install, R-release (R 3.4.0) & R-devel (R 3.4.0 Pre-release).
+* local Ubuntu 16.04, R-release (R 3.4.0) & R-devel (R 3.4.0 Pre-release).
+* win-builder, R-release (R 3.3.3) & R-devel (R 3.4.0 Pre-release).
+* CLANG memtest via rocker/r-devel-ubsan-clang.
+* GCC memtest via rocker/r-devel-san.
+
+### R CMD check results
+* 0 errors | 0 warnings | 0 notes
+
+***
+
 # Version 0.2.3.1 - First submission
 
 ### Test environments

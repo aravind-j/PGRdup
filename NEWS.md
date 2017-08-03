@@ -8,6 +8,8 @@ PGRdup 0.2.3.2
  - Added welcome message.
  - Added version history to vignette
  - Replaced all 1:nrow() and 1:length() usage in function with seq_len(nrow()) and seq_len(length()) respectively.
+ - Added package to github.
+ - Added package documentation website (https://aravind-j.github.io/PGRdup/) as a github page with `pkgdown`.
 
 ***
 
