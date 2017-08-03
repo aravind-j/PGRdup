@@ -7,8 +7,6 @@
 
 Update pandoc - compile
 
-# ![](inst/extdata/PGRdup.png){width=75%}
-
 # remove empty txt2pdf
 # add url to ciataion
 # A link to your your github repo (if listed in the DESCRIPTION url field).
@@ -96,6 +94,7 @@ Sys.setenv(R_QPDF="C:/qpdf-5.1.3/bin/qpdf.exe")
 devtools::check(build_args = '--compact-vignettes="gs+qpdf"',
                 args=c('--as-cran', '--use-valgrind'),
                 check_version = FALSE)
+
 # Check on r-devel using win_builder
 devtools::build_win(pkg = "C:/Users/lenovo/Dropbox/PGRdup", version = c("R-devel"),
                     args = '--compact-vignettes="gs+qpdf"')

@@ -5,7 +5,7 @@
 
 ###### Copyright (C) 2014, [ICAR-NBPGR](http://www.nbpgr.ernet.in/) ; License: [GPL-2 | GPL-3](https://www.r-project.org/Licenses/)
 
-[![Project Status: Inactive ? The project has reached a stable, usable state but is no longer being actively developed; support/maintenance will be provided as time allows.](http://www.repostatus.org/badges/latest/inactive.svg)](http://www.repostatus.org/#inactive) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/PGRdup)](https://cran.r-project.org/package=PGRdup)
+[![Project Status: Inactive ? The project has reached a stable, usable state but is no longer being actively developed; support/maintenance will be provided as time allows.](http://www.repostatus.org/badges/latest/inactive.svg)](http://www.repostatus.org/#inactive) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/PGRdup)](https://cran.r-project.org/package=PGRdup) [![minimal R version](https://img.shields.io/badge/R%3E%3D-3.0.2-6666ff.svg)](https://cran.r-project.org/)
 
 ##### *J. Aravind<sup>1</sup>, J. Radhamani<sup>1</sup>, Kalyani Srinivasan<sup>1</sup>, B. Ananda Subhash<sup>2</sup> and R. K. Tyagi<sup>1</sup>*
 
