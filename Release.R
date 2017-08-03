@@ -1,18 +1,5 @@
 
-[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-
-[![minimal R version](https://img.shields.io/badge/R%3E%3D-3.0.2-6666ff.svg)](https://cran.r-project.org/)
-[![packageversion](https://img.shields.io/badge/Package%20version-0.2.3.2-orange.svg?style=flat-square)](commits/master)
-[![Last-changedate](https://img.shields.io/badge/last%20change-`r gsub('-', '--', Sys.Date())`-yellowgreen.svg)](/commits/master)
-
-Update pandoc - compile
-
-# remove empty txt2pdf
-# add url to ciataion
-# A link to your your github repo (if listed in the DESCRIPTION url field).
 # http://kbroman.org/pkg_primer/pages/github.html
-
-# use_github_links()
 
 # http://rmhogervorst.nl/cleancode/blog/2016/07/08/introducing-badgecreatr-create-and-place-badges-in-readme-rmd.html
 # http://www.repostatus.org/#wip
@@ -83,12 +70,14 @@ goodpractice::gp()
 
 # Rebuild github page
 pkgdown::build_site()
+#autolink_html
+              
 
 # Set GhostScript and qpdf env variables
 Sys.getenv("R_GSCMD")
 Sys.getenv("R_QPDF")
 Sys.setenv(R_GSCMD="C:/Program Files/gs/gs9.16/bin/gswin32c.exe")
-Sys.setenv(R_QPDF="C:/qpdf-5.1.3/bin/qpdf.exe")
+Sys.setenv(R_QPDF="C:/qpdf-6.0.0/bin/qpdf.exe")
 
 # Check locally - check on both release and devel
 devtools::check(build_args = '--compact-vignettes="gs+qpdf"',
@@ -99,20 +88,58 @@ devtools::check(build_args = '--compact-vignettes="gs+qpdf"',
 devtools::build_win(pkg = "C:/Users/lenovo/Dropbox/PGRdup", version = c("R-devel"),
                     args = '--compact-vignettes="gs+qpdf"')
 
+devtools::build_win(pkg = "C:/Users/J. Aravind/Dropbox/PGRdup", version = c("R-devel"),
+                    args = '--compact-vignettes="gs+qpdf"')
+
 # Check on r-release using win_builder
 devtools::build_win(pkg = "C:/Users/lenovo/Dropbox/PGRdup", version = c("R-release"),
                     args = '--compact-vignettes="gs+qpdf"')
 
+devtools::build_win(pkg = "C:/Users/J. Aravind/Dropbox/PGRdup", version = c("R-release"),
+                    args = '--compact-vignettes="gs+qpdf"')
 
-
-
+# R-hub check
+library(rhub)
+platforms()
+check(platform = c("debian-gcc-devel", "debian-gcc-patched", 
+                   "debian-gcc-release", "fedora-clang-devel", "fedora-gcc-devel", 
+                   "linux-x86_64-centos6-epel", "linux-x86_64-centos6-epel-rdt", 
+                   "linux-x86_64-rocker-gcc-san", "macos-elcapitan-release", "macos-mavericks-oldrel", 
+                   "solaris-x86-patched", "ubuntu-gcc-devel", "ubuntu-gcc-release", 
+                   "ubuntu-rchk", "windows-x86_64-devel", "windows-x86_64-oldrel", 
+                   "windows-x86_64-patched", "windows-x86_64-release"))
 
 # check vignette citation info - correct version and date
-
-
-
-
-
 devtools::release("C:/Users/lenovo/Documents/PGRdup",
                   check = F, args = '--compact-vignettes="gs+qpdf"')
 
+devtools::release("C:/Users/J. Aravind/Dropbox/PGRdup",
+                  check = F, args = '--compact-vignettes="gs+qpdf"')
+
+
+
+
+
+################################################################################
+library(rvest)
+pkg <- "PGRdup"
+link <- paste0("http://cran.r-project.org/src/contrib/Archive/", pkg)
+xml <- read_html(link)
+hn <- html_nodes(xml, xpath='/html/body/table')
+ht <- html_table(hn)
+
+VerHistory <- ht[[1]]
+
+VerHistory <- VerHistory[VerHistory$Name != "Parent Directory",
+                         c("Name", "Last modified")]
+VerHistory <- VerHistory[VerHistory$Name != "", ]
+
+VerHistory$Version <- gsub("PGRdup_", "", VerHistory$Name)
+VerHistory$Version <- gsub(".tar.gz", "", VerHistory$Version)
+VerHistory$Date <- as.Date(VerHistory$`Last modified`)
+
+VerHistory <- VerHistory[order(VerHistory$Date), c("Version", "Date")]
+rownames(VerHistory) <- NULL
+
+knitr::kable(VerHistory)
+################################################################################
