@@ -37,7 +37,7 @@ Suggests:
     diagram,
     wordcloud,
     microbenchmark,
-    rvest,
+    XML,
     knitr,
     rmarkdown
 Copyright: 2014, ICAR-NBPGR
