@@ -150,22 +150,17 @@ The current version of the package is `r getNamespaceVersion("PGRdup")`. The pre
 **Table 1.** Version history of `PGRdup` `R` package.
 
 ```{r, echo=FALSE, message=FALSE}
-library(rvest)
+library(XML)
 pkg <- "PGRdup"
 link <- paste0("http://cran.r-project.org/src/contrib/Archive/", pkg)
-xml <- read_html(link)
-hn <- html_nodes(xml, xpath='/html/body/table')
-ht <- html_table(hn)
 
-VerHistory <- ht[[1]]
-
-VerHistory <- VerHistory[VerHistory$Name != "Parent Directory",
-                         c("Name", "Last modified")]
-VerHistory <- VerHistory[VerHistory$Name != "", ]
-
-VerHistory$Version <- gsub("PGRdup_", "", VerHistory$Name)
+VerHistory <- readHTMLTable(link)[[1]][,2:3]
+colnames(VerHistory) <- c("Version", "Date")
+VerHistory <- VerHistory[VerHistory$Version != "Parent Directory",]
+VerHistory <- VerHistory[!is.na(VerHistory$Version), ]
+VerHistory$Date <- as.Date(VerHistory$Date)
+VerHistory$Version <- gsub("PGRdup_", "", VerHistory$Version)
 VerHistory$Version <- gsub(".tar.gz", "", VerHistory$Version)
-VerHistory$Date <- as.Date(VerHistory$`Last modified`)
 
 VerHistory <- VerHistory[order(VerHistory$Date), c("Version", "Date")]
 rownames(VerHistory) <- NULL
@@ -184,18 +179,13 @@ The package can be installed using the following functions:
 # Install from CRAN
 install.packages('PGRdup', dependencies=TRUE)
 
-# Install development version from Github
-devtools::install_github("aravind-j/PGRdup")
 ```
+
 Uninstalled dependencies (packages which `PGRdup` depends on *viz*- [`data.table`](https://cran.r-project.org/web/packages/data.table/index.html), [`igraph`](https://cran.r-project.org/web/packages/igraph/index.html), [`stringdist`](https://cran.r-project.org/web/packages/stringdist/index.html) and [`stringi`](https://cran.r-project.org/web/packages/stringi/index.html)) are also installed because of the argument `dependencies=TRUE`.
 
 Then the package can be loaded using the function
 ```{r, eval=FALSE}
 library(PGRdup)
-```
-
-```{r, echo=FALSE}
-devtools::load_all(".")
 ```
 
 ##Data Format
