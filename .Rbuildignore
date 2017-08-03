@@ -1,0 +1,17 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^README\.Rmd$
+^README\.html$
+^README-*\.png$
+^cran-comments\.md$
+^.*\.dropbox$
+^\.dropbox\.attr$
+^desktop\.ini$
+^.*\.Rhistory$
+^.*\.git$
+^README-.*\.png$
+^Release\.R$
+^docs$
+^_pkgdown\.yml$
+^PGRdup\.png$
+^C:\Users\lenovo\Dropbox\PGRdup\docs$

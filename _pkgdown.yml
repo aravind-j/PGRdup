@@ -1,0 +1,63 @@
+template:
+  params:
+    bootswatch: united
+
+navbar:
+  title: PGRdup
+  type: default
+  left:
+    - icon: fa-home fa-lg
+      text: Home
+      href: /index.html
+    - icon: fa-code
+      text: Reference
+      href: reference/index.html
+    - icon: fa-file-o
+      text: An Introduction to PGRdup package
+      href: articles/Introduction.html
+    - icon: fa-newspaper-o
+      text: News
+      href: news/index.html
+  right:
+    - icon: fa-github-alt
+      text: Github
+      href: https://github.com/aravind-j/PGRdup
+
+reference:
+    - title: Data pre-processing
+      contents:
+         - '`DataClean`'
+         - '`MergeKW`'
+
+    - title: Generation of KWIC Index
+      contents:         
+         - '`KWIC`'
+   
+    - title: Probable duplicate set retrieval
+      contents:
+         - '`ProbDup`'
+         
+    - title: Set review, modification & validation
+      contents:
+         - '`DisProbDup`'
+         - '`ReviewProbDup`'
+         - '`ReconstructProbDup`'         
+
+    - title: Adjuncts/Helper functions
+      contents:
+         - '`ValidatePrimKey`'
+         - '`DoubleMetaphone`'
+         - '`read.genesys`'
+         - '`KWCounts`'         
+         - '`ParseProbDup`'
+         - '`SplitProbDup`'
+         - '`MergeProbDup`'
+         - '`AddProbDup`'
+         - '`ViewProbDup`'   
+         - '`print.KWIC`'
+         - '`print.ProbDup`'
+
+    - title: Dataset
+      contents:         
+         - '`GN1000`'
+
