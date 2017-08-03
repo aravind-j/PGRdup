@@ -149,14 +149,16 @@
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>The package can be installed using the following functions:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Install from CRAN</span>
-<span class="kw">install.packages</span>(<span class="st">'PGRdup'</span>, <span class="dt">dependencies=</span><span class="ot">TRUE</span>)
-
-<span class="co"># Install development version from Github</span>
-devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"aravind-j/PGRdup"</span>)</code></pre></div>
+<span class="kw">install.packages</span>(<span class="st">'PGRdup'</span>, <span class="dt">dependencies=</span><span class="ot">TRUE</span>)</code></pre></div>
 <p>Uninstalled dependencies (packages which <code>PGRdup</code> depends on <em>viz</em>- <a href="https://cran.r-project.org/web/packages/data.table/index.html"><code>data.table</code></a>, <a href="https://cran.r-project.org/web/packages/igraph/index.html"><code>igraph</code></a>, <a href="https://cran.r-project.org/web/packages/stringdist/index.html"><code>stringdist</code></a> and <a href="https://cran.r-project.org/web/packages/stringi/index.html"><code>stringi</code></a>) are also installed because of the argument <code>dependencies=TRUE</code>.</p>
 <p>Then the package can be loaded using the function</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(PGRdup)</code></pre></div>
-<pre><code>Loading PGRdup</code></pre>
+</div>
+<div id="data-format" class="section level2">
+<h2 class="hasAnchor">
+<a href="#data-format" class="anchor"></a>Data Format</h2>
+<p>The package is essentially designed to operate on PGR passport data present in a <a href="http://google.com/#q=%5BR%5D+data.frame">data frame object</a>, with each row holding one record and columns representing the attribute fields. For example, consider the dataset <code>GN1000</code> supplied along with the package.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(PGRdup)</code></pre></div>
 <pre><code>
 --------------------------------------------------------------------------------
 Welcome to PGRdup version 0.2.3.2
@@ -176,13 +178,7 @@ Welcome to PGRdup version 0.2.3.2
 # To suppress this message use:
   suppressPackageStartupMessages(library(PGRdup))
 --------------------------------------------------------------------------------</code></pre>
-</div>
-<div id="data-format" class="section level2">
-<h2 class="hasAnchor">
-<a href="#data-format" class="anchor"></a>Data Format</h2>
-<p>The package is essentially designed to operate on PGR passport data present in a <a href="http://google.com/#q=%5BR%5D+data.frame">data frame object</a>, with each row holding one record and columns representing the attribute fields. For example, consider the dataset <code>GN1000</code> supplied along with the package.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(PGRdup)
-<span class="co"># Load the dataset to the environment</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Load the dataset to the environment</span>
 <span class="kw">data</span>(GN1000)
 <span class="co"># Show the class of the object</span>
 <span class="kw">class</span>(GN1000)</code></pre></div>
@@ -485,7 +481,7 @@ KeywordFreq &lt;-<span class="st"> </span>GNKWIC[[<span class="dv">2</span>]]
 4     RED   11
 5    OVER   10
 6  PURPLE   10</code></pre>
-<p><img src="Introduction_files/figure-html/unnamed-chunk-20-1.png" width="672"></p>
+<p><img src="Introduction_files/figure-html/unnamed-chunk-19-1.png" width="672"></p>
 <p><strong>Fig. 2.</strong> Word cloud of keywords retrieved</p>
 <p>The function will throw an error in case of duplicates or NULL values in the primary key/ID field mentioned.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">GN &lt;-<span class="st"> </span>GN1000
@@ -1119,7 +1115,7 @@ timings &lt;-<span class="st"> </span><span class="kw">microbenchmark</span>(
          <span class="st">"t3 : chunksize = 500,</span><span class="ch">\n</span><span class="st">     useBytes = T</span><span class="ch">\n</span><span class="st">"</span>,
          <span class="st">"t4 : chunksize = 1000,</span><span class="ch">\n</span><span class="st">     useBytes = F</span><span class="ch">\n</span><span class="st">"</span>),
        <span class="dt">bty =</span> <span class="st">"n"</span>, <span class="dt">cex =</span> <span class="fl">0.6</span>)</code></pre></div>
-<p><img src="Introduction_files/figure-html/unnamed-chunk-41-1.png" width="672"></p>
+<p><img src="Introduction_files/figure-html/unnamed-chunk-40-1.png" width="672"></p>
 <p><strong>Fig. 3.</strong> CPU time with different <code>ProbDup</code> arguments estimated using the <code>microbenchmark</code> package.</p>
 </div>
 </div>
@@ -1492,7 +1488,7 @@ GNdupcView[[<span class="dv">2</span>]]</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Plot the summary visualization</span>
 <span class="kw">library</span>(gridExtra)
 <span class="kw">grid.arrange</span>(GNdupcView[[<span class="dv">3</span>]])</code></pre></div>
-<p><img src="Introduction_files/figure-html/unnamed-chunk-56-1.png" width="960"></p>
+<p><img src="Introduction_files/figure-html/unnamed-chunk-55-1.png" width="960"></p>
 <p><strong>Fig. 5.</strong> Summary visualization of groundnut probable duplicate sets retrieved according to <code>SourceCountry</code> field.</p>
 <p>The function <code>KWCounts</code> can be used to compute the keyword counts from PGR passport database fields(columns) which are considered for identification of probable duplicates. These keyword counts can give a rough indication of the completeness of the data in such fields (Fig. 3).</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Compute the keyword counts for the whole data</span>
@@ -1525,7 +1521,7 @@ bp3 &lt;-<span class="st"> </span><span class="kw">barplot</span>(<span class="k
 <span class="kw">text</span>(bp3, <span class="dv">0</span>, <span class="kw">table</span>(GNUKWCouts<span class="op">$</span>COUNT),<span class="dt">cex =</span> <span class="dv">1</span>, <span class="dt">pos =</span> <span class="dv">3</span>)
 <span class="kw">legend</span>(<span class="st">"topright"</span>, <span class="kw">paste</span>(<span class="st">"No. of records ="</span>,
                    <span class="kw">nrow</span>(GN[<span class="op">!</span>GN<span class="op">$</span>NationalID <span class="op">%in%</span><span class="st"> </span>GND, ])), <span class="dt">bty =</span> <span class="st">"n"</span>)</code></pre></div>
-<p><img src="Introduction_files/figure-html/unnamed-chunk-57-1.png" width="672"></p>
+<p><img src="Introduction_files/figure-html/unnamed-chunk-56-1.png" width="672"></p>
 <p><strong>Fig. 6.</strong> The keyword counts in the database fields considered for identification of probable duplicates for <strong>A.</strong> the entire <code>GN1000</code> dataset, <strong>B.</strong> the probable duplicate records alone and <strong>C.</strong> the unique records alone.</p>
 </div>
 <div id="citing-pgrdup" class="section level2">
@@ -1559,9 +1555,9 @@ project by citing the package.</code></pre>
 <h2 class="hasAnchor">
 <a href="#session-info" class="anchor"></a>Session Info</h2>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sessionInfo</span>()</code></pre></div>
-<pre><code>R version 3.4.0 (2017-04-21)
-Platform: i386-w64-mingw32/i386 (32-bit)
-Running under: Windows 7 (build 7601) Service Pack 1
+<pre><code>R version 3.4.1 (2017-06-30)
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+Running under: Windows 10 x64 (build 14393)
 
 Matrix products: default
 
@@ -1575,25 +1571,21 @@ attached base packages:
 
 other attached packages:
 [1] gridExtra_2.2.1        microbenchmark_1.4-2.1 wordcloud_2.5         
-[4] RColorBrewer_1.1-2     PGRdup_0.2.3.2         rvest_0.3.2           
-[7] xml2_1.1.1             diagram_1.6.3          shape_1.4.2           
+[4] RColorBrewer_1.1-2     PGRdup_0.2.3.2         XML_3.98-1.9          
+[7] diagram_1.6.3          shape_1.4.2           
 
 loaded via a namespace (and not attached):
- [1] igraph_1.1.2         withr_2.0.0          ggplot2_2.2.1       
- [4] devtools_1.13.3.9000 rprojroot_1.2        pkgconfig_2.0.1     
- [7] compiler_3.4.0       stringr_1.2.0        parallel_3.4.0      
-[10] labeling_0.3         Rcpp_0.12.12         plyr_1.8.4          
-[13] highr_0.6            httr_1.2.1           tools_3.4.0         
-[16] pkgbuild_0.0.0.9000  memoise_1.1.0        rmarkdown_1.6       
-[19] R6_2.2.2             selectr_0.3-1        knitr_1.16          
-[22] scales_0.4.1         stringdist_0.9.4.6   assertthat_0.2.0    
-[25] curl_2.8.1           digest_0.6.12        gtable_0.2.0        
-[28] evaluate_0.10.1      stringi_1.1.5        backports_1.1.0     
-[31] desc_1.1.0           htmltools_0.3.6      munsell_0.4.3       
-[34] grid_3.4.0           XML_3.98-1.8         colorspace_1.3-2    
-[37] data.table_1.10.4    rlang_0.1.1.9000     magrittr_1.5        
-[40] lazyeval_0.2.0       yaml_2.1.14          slam_0.1-40         
-[43] crayon_1.3.2         pkgload_0.0.0.9000   tibble_1.3.3        </code></pre>
+ [1] igraph_1.0.1       Rcpp_0.12.11       knitr_1.16        
+ [4] magrittr_1.5       munsell_0.4.3      colorspace_1.3-2  
+ [7] rlang_0.1.1.9000   highr_0.6          plyr_1.8.4        
+[10] stringr_1.2.0      tools_3.4.1        parallel_3.4.1    
+[13] grid_3.4.1         data.table_1.10.4  gtable_0.2.0      
+[16] htmltools_0.3.6    lazyeval_0.2.0     yaml_2.1.14       
+[19] rprojroot_1.2      digest_0.6.12      tibble_1.3.3      
+[22] ggplot2_2.2.1      stringdist_0.9.4.4 slam_0.1-40       
+[25] evaluate_0.10.1    rmarkdown_1.6      labeling_0.3      
+[28] stringi_1.1.5      compiler_3.4.1     scales_0.4.1      
+[31] backports_1.1.0   </code></pre>
 </div>
 <div id="references" class="section level2 unnumbered">
 <h2 class="hasAnchor">
