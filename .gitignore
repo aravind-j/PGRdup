@@ -5,3 +5,4 @@ inst/doc
 src/PGRdup.dll
 src/fdouble_metaphone.o
 src/register.o
+Release.R
