@@ -3,9 +3,9 @@
 * The memtest errors in the package have been corrected.
 
 ### Test environments
-* local Windows 7 Ultimate install, R-release (R 3.4.0) & R-devel (R 3.4.0 Pre-release).
-* local Ubuntu 16.04, R-release (R 3.4.0) & R-devel (R 3.4.0 Pre-release).
-* win-builder, R-release (R 3.3.3) & R-devel (R 3.4.0 Pre-release).
+* local Windows 7 Ultimate install, R-release (R 3.4.1) & R-devel (R 3.5.0 Pre-release).
+* local Ubuntu 16.04, R-release (R 3.4.1) & R-devel (R 3.5.0 Pre-release).
+* win-builder, R-release (R 3.4.1) & R-devel (R 3.5.0 Pre-release).
 * CLANG memtest via rocker/r-devel-ubsan-clang.
 * GCC memtest via rocker/r-devel-san.
 

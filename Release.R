@@ -76,7 +76,9 @@ pkgdown::build_site()
 # Set GhostScript and qpdf env variables
 Sys.getenv("R_GSCMD")
 Sys.getenv("R_QPDF")
-Sys.setenv(R_GSCMD="C:/Program Files/gs/gs9.16/bin/gswin32c.exe")
+#Sys.setenv(R_GSCMD="C:/Program Files/gs/gs9.16/bin/gswin32c.exe")
+#Sys.setenv(R_QPDF="C:/qpdf-6.0.0/bin/qpdf.exe")
+Sys.setenv(R_GSCMD="C:/Program Files/gs/gs9.21/bin/gswin64c.exe")
 Sys.setenv(R_QPDF="C:/qpdf-6.0.0/bin/qpdf.exe")
 
 # Check locally - check on both release and devel
