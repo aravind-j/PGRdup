@@ -1,23 +1,23 @@
 PGRdup 0.2.3.2
 ---------------------------------------
 ###UPDATED FUNCTIONS:
- - `DoubleMetaphone` - Fixed memory leak issues in underlying C code.
+ - `DoubleMetaphone` - Fixed memory leak issues in underlying `C` code.
  
 ###OTHER NOTES:
  - Minor corrections in vignette.
  - Added welcome message.
  - Added version history to vignette
- - Replaced all 1:nrow() and 1:length() usage in function with seq_len(nrow()) and seq_len(length()) respectively.
+ - Replaced all `1:nrow()` and `1:length()` usage in function with `seq_len(nrow())` and `seq_len(length())` respectively.
  - Added package to github.
  - Added package documentation website (https://aravind-j.github.io/PGRdup/) as a github page with `pkgdown`.
- - Added copyright to `Authors@R` along with original contributors for the underlying C code for `DoubleMetaphone.
+ - Added copyright to `Authors@R` along with original contributors for the underlying `C` code for `DoubleMetaphone`.
 
 ***
 
 PGRdup 0.2.3.1
 ---------------------------------------
 ###OTHER NOTES:
- - Registered native routines in the C code for `DoubleMetaphone`.
+ - Registered native routines in the `C` code for `DoubleMetaphone`.
 
 ***
 
