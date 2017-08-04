@@ -1,3 +1,12 @@
+# Version 0.2.3.2 - Second submission
+
+* Added copyright to Authors@R along with original contributors for the C code.
+* The memtest errors in the package have been corrected.
+
+### Test environments
+* local Windows 7 Ultimate install, R-release (R 3.4.1) & R-devel (R 3.5.0 Pre-release).
+* local Ubuntu 16.04, R-release (R 3.4.1) & R-devel (R 3.5.0 Pre-release).
+
 # Version 0.2.3.2 - First submission
 
 * The memtest errors in the package have been corrected.

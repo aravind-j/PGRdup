@@ -6,13 +6,27 @@ Authors@R: c(
     email = "j.aravind@icar.gov.in",
     role = c("aut", "cre")),
     person(c("J.", "Radhamani"),
-    email = "jalli.radhamani@icar.gov.in", role = "aut"),
+    email = "jalli.radhamani@icar.gov.in",
+    role = "aut"),
     person(c("Kalyani", "Srinivasan"),
-    email = "kalyani.srinivasan@icar.gov.in", role = "aut"),
+    email = "kalyani.srinivasan@icar.gov.in",
+    role = "aut"),
     person(c("B.", "Ananda", "Subhash"),
-    email = "anandasubhash@gmail.com", role = "aut"),
+    email = "anandasubhash@gmail.com",
+    role = "aut"),
     person(c("R.", "K.", "Tyagi"),
-    email = "rishi.tyagi@icar.gov.in", role = "aut"))
+    email = "rishi.tyagi@icar.gov.in",
+    role = "aut"),
+    person("ICAR-NBGPR",
+    role = "cph"),
+    person(c("Maurice", "Aubrey"),
+    email = "maurice@hevanet.com",
+    role = "ctb"),
+    person(c("Kevin", "Atkinson"),
+    email = "kevina@users.sourceforge.net",
+    role = "ctb"),
+    person(c("Lawrence", "Philips"),
+    role = "ctb"))
 Description: Provides functions to aid the identification of probable/possible
     duplicates in Plant Genetic Resources (PGR) collections using
     'passport databases' comprising of information records of each constituent
@@ -40,7 +54,7 @@ Suggests:
     XML,
     knitr,
     rmarkdown
-Copyright: 2014, ICAR-NBPGR
+Copyright: 2014-2017, ICAR-NBPGR
 License: GPL-2 | GPL-3
 LazyData: true
 VignetteBuilder: knitr
