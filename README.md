@@ -3,9 +3,9 @@
 
     Version :0.2.3.2
 
-###### Copyright (C) 2014, [ICAR-NBPGR](http://www.nbpgr.ernet.in/) ; License: [GPL-2 | GPL-3](https://www.r-project.org/Licenses/)
+###### Copyright (C) 2014-2017, [ICAR-NBPGR](http://www.nbpgr.ernet.in/) ; License: [GPL-2 | GPL-3](https://www.r-project.org/Licenses/)
 
-[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![Project Status: Inactive ? The project has reached a stable, usable state but is no longer being actively developed; support/maintenance will be provided as time allows.](http://www.repostatus.org/badges/latest/inactive.svg)](http://www.repostatus.org/#inactive) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/PGRdup)](https://cran.r-project.org/package=PGRdup) [![minimal R version](https://img.shields.io/badge/R%3E%3D-3.0.2-6666ff.svg)](https://cran.r-project.org/) [![packageversion](https://img.shields.io/badge/Package%20version-0.2.3.2-orange.svg?style=flat-square)](commits/master) [![Last-changedate](https://img.shields.io/badge/last%20change-2017--08--03-yellowgreen.svg)](/commits/master)
+[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![Project Status: Inactive ? The project has reached a stable, usable state but is no longer being actively developed; support/maintenance will be provided as time allows.](http://www.repostatus.org/badges/latest/inactive.svg)](http://www.repostatus.org/#inactive) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/PGRdup)](https://cran.r-project.org/package=PGRdup) [![minimal R version](https://img.shields.io/badge/R%3E%3D-3.0.2-6666ff.svg)](https://cran.r-project.org/) [![packageversion](https://img.shields.io/badge/Package%20version-0.2.3.2-orange.svg?style=flat-square)](commits/master) [![Last-changedate](https://img.shields.io/badge/last%20change-2017--08--04-yellowgreen.svg)](/commits/master)
 
 ##### *J. Aravind<sup>1</sup>, J. Radhamani<sup>1</sup>, Kalyani Srinivasan<sup>1</sup>, B. Ananda Subhash<sup>2</sup> and R. K. Tyagi<sup>1</sup>*
 

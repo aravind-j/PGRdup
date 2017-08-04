@@ -2,22 +2,14 @@
 output: rmarkdown::github_document
 ---
 
-```{r, echo = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "",
-  fig.path = "inst/extdata/"
-)
+
+
+<img src="https://raw.githubusercontent.com/aravind-j/PGRdup/master/inst/extdata/PGRdup.png" width="100%" />
+
+
+
 ```
-
-```{r, out.width = '100%', echo = FALSE}
-knitr::include_graphics("https://raw.githubusercontent.com/aravind-j/PGRdup/master/inst/extdata/PGRdup.png")
-```
-
-
-```{r,echo = FALSE, message = FALSE}
-devtools::load_all(".")
-cat("Version :", getNamespaceVersion("PGRdup"), sep = "")
+Version :0.2.3.2
 ```
 
 ###### Copyright (C) 2014-2017, [ICAR-NBPGR](http://www.nbpgr.ernet.in/) ; License: [GPL-2 | GPL-3](https://www.r-project.org/Licenses/)
@@ -27,7 +19,7 @@ cat("Version :", getNamespaceVersion("PGRdup"), sep = "")
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/PGRdup)](https://cran.r-project.org/package=PGRdup)
 [![minimal R version](https://img.shields.io/badge/R%3E%3D-3.0.2-6666ff.svg)](https://cran.r-project.org/)
 [![packageversion](https://img.shields.io/badge/Package%20version-0.2.3.2-orange.svg?style=flat-square)](commits/master)
-[![Last-changedate](https://img.shields.io/badge/last%20change-`r gsub('-', '--', Sys.Date())`-yellowgreen.svg)](/commits/master)
+[![Last-changedate](https://img.shields.io/badge/last%20change-2017--08--04-yellowgreen.svg)](/commits/master)
 
 
 ##### *J. Aravind^1^, J. Radhamani^1^, Kalyani Srinivasan^1^, B. Ananda Subhash^2^ and R. K. Tyagi^1^*
@@ -51,7 +43,8 @@ The functions in this package are primarily built using the following R packages
 ## Installation
 The package can be installed from CRAN as follows:
 
-```{r, eval=FALSE}
+
+```r
 # Install from CRAN
 install.packages('PGRdup', dependencies=TRUE)
 
@@ -133,14 +126,16 @@ Use these helper functions if needed. `ValidatePrimKey` can be used to check whe
 ## Detailed tutorial
 For a detailed tutorial on how to used this package type:
 
-```{r, eval=FALSE}
+
+```r
 browseVignettes(package = 'PGRdup')
 ```
 
 ## What's new
 To know whats new in this version type:
 
-```{r, eval=FALSE}
+
+```r
 news(package='PGRdup')
 ```
 
@@ -155,21 +150,33 @@ news(package='PGRdup')
 ## Citing `PGRdup`
 To cite the methods in the package use:
 
-```{r, eval = FALSE}
+
+```r
 citation("PGRdup")
 ```
 
 
-```{r, echo = FALSE}
-cit <- citation("PGRdup")
-yr <- format(Sys.Date(), "%Y")
-cit[1]$year <- yr
-oc <- class(cit)
 
-cit <- unclass(cit)
-attr(cit[[1]],"textVersion") <- gsub("\\(\\)",
-                                     paste("\\(", yr, "\\)", sep = ""),
-                                     attr(cit[[1]],"textVersion"))
-class(cit) <- oc
-cit
+```
+
+To cite the R package 'PGRdup' in publications use:
+
+  Aravind, J., J. Radhamani, Kalyani Srinivasan, B. Ananda
+  Subhash, and R. K. Tyagi (2017).  PGRdup: Discover Probable
+  Duplicates in Plant Genetic Resources Collections. R package
+  version 0.2.3.2.
+
+A BibTeX entry for LaTeX users is
+
+  @Manual{,
+    title = {PGRdup: Discover Probable Duplicates in Plant Genetic Resources Collections},
+    author = {{Aravind J} and {Radhamani J} and {Kalyani Srinivasan} and {Ananda Subhash B} and {Rishi Kumar Tyagi}},
+    note = {R package version 0.2.3.2},
+    url = {https://cran.r-project.org/package=PGRdup},
+    year = {2017},
+  }
+
+This free and open-source software implements academic research by
+the authors and co-workers. If you use it, please support the
+project by citing the package.
 ```
