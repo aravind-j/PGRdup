@@ -16,7 +16,6 @@
 #  https://www.r-project.org/Licenses/
 
 
-
 #' Create a KWIC Index
 #' 
 #' \code{KWIC} creates a Keyword in Context index from PGR passport database 
@@ -45,16 +44,21 @@
 #'   frequency greater than \code{min.freq}. \cr \code{Fields} \tab A character 
 #'   vector with the names of the PGR database fields from which the keywords 
 #'   were extracted. \cr }
-#' @seealso \code{\link[data.table]{data.table}},
+#' @seealso \code{\link[data.table]{data.table}}, 
 #'   \code{\link[PGRdup]{print.KWIC}}
-#' @references Knupffer, H. (1988). The European Barley Database of the ECP/GR: 
-#'   an introduction. Die Kulturpflanze, 36(1), 135-162.\cr \cr Knupffer, H., 
-#'   Frese, L., & Jongen, M. W. M. (1997). Using central crop databases: 
-#'   searching for duplicates and gaps. In: E. Lipman, M. W. M. Jongen, T. J. L.
-#'   van Hintum, T. Gass, and L. Maggioni (Eds.), Central Crop Databases: Tools 
-#'   for Plant Genetic Resources Management (pp. 67-77). Rome, Italy: 
-#'   International Plant Genetic Resources Institute/ Wageningen, The 
-#'   Netherlands: Centre for Genetic Resources.
+#'   
+#' @references Knüpffer, H. 1988. “The European Barley Database of the ECP/GR:
+#'   An Introduction.” \emph{Die Kulturpflanze} 36 (1): 135-62. 
+#'   doi:\url{https://doi.org/10.1007/BF01986957}. \cr \cr Knüpffer, H., L.
+#'   Frese, and M. W. M. Jongen. 1997. “Using Central Crop Databases: Searching 
+#'   for Duplicates and Gaps.” In \emph{Central Crop Databases: Tools for Plant 
+#'   Genetic Resources Management. Report of a Workshop, Budapest, Hungary, 
+#'   13-16 October 1996}, edited by E. Lipman, M. W. M. Jongen, T. J. L. van 
+#'   Hintum, T. Gass, and L. Maggioni, 67-77. Rome, Italy and Wageningen, The 
+#'   Netherlands: International Plant Genetic Resources Institute and Centre for
+#'   Genetic Resources.
+#'   
+#' @encoding UTF-8
 #' @examples
 #' # Load PGR passport database
 #' GN <- GN1000

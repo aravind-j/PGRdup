@@ -71,12 +71,12 @@
 #' \strong{Semantic matching} matches keywords based on a list of accession name
 #' synonyms supplied as list with character vectors of synonym sets (synsets) to
 #' the \code{syn} argument. Synonyms in this context refers to interchangeable 
-#' identifiers or names by which an accession is recognized. Multiple keywords
-#' specified as members of the same synset in \code{syn} are merged together.
-#' To facilitate accurate identification of synonyms from the KWIC index,
-#' identical data standardization operations using the 
-#' \code{\link[PGRdup]{MergeKW}} and \code{\link[PGRdup]{DataClean}} functions 
-#' for both the original database fields and the synset list are recommended.
+#' identifiers or names by which an accession is recognized. Multiple keywords 
+#' specified as members of the same synset in \code{syn} are merged together. To
+#' facilitate accurate identification of synonyms from the KWIC index, identical
+#' data standardization operations using the \code{\link[PGRdup]{MergeKW}} and
+#' \code{\link[PGRdup]{DataClean}} functions for both the original database
+#' fields and the synset list are recommended.
 #' 
 #' The probable duplicate sets identified initially here may be intersecting 
 #' with other sets. To get the disjoint sets after the union of all the 
@@ -147,8 +147,10 @@
 #'   dependent upon the \code{useBytes} argument as described in 
 #'   \strong{Encoding issues} for the \code{\link[stringdist]{stringdist}} 
 #'   function, which is made use of here for string matching.
-#' @references van der Loo, M. P. J. (2014). The \code{stringdist} Package for 
-#'   Approximate String Matching. R Journal, 6(1), 111-122.
+#' @references van der Loo, M. P. J. 2014. “The Stringdist Package for
+#'   Approximate String Matching.” \emph{R Journal} 6 (1):111–22.
+#'   \url{https://journal.r-project.org/archive/2014/RJ-2014-011/index.html}.
+#' @encoding UTF-8
 #' @examples
 #' \dontrun{
 #' 
