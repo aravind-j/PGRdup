@@ -17,10 +17,10 @@ knitr::include_graphics("https://raw.githubusercontent.com/aravind-j/PGRdup/mast
 
 ```{r,echo = FALSE, message = FALSE}
 devtools::load_all(".")
-cat("Version :", getNamespaceVersion("PGRdup"), sep = "")
+
 ```
 
-###### Copyright (C) 2014-2017, [ICAR-NBPGR](http://www.nbpgr.ernet.in/) ; License: [GPL-2 | GPL-3](https://www.r-project.org/Licenses/)
+###### Version : `r getNamespaceVersion("PGRdup")`; Copyright (C) 2014-2017: [ICAR-NBPGR](http://www.nbpgr.ernet.in/); License: [GPL-3](https://www.r-project.org/Licenses/)
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Project Status: Inactive ? The project has reached a stable, usable state but is no longer being actively developed; support/maintenance will be provided as time allows.](http://www.repostatus.org/badges/latest/inactive.svg)](http://www.repostatus.org/#inactive)
