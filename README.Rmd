@@ -29,6 +29,7 @@ cat("Version :", getNamespaceVersion("PGRdup"), sep = "")
 [![packageversion](https://img.shields.io/badge/Package%20version-0.2.3.2-orange.svg?style=flat-square)](commits/master)
 [![Last-changedate](https://img.shields.io/badge/last%20change-`r gsub('-', '--', Sys.Date())`-yellowgreen.svg)](/commits/master)
 [![Rdoc](http://www.rdocumentation.org/badges/version/PGRdup)](http://www.rdocumentation.org/packages/PGRdup)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.841963.svg)](https://doi.org/10.5281/zenodo.841963)
 
 
 ##### *J. Aravind^1^, J. Radhamani^1^, Kalyani Srinivasan^1^, B. Ananda Subhash^2^ and R. K. Tyagi^1^*
@@ -152,6 +153,8 @@ news(package='PGRdup')
 [Github page](https://github.com/aravind-j/PGRdup)
 
 [Github website](https://aravind-j.github.io/PGRdup/)
+
+[Zeonodo DOI](https://doi.org/10.5281/zenodo.841963)
 
 ## Citing `PGRdup`
 To cite the methods in the package use:
