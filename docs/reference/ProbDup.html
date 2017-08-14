@@ -281,12 +281,12 @@ characters to be present in the encoding of a keyword for phonetic matching.
     <strong>Semantic matching</strong> matches keywords based on a list of accession name
 synonyms supplied as list with character vectors of synonym sets (synsets) to
 the <code>syn</code> argument. Synonyms in this context refers to interchangeable 
-identifiers or names by which an accession is recognized. Multiple keywords
-specified as members of the same synset in <code>syn</code> are merged together.
-To facilitate accurate identification of synonyms from the KWIC index,
-identical data standardization operations using the 
-<code><a href='MergeKW.html'>MergeKW</a></code> and <code><a href='DataClean.html'>DataClean</a></code> functions 
-for both the original database fields and the synset list are recommended.</p>
+identifiers or names by which an accession is recognized. Multiple keywords 
+specified as members of the same synset in <code>syn</code> are merged together. To
+facilitate accurate identification of synonyms from the KWIC index, identical
+data standardization operations using the <code><a href='MergeKW.html'>MergeKW</a></code> and
+<code><a href='DataClean.html'>DataClean</a></code> functions for both the original database
+fields and the synset list are recommended.</p>
 <p>The probable duplicate sets identified initially here may be intersecting 
 with other sets. To get the disjoint sets after the union of all the 
 intersecting sets use the <code><a href='DisProbDup.html'>DisProbDup</a></code> function.</p>
@@ -319,8 +319,9 @@ information associated with the identified sets in an object of class
     
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>van der Loo, M. P. J. (2014). The <code>stringdist</code> Package for 
-  Approximate String Matching. R Journal, 6(1), 111-122.</p>
+    <p>van der Loo, M. P. J. 2014. “The Stringdist Package for
+  Approximate String Matching.” <em>R Journal</em> 6 (1):111–22.
+  <a href='https://journal.r-project.org/archive/2014/RJ-2014-011/index.html'>https://journal.r-project.org/archive/2014/RJ-2014-011/index.html</a>.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 

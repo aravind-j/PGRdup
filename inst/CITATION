@@ -18,12 +18,13 @@ citEntry(entry  = "Manual",
                              person(c("Rishi", "Kumar", "Tyagi"),
                                     email = "rktyagi@nbpgr.ernet.in", role = "aut")),
          year = year,
-         note = paste(vers),
          textVersion = paste(
            "Aravind, J., J. Radhamani, Kalyani Srinivasan, B. Ananda Subhash, and R. K. Tyagi (",
            year, ").  PGRdup: Discover Probable Duplicates in Plant Genetic Resources Collections. ",
-           vers, ".", sep=""),
-         url = "https://cran.r-project.org/package=PGRdup")
+           vers, ", ", "https://cran.r-project.org/package=PGRdup, https://doi.org/10.5281/zenodo.841963",
+           ".", sep=""),
+         note = {c(paste(vers), "https://cran.r-project.org/package=PGRdup",
+                 "https://doi.org/10.5281/zenodo.841963")})
            
 citFooter("This free and open-source software implements academic
 research by the authors and co-workers. If you use it, please support

@@ -1,6 +1,6 @@
 Package: PGRdup
 Title: Discover Probable Duplicates in Plant Genetic Resources Collections
-Version: 0.2.3.2
+Version: 0.2.3.3
 Authors@R: c(
     person(c("J.", "Aravind"),
     email = "j.aravind@icar.gov.in",
@@ -21,11 +21,14 @@ Authors@R: c(
     role = "cph"),
     person(c("Maurice", "Aubrey"),
     email = "maurice@hevanet.com",
+    comment = "Double Metaphone",
     role = "ctb"),
     person(c("Kevin", "Atkinson"),
     email = "kevina@users.sourceforge.net",
+    comment = "Double Metaphone",
     role = "ctb"),
     person(c("Lawrence", "Philips"),
+    comment = "Double Metaphone",
     role = "ctb"))
 Description: Provides functions to aid the identification of probable/possible
     duplicates in Plant Genetic Resources (PGR) collections using
@@ -59,5 +62,9 @@ License: GPL-2 | GPL-3
 LazyData: true
 VignetteBuilder: knitr
 RoxygenNote: 6.0.1
-URL: https://github.com/aravind-j/PGRdup
+URL: https://cran.r-project.org/package=PGRdup,
+    https://github.com/aravind-j/PGRdup,
+    https://doi.org/10.5281/zenodo.841963,
+    https://aravind-j.github.io/PGRdup/,
+    https://www.rdocumentation.org/packages/PGRdup
 BugReports: https://github.com/aravind-j/PGRdup/issues
