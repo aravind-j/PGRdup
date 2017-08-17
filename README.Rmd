@@ -157,7 +157,7 @@ news(package='PGRdup')
 
 [Github website](https://aravind-j.github.io/PGRdup/)
 
-[Zeonodo DOI](https://doi.org/10.5281/zenodo.841963)
+[Zenodo DOI](https://doi.org/10.5281/zenodo.841963)
 
 ## Citing `PGRdup`
 To cite the methods in the package use:
