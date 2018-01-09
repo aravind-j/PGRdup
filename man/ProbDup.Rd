@@ -282,8 +282,8 @@ GNdupc
 }
 }
 \references{
-van der Loo, M. P. J. 2014. “The Stringdist Package for
-  Approximate String Matching.” \emph{R Journal} 6 (1):111–22.
+van der Loo, M. P. J. 2014. "The Stringdist Package for
+  Approximate String Matching." \emph{R Journal} 6 (1):111-22.
   \url{https://journal.r-project.org/archive/2014/RJ-2014-011/index.html}.
 }
 \seealso{

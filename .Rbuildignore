@@ -1,5 +1,6 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
+^README\.utf8.Rmd$
 ^README\.Rmd$
 ^README\.html$
 ^README-*\.png$
@@ -14,3 +15,4 @@
 ^docs$
 ^_pkgdown\.yml$
 ^PGRdup\.png$
+^README\.utf8\.md$

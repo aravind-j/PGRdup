@@ -10,7 +10,7 @@
 
 ------------------------------------------------------------------------
 
-[![minimal R version](https://img.shields.io/badge/R%3E%3D-3.0.2-6666ff.svg)](https://cran.r-project.org/) [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version-last-release/PGRdup)](https://cran.r-project.org/package=PGRdup) [![rstudio mirror downloads](https://cranlogs.r-pkg.org/badges/grand-total/PGRdup?color=green)](https://CRAN.R-project.org/package=PGRdup) [![Project Status: Inactive](http://www.repostatus.org/badges/latest/inactive.svg)](http://www.repostatus.org/#inactive) <!-- [![packageversion](https://img.shields.io/badge/Package%20version-0.2.3.3-orange.svg)](https://github.com/aravind-j/PGRdup) --> [![develVersion](https://img.shields.io/badge/devel%20version-0.2.3.3-orange.svg)](https://github.com/aravind-j/PGRdup) <!-- [![GitHub Download Count](https://github-basic-badges.herokuapp.com/downloads/kennedyoliveira/github-basic-badges/total.svg)] --> [![Last-changedate](https://img.shields.io/badge/last%20change-2017--08--20-yellowgreen.svg)](/commits/master) [![Rdoc](http://www.rdocumentation.org/badges/version/PGRdup)](http://www.rdocumentation.org/packages/PGRdup) [![Zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.841963.svg)](https://doi.org/10.5281/zenodo.841963)
+[![minimal R version](https://img.shields.io/badge/R%3E%3D-3.0.2-6666ff.svg)](https://cran.r-project.org/) [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version-last-release/PGRdup)](https://cran.r-project.org/package=PGRdup) [![rstudio mirror downloads](https://cranlogs.r-pkg.org/badges/grand-total/PGRdup?color=green)](https://CRAN.R-project.org/package=PGRdup) [![Project Status: Inactive](http://www.repostatus.org/badges/latest/inactive.svg)](http://www.repostatus.org/#inactive) <!-- [![packageversion](https://img.shields.io/badge/Package%20version-0.2.3.3-orange.svg)](https://github.com/aravind-j/PGRdup) --> [![develVersion](https://img.shields.io/badge/devel%20version-0.2.3.3-orange.svg)](https://github.com/aravind-j/PGRdup) <!-- [![GitHub Download Count](https://github-basic-badges.herokuapp.com/downloads/kennedyoliveira/github-basic-badges/total.svg)] --> [![Last-changedate](https://img.shields.io/badge/last%20change-2018--01--08-yellowgreen.svg)](/commits/master) [![Rdoc](http://www.rdocumentation.org/badges/version/PGRdup)](http://www.rdocumentation.org/packages/PGRdup) [![Zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.841963.svg)](https://doi.org/10.5281/zenodo.841963)
 
 ------------------------------------------------------------------------
 
@@ -157,7 +157,7 @@ citation("PGRdup")
     To cite the R package 'PGRdup' in publications use:
 
       Aravind, J., J. Radhamani, Kalyani Srinivasan, B. Ananda
-      Subhash, and R. K. Tyagi (2017).  PGRdup: Discover Probable
+      Subhash, and R. K. Tyagi (2018).  PGRdup: Discover Probable
       Duplicates in Plant Genetic Resources Collections. R package
       version 0.2.3.3, https://cran.r-project.org/package=PGRdup,
       https://doi.org/10.5281/zenodo.841963.
@@ -170,7 +170,7 @@ citation("PGRdup")
         note = {R package version 0.2.3.3},
         note = {https://cran.r-project.org/package=PGRdup},
         note = {https://doi.org/10.5281/zenodo.841963},
-        year = {2017},
+        year = {2018},
       }
 
     This free and open-source software implements academic research by

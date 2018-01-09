@@ -1,3 +1,12 @@
+# Version 0.2.3.3 - First submission
+
+* Use of packages in Suggests such as microbenchmark made conditional to avoid problems when they are not available for an OS.
+
+### Test environments
+* local Windows 7 Ultimate install, R-release (R 3.4.3) & R-devel (R 3.5.0 Pre-release).
+* local Ubuntu 16.04, R-release (R 3.4.3) & R-devel (R 3.5.0 Pre-release).
+* win-builder, R-release (R 3.4.3) & R-devel (R 3.5.0 Pre-release).
+
 # Version 0.2.3.2 - Second submission
 
 * Added copyright to Authors@R along with original contributors for the C code.

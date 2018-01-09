@@ -41,7 +41,7 @@
 #'    github library} along with the corresponding 
 #'   \href{https://github.com/gitpan/Text-DoubleMetaphone/blob/master/README}{license
 #'    information}.
-#' @references Philips, Lawrence. 2000. “The Double Metaphone Search Algorithm.”
+#' @references Philips, Lawrence. 2000. "The Double Metaphone Search Algorithm."
 #'   \emph{C/C++ Users Journal} 18 (6): 38-43.
 #'   \url{http://dl.acm.org/citation.cfm?id=349124.349132}.
 #' @encoding UTF-8

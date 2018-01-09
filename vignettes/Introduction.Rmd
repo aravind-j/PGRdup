@@ -41,14 +41,14 @@ knitr::opts_chunk$set(
 
 The goal of this document is to introduce the users to these functions and familiarise them with the workflow intended to fetch probable duplicate sets. This document assumes a basic knowledge of `R` programming language.
 
-The functions in this package are primarily built using the `R` packages [`data.table`](https://cran.r-project.org/web/packages/data.table/index.html), [`igraph`](https://cran.r-project.org/web/packages/igraph/index.html), [`stringdist`](https://cran.r-project.org/web/packages/stringdist/index.html) and [`stringi`](https://cran.r-project.org/web/packages/stringi/index.html).
+The functions in this package are primarily built using the `R` packages [`data.table`](https://CRAN.R-project.org/package=data.table), [`igraph`](https://CRAN.R-project.org/package=igraph), [`stringdist`](https://CRAN.R-project.org/package=stringdist) and [`stringi`](https://CRAN.R-project.org/package=stringi).
 
 \pagebreak
 
 ![](imgs/PGRdup.png)
 
 ```{r, echo=FALSE, warning=FALSE, fig.cap = NULL}
-if("diagram" %in% rownames(installed.packages())) {
+if (requireNamespace("diagram", quietly = TRUE)) {
   suppressMessages(library(diagram))
   
   elpos <- coordinates(pos = c(2, 2, 2, 4, 2, 2, 1, 3))
@@ -150,11 +150,11 @@ The current version of the package is `r getNamespaceVersion("PGRdup")`. The pre
 **Table 1.** Version history of `PGRdup` `R` package.
 
 ```{r, echo=FALSE, message=FALSE}
-library(XML)
+if (requireNamespace("XML", quietly = TRUE)) {
 pkg <- "PGRdup"
 link <- paste0("http://cran.r-project.org/src/contrib/Archive/", pkg)
 
-VerHistory <- readHTMLTable(link)[[1]][,2:3]
+VerHistory <- XML::readHTMLTable(link)[[1]][,2:3]
 colnames(VerHistory) <- c("Version", "Date")
 VerHistory <- VerHistory[VerHistory$Version != "Parent Directory",]
 VerHistory <- VerHistory[!is.na(VerHistory$Version), ]
@@ -164,8 +164,16 @@ VerHistory$Version <- gsub(".tar.gz", "", VerHistory$Version)
 
 VerHistory <- VerHistory[order(VerHistory$Date), c("Version", "Date")]
 rownames(VerHistory) <- NULL
+} else {
+  VerHistory <- data.frame(Version = c("0.2", "0.2.1", "0.2.2", "0.2.2.1",
+                                           "0.2.3", "0.2.3.1"),
+                           Date = structure(c(16539, 16639, 16865,
+                                              16869, 17198, 17240),
+                                            class = "Date"))
+}
 
 knitr::kable(VerHistory)
+
 ```
 
 To know detailed history of changes use `news(package='PGRdup')`.
@@ -181,7 +189,7 @@ install.packages('PGRdup', dependencies=TRUE)
 
 ```
 
-Uninstalled dependencies (packages which `PGRdup` depends on *viz*- [`data.table`](https://cran.r-project.org/web/packages/data.table/index.html), [`igraph`](https://cran.r-project.org/web/packages/igraph/index.html), [`stringdist`](https://cran.r-project.org/web/packages/stringdist/index.html) and [`stringi`](https://cran.r-project.org/web/packages/stringi/index.html)) are also installed because of the argument `dependencies=TRUE`.
+Uninstalled dependencies (packages which `PGRdup` depends on *viz*- [`data.table`](https://CRAN.R-project.org/package=data.table), [`igraph`](https://CRAN.R-project.org/package=igraph), [`stringdist`](https://CRAN.R-project.org/package=stringdist) and [`stringi`](https://CRAN.R-project.org/package=stringi) are also installed because of the argument `dependencies=TRUE`.
 
 Then the package can be loaded using the function
 ```{r, eval=FALSE}
@@ -200,9 +208,9 @@ class(GN1000)
 head(GN1000)
 ```
 
-If the passport data exists as an excel sheet, it can be first converted to a comma-separated values (csv) file or tab delimited file and then easily imported into the `R` environment using the base functions `read.csv` and `read.table` respectively. Similarly `read_csv()` and `read_tsv()` from the [`readr`](https://cran.r-project.org/web/packages/readr/index.html) package can also be used. Alternatively, the package [`readxl`](https://cran.r-project.org/web/packages/readxl/index.html) can be used to directly read the data from excel. In case of large csv files, the function `fread` in the [`data.table`](https://cran.r-project.org/web/packages/data.table/index.html) package can be used to rapidly load the data.
+If the passport data exists as an excel sheet, it can be first converted to a comma-separated values (csv) file or tab delimited file and then easily imported into the `R` environment using the base functions `read.csv` and `read.table` respectively. Similarly `read_csv()` and `read_tsv()` from the [`readr`](https://CRAN.R-project.org/package=readr) package can also be used. Alternatively, the package [`readxl`](https://CRAN.R-project.org/package=readxl) can be used to directly read the data from excel. In case of large csv files, the function `fread` in the [`data.table`](https://CRAN.R-project.org/package=data.table) package can be used to rapidly load the data.
 
-If the PGR passport data is in a database management system (DBMS), the required table can be imported as a data frame into `R`. using the appropriate [`R`-database interface package](http://www.burns-stat.com/r-database-interfaces/). For example [`dbConnect`](https://cran.r-project.org/web/packages/dbConnect/index.html) for MySQL, [`ROracle`](https://cran.r-project.org/web/packages/ROracle/index.html) for Oracle etc.
+If the PGR passport data is in a database management system (DBMS), the required table can be imported as a data frame into `R`. using the appropriate [`R`-database interface package](http://www.burns-stat.com/r-database-interfaces/). For example [`dbConnect`](https://CRAN.R-project.org/package=dbConnect) for MySQL, [`ROracle`](https://CRAN.R-project.org/package=ROracle) for Oracle etc.
 
 The PGR data downloaded from the [genesys](https://www.genesys-pgr.org/welcome) database as a [Darwin Core - Germplasm](https://github.com/dagendresen/darwincore-germplasm) zip archive can be imported into the `R` environment as a flat file `data.frame` using the `read.genesys` function.
 
@@ -414,7 +422,7 @@ head(KeywordFreq)
 
 ```{r, echo=FALSE, warning=FALSE, fig.height = 4, eval=TRUE}
 # Plot wordcloud of keyword frequencies
-if ("wordcloud" %in% rownames(installed.packages())) {
+if (requireNamespace("wordcloud", quietly = TRUE)) {
   suppressMessages(library(wordcloud))
   par(mar = c(0,0,0,0))
   # pal <- brewer.pal(8,"Dark2")
@@ -722,11 +730,11 @@ As the number of keywords in the KWIC indexes increases, the memory consumption 
 
 The progress of matching is displayed in the console as number of keyword blocks completed out of the total number of blocks, the percentage of achievement and a text-based progress bar.
 
-In case of multi-byte characters in keywords, the speed of keyword matching is further dependent upon the `useBytes` argument as described in `help("stringdist-encoding")` for the `stringdist` function in the namesake [package](https://cran.r-project.org/web/packages/stringdist/index.html) [@van2014stringdist], which is made use of here for string matching.
+In case of multi-byte characters in keywords, the speed of keyword matching is further dependent upon the `useBytes` argument as described in `help("stringdist-encoding")` for the `stringdist` function in the namesake [package](https://CRAN.R-project.org/package=stringdist) [@van2014stringdist], which is made use of here for string matching.
 
-The CPU time taken for retrieval of probable duplicate sets under different options for the arguments `chunksize` and `useBytes` can be visualized using the `microbenchmark` package (Fig.&nbsp;3).
+The CPU time taken for retrieval of probable duplicate sets under different options for the arguments `chunksize` and `useBytes` can be visualized using the [`microbenchmark`](https://CRAN.R-project.org/package=microbenchmark) package (Fig.&nbsp;3).
 
-```{r}
+```{r, eval = FALSE}
 # Load example dataset
 GN <- GN1000
 
@@ -765,10 +773,16 @@ syn <- lapply(syn, DataClean)
 
 ```
 
+```{r, eval=TRUE, echo=FALSE}
+if (requireNamespace("microbenchmark", quietly = TRUE)) {
+  mbm <- TRUE
+} else {
+  mbm <- FALSE
+}
+```
 
-```{r, eval = FALSE}
-library(microbenchmark)
-timings <- microbenchmark(
+```{r, eval=FALSE, echo=TRUE}
+timings <- microbenchmark::microbenchmark(
   # Fetch duplicate sets with default chunk.size
   t1 = ProbDup(kwic1 = GNKWIC, method = "a", excep = exep,
                                      chunksize = 1000, useBytes = TRUE,
@@ -792,25 +806,32 @@ timings <- microbenchmark(
   times = 10)
 ```
 
-```{r, echo=FALSE}
-library(microbenchmark)
-timings <- structure(list(expr = structure(c(2L, 1L, 1L, 3L, 1L, 2L, 3L, 
-4L, 3L, 3L, 4L, 2L, 2L, 1L, 2L, 4L, 4L, 4L, 1L, 4L, 3L, 2L, 1L, 
-1L, 3L, 2L, 1L, 4L, 2L, 3L, 1L, 2L, 4L, 3L, 4L, 3L, 2L, 3L, 4L, 
-1L), .Label = c("t1", "t2", "t3", "t4"), class = "factor"), time = c(1408220600, 
-1363532801, 1400142541, 3000887552, 1399254608, 1224892145, 3013227764, 
-1328487587, 2916351114, 2950914731, 1353476659, 1509574164, 1278119453, 
-1413596470, 1303064433, 1350284131, 1467990710, 1444774083, 1375139405, 
-1396005444, 3105281223, 1224878080, 1360539070, 1421216118, 3245590555, 
-1367002429, 1877008017, 1622301327, 1251792020, 2949414824, 1362527416, 
-1263918992, 1415981648, 2955363516, 1341522638, 2957571945, 1402744001, 
-3177392306, 1349590813, 1565604772)), .Names = c("expr", "time"
-), row.names = c(NA, -40L), class = c("microbenchmark", "data.frame"
-))
+```{r, eval = FALSE, echo=TRUE}
+plot(timings, col = c("#1B9E77", "#D95F02", "#7570B3", "#E7298A"),
+     xlab = "Expression", ylab = "Time")
+legend("topright", c("t1 : chunksize = 1000,\n     useBytes = T (default)\n",
+         "t2 : chunksize = 2000,\n     useBytes = T\n",
+         "t3 : chunksize = 500,\n     useBytes = T\n",
+         "t4 : chunksize = 1000,\n     useBytes = F\n"),
+       bty = "n", cex = 0.6)
 ```
 
-```{r}
-boxplot(timings, col = c("#1B9E77", "#D95F02", "#7570B3", "#E7298A"))
+```{r, eval=TRUE, echo=FALSE}
+timings <- data.frame(expr = structure(c(2L, 1L, 1L, 3L, 1L, 2L, 3L, 
+                                   4L, 3L, 3L, 4L, 2L, 2L, 1L, 2L, 4L, 4L, 4L, 1L, 4L, 3L, 2L, 1L, 
+                                   1L, 3L, 2L, 1L, 4L, 2L, 3L, 1L, 2L, 4L, 3L, 4L, 3L, 2L, 3L, 4L, 
+                                   1L), .Label = c("t1", "t2", "t3", "t4"), class = "factor"),
+                time = c(1408220600,
+                         1363532801, 1400142541, 3000887552, 1399254608, 1224892145, 3013227764, 
+                         1328487587, 2916351114, 2950914731, 1353476659, 1509574164, 1278119453, 
+                         1413596470, 1303064433, 1350284131, 1467990710, 1444774083, 1375139405, 
+                         1396005444, 3105281223, 1224878080, 1360539070, 1421216118, 3245590555, 
+                         1367002429, 1877008017, 1622301327, 1251792020, 2949414824, 1362527416, 
+                         1263918992, 1415981648, 2955363516, 1341522638, 2957571945, 1402744001, 
+                         3177392306, 1349590813, 1565604772))
+
+boxplot(time ~ expr, timings, xlab = "Expression", ylab = "Time",
+        col = c("#1B9E77", "#D95F02", "#7570B3", "#E7298A"))
 legend("topright", c("t1 : chunksize = 1000,\n     useBytes = T (default)\n",
          "t2 : chunksize = 2000,\n     useBytes = T\n",
          "t3 : chunksize = 500,\n     useBytes = T\n",
