@@ -81,7 +81,7 @@
                         <h4 class="author">J. Aravind<sup>1</sup>, J. Radhamani<sup>1</sup>, Kalyani Srinivasan<sup>1</sup>, B. Ananda Subhash<sup>2</sup> and R. K. Tyagi<sup>1</sup>
 </h4>
             
-            <h4 class="date">2018-01-08</h4>
+            <h4 class="date">2018-01-13</h4>
           </div>
 
     
@@ -1060,11 +1060,10 @@ GNfields &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st
 <span class="co"># Clean the data</span>
 GN[GNfields] &lt;-<span class="st"> </span><span class="kw">lapply</span>(GN[GNfields], <span class="cf">function</span>(x) <span class="kw"><a href="../reference/DataClean.html">DataClean</a></span>(x))
 y1 &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="kw">c</span>(<span class="st">"Gujarat"</span>, <span class="st">"Dwarf"</span>), <span class="kw">c</span>(<span class="st">"Castle"</span>, <span class="st">"Cary"</span>), <span class="kw">c</span>(<span class="st">"Small"</span>, <span class="st">"Japan"</span>),
-<span class="kw">c</span>(<span class="st">"Big"</span>, <span class="st">"Japan"</span>), <span class="kw">c</span>(<span class="st">"Mani"</span>, <span class="st">"Blanco"</span>), <span class="kw">c</span>(<span class="st">"Uganda"</span>, <span class="st">"Erect"</span>),
-<span class="kw">c</span>(<span class="st">"Mota"</span>, <span class="st">"Company"</span>))
+           <span class="kw">c</span>(<span class="st">"Big"</span>, <span class="st">"Japan"</span>), <span class="kw">c</span>(<span class="st">"Mani"</span>, <span class="st">"Blanco"</span>), <span class="kw">c</span>(<span class="st">"Uganda"</span>, <span class="st">"Erect"</span>),
+           <span class="kw">c</span>(<span class="st">"Mota"</span>, <span class="st">"Company"</span>))
 y2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">"Dark"</span>, <span class="st">"Light"</span>, <span class="st">"Small"</span>, <span class="st">"Improved"</span>, <span class="st">"Punjab"</span>, <span class="st">"SAM"</span>)
-y3 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">"Local"</span>, <span class="st">"Bold"</span>, <span class="st">"Cary"</span>, <span class="st">"Mutant"</span>, <span class="st">"Runner"</span>, <span class="st">"Giant"</span>, <span class="st">"No."</span>,
-        <span class="st">"Bunch"</span>, <span class="st">"Peanut"</span>)
+y3 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">"Local"</span>, <span class="st">"Bold"</span>, <span class="st">"Cary"</span>, <span class="st">"Mutant"</span>, <span class="st">"Runner"</span>, <span class="st">"Giant"</span>, <span class="st">"No."</span>, <span class="st">"Bunch"</span>, <span class="st">"Peanut"</span>)
 GN[GNfields] &lt;-<span class="st"> </span><span class="kw">lapply</span>(GN[GNfields],
                        <span class="cf">function</span>(x) <span class="kw"><a href="../reference/MergeKW.html">MergeKW</a></span>(x, y1, <span class="dt">delim =</span> <span class="kw">c</span>(<span class="st">"space"</span>, <span class="st">"dash"</span>)))
 GN[GNfields] &lt;-<span class="st"> </span><span class="kw">lapply</span>(GN[GNfields],
@@ -1076,12 +1075,11 @@ GN[GNfields] &lt;-<span class="st"> </span><span class="kw">lapply</span>(GN[GNf
 GNKWIC &lt;-<span class="st"> </span><span class="kw"><a href="../reference/KWIC.html">KWIC</a></span>(GN, GNfields)
 
 <span class="co"># Specify the exceptions as a vector</span>
-exep &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"BIG"</span>, <span class="st">"BOLD"</span>, <span class="st">"BUNCH"</span>, <span class="st">"C"</span>, <span class="st">"COMPANY"</span>, <span class="st">"CULTURE"</span>,
-         <span class="st">"DARK"</span>, <span class="st">"E"</span>, <span class="st">"EARLY"</span>, <span class="st">"EC"</span>, <span class="st">"ERECT"</span>, <span class="st">"EXOTIC"</span>, <span class="st">"FLESH"</span>, <span class="st">"GROUNDNUT"</span>,
-         <span class="st">"GUTHUKAI"</span>, <span class="st">"IMPROVED"</span>, <span class="st">"K"</span>, <span class="st">"KUTHUKADAL"</span>, <span class="st">"KUTHUKAI"</span>, <span class="st">"LARGE"</span>,
-         <span class="st">"LIGHT"</span>, <span class="st">"LOCAL"</span>, <span class="st">"OF"</span>, <span class="st">"OVERO"</span>, <span class="st">"P"</span>, <span class="st">"PEANUT"</span>, <span class="st">"PURPLE"</span>, <span class="st">"R"</span>,
-         <span class="st">"RED"</span>, <span class="st">"RUNNER"</span>, <span class="st">"S1"</span>, <span class="st">"SAM"</span>, <span class="st">"SMALL"</span>, <span class="st">"SPANISH"</span>, <span class="st">"TAN"</span>, <span class="st">"TYPE"</span>,
-         <span class="st">"U"</span>, <span class="st">"VALENCIA"</span>, <span class="st">"VIRGINIA"</span>, <span class="st">"WHITE"</span>)
+exep &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"BIG"</span>, <span class="st">"BOLD"</span>, <span class="st">"BUNCH"</span>, <span class="st">"C"</span>, <span class="st">"COMPANY"</span>, <span class="st">"CULTURE"</span>, <span class="st">"DARK"</span>,
+          <span class="st">"E"</span>, <span class="st">"EARLY"</span>, <span class="st">"EC"</span>, <span class="st">"ERECT"</span>, <span class="st">"EXOTIC"</span>, <span class="st">"FLESH"</span>, <span class="st">"GROUNDNUT"</span>, <span class="st">"GUTHUKAI"</span>,
+          <span class="st">"IMPROVED"</span>, <span class="st">"K"</span>, <span class="st">"KUTHUKADAL"</span>, <span class="st">"KUTHUKAI"</span>, <span class="st">"LARGE"</span>, <span class="st">"LIGHT"</span>, <span class="st">"LOCAL"</span>,
+          <span class="st">"OF"</span>, <span class="st">"OVERO"</span>, <span class="st">"P"</span>, <span class="st">"PEANUT"</span>, <span class="st">"PURPLE"</span>, <span class="st">"R"</span>, <span class="st">"RED"</span>, <span class="st">"RUNNER"</span>, <span class="st">"S1"</span>, <span class="st">"SAM"</span>,
+          <span class="st">"SMALL"</span>, <span class="st">"SPANISH"</span>, <span class="st">"TAN"</span>, <span class="st">"TYPE"</span>, <span class="st">"U"</span>, <span class="st">"VALENCIA"</span>, <span class="st">"VIRGINIA"</span>, <span class="st">"WHITE"</span>)
 
 <span class="co"># Specify the synsets as a list</span>
 syn &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="kw">c</span>(<span class="st">"CHANDRA"</span>, <span class="st">"AH 114"</span>), <span class="kw">c</span>(<span class="st">"TG-1"</span>, <span class="st">"VIKRAM"</span>))
@@ -1106,8 +1104,7 @@ syn &lt;-<span class="st"> </span><span class="kw">lapply</span>(syn, DataClean)
   <span class="dt">t4 =</span> <span class="kw"><a href="../reference/ProbDup.html">ProbDup</a></span>(<span class="dt">kwic1 =</span> GNKWIC, <span class="dt">method =</span> <span class="st">"a"</span>, <span class="dt">excep =</span> exep,
                                      <span class="dt">chunksize =</span> <span class="dv">1000</span>, <span class="dt">useBytes =</span> <span class="ot">FALSE</span>,
                                      <span class="dt">fuzzy =</span> <span class="ot">TRUE</span>, <span class="dt">phonetic =</span> <span class="ot">TRUE</span>,
-                                     <span class="dt">semantic =</span> <span class="ot">TRUE</span>, <span class="dt">syn =</span> syn),
-  <span class="dt">times =</span> <span class="dv">10</span>)</code></pre></div>
+                                     <span class="dt">semantic =</span> <span class="ot">TRUE</span>, <span class="dt">syn =</span> syn), <span class="dt">times =</span> <span class="dv">10</span>)</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(timings, <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">"#1B9E77"</span>, <span class="st">"#D95F02"</span>, <span class="st">"#7570B3"</span>, <span class="st">"#E7298A"</span>),
      <span class="dt">xlab =</span> <span class="st">"Expression"</span>, <span class="dt">ylab =</span> <span class="st">"Time"</span>)
 <span class="kw">legend</span>(<span class="st">"topright"</span>, <span class="kw">c</span>(<span class="st">"t1 : chunksize = 1000,</span><span class="ch">\n</span><span class="st">     useBytes = T (default)</span><span class="ch">\n</span><span class="st">"</span>,
@@ -1496,31 +1493,40 @@ GNKWCouts &lt;-<span class="st"> </span><span class="kw"><a href="../reference/K
 
 <span class="co"># Compute the keyword counts for 'duplicated' records</span>
 GND &lt;-<span class="st"> </span><span class="kw"><a href="../reference/ParseProbDup.html">ParseProbDup</a></span>(disGNdup2, <span class="ot">Inf</span>, F)<span class="op">$</span>PRIM_ID
-GNDKWCouts &lt;-<span class="st"> </span><span class="kw"><a href="../reference/KWCounts.html">KWCounts</a></span>(GN[GN<span class="op">$</span>NationalID <span class="op">%in%</span><span class="st"> </span>GND, ], GNfields, exep)
+
+GNDKWCouts &lt;-<span class="st"> </span><span class="kw"><a href="../reference/KWCounts.html">KWCounts</a></span>(GN[GN<span class="op">$</span>NationalID <span class="op">%in%</span><span class="st"> </span>GND, ],
+                       GNfields, exep)
 
 <span class="co"># Compute the keyword counts for 'unique' records</span>
-GNUKWCouts &lt;-<span class="st"> </span><span class="kw"><a href="../reference/KWCounts.html">KWCounts</a></span>(GN[<span class="op">!</span>GN<span class="op">$</span>NationalID <span class="op">%in%</span><span class="st"> </span>GND, ], GNfields, exep)
+GNUKWCouts &lt;-<span class="st"> </span><span class="kw"><a href="../reference/KWCounts.html">KWCounts</a></span>(GN[<span class="op">!</span>GN<span class="op">$</span>NationalID <span class="op">%in%</span><span class="st"> </span>GND, ],
+                       GNfields, exep)
 
 <span class="co"># Plot the counts as barplot</span>
 <span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">1</span>))
+
 bp1 &lt;-<span class="st"> </span><span class="kw">barplot</span>(<span class="kw">table</span>(GNKWCouts<span class="op">$</span>COUNT),
                <span class="dt">xlab =</span> <span class="st">"Word count"</span>, <span class="dt">ylab =</span> <span class="st">"Frequency"</span>,
                <span class="dt">main =</span> <span class="st">"A"</span>, <span class="dt">col =</span> <span class="st">"#1B9E77"</span>)
 <span class="kw">text</span>(bp1, <span class="dv">0</span>, <span class="kw">table</span>(GNKWCouts<span class="op">$</span>COUNT),<span class="dt">cex =</span> <span class="dv">1</span>, <span class="dt">pos =</span> <span class="dv">3</span>)
 <span class="kw">legend</span>(<span class="st">"topright"</span>, <span class="kw">paste</span>(<span class="st">"No. of records ="</span>,
-                   <span class="kw">nrow</span>(GN)), <span class="dt">bty =</span> <span class="st">"n"</span>)
+                         <span class="kw">nrow</span>(GN)),
+       <span class="dt">bty =</span> <span class="st">"n"</span>)
+
 bp2 &lt;-<span class="st"> </span><span class="kw">barplot</span>(<span class="kw">table</span>(GNDKWCouts<span class="op">$</span>COUNT),
                <span class="dt">xlab =</span> <span class="st">"Word count"</span>, <span class="dt">ylab =</span> <span class="st">"Frequency"</span>,
                <span class="dt">main =</span> <span class="st">"B"</span>, <span class="dt">col =</span> <span class="st">"#D95F02"</span>)
 <span class="kw">text</span>(bp2, <span class="dv">0</span>, <span class="kw">table</span>(GNDKWCouts<span class="op">$</span>COUNT),<span class="dt">cex =</span> <span class="dv">1</span>, <span class="dt">pos =</span> <span class="dv">3</span>)
 <span class="kw">legend</span>(<span class="st">"topright"</span>, <span class="kw">paste</span>(<span class="st">"No. of records ="</span>,
-                   <span class="kw">nrow</span>(GN[GN<span class="op">$</span>NationalID <span class="op">%in%</span><span class="st"> </span>GND, ])), <span class="dt">bty =</span> <span class="st">"n"</span>)
+                   <span class="kw">nrow</span>(GN[GN<span class="op">$</span>NationalID <span class="op">%in%</span><span class="st"> </span>GND, ])),
+       <span class="dt">bty =</span> <span class="st">"n"</span>)
+
 bp3 &lt;-<span class="st"> </span><span class="kw">barplot</span>(<span class="kw">table</span>(GNUKWCouts<span class="op">$</span>COUNT),
                <span class="dt">xlab =</span> <span class="st">"Word count"</span>, <span class="dt">ylab =</span> <span class="st">"Frequency"</span>,
                <span class="dt">main =</span> <span class="st">"C"</span>, <span class="dt">col =</span> <span class="st">"#7570B3"</span>)
 <span class="kw">text</span>(bp3, <span class="dv">0</span>, <span class="kw">table</span>(GNUKWCouts<span class="op">$</span>COUNT),<span class="dt">cex =</span> <span class="dv">1</span>, <span class="dt">pos =</span> <span class="dv">3</span>)
 <span class="kw">legend</span>(<span class="st">"topright"</span>, <span class="kw">paste</span>(<span class="st">"No. of records ="</span>,
-                   <span class="kw">nrow</span>(GN[<span class="op">!</span>GN<span class="op">$</span>NationalID <span class="op">%in%</span><span class="st"> </span>GND, ])), <span class="dt">bty =</span> <span class="st">"n"</span>)</code></pre></div>
+                   <span class="kw">nrow</span>(GN[<span class="op">!</span>GN<span class="op">$</span>NationalID <span class="op">%in%</span><span class="st"> </span>GND, ])),
+       <span class="dt">bty =</span> <span class="st">"n"</span>)</code></pre></div>
 <p><img src="Introduction_files/figure-html/unnamed-chunk-57-1.png" width="672"></p>
 <p><strong>Fig. 6.</strong> The keyword counts in the database fields considered for identification of probable duplicates for <strong>A.</strong> the entire <code>GN1000</code> dataset, <strong>B.</strong> the probable duplicate records alone and <strong>C.</strong> the unique records alone.</p>
 </div>

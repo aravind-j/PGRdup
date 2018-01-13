@@ -744,11 +744,10 @@ GNfields <- c("NationalID", "CollNo", "DonorID", "OtherID1", "OtherID2")
 # Clean the data
 GN[GNfields] <- lapply(GN[GNfields], function(x) DataClean(x))
 y1 <- list(c("Gujarat", "Dwarf"), c("Castle", "Cary"), c("Small", "Japan"),
-c("Big", "Japan"), c("Mani", "Blanco"), c("Uganda", "Erect"),
-c("Mota", "Company"))
+           c("Big", "Japan"), c("Mani", "Blanco"), c("Uganda", "Erect"),
+           c("Mota", "Company"))
 y2 <- c("Dark", "Light", "Small", "Improved", "Punjab", "SAM")
-y3 <- c("Local", "Bold", "Cary", "Mutant", "Runner", "Giant", "No.",
-        "Bunch", "Peanut")
+y3 <- c("Local", "Bold", "Cary", "Mutant", "Runner", "Giant", "No.", "Bunch", "Peanut")
 GN[GNfields] <- lapply(GN[GNfields],
                        function(x) MergeKW(x, y1, delim = c("space", "dash")))
 GN[GNfields] <- lapply(GN[GNfields],
@@ -760,12 +759,11 @@ GN[GNfields] <- lapply(GN[GNfields],
 GNKWIC <- KWIC(GN, GNfields)
 
 # Specify the exceptions as a vector
-exep <- c("A", "B", "BIG", "BOLD", "BUNCH", "C", "COMPANY", "CULTURE",
-         "DARK", "E", "EARLY", "EC", "ERECT", "EXOTIC", "FLESH", "GROUNDNUT",
-         "GUTHUKAI", "IMPROVED", "K", "KUTHUKADAL", "KUTHUKAI", "LARGE",
-         "LIGHT", "LOCAL", "OF", "OVERO", "P", "PEANUT", "PURPLE", "R",
-         "RED", "RUNNER", "S1", "SAM", "SMALL", "SPANISH", "TAN", "TYPE",
-         "U", "VALENCIA", "VIRGINIA", "WHITE")
+exep <- c("A", "B", "BIG", "BOLD", "BUNCH", "C", "COMPANY", "CULTURE", "DARK",
+          "E", "EARLY", "EC", "ERECT", "EXOTIC", "FLESH", "GROUNDNUT", "GUTHUKAI",
+          "IMPROVED", "K", "KUTHUKADAL", "KUTHUKAI", "LARGE", "LIGHT", "LOCAL",
+          "OF", "OVERO", "P", "PEANUT", "PURPLE", "R", "RED", "RUNNER", "S1", "SAM",
+          "SMALL", "SPANISH", "TAN", "TYPE", "U", "VALENCIA", "VIRGINIA", "WHITE")
 
 # Specify the synsets as a list
 syn <- list(c("CHANDRA", "AH 114"), c("TG-1", "VIKRAM"))
@@ -802,8 +800,7 @@ timings <- microbenchmark::microbenchmark(
   t4 = ProbDup(kwic1 = GNKWIC, method = "a", excep = exep,
                                      chunksize = 1000, useBytes = FALSE,
                                      fuzzy = TRUE, phonetic = TRUE,
-                                     semantic = TRUE, syn = syn),
-  times = 10)
+                                     semantic = TRUE, syn = syn), times = 10)
 ```
 
 ```{r, eval = FALSE, echo=TRUE}
@@ -1144,31 +1141,41 @@ GNKWCouts <- KWCounts(GN, GNfields, exep)
 
 # Compute the keyword counts for 'duplicated' records
 GND <- ParseProbDup(disGNdup2, Inf, F)$PRIM_ID
-GNDKWCouts <- KWCounts(GN[GN$NationalID %in% GND, ], GNfields, exep)
+
+GNDKWCouts <- KWCounts(GN[GN$NationalID %in% GND, ],
+                       GNfields, exep)
 
 # Compute the keyword counts for 'unique' records
-GNUKWCouts <- KWCounts(GN[!GN$NationalID %in% GND, ], GNfields, exep)
+GNUKWCouts <- KWCounts(GN[!GN$NationalID %in% GND, ],
+                       GNfields, exep)
 
 # Plot the counts as barplot
 par(mfrow = c(3,1))
+
 bp1 <- barplot(table(GNKWCouts$COUNT),
                xlab = "Word count", ylab = "Frequency",
                main = "A", col = "#1B9E77")
 text(bp1, 0, table(GNKWCouts$COUNT),cex = 1, pos = 3)
 legend("topright", paste("No. of records =",
-                   nrow(GN)), bty = "n")
+                         nrow(GN)),
+       bty = "n")
+
 bp2 <- barplot(table(GNDKWCouts$COUNT),
                xlab = "Word count", ylab = "Frequency",
                main = "B", col = "#D95F02")
 text(bp2, 0, table(GNDKWCouts$COUNT),cex = 1, pos = 3)
 legend("topright", paste("No. of records =",
-                   nrow(GN[GN$NationalID %in% GND, ])), bty = "n")
+                   nrow(GN[GN$NationalID %in% GND, ])),
+       bty = "n")
+
 bp3 <- barplot(table(GNUKWCouts$COUNT),
                xlab = "Word count", ylab = "Frequency",
                main = "C", col = "#7570B3")
 text(bp3, 0, table(GNUKWCouts$COUNT),cex = 1, pos = 3)
 legend("topright", paste("No. of records =",
-                   nrow(GN[!GN$NationalID %in% GND, ])), bty = "n")
+                   nrow(GN[!GN$NationalID %in% GND, ])),
+       bty = "n")
+
 ```
 
 **Fig. 6.** The keyword counts in the database fields considered for identification of probable duplicates for **A.**&nbsp;the entire `GN1000` dataset, **B.**&nbsp;the probable duplicate records alone and **C.**&nbsp;the unique records alone.
