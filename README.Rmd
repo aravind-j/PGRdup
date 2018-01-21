@@ -44,6 +44,8 @@ devtools::load_all(".")
 
 ***
 
+[![Counter](http://s05.flagcounter.com/more/BWd"><img src="https://s05.flagcounter.com/count2/BWd/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_1/pageviews_1/flags_0/percent_0/)](http://s05.flagcounter.com/more/BWd)
+
 The `R` package `PGRdup` was developed as a tool to aid genebank managers in the identification of probable duplicate accessions from plant genetic resources (PGR) passport databases.  
 
 This package primarily implements a workflow designed to fetch groups or sets of germplasm accessions with similar passport data particularly in fields associated with accession names within or across PGR passport databases.   
