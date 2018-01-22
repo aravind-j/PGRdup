@@ -34,6 +34,18 @@
 <![endif]-->
 
 
+<!-- Google analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-112827210-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
   </head>
 
   <body>
@@ -175,7 +187,7 @@ keyword counts may take some time.</p>
 
 <span class='co'># Plot the keyword counts</span>
 <span class='no'>bp</span> <span class='kw'>&lt;-</span> <span class='fu'>barplot</span>(<span class='fu'>table</span>(<span class='no'>GNKWCouts</span>$<span class='no'>COUNT</span>),
-              <span class='kw'>xlab</span> <span class='kw'>=</span> <span class='st'>"Word count"</span>, <span class='kw'>ylab</span> <span class='kw'>=</span> <span class='st'>"Frequency"</span>, <span class='kw'>col</span> <span class='kw'>=</span> <span class='st'>"#CD5555"</span>)</div><div class='input'><span class='fu'>text</span>(<span class='no'>bp</span>, <span class='fl'>0</span>, <span class='fu'>table</span>(<span class='no'>GNKWCouts</span>$<span class='no'>COUNT</span>),<span class='kw'>cex</span><span class='kw'>=</span><span class='fl'>1</span>,<span class='kw'>pos</span><span class='kw'>=</span><span class='fl'>3</span>)</div><div class='img'><img src='KWCounts-1.png' alt='' width='700' height='432.632880098887' /></div></pre>
+              <span class='kw'>xlab</span> <span class='kw'>=</span> <span class='st'>"Word count"</span>, <span class='kw'>ylab</span> <span class='kw'>=</span> <span class='st'>"Frequency"</span>, <span class='kw'>col</span> <span class='kw'>=</span> <span class='st'>"#CD5555"</span>)</div><div class='input'><span class='fu'>text</span>(<span class='no'>bp</span>, <span class='fl'>0</span>, <span class='fu'>table</span>(<span class='no'>GNKWCouts</span>$<span class='no'>COUNT</span>),<span class='kw'>cex</span><span class='kw'>=</span><span class='fl'>1</span>,<span class='kw'>pos</span><span class='kw'>=</span><span class='fl'>3</span>)</div><div class='img'><img src='KWCounts-3.png' alt='' width='700' height='432.632880098887' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

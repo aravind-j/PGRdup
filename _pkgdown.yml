@@ -1,6 +1,7 @@
 template:
   params:
     bootswatch: united
+    ganalytics: UA-112827210-1
 
 navbar:
   title: PGRdup
