@@ -1,3 +1,9 @@
+# PGRdup 0.2.3.4
+
+## UPDATED FUNCTIONS:
+* `read.genesys` - Updated for reading of doi field.
+
+***
 # PGRdup 0.2.3.3
 
 ## OTHER NOTES:

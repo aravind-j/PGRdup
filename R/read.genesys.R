@@ -122,7 +122,7 @@ read.genesys <- function(zip.genesys, scrub.names.space = TRUE, readme = TRUE) {
                           "mlsStat", "available", "historic", "storage",
                           "sampStat", "duplSite", "createdBy", "createdDate",
                           "lastModifiedBy", "lastModifiedDate"),
-               colClasses = rep("character", 20))
+               colClasses = rep("character", 21))
   setkey(cor, genesysId)
   # Import coll.csv
   col <- fread(input = list.files(tempdir(), pattern = "coll.csv",
