@@ -3,6 +3,8 @@ template:
     bootswatch: united
     ganalytics: UA-112827210-1
 
+url: https://aravind-j.github.io/PGRdup/
+
 navbar:
   title: PGRdup
   type: default
