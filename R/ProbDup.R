@@ -17,7 +17,7 @@
 
 
 
-#' Identify Probable Duplicates of Accessions
+#' Identify probable duplicates of accessions
 #' 
 #' \code{ProbDup} identifies probable duplicates of germplasm accessions in KWIC
 #' indexes created from PGR passport databases using fuzzy, phonetic and 

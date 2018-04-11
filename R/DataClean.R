@@ -17,7 +17,7 @@
 
 
 
-#' Clean PGR passport data.
+#' Clean PGR passport data
 #' 
 #' \code{DataClean} cleans the data in a character vector according to the 
 #' conditions in the arguments.

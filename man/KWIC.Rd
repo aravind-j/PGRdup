@@ -3,42 +3,42 @@
 \encoding{UTF-8}
 \name{KWIC}
 \alias{KWIC}
-\title{Create a KWIC Index}
+\title{Create a KWIC index}
 \usage{
 KWIC(x, fields, min.freq = 10)
 }
 \arguments{
 \item{x}{A data frame from which KWIC index is to be generated.}
 
-\item{fields}{A character vector with the names of fields(columns) of the 
-data frame from which KWIC index is to be generated. The first field is 
+\item{fields}{A character vector with the names of fields(columns) of the
+data frame from which KWIC index is to be generated. The first field is
 considered as the primary key or identifier (see \strong{Details}).}
 
-\item{min.freq}{Frequency of keywords are not computed if below 
+\item{min.freq}{Frequency of keywords are not computed if below
 \code{min.freq}. Default is 10.}
 }
 \value{
-A list of class \code{KWIC} containing the following components: 
-  \tabular{ll}{ \code{KWIC} \tab The KWIC index in the form of a data frame. 
-  \cr \code{KeywordFreq} \tab A data frame of the keywords detected with 
-  frequency greater than \code{min.freq}. \cr \code{Fields} \tab A character 
-  vector with the names of the PGR database fields from which the keywords 
+A list of class \code{KWIC} containing the following components:
+  \tabular{ll}{ \code{KWIC} \tab The KWIC index in the form of a data frame.
+  \cr \code{KeywordFreq} \tab A data frame of the keywords detected with
+  frequency greater than \code{min.freq}. \cr \code{Fields} \tab A character
+  vector with the names of the PGR database fields from which the keywords
   were extracted. \cr }
 }
 \description{
-\code{KWIC} creates a Keyword in Context index from PGR passport database 
+\code{KWIC} creates a Keyword in Context index from PGR passport database
 fields.
 }
 \details{
-The function generates a Keyword in Context index from a data frame of a PGR 
+The function generates a Keyword in Context index from a data frame of a PGR
 passport database based on the fields(columns) stated in the arguments, using
 \code{\link[data.table]{data.table}} package.
 
 The first element of vector \code{fields} is considered as the primary key or
 identifier which uniquely identifies all rows in the data frame.
 
-Cleaning of the data the input fields(columns) using the 
-\code{\link[PGRdup]{DataClean}} function with appropriate arguments is 
+Cleaning of the data the input fields(columns) using the
+\code{\link[PGRdup]{DataClean}} function with appropriate arguments is
 suggested before running this function.
 }
 \examples{
@@ -63,7 +63,7 @@ KWIC <- GNKWIC[[1]]
 # Retrieve the keyword frequencies from the KWIC object
 KeywordFreq <- GNKWIC[[2]]
 
-# Show error in case of duplicates and NULL values 
+# Show error in case of duplicates and NULL values
 # in the primary key/ID field "NationalID"
 GN[1001:1005,] <- GN[1:5,]
 GN[1001,3] <- ""
@@ -71,18 +71,19 @@ GNKWIC <- KWIC(GN, GNfields)
 }
 }
 \references{
-Knüpffer, H. 1988. "The European Barley Database of the ECP/GR:
-  An Introduction." \emph{Die Kulturpflanze} 36 (1): 135-62. 
-  doi:\url{https://doi.org/10.1007/BF01986957}. \cr \cr Knüpffer, H., L.
-  Frese, and M. W. M. Jongen. 1997. "Using Central Crop Databases: Searching 
-  for Duplicates and Gaps." In \emph{Central Crop Databases: Tools for Plant 
-  Genetic Resources Management. Report of a Workshop, Budapest, Hungary, 
-  13-16 October 1996}, edited by E. Lipman, M. W. M. Jongen, T. J. L. van 
-  Hintum, T. Gass, and L. Maggioni, 67-77. Rome, Italy and Wageningen, The 
-  Netherlands: International Plant Genetic Resources Institute and Centre for
-  Genetic Resources.
+KnÃ¼pffer, H. 1988. "The European Barley Database of the ECP/GR:
+  An Introduction." \emph{Die Kulturpflanze} 36 (1): 135-62.
+  doi:\url{https://doi.org/10.1007/BF01986957}.
+
+  KnÃ¼pffer, H., L. Frese, and M. W. M. Jongen. 1997. "Using Central Crop
+  Databases: Searching for Duplicates and Gaps." In \emph{Central Crop
+  Databases: Tools for Plant Genetic Resources Management. Report of a
+  Workshop, Budapest, Hungary, 13-16 October 1996}, edited by E. Lipman, M.
+  W. M. Jongen, T. J. L. van Hintum, T. Gass, and L. Maggioni, 67-77. Rome,
+  Italy and Wageningen, The Netherlands: International Plant Genetic
+  Resources Institute and Centre for Genetic Resources.
 }
 \seealso{
-\code{\link[data.table]{data.table}}, 
+\code{\link[data.table]{data.table}},
   \code{\link[PGRdup]{print.KWIC}}
 }

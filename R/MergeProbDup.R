@@ -15,7 +15,7 @@
 #  A copy of the GNU General Public License is available at
 #  https://www.r-project.org/Licenses/
 
-#' Merge two objects of class \code{ProbDup}.
+#' Merge two objects of class \code{ProbDup}
 #' 
 #' \code{MergeProbDup} merges two objects of class \code{ProbDup} into a single
 #' one.

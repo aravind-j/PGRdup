@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>All news • PGRdup</title>
+<title>Changelog • PGRdup</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -18,13 +18,16 @@
 <!-- Font Awesome icons -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
+<!-- clipboard.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-  
-  
+<meta property="og:title" content="Changelog" />
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -46,6 +49,8 @@
 
 </script>
 
+
+
   </head>
 
   <body>
@@ -59,12 +64,16 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">PGRdup</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">PGRdup</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.2.3.4</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="..//index.html">
+  <a href="../index.html">
     <span class="fa fa-home fa-lg"></span>
      
     Home
@@ -81,7 +90,7 @@
   <a href="../articles/Introduction.html">
     <span class="fa fa-file-o"></span>
      
-    An Introduction to PGRdup package
+    Introduction
   </a>
 </li>
 <li>
@@ -102,6 +111,7 @@
   </a>
 </li>
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -109,17 +119,31 @@
       
       </header>
 
-      <div class="row">
-
-  <div class="col-md-9">
+<div class="row">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Change log <small>All releases</small></h1>
+      <h1>Changelog <small></small></h1>
+      <small>Source: <a href='https://github.com/aravind-j/PGRdup/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
-    <div class="contents">
+    <div id="pgrdup-0-2-3-4" class="section level1">
+<h1 class="page-header">
+<a href="#pgrdup-0-2-3-4" class="anchor"></a>PGRdup 0.2.3.4<small> Unreleased </small>
+</h1>
+<div id="updated-functions" class="section level2">
+<h2 class="hasAnchor">
+<a href="#updated-functions" class="anchor"></a>UPDATED FUNCTIONS:</h2>
+<ul>
+<li>
+<code>read.genesys</code> - Updated for reading of doi field.</li>
+</ul>
+<hr>
+</div>
+</div>
     <div id="pgrdup-0-2-3-3" class="section level1">
-<h1 class="hasAnchor">
-<a href="#pgrdup-0-2-3-3" class="anchor"></a>PGRdup 0.2.3.3</h1>
+<h1 class="page-header">
+<a href="#pgrdup-0-2-3-3" class="anchor"></a>PGRdup 0.2.3.3<small> 2018-01-13 </small>
+</h1>
 <div id="other-notes" class="section level2">
 <h2 class="hasAnchor">
 <a href="#other-notes" class="anchor"></a>OTHER NOTES:</h2>
@@ -130,11 +154,12 @@
 </div>
 </div>
     <div id="pgrdup-0-2-3-2" class="section level1">
-<h1 class="hasAnchor">
-<a href="#pgrdup-0-2-3-2" class="anchor"></a>PGRdup 0.2.3.2</h1>
-<div id="updated-functions" class="section level2">
+<h1 class="page-header">
+<a href="#pgrdup-0-2-3-2" class="anchor"></a>PGRdup 0.2.3.2<small> 2017-08-04 </small>
+</h1>
+<div id="updated-functions-1" class="section level2">
 <h2 class="hasAnchor">
-<a href="#updated-functions" class="anchor"></a>UPDATED FUNCTIONS:</h2>
+<a href="#updated-functions-1" class="anchor"></a>UPDATED FUNCTIONS:</h2>
 <ul>
 <li>
 <code>DoubleMetaphone</code> - Fixed memory leak issues in underlying <code>C</code> code.</li>
@@ -150,14 +175,15 @@
 <li>Replaced all <code>1:nrow()</code> and <code>1:length()</code> usage in function with <code>seq_len(nrow())</code> and <code>seq_len(length())</code> respectively.</li>
 <li>Added package to github.</li>
 <li>Added package documentation website (<a href="https://aravind-j.github.io/PGRdup/" class="uri">https://aravind-j.github.io/PGRdup/</a>) as a github page with <code>pkgdown</code>.</li>
-<li>Added copyright to <code>Authors@R</code> along with original contributors for the underlying <code>C</code> code for <code>DoubleMetaphone</code>.</li>
+<li>Added copyright to <code>Authors<a href='http://github.com/R'>@R</a></code> along with original contributors for the underlying <code>C</code> code for <code>DoubleMetaphone</code>.</li>
 </ul>
 <hr>
 </div>
 </div>
     <div id="pgrdup-0-2-3-1" class="section level1">
-<h1 class="hasAnchor">
-<a href="#pgrdup-0-2-3-1" class="anchor"></a>PGRdup 0.2.3.1</h1>
+<h1 class="page-header">
+<a href="#pgrdup-0-2-3-1" class="anchor"></a>PGRdup 0.2.3.1<small> 2017-03-15 </small>
+</h1>
 <div id="other-notes-2" class="section level2">
 <h2 class="hasAnchor">
 <a href="#other-notes-2" class="anchor"></a>OTHER NOTES:</h2>
@@ -168,11 +194,12 @@
 </div>
 </div>
     <div id="pgrdup-0-2-3" class="section level1">
-<h1 class="hasAnchor">
-<a href="#pgrdup-0-2-3" class="anchor"></a>PGRdup 0.2.3</h1>
-<div id="updated-functions-1" class="section level2">
+<h1 class="page-header">
+<a href="#pgrdup-0-2-3" class="anchor"></a>PGRdup 0.2.3<small> 2017-02-01 </small>
+</h1>
+<div id="updated-functions-2" class="section level2">
 <h2 class="hasAnchor">
-<a href="#updated-functions-1" class="anchor"></a>UPDATED FUNCTIONS:</h2>
+<a href="#updated-functions-2" class="anchor"></a>UPDATED FUNCTIONS:</h2>
 <ul>
 <li>
 <code>KWCounts</code> - Fixed error in case of large number of exceptions and fixed bug regarding non-exact removal of keyword exceptions.</li>
@@ -194,8 +221,9 @@
 </div>
 </div>
     <div id="pgrdup-0-2-2-1" class="section level1">
-<h1 class="hasAnchor">
-<a href="#pgrdup-0-2-2-1" class="anchor"></a>PGRdup 0.2.2.1</h1>
+<h1 class="page-header">
+<a href="#pgrdup-0-2-2-1" class="anchor"></a>PGRdup 0.2.2.1<small> 2016-03-09 </small>
+</h1>
 <div id="other-notes-4" class="section level2">
 <h2 class="hasAnchor">
 <a href="#other-notes-4" class="anchor"></a>OTHER NOTES:</h2>
@@ -206,8 +234,9 @@
 </div>
 </div>
     <div id="pgrdup-0-2-2" class="section level1">
-<h1 class="hasAnchor">
-<a href="#pgrdup-0-2-2" class="anchor"></a>PGRdup 0.2.2</h1>
+<h1 class="page-header">
+<a href="#pgrdup-0-2-2" class="anchor"></a>PGRdup 0.2.2<small> 2016-03-05 </small>
+</h1>
 <div id="new-functions" class="section level2">
 <h2 class="hasAnchor">
 <a href="#new-functions" class="anchor"></a>NEW FUNCTIONS:</h2>
@@ -218,9 +247,9 @@
 <code>ViewProbDup</code> - Visualize the probable duplicate sets retrieved in a <code>ProbDup</code> object.</li>
 </ul>
 </div>
-<div id="updated-functions-2" class="section level2">
+<div id="updated-functions-3" class="section level2">
 <h2 class="hasAnchor">
-<a href="#updated-functions-2" class="anchor"></a>UPDATED FUNCTIONS:</h2>
+<a href="#updated-functions-3" class="anchor"></a>UPDATED FUNCTIONS:</h2>
 <ul>
 <li>
 <code>ReconstructProbDup</code> - Fixed bug regarding failure to retrieve db2 fields when method “c” is used.</li>
@@ -239,8 +268,9 @@
 </div>
 </div>
     <div id="pgrdup-0-2-1" class="section level1">
-<h1 class="hasAnchor">
-<a href="#pgrdup-0-2-1" class="anchor"></a>PGRdup 0.2.1</h1>
+<h1 class="page-header">
+<a href="#pgrdup-0-2-1" class="anchor"></a>PGRdup 0.2.1<small> 2015-07-23 </small>
+</h1>
 <div id="new-functions-1" class="section level2">
 <h2 class="hasAnchor">
 <a href="#new-functions-1" class="anchor"></a>NEW FUNCTIONS:</h2>
@@ -257,9 +287,9 @@
 <code>print.ProbDup</code> - Prints summary of an object of class <code>ProbDup</code> to console.</li>
 </ul>
 </div>
-<div id="updated-functions-3" class="section level2">
+<div id="updated-functions-4" class="section level2">
 <h2 class="hasAnchor">
-<a href="#updated-functions-3" class="anchor"></a>UPDATED FUNCTIONS:</h2>
+<a href="#updated-functions-4" class="anchor"></a>UPDATED FUNCTIONS:</h2>
 <ul>
 <li>
 <code>ProbDup</code> - Modified the phonetic matching for better handling of strings with digits.</li>
@@ -299,19 +329,20 @@
 </div>
 </div>
     <div id="pgrdup-0-2-0" class="section level1">
-<h1 class="hasAnchor">
-<a href="#pgrdup-0-2-0" class="anchor"></a>PGRdup 0.2.0</h1>
+<h1 class="page-header">
+<a href="#pgrdup-0-2-0" class="anchor"></a>PGRdup 0.2.0<small> Unreleased </small>
+</h1>
 <ul>
 <li>First release</li>
 </ul>
 </div>
-    </div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <div id="tocnav">
       <h2>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
+        <li><a href="#pgrdup-0-2-3-4">0.2.3.4</a></li>
         <li><a href="#pgrdup-0-2-3-3">0.2.3.3</a></li>
         <li><a href="#pgrdup-0-2-3-2">0.2.3.2</a></li>
         <li><a href="#pgrdup-0-2-3-1">0.2.3.1</a></li>
@@ -332,11 +363,14 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>
    </div>
 
+  
+
   </body>
 </html>
+

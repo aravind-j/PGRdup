@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Create a KWIC Index � KWIC • PGRdup</title>
+<title>Create a KWIC index — KWIC • PGRdup</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -18,13 +18,20 @@
 <!-- Font Awesome icons -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
+<!-- clipboard.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-  
-  
+<meta property="og:title" content="Create a KWIC index — KWIC" />
+
+<meta property="og:description" content="KWIC creates a Keyword in Context index from PGR passport database
+fields." />
+<meta name="twitter:card" content="summary" />
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -46,6 +53,8 @@
 
 </script>
 
+
+
   </head>
 
   <body>
@@ -59,12 +68,16 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">PGRdup</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">PGRdup</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.2.3.4</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="..//index.html">
+  <a href="../index.html">
     <span class="fa fa-home fa-lg"></span>
      
     Home
@@ -81,7 +94,7 @@
   <a href="../articles/Introduction.html">
     <span class="fa fa-file-o"></span>
      
-    An Introduction to PGRdup package
+    Introduction
   </a>
 </li>
 <li>
@@ -102,6 +115,7 @@
   </a>
 </li>
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -109,20 +123,22 @@
       
       </header>
 
-      <div class="row">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Create a KWIC Index</h1>
+    <h1>Create a KWIC index</h1>
+    <small>Source: <a href='https://github.com/aravind-j/PGRdup/blob/master/R/KWIC.R'><code>R/KWIC.R</code></a></small>
+    <div class="hidden name"><code>KWIC.Rd</code></div>
     </div>
 
     
-    <p><code>KWIC</code> creates a Keyword in Context index from PGR passport database 
+    <p><code>KWIC</code> creates a Keyword in Context index from PGR passport database
 fields.</p>
     
 
     <pre class="usage"><span class='fu'>KWIC</span>(<span class='no'>x</span>, <span class='no'>fields</span>, <span class='kw'>min.freq</span> <span class='kw'>=</span> <span class='fl'>10</span>)</pre>
     
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
@@ -131,13 +147,13 @@ fields.</p>
     </tr>
     <tr>
       <th>fields</th>
-      <td><p>A character vector with the names of fields(columns) of the 
-data frame from which KWIC index is to be generated. The first field is 
+      <td><p>A character vector with the names of fields(columns) of the
+data frame from which KWIC index is to be generated. The first field is
 considered as the primary key or identifier (see <strong>Details</strong>).</p></td>
     </tr>
     <tr>
       <th>min.freq</th>
-      <td><p>Frequency of keywords are not computed if below 
+      <td><p>Frequency of keywords are not computed if below
 <code>min.freq</code>. Default is 10.</p></td>
     </tr>
     </table>
@@ -145,46 +161,46 @@ considered as the primary key or identifier (see <strong>Details</strong>).</p><
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>A list of class <code>KWIC</code> containing the following components:</p><table><tr><td> <code>KWIC</code> </td>
-<td> The KWIC index in the form of a data frame. 
+<td> The KWIC index in the form of a data frame.
   </td>
-</tr><tr><td> <code>KeywordFreq</code> </td>
-<td> A data frame of the keywords detected with 
+</tr><tr><td><br /> <code>KeywordFreq</code> </td>
+<td> A data frame of the keywords detected with
   frequency greater than <code>min.freq</code>. </td>
-</tr><tr><td> <code>Fields</code> </td>
-<td> A character 
-  vector with the names of the PGR database fields from which the keywords 
+</tr><tr><td><br /> <code>Fields</code> </td>
+<td> A character
+  vector with the names of the PGR database fields from which the keywords
   were extracted. </td>
 </tr></table>
 
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>The function generates a Keyword in Context index from a data frame of a PGR 
+    <p>The function generates a Keyword in Context index from a data frame of a PGR
 passport database based on the fields(columns) stated in the arguments, using
 <code><a href='http://www.rdocumentation.org/packages/data.table/topics/data.table'>data.table</a></code> package.</p>
 <p>The first element of vector <code>fields</code> is considered as the primary key or
 identifier which uniquely identifies all rows in the data frame.</p>
-<p>Cleaning of the data the input fields(columns) using the 
-<code><a href='DataClean.html'>DataClean</a></code> function with appropriate arguments is 
+<p>Cleaning of the data the input fields(columns) using the
+<code><a href='DataClean.html'>DataClean</a></code> function with appropriate arguments is
 suggested before running this function.</p>
     
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>Kn�pffer, H. 1988. "The European Barley Database of the ECP/GR:
-  An Introduction." <em>Die Kulturpflanze</em> 36 (1): 135-62. 
-  doi:<a href='https://doi.org/10.1007/BF01986957'>https://doi.org/10.1007/BF01986957</a>.   Kn�pffer, H., L.
-  Frese, and M. W. M. Jongen. 1997. "Using Central Crop Databases: Searching 
-  for Duplicates and Gaps." In <em>Central Crop Databases: Tools for Plant 
-  Genetic Resources Management. Report of a Workshop, Budapest, Hungary, 
-  13-16 October 1996</em>, edited by E. Lipman, M. W. M. Jongen, T. J. L. van 
-  Hintum, T. Gass, and L. Maggioni, 67-77. Rome, Italy and Wageningen, The 
-  Netherlands: International Plant Genetic Resources Institute and Centre for
-  Genetic Resources.</p>
+    <p>KnÃ¼pffer, H. 1988. "The European Barley Database of the ECP/GR:
+  An Introduction." <em>Die Kulturpflanze</em> 36 (1): 135-62.
+  doi:<a href='https://doi.org/10.1007/BF01986957'>https://doi.org/10.1007/BF01986957</a>.</p>
+<p>KnÃ¼pffer, H., L. Frese, and M. W. M. Jongen. 1997. "Using Central Crop
+  Databases: Searching for Duplicates and Gaps." In <em>Central Crop
+  Databases: Tools for Plant Genetic Resources Management. Report of a
+  Workshop, Budapest, Hungary, 13-16 October 1996</em>, edited by E. Lipman, M.
+  W. M. Jongen, T. J. L. van Hintum, T. Gass, and L. Maggioni, 67-77. Rome,
+  Italy and Wageningen, The Netherlands: International Plant Genetic
+  Resources Institute and Centre for Genetic Resources.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p><code><a href='http://www.rdocumentation.org/packages/data.table/topics/data.table'>data.table</a></code>, 
-  <code><a href='print.KWIC.html'>print.KWIC</a></code></p>
+    <div class='dont-index'><p><code><a href='http://www.rdocumentation.org/packages/data.table/topics/data.table'>data.table</a></code>,
+  <code><a href='print.KWIC.html'>print.KWIC</a></code></p></div>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
@@ -206,7 +222,7 @@ suggested before running this function.</p>
 <span class='co'># Retrieve the keyword frequencies from the KWIC object</span>
 <span class='no'>KeywordFreq</span> <span class='kw'>&lt;-</span> <span class='no'>GNKWIC</span><span class='kw'>[[</span><span class='fl'>2</span>]]
 
-<span class='co'># Show error in case of duplicates and NULL values </span>
+<span class='co'># Show error in case of duplicates and NULL values</span>
 <span class='co'># in the primary key/ID field "NationalID"</span>
 <span class='no'>GN</span>[<span class='fl'>1001</span>:<span class='fl'>1005</span>,] <span class='kw'>&lt;-</span> <span class='no'>GN</span>[<span class='fl'>1</span>:<span class='fl'>5</span>,]
 <span class='no'>GN</span>[<span class='fl'>1001</span>,<span class='fl'>3</span>] <span class='kw'>&lt;-</span> <span class='st'>""</span>
@@ -238,11 +254,14 @@ suggested before running this function.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>
    </div>
 
+  
+
   </body>
 </html>
+

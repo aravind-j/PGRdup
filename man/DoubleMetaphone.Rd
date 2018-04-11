@@ -3,7 +3,7 @@
 \encoding{UTF-8}
 \name{DoubleMetaphone}
 \alias{DoubleMetaphone}
-\title{Double Metaphone Phonetic Algorithm}
+\title{'Double Metaphone' phonetic algorithm}
 \usage{
 DoubleMetaphone(str)
 }

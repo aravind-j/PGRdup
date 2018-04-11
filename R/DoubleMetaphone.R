@@ -17,7 +17,7 @@
 
 
 
-#' Double Metaphone Phonetic Algorithm
+#' 'Double Metaphone' phonetic algorithm
 #' 
 #' \code{DoubleMetaphone} converts strings to double metaphone phonetic codes.
 #' 

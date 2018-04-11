@@ -3,7 +3,7 @@
 \encoding{UTF-8}
 \name{ProbDup}
 \alias{ProbDup}
-\title{Identify Probable Duplicates of Accessions}
+\title{Identify probable duplicates of accessions}
 \usage{
 ProbDup(kwic1, kwic2 = NULL, method = c("a", "b", "c"), excep = NULL,
   chunksize = 1000, useBytes = TRUE, fuzzy = TRUE, max.dist = 3,

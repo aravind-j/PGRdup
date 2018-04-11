@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Identify Probable Duplicates of Accessions � ProbDup • PGRdup</title>
+<title>Identify probable duplicates of accessions — ProbDup • PGRdup</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -18,13 +18,21 @@
 <!-- Font Awesome icons -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
+<!-- clipboard.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-  
-  
+<meta property="og:title" content="Identify probable duplicates of accessions — ProbDup" />
+
+<meta property="og:description" content="ProbDup identifies probable duplicates of germplasm accessions in KWIC
+indexes created from PGR passport databases using fuzzy, phonetic and 
+semantic matching strategies." />
+<meta name="twitter:card" content="summary" />
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -46,6 +54,8 @@
 
 </script>
 
+
+
   </head>
 
   <body>
@@ -59,12 +69,16 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">PGRdup</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">PGRdup</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.2.3.4</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="..//index.html">
+  <a href="../index.html">
     <span class="fa fa-home fa-lg"></span>
      
     Home
@@ -81,7 +95,7 @@
   <a href="../articles/Introduction.html">
     <span class="fa fa-file-o"></span>
      
-    An Introduction to PGRdup package
+    Introduction
   </a>
 </li>
 <li>
@@ -102,6 +116,7 @@
   </a>
 </li>
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -109,10 +124,12 @@
       
       </header>
 
-      <div class="row">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Identify Probable Duplicates of Accessions</h1>
+    <h1>Identify probable duplicates of accessions</h1>
+    <small>Source: <a href='https://github.com/aravind-j/PGRdup/blob/master/R/ProbDup.R'><code>R/ProbDup.R</code></a></small>
+    <div class="hidden name"><code>ProbDup.Rd</code></div>
     </div>
 
     
@@ -127,7 +144,7 @@ semantic matching strategies.</p>
   <span class='kw'>encoding</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"primary"</span>, <span class='st'>"alternate"</span>), <span class='kw'>phon.min.alpha</span> <span class='kw'>=</span> <span class='fl'>5</span>, <span class='kw'>min.enc</span> <span class='kw'>=</span> <span class='fl'>3</span>,
   <span class='kw'>semantic</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>syn</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
@@ -233,16 +250,16 @@ on semantic matching.</p></td>
   has the following columns:</p><table><tr><td> <code>SET_NO</code> </td>
 <td> The set number.
   </td>
-</tr><tr><td> <code>TYPE</code> </td>
+</tr><tr><td><br /> <code>TYPE</code> </td>
 <td> The type of probable duplicate set. 'F' for fuzzy, 'P'
   for phonetic and 'S' for semantic matching sets. </td>
-</tr><tr><td> <code>ID</code> </td>
+</tr><tr><td><br /> <code>ID</code> </td>
 <td> The 
   primary IDs of records of accessions comprising a set. </td>
-</tr><tr><td> <code>ID:KW</code> 
+</tr><tr><td><br /> <code>ID:KW</code> 
   </td>
 <td> The 'matching' keywords along with the IDs. </td>
-</tr><tr><td> <code>COUNT</code> </td>
+</tr><tr><td><br /> <code>COUNT</code> </td>
 <td> The 
   number of elements in a set. </td>
 </tr></table>
@@ -256,7 +273,8 @@ on semantic matching.</p></td>
 KWIC indexes of PGR passport databases (created using 
 <code><a href='KWIC.html'>KWIC</a></code> function) to identify probable duplicates of 
 germplasm accessions. The function can execute matching according to either 
-of the following three methods as specified by the <code>method</code> argument.</p><dl class='dl-horizontal'>
+of the following three methods as specified by the <code>method</code> argument.</p>
+<dl class='dl-horizontal'>
 <dt>Method <code>a</code>:</dt><dd><p>Perform string matching of keywords in a 
 single KWIC index to identify probable duplicates of accessions in a single 
 PGR passport database.</p></dd> <dt>Method <code>b</code>:</dt><dd><p>Perform string matching of 
@@ -265,7 +283,8 @@ second index (source) to identify probable duplicates of accessions of the
 first PGR passport database among the accessions in the second database.</p></dd> 
 <dt>Method <code>c</code>:</dt><dd><p>Perform string matching of keywords in two different 
 KWIC indexes jointly to identify probable duplicates of accessions from among
-two PGR passport databases.</p></dd></dl><p><strong>Fuzzy matching</strong> or approximate string matching of keywords is carried
+two PGR passport databases.</p></dd></dl>
+    <p><strong>Fuzzy matching</strong> or approximate string matching of keywords is carried
 out by computing the generalized levenshtein (edit) distance between them. 
 This distance measure  counts the number of deletions, insertions and 
 substitutions necessary to turn one string to the another. A distance of up 
@@ -281,16 +300,16 @@ characters. If <code>max.digit</code> and <code>max.alpha</code> are both set to
 <p>When exact matching is enforced, for keywords having both alphabet and 
 numeric characters and with the number of alphabet characters greater than 
 <code>max.digit</code>, matching will be carried out separately for alphabet and 
-numeric characters present.
-    <strong>Phonetic matching</strong> of keywords is carried out using the Double 
+numeric characters present.</p>
+<p><strong>Phonetic matching</strong> of keywords is carried out using the Double 
 Metaphone phonetic algorithm (<code><a href='DoubleMetaphone.html'>DoubleMetaphone</a></code>) to 
 identify keywords that have the similar pronunciation. Either the 
 <code>primary</code> or <code>alternate</code> encodings can be used by specifying the 
 <code>encoding</code> argument. The argument <code>phon.min.alpha</code> sets the limits 
 for the number of alphabet characters to be present in a string for executing
 phonetic matching. Similarly <code>min.enc</code> sets the limits for the number of
-characters to be present in the encoding of a keyword for phonetic matching.
-    <strong>Semantic matching</strong> matches keywords based on a list of accession name
+characters to be present in the encoding of a keyword for phonetic matching.</p>
+<p><strong>Semantic matching</strong> matches keywords based on a list of accession name
 synonyms supplied as list with character vectors of synonym sets (synsets) to
 the <code>syn</code> argument. Synonyms in this context refers to interchangeable 
 identifiers or names by which an accession is recognized. Multiple keywords 
@@ -337,9 +356,9 @@ information associated with the identified sets in an object of class
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p><code><a href='KWIC.html'>KWIC</a></code>, <code><a href='DoubleMetaphone.html'>DoubleMetaphone</a></code> 
+    <div class='dont-index'><p><code><a href='KWIC.html'>KWIC</a></code>, <code><a href='DoubleMetaphone.html'>DoubleMetaphone</a></code> 
   <code><a href='http://www.rdocumentation.org/packages/stringdist/topics/stringdist'>stringdistmatrix</a></code>, <code><a href='http://www.rdocumentation.org/packages/utils/topics/adist'>adist</a></code>, 
-  <code><a href='print.ProbDup.html'>print.ProbDup</a></code></p>
+  <code><a href='print.ProbDup.html'>print.ProbDup</a></code></p></div>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
@@ -473,11 +492,14 @@ information associated with the identified sets in an object of class
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>
    </div>
 
+  
+
   </body>
 </html>
+

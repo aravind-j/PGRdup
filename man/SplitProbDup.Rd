@@ -2,7 +2,7 @@
 % Please edit documentation in R/SplitProbDup.R
 \name{SplitProbDup}
 \alias{SplitProbDup}
-\title{Split an object of class \code{ProbDup}.}
+\title{Split an object of class \code{ProbDup}}
 \usage{
 SplitProbDup(pdup, splitat = c(30, 30, 30))
 }

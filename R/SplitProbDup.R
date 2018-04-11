@@ -15,7 +15,7 @@
 #  A copy of the GNU General Public License is available at
 #  https://www.r-project.org/Licenses/
 
-#' Split an object of class \code{ProbDup}.
+#' Split an object of class \code{ProbDup}
 #' 
 #' \code{SplitProbDup} splits an object of class \code{ProbDup} into two on the 
 #' basis of set counts.

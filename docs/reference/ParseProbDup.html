@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Parse an object of class <code>ProbDup</code> to a data frame. � ParseProbDup • PGRdup</title>
+<title>Parse an object of class <code>ProbDup</code> to a data frame. — ParseProbDup • PGRdup</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -18,13 +18,19 @@
 <!-- Font Awesome icons -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
+<!-- clipboard.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-  
-  
+<meta property="og:title" content="Parse an object of class <code>ProbDup</code> to a data frame. — ParseProbDup" />
+
+<meta property="og:description" content="ParseProbDup converts an object of class ProbDup to a data frame for export." />
+<meta name="twitter:card" content="summary" />
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -46,6 +52,8 @@
 
 </script>
 
+
+
   </head>
 
   <body>
@@ -59,12 +67,16 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">PGRdup</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">PGRdup</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.2.3.4</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="..//index.html">
+  <a href="../index.html">
     <span class="fa fa-home fa-lg"></span>
      
     Home
@@ -81,7 +93,7 @@
   <a href="../articles/Introduction.html">
     <span class="fa fa-file-o"></span>
      
-    An Introduction to PGRdup package
+    Introduction
   </a>
 </li>
 <li>
@@ -102,6 +114,7 @@
   </a>
 </li>
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -109,10 +122,12 @@
       
       </header>
 
-      <div class="row">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Parse an object of class <code>ProbDup</code> to a data frame.</h1>
+    <small>Source: <a href='https://github.com/aravind-j/PGRdup/blob/master/R/ParseProbDup.R'><code>R/ParseProbDup.R</code></a></small>
+    <div class="hidden name"><code>ParseProbDup.Rd</code></div>
     </div>
 
     
@@ -121,7 +136,7 @@
 
     <pre class="usage"><span class='fu'>ParseProbDup</span>(<span class='no'>pdup</span>, <span class='kw'>max.count</span> <span class='kw'>=</span> <span class='fl'>30</span>, <span class='kw'>insert.blanks</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
@@ -145,21 +160,21 @@ after each set.</p></td>
   data with the following core columns:</p><table><tr><td> 
   <code>SET_NO</code> </td>
 <td> The set number. </td>
-</tr><tr><td> <code>TYPE</code> </td>
+</tr><tr><td><br /> <code>TYPE</code> </td>
 <td> The type of 
   probable duplicate set. 'F' for fuzzy, 'P' for phonetic and 'S' for 
   semantic matching sets. </td>
-</tr><tr><td> <code>K</code> </td>
+</tr><tr><td><br /> <code>K</code> </td>
 <td> The KWIC index or database of 
   origin of the record. The <code>method</code> is specified within the square 
   brackets in the column name.  </td>
-</tr><tr><td> <code>PRIM_ID</code> </td>
+</tr><tr><td><br /> <code>PRIM_ID</code> </td>
 <td> The primary ID of the
   accession record from which the set could be identified. </td>
-</tr><tr><td> <code>IDKW</code> 
+</tr><tr><td><br /> <code>IDKW</code> 
   </td>
 <td> The 'matching' keywords along with the IDs. </td>
-</tr><tr><td> <code>COUNT</code> </td>
+</tr><tr><td><br /> <code>COUNT</code> </td>
 <td> The number of elements in a set. </td>
 </tr></table><p>For the 
   retrieved columns(fields) the prefix <code>K*</code> indicates the KWIC index of 
@@ -167,7 +182,7 @@ after each set.</p></td>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p><code><a href='ProbDup.html'>ProbDup</a></code>,</p>
+    <div class='dont-index'><p><code><a href='ProbDup.html'>ProbDup</a></code>,</p></div>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
@@ -235,11 +250,14 @@ after each set.</p></td>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>
    </div>
 
+  
+
   </body>
 </html>
+

@@ -2,7 +2,7 @@
 % Please edit documentation in R/MergeProbDup.R
 \name{MergeProbDup}
 \alias{MergeProbDup}
-\title{Merge two objects of class \code{ProbDup}.}
+\title{Merge two objects of class \code{ProbDup}}
 \usage{
 MergeProbDup(pdup1, pdup2)
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/DataClean.R
 \name{DataClean}
 \alias{DataClean}
-\title{Clean PGR passport data.}
+\title{Clean PGR passport data}
 \usage{
 DataClean(x, fix.comma = TRUE, fix.semcol = TRUE, fix.col = TRUE,
   fix.bracket = TRUE, fix.punct = TRUE, fix.space = TRUE,

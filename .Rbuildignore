@@ -16,3 +16,6 @@
 ^_pkgdown\.yml$
 ^PGRdup\.png$
 ^README\.utf8\.md$
+^vignettes/Introduction\.tex$
+^vignettes/Introduction\.aux$
+^vignettes/Introduction\.out$

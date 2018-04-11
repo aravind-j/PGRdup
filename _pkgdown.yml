@@ -9,12 +9,12 @@ navbar:
   left:
     - icon: fa-home fa-lg
       text: Home
-      href: /index.html
+      href: index.html
     - icon: fa-code
       text: Reference
       href: reference/index.html
     - icon: fa-file-o
-      text: An Introduction to PGRdup package
+      text: Introduction
       href: articles/Introduction.html
     - icon: fa-newspaper-o
       text: News
