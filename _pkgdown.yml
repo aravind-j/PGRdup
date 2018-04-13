@@ -2,6 +2,9 @@ template:
   params:
     bootswatch: united
     ganalytics: UA-112827210-1
+    docsearch:
+      api_key: 01238b3717a637dbd6d12ae34b5c5d48
+      index_name: pgrdup
 
 url: https://aravind-j.github.io/PGRdup/
 
