@@ -114,17 +114,18 @@
 }
 
 \setlength{\droptitle}{-2em}
+
   \title{An Introduction to \textbf{PGRdup} package}
-  \pretitle{\vspace{\droptitle}\centering\huge}
+    \pretitle{\vspace{\droptitle}\centering\huge}
   \posttitle{\par}
-  \author{J. Aravind\textsuperscript{1}, J. Radhamani\textsuperscript{1}, Kalyani
+    \author{J. Aravind\textsuperscript{1}, J. Radhamani\textsuperscript{1}, Kalyani
 Srinivasan\textsuperscript{1}, B. Ananda Subhash\textsuperscript{2} and
 R. K. Tyagi\textsuperscript{1}}
-  \preauthor{\centering\large\emph}
+    \preauthor{\centering\large\emph}
   \postauthor{\par}
-  \predate{\centering\large\emph}
+      \predate{\centering\large\emph}
   \postdate{\par}
-  \date{2018-04-11}
+    \date{2018-07-15}
 
 \usepackage{fancyhdr}
 \pagestyle{fancy}
@@ -686,12 +687,13 @@ frame using the
 \subsection{Generation of KWIC Index}\label{generation-of-kwic-index}}
 
 The function \texttt{KWIC} generates a Key Word in Context index
-(Knüpffer 1988; Knüpffer, Frese, and Jongen 1997) from the data frame of
-a PGR passport database based on the fields(columns) specified in the
-argument \texttt{fields} along with the keyword frequencies and gives
-the output as a list of class \texttt{KWIC}. The first element of the
-vector specified in \texttt{fields} is considered as the primary key or
-identifier which uniquely identifies all rows in the data frame.
+(Knüpffer \protect\hyperlink{ref-knupffer1988european}{1988}; Knüpffer,
+Frese, and Jongen \protect\hyperlink{ref-kfj97}{1997}) from the data
+frame of a PGR passport database based on the fields(columns) specified
+in the argument \texttt{fields} along with the keyword frequencies and
+gives the output as a list of class \texttt{KWIC}. The first element of
+the vector specified in \texttt{fields} is considered as the primary key
+or identifier which uniquely identifies all rows in the data frame.
 
 This function fetches keywords from different fields specified, which
 can be subsequently used for matching to identify probable duplicates.
@@ -1485,8 +1487,9 @@ Total                   378 745(Distinct:745)
 \item
   \textbf{Phonetic matching} of keywords is carried out using the Double
   Metaphone phonetic algorithm which is implemented as the helper
-  function \texttt{DoubleMetaphone}, (Philips 2000), to identify
-  keywords that have the similar pronunciation.
+  function \texttt{DoubleMetaphone}, (Philips
+  \protect\hyperlink{ref-p00}{2000}), to identify keywords that have the
+  similar pronunciation.
 \end{enumerate}
 
 \begin{Shaded}
@@ -1773,7 +1776,8 @@ matching is further dependent upon the \texttt{useBytes} argument as
 described in \texttt{help("stringdist-encoding")} for the
 \texttt{stringdist} function in the namesake
 \href{https://CRAN.R-project.org/package=stringdist}{package} (van der
-Loo 2014), which is made use of here for string matching.
+Loo \protect\hyperlink{ref-van2014stringdist}{2014}), which is made use
+of here for string matching.
 
 The CPU time taken for retrieval of probable duplicate sets under
 different options for the arguments \texttt{chunksize} and
@@ -2574,10 +2578,10 @@ A BibTeX entry for LaTeX users is
   @Manual{,
     title = {PGRdup: Discover Probable Duplicates in Plant Genetic Resources Collections},
     author = {{Aravind J} and {Radhamani J} and {Kalyani Srinivasan} and {Ananda Subhash B} and {Rishi Kumar Tyagi}},
+    year = {2018},
     note = {R package version 0.2.3.4},
     note = {https://cran.r-project.org/package=PGRdup},
     note = {https://doi.org/10.5281/zenodo.841963},
-    year = {2018},
   }
 
 This free and open-source software implements academic research by
@@ -2595,7 +2599,7 @@ project by citing the package.
 \end{Shaded}
 
 \begin{verbatim}
-R version 3.4.3 (2017-11-30)
+R version 3.5.1 (2018-07-02)
 Platform: x86_64-w64-mingw32/x64 (64-bit)
 Running under: Windows >= 8 x64 (build 9200)
 
@@ -2610,31 +2614,26 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] gridExtra_2.3      wordcloud_2.5      RColorBrewer_1.1-2
-[4] diagram_1.6.4      shape_1.4.4        PGRdup_0.2.3.4    
+[1] PGRdup_0.2.3.4     gridExtra_2.3      wordcloud_2.5     
+[4] RColorBrewer_1.1-2 diagram_1.6.4      shape_1.4.4       
 
 loaded via a namespace (and not attached):
- [1] stringdist_0.9.4.7   slam_0.1-42          purrr_0.2.4         
- [4] colorspace_1.3-2     testthat_2.0.0       htmltools_0.3.6     
- [7] yaml_2.1.18          XML_3.98-1.10        rlang_0.2.0         
-[10] pkgbuild_1.0.0       pkgdown_0.1.0.9000   pillar_1.2.1        
-[13] withr_2.1.2          plyr_1.8.4           stringr_1.3.0       
-[16] munsell_0.4.3        commonmark_1.4       gtable_0.2.0        
-[19] devtools_1.13.5      evaluate_0.10.1      memoise_1.1.0       
-[22] labeling_0.3         knitr_1.20           callr_2.0.3         
-[25] highlight_0.4.7.2    parallel_3.4.3       curl_3.1            
-[28] highr_0.6            Rcpp_0.12.16         backports_1.1.2     
-[31] scales_0.5.0         desc_1.1.1           pkgload_1.0.0       
-[34] jsonlite_1.5         debugme_1.1.0        fs_1.2.2            
-[37] microbenchmark_1.4-4 ggplot2_2.2.1        digest_0.6.15       
-[40] stringi_1.1.6        grid_3.4.3           rprojroot_1.3-2     
-[43] cli_1.0.0            tools_3.4.3          magrittr_1.5        
-[46] lazyeval_0.2.1       tibble_1.4.2         crayon_1.3.4        
-[49] whisker_0.3-2        pkgconfig_2.0.1      MASS_7.3-49         
-[52] data.table_1.10.4-3  xml2_1.2.0           assertthat_0.2.0    
-[55] rmarkdown_1.9.8      rematch_1.0.1        roxygen2_6.0.1      
-[58] httr_1.3.1           rstudioapi_0.7       R6_2.2.2            
-[61] igraph_1.2.1         compiler_3.4.3      
+ [1] Rcpp_0.12.16          highr_0.6             compiler_3.5.1       
+ [4] pillar_1.2.2          plyr_1.8.4            tools_3.5.1          
+ [7] digest_0.6.15         evaluate_0.10.1       memoise_1.1.0        
+[10] tibble_1.4.2          gtable_0.2.0          pkgconfig_2.0.1      
+[13] rlang_0.2.1           igraph_1.2.1          rstudioapi_0.7.0-9000
+[16] microbenchmark_1.4-4  commonmark_1.5        yaml_2.1.19          
+[19] parallel_3.5.1        knitr_1.20            withr_2.1.2          
+[22] stringr_1.3.0         roxygen2_6.0.1        xml2_1.2.0           
+[25] desc_1.2.0            devtools_1.13.5       rprojroot_1.3-2      
+[28] grid_3.5.1            data.table_1.11.4     R6_2.2.2             
+[31] XML_3.98-1.11         rmarkdown_1.10        ggplot2_2.2.1        
+[34] magrittr_1.5          htmltools_0.3.6       scales_0.5.0         
+[37] backports_1.1.2       stringdist_0.9.4.7    assertthat_0.2.0     
+[40] colorspace_1.3-2      labeling_0.3          tinytex_0.5          
+[43] stringi_1.1.7         lazyeval_0.2.1        munsell_0.4.3        
+[46] slam_0.1-43           crayon_1.3.4         
 \end{verbatim}
 
 \hypertarget{references}{%

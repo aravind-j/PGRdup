@@ -21,11 +21,23 @@
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
+<!-- sticky kit -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
+
+
+<!-- docsearch -->
+<script src="../docsearch.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+<link href="../docsearch.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+
+
 <meta property="og:title" content="Function reference" />
+
 
 
 <!-- mathjax -->
@@ -37,22 +49,15 @@
 <![endif]-->
 
 
-<!-- Google analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-112827210-1"></script>
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-  ga('create', 'UA-112827210-1', 'auto');
-  ga('send', 'pageview');
-
+  gtag('config', 'UA-112827210-1');
 </script>
-
-
-
-<!-- docsearch -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
   </head>
 
@@ -117,7 +122,7 @@
       
       <form class="navbar-form navbar-right" role="search">
         <div class="form-group">
-          <input type="search" class="form-control" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
+          <input type="search" class="form-control" name="search-input" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
         </div>
       </form>
       
@@ -137,6 +142,7 @@
     <table class="ref-index">
 
     <colgroup>
+      
       <col class="alias" />
       <col class="title" />
     </colgroup>
@@ -149,13 +155,13 @@
         </th>
       </tr>
       <tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="DataClean.html">DataClean()</a></code> </p>
         </td>
         <td><p>Clean PGR passport data</p></td>
       </tr><tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="MergeKW.html">MergeKW()</a></code> <code><a href="MergeKW.html">MergePrefix()</a></code> <code><a href="MergeKW.html">MergeSuffix()</a></code> </p>
         </td>
@@ -169,7 +175,7 @@
         </th>
       </tr>
       <tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="KWIC.html">KWIC()</a></code> </p>
         </td>
@@ -183,7 +189,7 @@
         </th>
       </tr>
       <tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="ProbDup.html">ProbDup()</a></code> </p>
         </td>
@@ -197,20 +203,20 @@
         </th>
       </tr>
       <tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="DisProbDup.html">DisProbDup()</a></code> </p>
         </td>
         <td><p>Get disjoint probable duplicate sets</p></td>
       </tr><tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="ReviewProbDup.html">ReviewProbDup()</a></code> </p>
         </td>
         <td><p>Retrieve probable duplicate set information from PGR passport database for 
 review</p></td>
       </tr><tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="ReconstructProbDup.html">ReconstructProbDup()</a></code> </p>
         </td>
@@ -224,67 +230,67 @@ review</p></td>
         </th>
       </tr>
       <tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="ValidatePrimKey.html">ValidatePrimKey()</a></code> </p>
         </td>
         <td><p>Validate if a data frame column confirms to primary key/ID constraints</p></td>
       </tr><tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="DoubleMetaphone.html">DoubleMetaphone()</a></code> </p>
         </td>
         <td><p>'Double Metaphone' phonetic algorithm</p></td>
       </tr><tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="read.genesys.html">read.genesys()</a></code> </p>
         </td>
         <td><p>Convert 'Darwin Core - Germplasm' zip archive to a flat file</p></td>
       </tr><tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="KWCounts.html">KWCounts()</a></code> </p>
         </td>
         <td><p>Generate keyword counts</p></td>
       </tr><tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="ParseProbDup.html">ParseProbDup()</a></code> </p>
         </td>
         <td><p>Parse an object of class <code>ProbDup</code> to a data frame.</p></td>
       </tr><tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="SplitProbDup.html">SplitProbDup()</a></code> </p>
         </td>
         <td><p>Split an object of class <code>ProbDup</code></p></td>
       </tr><tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="MergeProbDup.html">MergeProbDup()</a></code> </p>
         </td>
         <td><p>Merge two objects of class <code>ProbDup</code></p></td>
       </tr><tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="AddProbDup.html">AddProbDup()</a></code> </p>
         </td>
         <td><p>Add probable duplicate sets fields to the PGR passport database</p></td>
       </tr><tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="ViewProbDup.html">ViewProbDup()</a></code> </p>
         </td>
         <td><p>Visualize the probable duplicate sets retrieved in a <code>ProbDup</code> object</p></td>
       </tr><tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="print.KWIC.html">print(<i>&lt;KWIC&gt;</i>)</a></code> </p>
         </td>
         <td><p>Prints summary of <code>KWIC</code> object.</p></td>
       </tr><tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="print.ProbDup.html">print(<i>&lt;ProbDup&gt;</i>)</a></code> </p>
         </td>
@@ -298,7 +304,7 @@ review</p></td>
         </th>
       </tr>
       <tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="GN1000.html">GN1000</a></code> </p>
         </td>
@@ -338,10 +344,16 @@ review</p></td>
 <script>
   docsearch({
     
+    
     apiKey: '01238b3717a637dbd6d12ae34b5c5d48',
     indexName: 'pgrdup',
     inputSelector: 'input#search-input.form-control',
-    debug: false // Set debug to true if you want to inspect the dropdown
+    transformData: function(hits) {
+      return hits.map(function (hit) {
+        hit.url = updateHitURL(hit);
+        return hit;
+      });
+    }
   });
 </script>
 

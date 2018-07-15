@@ -18,6 +18,7 @@ header-includes:
 - \hypersetup{linktoc=all}
 - \hypersetup{linkcolor=blue}
 bibliography: bibliography.bibtex
+link-citations: yes
 toc: no
 vignette: |
   %\VignetteIndexEntry{Introduction}
@@ -1187,16 +1188,18 @@ citation("PGRdup")
 
 
 ```{r, echo = FALSE, collapse = TRUE}
+detach("package:PGRdup", unload=TRUE)
+suppressPackageStartupMessages(library(PGRdup))
 cit <- citation("PGRdup")
-yr <- format(Sys.Date(), "%Y")
-cit[1]$year <- yr
-oc <- class(cit)
-
-cit <- unclass(cit)
-attr(cit[[1]],"textVersion") <- gsub("\\(\\)",
-                                     paste("\\(", yr, "\\)", sep = ""),
-                                     attr(cit[[1]],"textVersion"))
-class(cit) <- oc
+# yr <- format(Sys.Date(), "%Y")
+# cit[1]$year <- yr
+# oc <- class(cit)
+# 
+# cit <- unclass(cit)
+# attr(cit[[1]],"textVersion") <- gsub("\\(\\)",
+#                                      paste("\\(", yr, "\\)", sep = ""),
+#                                      attr(cit[[1]],"textVersion"))
+# class(cit) <- oc
 cit
 ```
 
