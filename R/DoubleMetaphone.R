@@ -65,7 +65,7 @@ DoubleMetaphone <- function(str) {
     stop("str is not a character vector")
   }
   if (any(grepl("NON_ASCII",
-                iconv(str, "latin1", "ASCII", sub = "NON_ASCII"))) == TRUE) {
+                iconv(str, "latin1", "ASCII", sub = "NON_ASCII"), fixed = TRUE)) == TRUE) {
     str <- iconv(str, to = "ASCII//TRANSLIT")
     warning("Non-ASCII characters were encountered.")
   }

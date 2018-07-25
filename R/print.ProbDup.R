@@ -33,11 +33,11 @@ print.ProbDup <- function(x, ...) {
   attributes(x) <- append(attributes(x), attr[2:4])
   m <- data.frame(`No. of Sets` = sapply(x, function(x) dim(x)[1]),
                   `No. of Records` = sapply(x,
-                                            function(x) length(unique(unlist(strsplit(x$ID, split = ", "))))))
+                                            function(x) length(unique(unlist(strsplit(x$ID, split = ", ", fixed = TRUE))))))
   Total <- as.character(colSums(m))
   Total[2] <- paste(Total[2], "(Distinct:",
                     length(unique(unlist(lapply(x,
-                                                function(x) unlist(strsplit(x$ID, split = ", ")))))),
+                                                function(x) unlist(strsplit(x$ID, split = ", ", fixed = TRUE)))))),
                     ")", sep = "")
   m <- rbind(m, Total = Total)
   cat(paste("Method : ", attributes(x)$method, "\n", sep = ""))
