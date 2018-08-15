@@ -24,8 +24,8 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{hyperref}
 \hypersetup{unicode=true,
-            pdftitle={An Introduction to PGRdup package},
-            pdfauthor={J. Aravind1, J. Radhamani1, Kalyani Srinivasan1, B. Ananda Subhash2 and R. K. Tyagi1},
+            pdftitle={An Introduction to PGRdup Package},
+            pdfauthor={Aravind, J.1, Radhamani, J.1, Kalyani Srinivasan1, Ananda Subhash, B.2, and Tyagi, R. K.1},
             pdfborder={0 0 0},
             breaklinks=true}
 \urlstyle{same}  % don't use monospace font for urls
@@ -115,22 +115,22 @@
 
 \setlength{\droptitle}{-2em}
 
-  \title{An Introduction to \textbf{PGRdup} package}
+  \title{An Introduction to \texttt{PGRdup} Package}
     \pretitle{\vspace{\droptitle}\centering\huge}
   \posttitle{\par}
-    \author{J. Aravind\textsuperscript{1}, J. Radhamani\textsuperscript{1}, Kalyani
-Srinivasan\textsuperscript{1}, B. Ananda Subhash\textsuperscript{2} and
-R. K. Tyagi\textsuperscript{1}}
+    \author{Aravind, J.\textsuperscript{1}, Radhamani, J.\textsuperscript{1},
+Kalyani Srinivasan\textsuperscript{1}, Ananda Subhash,
+B.\textsuperscript{2}, and Tyagi, R. K.\textsuperscript{1}}
     \preauthor{\centering\large\emph}
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2018-07-15}
+    \date{2018-08-15}
 
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhead[LE,RO]{\slshape \rightmark}
-\fancyhead[LO,RE]{An Introduction to PGRdup package}
+\fancyhead[LO,RE]{An Introduction to \texttt{PGRdup} Package}
 \fancyfoot[C]{\thepage}
 \usepackage{hyperref}
 \hypersetup{colorlinks=true}
@@ -140,15 +140,17 @@ R. K. Tyagi\textsuperscript{1}}
 \begin{document}
 \maketitle
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  ICAR-National Bureau of Plant Genetic Resources, New Delhi, India
-\item
-  Centre for Development of Advanced Computing, Thiruvananthapuram,
-  Kerala, India
-\end{enumerate}
+\begin{center}
+1. ICAR-National Bureau of Plant Genetic Resources, New Delhi, India.
+
+2. Centre for Development of Advanced Computing, Thiruvananthapuram, Kerala, India.
+
+\end{center}
+
+\begin{center}
+\vspace{6pt}
+\hrule
+\end{center}
 
 \tableofcontents
 
@@ -182,16 +184,18 @@ and \href{https://CRAN.R-project.org/package=stringi}{\texttt{stringi}}.
 
 \pagebreak
 
-\includegraphics{imgs/PGRdup.png}
+\begin{center}
+    \includegraphics{C:/Users/J. Aravind/Documents/R/win-library/3.5/PGRdup/extdata/PGRdup.png}
+\end{center}
 
-\includegraphics{Introduction_files/figure-latex/unnamed-chunk-2-1.pdf}
+\includegraphics{Introduction_files/figure-latex/unnamed-chunk-4-1.pdf}
 
 \textbf{Fig. 1.} PGRdup workflow and associated functions
 
 \hypertarget{version-history}{%
 \subsection{Version History}\label{version-history}}
 
-The current version of the package is 0.2.3.4. The previous versions are
+The current version of the package is 0.2.3.3. The previous versions are
 as follows.
 
 \textbf{Table 1.} Version history of \texttt{PGRdup} \texttt{R} package.
@@ -798,7 +802,7 @@ Number of distinct keywords : 3109
 6  PURPLE   10
 \end{verbatim}
 
-\includegraphics{Introduction_files/figure-latex/unnamed-chunk-19-1.pdf}
+\includegraphics{Introduction_files/figure-latex/unnamed-chunk-21-1.pdf}
 
 \textbf{Fig. 2.} Word cloud of keywords retrieved
 
@@ -1861,7 +1865,7 @@ package (Fig.~3).
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction_files/figure-latex/unnamed-chunk-41-1.pdf}
+\includegraphics{Introduction_files/figure-latex/unnamed-chunk-43-1.pdf}
 
 \textbf{Fig. 3.} CPU time with different \texttt{ProbDup} arguments
 estimated using the \texttt{microbenchmark} package.
@@ -2491,7 +2495,7 @@ Block 3 / 3 |
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction_files/figure-latex/unnamed-chunk-56-1.pdf}
+\includegraphics{Introduction_files/figure-latex/unnamed-chunk-58-1.pdf}
 
 \textbf{Fig. 5.} Summary visualization of groundnut probable duplicate
 sets retrieved according to \texttt{SourceCountry} field.
@@ -2546,7 +2550,7 @@ rough indication of the completeness of the data in such fields
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction_files/figure-latex/unnamed-chunk-57-1.pdf}
+\includegraphics{Introduction_files/figure-latex/unnamed-chunk-59-1.pdf}
 
 \textbf{Fig. 6.} The keyword counts in the database fields considered
 for identification of probable duplicates for \textbf{A.}~the entire
@@ -2567,21 +2571,21 @@ alone and \textbf{C.}~the unique records alone.
 
 To cite the R package 'PGRdup' in publications use:
 
-  Aravind, J., J. Radhamani, Kalyani Srinivasan, B. Ananda
-  Subhash, and R. K. Tyagi (2018).  PGRdup: Discover Probable
+  Aravind, J., Radhamani, J., Kalyani Srinivasan, Ananda Subhash,
+  B., and Tyagi, R. K.  (2018).  PGRdup: Discover Probable
   Duplicates in Plant Genetic Resources Collections. R package
-  version 0.2.3.4, https://cran.r-project.org/package=PGRdup,
-  https://doi.org/10.5281/zenodo.841963.
+  version 0.2.3.4,
+  https://github.com/aravind-j/PGRdup,https://cran.r-project.org/package=PGRdup.
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {PGRdup: Discover Probable Duplicates in Plant Genetic Resources Collections},
-    author = {{Aravind J} and {Radhamani J} and {Kalyani Srinivasan} and {Ananda Subhash B} and {Rishi Kumar Tyagi}},
+    author = {J. Aravind and J. Radhamani and {Kalyani Srinivasan} and B. {Ananda Subhash} and Rishi Kumar Tyagi},
     year = {2018},
     note = {R package version 0.2.3.4},
+    note = {https://github.com/aravind-j/PGRdup,},
     note = {https://cran.r-project.org/package=PGRdup},
-    note = {https://doi.org/10.5281/zenodo.841963},
   }
 
 This free and open-source software implements academic research by
@@ -2618,22 +2622,24 @@ other attached packages:
 [4] RColorBrewer_1.1-2 diagram_1.6.4      shape_1.4.4       
 
 loaded via a namespace (and not attached):
- [1] Rcpp_0.12.16          highr_0.6             compiler_3.5.1       
- [4] pillar_1.2.2          plyr_1.8.4            tools_3.5.1          
- [7] digest_0.6.15         evaluate_0.10.1       memoise_1.1.0        
-[10] tibble_1.4.2          gtable_0.2.0          pkgconfig_2.0.1      
-[13] rlang_0.2.1           igraph_1.2.1          rstudioapi_0.7.0-9000
-[16] microbenchmark_1.4-4  commonmark_1.5        yaml_2.1.19          
-[19] parallel_3.5.1        knitr_1.20            withr_2.1.2          
-[22] stringr_1.3.0         roxygen2_6.0.1        xml2_1.2.0           
-[25] desc_1.2.0            devtools_1.13.5       rprojroot_1.3-2      
-[28] grid_3.5.1            data.table_1.11.4     R6_2.2.2             
-[31] XML_3.98-1.11         rmarkdown_1.10        ggplot2_2.2.1        
-[34] magrittr_1.5          htmltools_0.3.6       scales_0.5.0         
-[37] backports_1.1.2       stringdist_0.9.4.7    assertthat_0.2.0     
-[40] colorspace_1.3-2      labeling_0.3          tinytex_0.5          
-[43] stringi_1.1.7         lazyeval_0.2.1        munsell_0.4.3        
-[46] slam_0.1-43           crayon_1.3.4         
+ [1] stringdist_0.9.5.1    tidyselect_0.2.4      slam_0.1-43          
+ [4] purrr_0.2.5           colorspace_1.3-2      htmltools_0.3.6      
+ [7] yaml_2.2.0            XML_3.98-1.12         rlang_0.2.1          
+[10] pillar_1.3.0          glue_1.3.0            withr_2.1.2          
+[13] bindrcpp_0.2.2        bindr_0.1.1           plyr_1.8.4           
+[16] stringr_1.3.1         munsell_0.5.0         commonmark_1.5       
+[19] gtable_0.2.0          devtools_1.13.6       memoise_1.1.0        
+[22] evaluate_0.11         labeling_0.3          knitr_1.20           
+[25] parallel_3.5.1        highr_0.7             Rcpp_0.12.18         
+[28] scales_0.5.0          backports_1.1.2       desc_1.2.0           
+[31] microbenchmark_1.4-4  ggplot2_3.0.0         digest_0.6.15        
+[34] stringi_1.2.4         dplyr_0.7.6           grid_3.5.1           
+[37] rprojroot_1.3-2       tools_3.5.1           magrittr_1.5         
+[40] lazyeval_0.2.1        tibble_1.4.2          crayon_1.3.4         
+[43] pkgconfig_2.0.1       data.table_1.11.4     xml2_1.2.0           
+[46] assertthat_0.2.0      rmarkdown_1.10        roxygen2_6.1.0       
+[49] rstudioapi_0.7.0-9001 R6_2.2.2              igraph_1.2.1         
+[52] compiler_3.5.1       
 \end{verbatim}
 
 \hypertarget{references}{%

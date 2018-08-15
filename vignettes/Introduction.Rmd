@@ -1,7 +1,6 @@
 ---
-title: "An Introduction to **PGRdup** package"
-author: J. Aravind^1^, J. Radhamani^1^, Kalyani Srinivasan^1^, B. Ananda Subhash^2^
-  and R. K. Tyagi^1^
+title: "An Introduction to `PGRdup` Package"
+author: "Aravind, J.^1^, Radhamani, J.^1^, Kalyani Srinivasan^1^, Ananda Subhash, B.^2^, and Tyagi, R. K.^1^"
 date: '`r Sys.Date()`'
 output:
   pdf_document:
@@ -11,7 +10,7 @@ header-includes:
 - \usepackage{fancyhdr}
 - \pagestyle{fancy}
 - \fancyhead[LE,RO]{\slshape \rightmark}
-- \fancyhead[LO,RE]{An Introduction to PGRdup package}
+- \fancyhead[LO,RE]{An Introduction to \texttt{PGRdup} Package}
 - \fancyfoot[C]{\thepage}
 - \usepackage{hyperref}
 - \hypersetup{colorlinks=true}
@@ -25,8 +24,29 @@ vignette: |
   %\usepackage[utf8]{inputenc}
   %\VignetteEngine{knitr::rmarkdown_notangle}
 ---
-1. ICAR-National Bureau of Plant Genetic Resources, New Delhi, India
-2. Centre for Development of Advanced Computing, Thiruvananthapuram, Kerala, India
+
+```{r, echo=FALSE}
+out_type <- knitr::opts_knit$get("rmarkdown.pandoc.to")
+```
+
+```{r, results='asis', echo=FALSE}
+switch(out_type,
+    html = {cat("<p>ICAR-National Bureau of Plant Genetic Resources, New Delhi, India.</p>
+	
+<p>Centre for Development of Advanced Computing, Thiruvananthapuram, Kerala, India.</p>")},
+    latex = cat("\\begin{center}
+1. ICAR-National Bureau of Plant Genetic Resources, New Delhi, India.
+
+2. Centre for Development of Advanced Computing, Thiruvananthapuram, Kerala, India.
+
+\\end{center}" )
+)
+```
+
+\begin{center}
+\vspace{6pt}
+\hrule
+\end{center}
 
 ```{r, echo = FALSE}
 knitr::opts_chunk$set(
@@ -46,7 +66,11 @@ The functions in this package are primarily built using the `R` packages [`data.
 
 \pagebreak
 
-![](imgs/PGRdup.png)
+\begin{center}
+    \includegraphics{`r system.file("extdata", "PGRdup.png", package = "PGRdup")`}
+\end{center}
+
+<img src="https://raw.githubusercontent.com/aravind-j/PGRdup/master/inst/extdata/PGRdup.png" align="center" alt="logo" width="750" height = "85" style = "border: none;">
 
 ```{r, echo=FALSE, warning=FALSE, fig.cap = NULL}
 if (requireNamespace("diagram", quietly = TRUE)) {
@@ -146,7 +170,7 @@ if (requireNamespace("diagram", quietly = TRUE)) {
 **Fig. 1.** PGRdup workflow and associated functions
 
 ## Version History
-The current version of the package is `r getNamespaceVersion("PGRdup")`. The previous versions are as follows.
+The current version of the package is `r as.vector(available.packages()["PGRdup",]["Version"])`. The previous versions are as follows.
 
 **Table 1.** Version history of `PGRdup` `R` package.
 
@@ -166,11 +190,7 @@ VerHistory$Version <- gsub(".tar.gz", "", VerHistory$Version)
 VerHistory <- VerHistory[order(VerHistory$Date), c("Version", "Date")]
 rownames(VerHistory) <- NULL
 } else {
-  VerHistory <- data.frame(Version = c("0.2", "0.2.1", "0.2.2", "0.2.2.1",
-                                           "0.2.3", "0.2.3.1"),
-                           Date = structure(c(16539, 16639, 16865,
-                                              16869, 17198, 17240),
-                                            class = "Date"))
+print("package 'XML' is required to generate this table")
 }
 
 knitr::kable(VerHistory)

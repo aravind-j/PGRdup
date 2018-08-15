@@ -5,13 +5,13 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>An Introduction to <strong>PGRdup</strong> package • PGRdup</title>
+<title>An Introduction to <code>PGRdup</code> Package • PGRdup</title>
 <!-- jquery --><script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/united/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><!-- Font Awesome icons --><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
 <script src="../pkgdown.js"></script><!-- docsearch --><script src="../docsearch.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css">
 <link href="../docsearch.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script><meta property="og:title" content="An Introduction to &lt;strong&gt;PGRdup&lt;/strong&gt; package">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script><meta property="og:title" content="An Introduction to &lt;code&gt;PGRdup&lt;/code&gt; Package">
 <meta property="og:description" content="">
 <meta name="twitter:card" content="summary">
 <!-- mathjax --><script src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!--[if lt IE 9]>
@@ -98,11 +98,11 @@
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1>An Introduction to <strong>PGRdup</strong> package</h1>
-                        <h4 class="author">J. Aravind<sup>1</sup>, J. Radhamani<sup>1</sup>, Kalyani Srinivasan<sup>1</sup>, B. Ananda Subhash<sup>2</sup> and R. K. Tyagi<sup>1</sup>
+      <h1>An Introduction to <code>PGRdup</code> Package</h1>
+                        <h4 class="author">Aravind, J.<sup>1</sup>, Radhamani, J.<sup>1</sup>, Kalyani Srinivasan<sup>1</sup>, Ananda Subhash, B.<sup>2</sup>, and Tyagi, R. K.<sup>1</sup>
 </h4>
             
-            <h4 class="date">2018-07-15</h4>
+            <h4 class="date">2018-08-15</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/aravind-j/PGRdup/blob/master/vignettes/Introduction.Rmd"><code>vignettes/Introduction.Rmd</code></a></small>
       <div class="hidden name"><code>Introduction.Rmd</code></div>
@@ -111,10 +111,14 @@
 
     
     
-<ol style="list-style-type: decimal">
-<li>ICAR-National Bureau of Plant Genetic Resources, New Delhi, India</li>
-<li>Centre for Development of Advanced Computing, Thiruvananthapuram, Kerala, India</li>
-</ol>
+<p>
+ICAR-National Bureau of Plant Genetic Resources, New Delhi, India.
+</p>
+<p>
+Centre for Development of Advanced Computing, Thiruvananthapuram, Kerala, India.
+</p>
+
+
 <div id="introduction" class="section level2">
 <h2 class="hasAnchor">
 <a href="#introduction" class="anchor"></a>Introduction</h2>
@@ -122,14 +126,15 @@
 <p>The goal of this document is to introduce the users to these functions and familiarise them with the workflow intended to fetch probable duplicate sets. This document assumes a basic knowledge of <code>R</code> programming language.</p>
 <p>The functions in this package are primarily built using the <code>R</code> packages <a href="https://CRAN.R-project.org/package=data.table"><code>data.table</code></a>, <a href="https://CRAN.R-project.org/package=igraph"><code>igraph</code></a>, <a href="https://CRAN.R-project.org/package=stringdist"><code>stringdist</code></a> and <a href="https://CRAN.R-project.org/package=stringi"><code>stringi</code></a>.</p>
 
-<p><img src="../../../../../J.%20Aravind/Dropbox/R%20packages/PGRdup/vignettes/imgs/PGRdup.png"></p>
-<p><img src="Introduction_files/figure-html/unnamed-chunk-2-1.png" width="700"></p>
+
+<p><img src="https://raw.githubusercontent.com/aravind-j/PGRdup/master/inst/extdata/PGRdup.png" align="center" alt="logo" width="750" height="85" style="border: none;"></p>
+<p><img src="Introduction_files/figure-html/unnamed-chunk-4-1.png" width="700"></p>
 <p><strong>Fig. 1.</strong> PGRdup workflow and associated functions</p>
 </div>
 <div id="version-history" class="section level2">
 <h2 class="hasAnchor">
 <a href="#version-history" class="anchor"></a>Version History</h2>
-<p>The current version of the package is 0.2.3.4. The previous versions are as follows.</p>
+<p>The current version of the package is 0.2.3.3. The previous versions are as follows.</p>
 <p><strong>Table 1.</strong> Version history of <code>PGRdup</code> <code>R</code> package.</p>
 <table class="table">
 <thead><tr class="header">
@@ -507,7 +512,7 @@ Number of distinct keywords : 3109</code></pre>
 4     RED   11
 5    OVER   10
 6  PURPLE   10</code></pre>
-<p><img src="Introduction_files/figure-html/unnamed-chunk-19-1.png" width="700"></p>
+<p><img src="Introduction_files/figure-html/unnamed-chunk-21-1.png" width="700"></p>
 <p><strong>Fig. 2.</strong> Word cloud of keywords retrieved</p>
 <p>The function will throw an error in case of duplicates or NULL values in the primary key/ID field mentioned.</p>
 <div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb54-1" data-line-number="1">GN &lt;-<span class="st"> </span>GN1000</a>
@@ -1138,7 +1143,7 @@ Total                        2  5(Distinct:5)</code></pre>
 <a class="sourceLine" id="cb137-5" data-line-number="5">         <span class="st">"t3 : chunksize = 500,</span><span class="ch">\n</span><span class="st">     useBytes = T</span><span class="ch">\n</span><span class="st">"</span>,</a>
 <a class="sourceLine" id="cb137-6" data-line-number="6">         <span class="st">"t4 : chunksize = 1000,</span><span class="ch">\n</span><span class="st">     useBytes = F</span><span class="ch">\n</span><span class="st">"</span>),</a>
 <a class="sourceLine" id="cb137-7" data-line-number="7">       <span class="dt">bty =</span> <span class="st">"n"</span>, <span class="dt">cex =</span> <span class="fl">0.6</span>)</a></code></pre></div>
-<p><img src="Introduction_files/figure-html/unnamed-chunk-41-1.png" width="700"></p>
+<p><img src="Introduction_files/figure-html/unnamed-chunk-43-1.png" width="700"></p>
 <p><strong>Fig. 3.</strong> CPU time with different <code>ProbDup</code> arguments estimated using the <code>microbenchmark</code> package.</p>
 </div>
 </div>
@@ -1511,7 +1516,7 @@ Block 3 / 3 |</code></pre>
 <div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb177-1" data-line-number="1"><span class="co"># Plot the summary visualization</span></a>
 <a class="sourceLine" id="cb177-2" data-line-number="2"><span class="kw">library</span>(gridExtra)</a>
 <a class="sourceLine" id="cb177-3" data-line-number="3"><span class="kw">grid.arrange</span>(GNdupcView[[<span class="dv">3</span>]])</a></code></pre></div>
-<p><img src="Introduction_files/figure-html/unnamed-chunk-56-1.png" width="960"></p>
+<p><img src="Introduction_files/figure-html/unnamed-chunk-58-1.png" width="960"></p>
 <p><strong>Fig. 5.</strong> Summary visualization of groundnut probable duplicate sets retrieved according to <code>SourceCountry</code> field.</p>
 <p>The function <code>KWCounts</code> can be used to compute the keyword counts from PGR passport database fields(columns) which are considered for identification of probable duplicates. These keyword counts can give a rough indication of the completeness of the data in such fields (Fig. 3).</p>
 <div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb178-1" data-line-number="1"><span class="co"># Compute the keyword counts for the whole data</span></a>
@@ -1553,7 +1558,7 @@ Block 3 / 3 |</code></pre>
 <a class="sourceLine" id="cb178-37" data-line-number="37"><span class="kw">legend</span>(<span class="st">"topright"</span>, <span class="kw">paste</span>(<span class="st">"No. of records ="</span>,</a>
 <a class="sourceLine" id="cb178-38" data-line-number="38">                   <span class="kw">nrow</span>(GN[<span class="op">!</span>GN<span class="op">$</span>NationalID <span class="op">%in%</span><span class="st"> </span>GND, ])),</a>
 <a class="sourceLine" id="cb178-39" data-line-number="39">       <span class="dt">bty =</span> <span class="st">"n"</span>)</a></code></pre></div>
-<p><img src="Introduction_files/figure-html/unnamed-chunk-57-1.png" width="700"></p>
+<p><img src="Introduction_files/figure-html/unnamed-chunk-59-1.png" width="700"></p>
 <p><strong>Fig. 6.</strong> The keyword counts in the database fields considered for identification of probable duplicates for <strong>A.</strong> the entire <code>GN1000</code> dataset, <strong>B.</strong> the probable duplicate records alone and <strong>C.</strong> the unique records alone.</p>
 </div>
 <div id="citing-pgrdup" class="section level2">
@@ -1564,21 +1569,21 @@ Block 3 / 3 |</code></pre>
 <pre><code>
 To cite the R package 'PGRdup' in publications use:
 
-  Aravind, J., J. Radhamani, Kalyani Srinivasan, B. Ananda
-  Subhash, and R. K. Tyagi (2018).  PGRdup: Discover Probable
+  Aravind, J., Radhamani, J., Kalyani Srinivasan, Ananda Subhash,
+  B., and Tyagi, R. K.  (2018).  PGRdup: Discover Probable
   Duplicates in Plant Genetic Resources Collections. R package
-  version 0.2.3.4, https://cran.r-project.org/package=PGRdup,
-  https://doi.org/10.5281/zenodo.841963.
+  version 0.2.3.4,
+  https://github.com/aravind-j/PGRdup,https://cran.r-project.org/package=PGRdup.
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {PGRdup: Discover Probable Duplicates in Plant Genetic Resources Collections},
-    author = {{Aravind J} and {Radhamani J} and {Kalyani Srinivasan} and {Ananda Subhash B} and {Rishi Kumar Tyagi}},
+    author = {J. Aravind and J. Radhamani and {Kalyani Srinivasan} and B. {Ananda Subhash} and Rishi Kumar Tyagi},
     year = {2018},
     note = {R package version 0.2.3.4},
+    note = {https://github.com/aravind-j/PGRdup,},
     note = {https://cran.r-project.org/package=PGRdup},
-    note = {https://doi.org/10.5281/zenodo.841963},
   }
 
 This free and open-source software implements academic research by
@@ -1608,22 +1613,24 @@ other attached packages:
 [4] RColorBrewer_1.1-2 diagram_1.6.4      shape_1.4.4       
 
 loaded via a namespace (and not attached):
- [1] Rcpp_0.12.16          highr_0.6             pillar_1.2.2         
- [4] compiler_3.5.1        plyr_1.8.4            tools_3.5.1          
- [7] digest_0.6.15         evaluate_0.10.1       memoise_1.1.0        
-[10] tibble_1.4.2          gtable_0.2.0          pkgconfig_2.0.1      
-[13] rlang_0.2.1           igraph_1.2.1          rstudioapi_0.7.0-9000
-[16] microbenchmark_1.4-4  commonmark_1.5        yaml_2.1.19          
-[19] parallel_3.5.1        pkgdown_1.1.0.9000    stringr_1.3.0        
-[22] roxygen2_6.0.1        xml2_1.2.0            knitr_1.20           
-[25] desc_1.2.0            fs_1.2.3              rprojroot_1.3-2      
-[28] grid_3.5.1            data.table_1.11.4     R6_2.2.2             
-[31] XML_3.98-1.11         rmarkdown_1.10        ggplot2_2.2.1        
-[34] magrittr_1.5          backports_1.1.2       scales_0.5.0         
-[37] htmltools_0.3.6       MASS_7.3-50           stringdist_0.9.4.7   
-[40] assertthat_0.2.0      colorspace_1.3-2      labeling_0.3         
-[43] stringi_1.1.7         lazyeval_0.2.1        munsell_0.4.3        
-[46] slam_0.1-43           crayon_1.3.4         </code></pre>
+ [1] stringdist_0.9.5.1    tidyselect_0.2.4      slam_0.1-43          
+ [4] purrr_0.2.5           colorspace_1.3-2      htmltools_0.3.6      
+ [7] yaml_2.2.0            XML_3.98-1.12         rlang_0.2.1          
+[10] pkgdown_1.1.0.9000    pillar_1.3.0          glue_1.3.0           
+[13] bindrcpp_0.2.2        plyr_1.8.4            bindr_0.1.1          
+[16] stringr_1.3.1         munsell_0.5.0         commonmark_1.5       
+[19] gtable_0.2.0          memoise_1.1.0         evaluate_0.11        
+[22] labeling_0.3          knitr_1.20            parallel_3.5.1       
+[25] highr_0.7             Rcpp_0.12.18          scales_0.5.0         
+[28] backports_1.1.2       desc_1.2.0            fs_1.2.5             
+[31] microbenchmark_1.4-4  ggplot2_3.0.0         digest_0.6.15        
+[34] stringi_1.2.4         dplyr_0.7.6           grid_3.5.1           
+[37] rprojroot_1.3-2       tools_3.5.1           magrittr_1.5         
+[40] lazyeval_0.2.1        tibble_1.4.2          crayon_1.3.4         
+[43] pkgconfig_2.0.1       MASS_7.3-50           data.table_1.11.4    
+[46] xml2_1.2.0            assertthat_0.2.0      rmarkdown_1.10       
+[49] roxygen2_6.1.0        rstudioapi_0.7.0-9001 R6_2.2.2             
+[52] igraph_1.2.1          compiler_3.5.1       </code></pre>
 </div>
 <div id="references" class="section level2 unnumbered">
 <h2 class="hasAnchor">
@@ -1652,7 +1659,7 @@ loaded via a namespace (and not attached):
 
 
       <footer><div class="copyright">
-  <p>Developed by J. Aravind, J. Radhamani, Kalyani Srinivasan, B. Ananda Subhash, R. K. Tyagi.</p>
+  <p>Developed by J. Aravind, J. Radhamani,  Kalyani Srinivasan, B. Ananda Subhash, Rishi Kumar Tyagi.</p>
 </div>
 
 <div class="pkgdown">

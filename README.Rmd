@@ -23,7 +23,7 @@ devtools::load_all(".")
 ###### Version : [`r getNamespaceVersion("PGRdup")`](https://aravind-j.github.io/PGRdup/articles/Introduction.html#version-history); Copyright (C) 2014-2017: [ICAR-NBPGR](http://www.nbpgr.ernet.in/); License: [GPL-2|GPL-3](https://www.r-project.org/Licenses/)
 
 
-##### *J. Aravind^1^, J. Radhamani^1^, Kalyani Srinivasan^1^, B. Ananda Subhash^2^ and R. K. Tyagi^1^*
+##### *Aravind, J.^1^, Radhamani, J.^1^, Kalyani Srinivasan^1^, Ananda Subhash, B.^2^, and Tyagi, R. K.^1^*
 
 1. ICAR-National Bureau of Plant Genetic Resources, New Delhi, India
 2. Centre for Development of Advanced Computing, Thiruvananthapuram, Kerala, India
@@ -141,11 +141,13 @@ Use these helper functions if needed. `ValidatePrimKey` can be used to check whe
  * The `ProbDup` function can be memory hungry with large passport databases. In such cases, ensure that the system has sufficient memory for smooth functioning (See `?ProbDup`).
  
 ## Detailed tutorial
-For a detailed tutorial on how to used this package type:
+For a detailed tutorial (vignette) on how to used this package type:
 
 ```{r, eval=FALSE}
 browseVignettes(package = 'PGRdup')
 ```
+
+The vignette for the latest version is also available [online](https://aravind-j.github.io/PGRdup/articles/Introduction.html).
 
 ## What's new
 To know whats new in this version type:
@@ -160,7 +162,7 @@ news(package='PGRdup')
 
 [Github page](https://github.com/aravind-j/PGRdup)
 
-[Github website](https://aravind-j.github.io/PGRdup/)
+[Documentation website](https://aravind-j.github.io/PGRdup/)
 
 [Zenodo DOI](https://doi.org/10.5281/zenodo.841963)
 

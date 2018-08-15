@@ -20,3 +20,4 @@
 ^vignettes/Introduction\.aux$
 ^vignettes/Introduction\.out$
 ^PGRdup\.pdf$
+^inst/extdata/PGRdup v2\.png$

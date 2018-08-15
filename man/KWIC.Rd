@@ -71,11 +71,11 @@ GNKWIC <- KWIC(GN, GNfields)
 }
 }
 \references{
-KnÃ¼pffer, H. 1988. "The European Barley Database of the ECP/GR:
+Knüpffer, H. 1988. "The European Barley Database of the ECP/GR:
   An Introduction." \emph{Die Kulturpflanze} 36 (1): 135-62.
   doi:\url{https://doi.org/10.1007/BF01986957}.
 
-  KnÃ¼pffer, H., L. Frese, and M. W. M. Jongen. 1997. "Using Central Crop
+  Knüpffer, H., L. Frese, and M. W. M. Jongen. 1997. "Using Central Crop
   Databases: Searching for Duplicates and Gaps." In \emph{Central Crop
   Databases: Tools for Plant Genetic Resources Management. Report of a
   Workshop, Budapest, Hungary, 13-16 October 1996}, edited by E. Lipman, M.

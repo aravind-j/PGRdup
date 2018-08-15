@@ -2,35 +2,36 @@ Package: PGRdup
 Title: Discover Probable Duplicates in Plant Genetic Resources Collections
 Version: 0.2.3.4
 Authors@R: c(
-    person(c("J.", "Aravind"),
-    email = "j.aravind@icar.gov.in",
-    role = c("aut", "cre"),
-    comment = c(ORCID = "0000-0002-4791-442X")),
-    person(c("J.", "Radhamani"),
-    email = "jalli.radhamani@icar.gov.in",
-    role = "aut"),
-    person(c("Kalyani", "Srinivasan"),
-    email = "kalyani.srinivasan@icar.gov.in",
-    role = "aut"),
-    person(c("B.", "Ananda", "Subhash"),
-    email = "anandasubhash@gmail.com",
-    role = "aut"),
-    person(c("R.", "K.", "Tyagi"),
-    email = "rishi.tyagi@icar.gov.in",
-    role = "aut"),
+    person(given = "J.", family = "Aravind",
+           email = "j.aravind@icar.gov.in",
+           role = c("aut", "cre"),
+		       comment = c(ORCID = "0000-0002-4791-442X")),
+    person(given = "J.", family = "Radhamani",
+           email = "jalli.radhamani@icar.gov.in",
+		       role = "aut"),
+    person(family = c("Kalyani Srinivasan"),
+           email = "kalyani.srinivasan@icar.gov.in",
+		       role = "aut"),
+    person(given = "B.", family = c("Ananda Subhash"),
+           email = "anandasubhash@gmail.com",
+		       role = "aut"),
+    person(given = c("Rishi", "Kumar"), family = "Tyagi",
+           email = "rishi.tyagi@icar.gov.in",
+		       role = "aut"),
     person("ICAR-NBGPR",
-    role = "cph"),
-    person(c("Maurice", "Aubrey"),
-    email = "maurice@hevanet.com",
-    comment = "Double Metaphone",
-    role = "ctb"),
-    person(c("Kevin", "Atkinson"),
-    email = "kevina@users.sourceforge.net",
-    comment = "Double Metaphone",
-    role = "ctb"),
-    person(c("Lawrence", "Philips"),
-    comment = "Double Metaphone",
-    role = "ctb"))
+           role = "cph",
+		       comment = c(url = "www.nbpgr.ernet.in")),
+    person(given = "Maurice", family = "Aubrey",
+           email = "maurice@hevanet.com",
+           comment = "Double Metaphone",
+           role = "ctb"),
+    person(given = "Kevin", family = "Atkinson",
+           email = "kevina@users.sourceforge.net",
+           comment = "Double Metaphone",
+           role = "ctb"),
+    person(given = "Lawrence", family = "Philips",
+           comment = "Double Metaphone",
+           role = "ctb"))
 Description: Provides functions to aid the identification of probable/possible
     duplicates in Plant Genetic Resources (PGR) collections using
     'passport databases' comprising of information records of each constituent
@@ -64,7 +65,7 @@ License: GPL-2 | GPL-3
 Encoding: latin1
 LazyData: true
 VignetteBuilder: knitr
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.0
 URL: https://cran.r-project.org/package=PGRdup,
     https://github.com/aravind-j/PGRdup,
     https://doi.org/10.5281/zenodo.841963,

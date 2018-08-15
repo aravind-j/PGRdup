@@ -3,7 +3,7 @@
 
 ###### Version : [0.2.3.4](https://aravind-j.github.io/PGRdup/articles/Introduction.html#version-history); Copyright (C) 2014-2017: [ICAR-NBPGR](http://www.nbpgr.ernet.in/); License: [GPL-2|GPL-3](https://www.r-project.org/Licenses/)
 
-##### *J. Aravind<sup>1</sup>, J. Radhamani<sup>1</sup>, Kalyani Srinivasan<sup>1</sup>, B. Ananda Subhash<sup>2</sup> and R. K. Tyagi<sup>1</sup>*
+##### *Aravind, J.<sup>1</sup>, Radhamani, J.<sup>1</sup>, Kalyani Srinivasan<sup>1</sup>, Ananda Subhash, B.<sup>2</sup>, and Tyagi, R. K.<sup>1</sup>*
 
 1.  ICAR-National Bureau of Plant Genetic Resources, New Delhi, India
 2.  Centre for Development of Advanced Computing, Thiruvananthapuram,
@@ -24,7 +24,7 @@ downloads](https://cranlogs.r-pkg.org/badges/grand-total/PGRdup?color=green)](ht
 [![Project Status:
 Inactive](http://www.repostatus.org/badges/latest/inactive.svg)](http://www.repostatus.org/#inactive)
 [![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
-[![Last-changedate](https://img.shields.io/badge/last%20change-2018--07--15-yellowgreen.svg)](/commits/master)
+[![Last-changedate](https://img.shields.io/badge/last%20change-2018--08--15-yellowgreen.svg)](/commits/master)
 [![Rdoc](http://www.rdocumentation.org/badges/version/PGRdup)](http://www.rdocumentation.org/packages/PGRdup)
 [![Zenodo
 DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.841963.svg)](https://doi.org/10.5281/zenodo.841963)
@@ -178,11 +178,14 @@ environment.
 
 ## Detailed tutorial
 
-For a detailed tutorial on how to used this package type:
+For a detailed tutorial (vignette) on how to used this package type:
 
 ``` r
 browseVignettes(package = 'PGRdup')
 ```
+
+The vignette for the latest version is also available
+[online](https://aravind-j.github.io/PGRdup/articles/Introduction.html).
 
 ## What’s new
 
@@ -198,7 +201,7 @@ news(package='PGRdup')
 
 [Github page](https://github.com/aravind-j/PGRdup)
 
-[Github website](https://aravind-j.github.io/PGRdup/)
+[Documentation website](https://aravind-j.github.io/PGRdup/)
 
 [Zenodo DOI](https://doi.org/10.5281/zenodo.841963)
 
@@ -214,21 +217,21 @@ citation("PGRdup")
 
 To cite the R package 'PGRdup' in publications use:
 
-  Aravind, J., J. Radhamani, Kalyani Srinivasan, B. Ananda
-  Subhash, and R. K. Tyagi (2018).  PGRdup: Discover Probable
+  Aravind, J., Radhamani, J., Kalyani Srinivasan, Ananda Subhash,
+  B., and Tyagi, R. K.  (2018).  PGRdup: Discover Probable
   Duplicates in Plant Genetic Resources Collections. R package
-  version 0.2.3.4, https://cran.r-project.org/package=PGRdup,
-  https://doi.org/10.5281/zenodo.841963.
+  version 0.2.3.4,
+  https://github.com/aravind-j/PGRdup,https://cran.r-project.org/package=PGRdup.
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {PGRdup: Discover Probable Duplicates in Plant Genetic Resources Collections},
-    author = {{Aravind J} and {Radhamani J} and {Kalyani Srinivasan} and {Ananda Subhash B} and {Rishi Kumar Tyagi}},
+    author = {J. Aravind and J. Radhamani and {Kalyani Srinivasan} and B. {Ananda Subhash} and Rishi Kumar Tyagi},
     year = {2018},
     note = {R package version 0.2.3.4},
+    note = {https://github.com/aravind-j/PGRdup,},
     note = {https://cran.r-project.org/package=PGRdup},
-    note = {https://doi.org/10.5281/zenodo.841963},
   }
 
 This free and open-source software implements academic research by
