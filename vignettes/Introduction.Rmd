@@ -8,6 +8,7 @@ output:
     fig_caption: false
 header-includes:
 - \usepackage{fancyhdr}
+- \usepackage{wrapfig}
 - \pagestyle{fancy}
 - \fancyhead[LE,RO]{\slshape \rightmark}
 - \fancyhead[LO,RE]{An Introduction to \texttt{PGRdup} Package}
@@ -57,13 +58,24 @@ knitr::opts_chunk$set(
 
 \tableofcontents
 
-## Introduction
+
+\begin{wrapfigure}{r}{0.35\textwidth}
+  \vspace{1cm}
+  \begin{center}
+    \includegraphics[width=0.33\textwidth]{`r system.file("extdata", "PGRdup v2.png", package = "PGRdup")`}
+  \end{center}
+  \vspace{-1.5cm}
+\end{wrapfigure}\leavevmode
+
+## Introduction <img src="https://raw.githubusercontent.com/aravind-j/PGRdup/master/inst/extdata/PGRdup v2.png" align="left" alt="logo" width="173" height = "200" style = "padding: 10px; border: none; float: right;">
+
 **PGRdup** is an `R` package to facilitate the search for probable/possible duplicate accessions in Plant Genetic Resources (PGR) collections using passport databases. Primarily this package implements a workflow (Fig.&nbsp;1) designed to fetch groups or sets of germplasm accessions with similar passport data particularly in fields associated with accession names within or across PGR passport databases. It offers a suite of functions for data pre-processing, creation of a searchable Key Word in Context (KWIC) index of keywords associated with accession records and the identification of probable duplicate sets by fuzzy, phonetic and semantic matching of keywords. It also has functions to enable the user to review, modify and validate the probable duplicate sets retrieved.
 
 The goal of this document is to introduce the users to these functions and familiarise them with the workflow intended to fetch probable duplicate sets. This document assumes a basic knowledge of `R` programming language.
 
 The functions in this package are primarily built using the `R` packages [`data.table`](https://CRAN.R-project.org/package=data.table), [`igraph`](https://CRAN.R-project.org/package=igraph), [`stringdist`](https://CRAN.R-project.org/package=stringdist) and [`stringi`](https://CRAN.R-project.org/package=stringi).
 
+\clearpage
 \pagebreak
 
 \begin{center}

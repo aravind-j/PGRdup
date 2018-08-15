@@ -128,6 +128,7 @@ B.\textsuperscript{2}, and Tyagi, R. K.\textsuperscript{1}}
     \date{2018-08-15}
 
 \usepackage{fancyhdr}
+\usepackage{wrapfig}
 \pagestyle{fancy}
 \fancyhead[LE,RO]{\slshape \rightmark}
 \fancyhead[LO,RE]{An Introduction to \texttt{PGRdup} Package}
@@ -154,8 +155,16 @@ B.\textsuperscript{2}, and Tyagi, R. K.\textsuperscript{1}}
 
 \tableofcontents
 
+\begin{wrapfigure}{r}{0.35\textwidth}
+  \vspace{1cm}
+  \begin{center}
+    \includegraphics[width=0.33\textwidth]{C:/Users/J. Aravind/Documents/R/win-library/3.5/PGRdup/extdata/PGRdup v2.png}
+  \end{center}
+  \vspace{-1.5cm}
+\end{wrapfigure}\leavevmode
+
 \hypertarget{introduction}{%
-\subsection{Introduction}\label{introduction}}
+\subsection{Introduction }\label{introduction}}
 
 \textbf{PGRdup} is an \texttt{R} package to facilitate the search for
 probable/possible duplicate accessions in Plant Genetic Resources (PGR)
@@ -182,6 +191,7 @@ packages
 \href{https://CRAN.R-project.org/package=stringdist}{\texttt{stringdist}}
 and \href{https://CRAN.R-project.org/package=stringi}{\texttt{stringi}}.
 
+\clearpage
 \pagebreak
 
 \begin{center}
@@ -2622,24 +2632,22 @@ other attached packages:
 [4] RColorBrewer_1.1-2 diagram_1.6.4      shape_1.4.4       
 
 loaded via a namespace (and not attached):
- [1] stringdist_0.9.5.1    tidyselect_0.2.4      slam_0.1-43          
- [4] purrr_0.2.5           colorspace_1.3-2      htmltools_0.3.6      
- [7] yaml_2.2.0            XML_3.98-1.12         rlang_0.2.1          
-[10] pillar_1.3.0          glue_1.3.0            withr_2.1.2          
-[13] bindrcpp_0.2.2        bindr_0.1.1           plyr_1.8.4           
-[16] stringr_1.3.1         munsell_0.5.0         commonmark_1.5       
-[19] gtable_0.2.0          devtools_1.13.6       memoise_1.1.0        
-[22] evaluate_0.11         labeling_0.3          knitr_1.20           
-[25] parallel_3.5.1        highr_0.7             Rcpp_0.12.18         
-[28] scales_0.5.0          backports_1.1.2       desc_1.2.0           
-[31] microbenchmark_1.4-4  ggplot2_3.0.0         digest_0.6.15        
-[34] stringi_1.2.4         dplyr_0.7.6           grid_3.5.1           
-[37] rprojroot_1.3-2       tools_3.5.1           magrittr_1.5         
-[40] lazyeval_0.2.1        tibble_1.4.2          crayon_1.3.4         
-[43] pkgconfig_2.0.1       data.table_1.11.4     xml2_1.2.0           
-[46] assertthat_0.2.0      rmarkdown_1.10        roxygen2_6.1.0       
-[49] rstudioapi_0.7.0-9001 R6_2.2.2              igraph_1.2.1         
-[52] compiler_3.5.1       
+ [1] stringdist_0.9.5.1   tinytex_0.6          tidyselect_0.2.4    
+ [4] xfun_0.3             slam_0.1-43          purrr_0.2.5         
+ [7] colorspace_1.3-2     htmltools_0.3.6      yaml_2.2.0          
+[10] XML_3.98-1.12        rlang_0.2.1          pillar_1.3.0        
+[13] glue_1.3.0           bindrcpp_0.2.2       plyr_1.8.4          
+[16] bindr_0.1.1          stringr_1.3.1        munsell_0.5.0       
+[19] gtable_0.2.0         evaluate_0.11        labeling_0.3        
+[22] knitr_1.20           parallel_3.5.1       highr_0.7           
+[25] Rcpp_0.12.18         scales_0.5.0         backports_1.1.2     
+[28] microbenchmark_1.4-4 ggplot2_3.0.0        digest_0.6.15       
+[31] stringi_1.2.4        dplyr_0.7.6          grid_3.5.1          
+[34] rprojroot_1.3-2      tools_3.5.1          magrittr_1.5        
+[37] lazyeval_0.2.1       tibble_1.4.2         crayon_1.3.4        
+[40] pkgconfig_2.0.1      data.table_1.11.4    assertthat_0.2.0    
+[43] rmarkdown_1.10       R6_2.2.2             igraph_1.2.1        
+[46] compiler_3.5.1      
 \end{verbatim}
 
 \hypertarget{references}{%

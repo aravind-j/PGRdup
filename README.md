@@ -32,6 +32,8 @@ DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.841963.svg)](https://doi.org/10
 
 -----
 
+## Introduction <img src="https://raw.githubusercontent.com/aravind-j/PGRdup/master/inst/extdata/PGRdup v2.png" align="right" alt="logo" width="173" height = "200" style = "padding: 10px; border: none; float: right;">
+
 The `R` package `PGRdup` was developed as a tool to aid genebank
 managers in the identification of probable duplicate accessions from
 plant genetic resources (PGR) passport databases.
