@@ -25,9 +25,23 @@ vignette: |
   %\usepackage[utf8]{inputenc}
   %\VignetteEngine{knitr::rmarkdown_notangle}
 ---
+```{r, include=FALSE, eval = FALSE}
+options(tinytex.verbose = TRUE)
+```
 
 ```{r, echo=FALSE}
 out_type <- knitr::opts_knit$get("rmarkdown.pandoc.to")
+
+
+r = getOption("repos")
+r["CRAN"] = "https://cran.rstudio.com/"
+#r["CRAN"] = "https://cloud.r-project.org/"
+#r["CRAN"] = "https://ftp.iitm.ac.in/cran/"
+options(repos = r)
+
+# Workaround for missing pandoc in CRAN OSX build machines
+out_type <- ifelse(out_type == "", "latex", out_type)
+# out_type <- "latex"
 ```
 
 ```{r, results='asis', echo=FALSE}
@@ -44,6 +58,7 @@ switch(out_type,
 )
 ```
 
+
 \begin{center}
 \vspace{6pt}
 \hrule
@@ -58,16 +73,15 @@ knitr::opts_chunk$set(
 
 \tableofcontents
 
-
 \begin{wrapfigure}{r}{0.35\textwidth}
   \vspace{1cm}
   \begin{center}
-    \includegraphics[width=0.33\textwidth]{`r system.file("extdata", "PGRdup v2.png", package = "PGRdup")`}
+    \includegraphics[width=0.33\textwidth]{`r system.file("extdata", "PGRdup_v2.png", package = "PGRdup")`}
   \end{center}
   \vspace{-1.5cm}
 \end{wrapfigure}\leavevmode
 
-## Introduction <img src="https://raw.githubusercontent.com/aravind-j/PGRdup/master/inst/extdata/PGRdup v2.png" align="left" alt="logo" width="173" height = "200" style = "padding: 10px; border: none; float: right;">
+## Introduction <img src="https://raw.githubusercontent.com/aravind-j/PGRdup/master/inst/extdata/PGRdup_v2.png" align="left" alt="logo" width="173" height = "200" style = "padding: 10px; border: none; float: right;">
 
 **PGRdup** is an `R` package to facilitate the search for probable/possible duplicate accessions in Plant Genetic Resources (PGR) collections using passport databases. Primarily this package implements a workflow (Fig.&nbsp;1) designed to fetch groups or sets of germplasm accessions with similar passport data particularly in fields associated with accession names within or across PGR passport databases. It offers a suite of functions for data pre-processing, creation of a searchable Key Word in Context (KWIC) index of keywords associated with accession records and the identification of probable duplicate sets by fuzzy, phonetic and semantic matching of keywords. It also has functions to enable the user to review, modify and validate the probable duplicate sets retrieved.
 
@@ -83,6 +97,7 @@ The functions in this package are primarily built using the `R` packages [`data.
 \end{center}
 
 <img src="https://raw.githubusercontent.com/aravind-j/PGRdup/master/inst/extdata/PGRdup.png" align="center" alt="logo" width="750" height = "85" style = "border: none;">
+
 
 ```{r, echo=FALSE, warning=FALSE, fig.cap = NULL}
 if (requireNamespace("diagram", quietly = TRUE)) {
@@ -182,16 +197,26 @@ if (requireNamespace("diagram", quietly = TRUE)) {
 **Fig. 1.** PGRdup workflow and associated functions
 
 ## Version History
-The current version of the package is `r as.vector(available.packages()["PGRdup",]["Version"])`. The previous versions are as follows.
+```{r, results='asis', echo=FALSE}
+# Fetch release version
+rver <- ifelse(test = gsub("(.\\.)(\\d+)(\\..)", "", getNamespaceVersion("PGRdup")) == "",
+               yes = getNamespaceVersion("PGRdup"),
+               no = as.vector(available.packages()["PGRdup",]["Version"]))
+```
+The current version of the package is `r rver`. The previous versions are as follows.
 
 **Table 1.** Version history of `PGRdup` `R` package.
 
 ```{r, echo=FALSE, message=FALSE}
-if (requireNamespace("XML", quietly = TRUE)) {
+if (requireNamespace("RCurl", quietly = TRUE) & requireNamespace("httr", quietly = TRUE) & requireNamespace("XML", quietly = TRUE)) {
 pkg <- "PGRdup"
-link <- paste0("http://cran.r-project.org/src/contrib/Archive/", pkg)
+link <- paste0("https://cran.r-project.org/src/contrib/Archive/", pkg, "/")
+cafile <- system.file("CurlSSL", "cacert.pem", package = "RCurl")
+page <- httr::GET(link, httr::config(cainfo = cafile))
+page <- httr::content(page, as = 'text')
+# page <- RCurl::getURL(link)
 
-VerHistory <- XML::readHTMLTable(link)[[1]][,2:3]
+VerHistory <- XML::readHTMLTable(page)[[1]][,2:3]
 colnames(VerHistory) <- c("Version", "Date")
 VerHistory <- VerHistory[VerHistory$Version != "Parent Directory",]
 VerHistory <- VerHistory[!is.na(VerHistory$Version), ]
@@ -201,17 +226,18 @@ VerHistory$Version <- gsub(".tar.gz", "", VerHistory$Version)
 
 VerHistory <- VerHistory[order(VerHistory$Date), c("Version", "Date")]
 rownames(VerHistory) <- NULL
-} else {
-print("package 'XML' is required to generate this table")
-}
 
 knitr::kable(VerHistory)
 
+} else {
+print("Packages 'RCurl', 'httr' and 'XML' are required to generate this table")
+}
 ```
 
 To know detailed history of changes use `news(package='PGRdup')`.
 
 \pagebreak
+
 
 ## Installation
 The package can be installed using the following functions:
@@ -252,6 +278,7 @@ The PGR data downloaded from the [genesys](https://www.genesys-pgr.org/welcome) 
 PGRgenesys <- read.genesys("genesys-accessions-filtered.zip",
                            scrub.names.space = TRUE, readme = TRUE)
 ```
+
 
 ## Data Pre-processing
 Data pre-processing is a critical step which can affect the quality of the probable duplicate sets being retrieved. It involves data standardization as well as data cleaning which can be achieved using the functions `DataClean`, `MergeKW`, `MergePrefix` and `MergeSuffix`.
@@ -410,6 +437,7 @@ GN[GNfields] <- lapply(GN[GNfields],
 head(GN[GNfields])
 ```
 
+
 ## Generation of KWIC Index
 The function `KWIC` generates a Key Word in Context index [@knupffer1988european; @kfj97] from the data frame of a PGR passport database based on the fields(columns) specified in the argument `fields` along with the keyword frequencies and gives the output as a list of class `KWIC`. The first element of the vector specified in `fields` is considered as the primary key or identifier which uniquely identifies all rows in the data frame.
 
@@ -509,6 +537,7 @@ GN <- GN[-c(1001:1005), ]
 # Validate again
 ValidatePrimKey(x = GN, prim.key = "NationalID")
 ```
+
 
 ## Retrieval of Probable Duplicate Sets
 Once KWIC indexes are generated, probable duplicates of germplasm accessions can be identified by fuzzy, phonetic and semantic matching of the associated keywords using the function `ProbDup`. The sets are retrieved as a list of data frames of class `ProbDup`.
@@ -1018,7 +1047,6 @@ GN2 <- GN1000
 GNwithdup <-  AddProbDup(pdup = GNdup, db = GN2, addto = "I")
 ```
 
-
 In case more than one KWIC index was used to generate the object of class `ProbDup`, the argument `addto` can be used to specify to which database the data fields are to be added. The default `"I"` indicates the database from which the first KWIC index was created and `"II"` indicates the database from which the second index was created.
 
 The function `SplitProbDup` can be used to split an object of class `ProbDup` into two on the basis of set counts. This is useful for reviewing separately the sets with larger set counts.
@@ -1213,11 +1241,11 @@ legend("topright", paste("No. of records =",
 
 **Fig. 6.** The keyword counts in the database fields considered for identification of probable duplicates for **A.**&nbsp;the entire `GN1000` dataset, **B.**&nbsp;the probable duplicate records alone and **C.**&nbsp;the unique records alone.
 
+
 ## Citing `PGRdup`
 ```{r, eval = FALSE}
 citation("PGRdup")
 ```
-
 
 ```{r, echo = FALSE, collapse = TRUE}
 detach("package:PGRdup", unload=TRUE)

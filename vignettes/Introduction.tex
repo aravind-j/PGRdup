@@ -107,7 +107,7 @@
 \usepackage{titling}
 
 % Create subtitle command for use in maketitle
-\newcommand{\subtitle}[1]{
+\providecommand{\subtitle}[1]{
   \posttitle{
     \begin{center}\large#1\end{center}
     }
@@ -125,7 +125,7 @@ B.\textsuperscript{2}, and Tyagi, R. K.\textsuperscript{1}}
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2018-08-15}
+    \date{2019-09-19}
 
 \usepackage{fancyhdr}
 \usepackage{wrapfig}
@@ -141,6 +141,10 @@ B.\textsuperscript{2}, and Tyagi, R. K.\textsuperscript{1}}
 \begin{document}
 \maketitle
 
+{
+\setcounter{tocdepth}{3}
+\tableofcontents
+}
 \begin{center}
 1. ICAR-National Bureau of Plant Genetic Resources, New Delhi, India.
 
@@ -158,7 +162,7 @@ B.\textsuperscript{2}, and Tyagi, R. K.\textsuperscript{1}}
 \begin{wrapfigure}{r}{0.35\textwidth}
   \vspace{1cm}
   \begin{center}
-    \includegraphics[width=0.33\textwidth]{C:/Users/J. Aravind/Documents/R/win-library/3.5/PGRdup/extdata/PGRdup v2.png}
+    \includegraphics[width=0.33\textwidth]{C:/Users/J. Aravind/Documents/R/win-library/3.7/PGRdup/extdata/PGRdup_v2.png}
   \end{center}
   \vspace{-1.5cm}
 \end{wrapfigure}\leavevmode
@@ -195,10 +199,10 @@ and \href{https://CRAN.R-project.org/package=stringi}{\texttt{stringi}}.
 \pagebreak
 
 \begin{center}
-    \includegraphics{C:/Users/J. Aravind/Documents/R/win-library/3.5/PGRdup/extdata/PGRdup.png}
+    \includegraphics{C:/Users/J. Aravind/Documents/R/win-library/3.7/PGRdup/extdata/PGRdup.png}
 \end{center}
 
-\includegraphics{Introduction_files/figure-latex/unnamed-chunk-4-1.pdf}
+\includegraphics{Introduction_files/figure-latex/unnamed-chunk-5-1.pdf}
 
 \textbf{Fig. 1.} PGRdup workflow and associated functions
 
@@ -812,7 +816,7 @@ Number of distinct keywords : 3109
 6  PURPLE   10
 \end{verbatim}
 
-\includegraphics{Introduction_files/figure-latex/unnamed-chunk-21-1.pdf}
+\includegraphics{Introduction_files/figure-latex/unnamed-chunk-23-1.pdf}
 
 \textbf{Fig. 2.} Word cloud of keywords retrieved
 
@@ -1875,7 +1879,7 @@ package (Fig.~3).
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction_files/figure-latex/unnamed-chunk-43-1.pdf}
+\includegraphics{Introduction_files/figure-latex/unnamed-chunk-45-1.pdf}
 
 \textbf{Fig. 3.} CPU time with different \texttt{ProbDup} arguments
 estimated using the \texttt{microbenchmark} package.
@@ -2505,7 +2509,7 @@ Block 3 / 3 |
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction_files/figure-latex/unnamed-chunk-58-1.pdf}
+\includegraphics{Introduction_files/figure-latex/unnamed-chunk-60-1.pdf}
 
 \textbf{Fig. 5.} Summary visualization of groundnut probable duplicate
 sets retrieved according to \texttt{SourceCountry} field.
@@ -2560,7 +2564,7 @@ rough indication of the completeness of the data in such fields
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction_files/figure-latex/unnamed-chunk-59-1.pdf}
+\includegraphics{Introduction_files/figure-latex/unnamed-chunk-61-1.pdf}
 
 \textbf{Fig. 6.} The keyword counts in the database fields considered
 for identification of probable duplicates for \textbf{A.}~the entire
@@ -2582,7 +2586,7 @@ alone and \textbf{C.}~the unique records alone.
 To cite the R package 'PGRdup' in publications use:
 
   Aravind, J., Radhamani, J., Kalyani Srinivasan, Ananda Subhash,
-  B., and Tyagi, R. K.  (2018).  PGRdup: Discover Probable
+  B., and Tyagi, R. K.  (2019).  PGRdup: Discover Probable
   Duplicates in Plant Genetic Resources Collections. R package
   version 0.2.3.4,
   https://github.com/aravind-j/PGRdup,https://cran.r-project.org/package=PGRdup.
@@ -2592,7 +2596,7 @@ A BibTeX entry for LaTeX users is
   @Manual{,
     title = {PGRdup: Discover Probable Duplicates in Plant Genetic Resources Collections},
     author = {J. Aravind and J. Radhamani and {Kalyani Srinivasan} and B. {Ananda Subhash} and Rishi Kumar Tyagi},
-    year = {2018},
+    year = {2019},
     note = {R package version 0.2.3.4},
     note = {https://github.com/aravind-j/PGRdup,},
     note = {https://cran.r-project.org/package=PGRdup},
@@ -2613,9 +2617,9 @@ project by citing the package.
 \end{Shaded}
 
 \begin{verbatim}
-R version 3.5.1 (2018-07-02)
+R Under development (unstable) (2019-09-07 r77160)
 Platform: x86_64-w64-mingw32/x64 (64-bit)
-Running under: Windows >= 8 x64 (build 9200)
+Running under: Windows 10 x64 (build 17763)
 
 Matrix products: default
 
@@ -2628,26 +2632,33 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] PGRdup_0.2.3.4     gridExtra_2.3      wordcloud_2.5     
+[1] PGRdup_0.2.3.4     gridExtra_2.3      wordcloud_2.6     
 [4] RColorBrewer_1.1-2 diagram_1.6.4      shape_1.4.4       
 
 loaded via a namespace (and not attached):
- [1] stringdist_0.9.5.1   tinytex_0.6          tidyselect_0.2.4    
- [4] xfun_0.3             slam_0.1-43          purrr_0.2.5         
- [7] colorspace_1.3-2     htmltools_0.3.6      yaml_2.2.0          
-[10] XML_3.98-1.12        rlang_0.2.1          pillar_1.3.0        
-[13] glue_1.3.0           bindrcpp_0.2.2       plyr_1.8.4          
-[16] bindr_0.1.1          stringr_1.3.1        munsell_0.5.0       
-[19] gtable_0.2.0         evaluate_0.11        labeling_0.3        
-[22] knitr_1.20           parallel_3.5.1       highr_0.7           
-[25] Rcpp_0.12.18         scales_0.5.0         backports_1.1.2     
-[28] microbenchmark_1.4-4 ggplot2_3.0.0        digest_0.6.15       
-[31] stringi_1.2.4        dplyr_0.7.6          grid_3.5.1          
-[34] rprojroot_1.3-2      tools_3.5.1          magrittr_1.5        
-[37] lazyeval_0.2.1       tibble_1.4.2         crayon_1.3.4        
-[40] pkgconfig_2.0.1      data.table_1.11.4    assertthat_0.2.0    
-[43] rmarkdown_1.10       R6_2.2.2             igraph_1.2.1        
-[46] compiler_3.5.1      
+ [1] Rcpp_1.0.2           stringdist_0.9.5.2   prettyunits_1.0.2   
+ [4] ps_1.3.0             assertthat_0.2.1     rprojroot_1.3-2     
+ [7] digest_0.6.20        packrat_0.5.0        R6_2.4.0            
+[10] backports_1.1.4      evaluate_0.14        httr_1.4.1          
+[13] ggplot2_3.2.1        highr_0.8            pillar_1.4.2        
+[16] rlang_0.4.0          lazyeval_0.2.2       curl_4.0            
+[19] rstudioapi_0.10      data.table_1.12.2    callr_3.3.1         
+[22] DT_0.8               rmarkdown_1.15       labeling_0.3        
+[25] desc_1.2.0           devtools_2.2.0       stringr_1.4.0       
+[28] htmlwidgets_1.3      igraph_1.2.4.1       RCurl_1.95-4.12     
+[31] munsell_0.5.0        compiler_3.7.0       xfun_0.9            
+[34] microbenchmark_1.4-6 pkgconfig_2.0.2      pkgbuild_1.0.5      
+[37] htmltools_0.3.6      tidyselect_0.2.5     tibble_2.1.3        
+[40] roxygen2_6.1.1       XML_3.98-1.20        crayon_1.3.4        
+[43] dplyr_0.8.3          withr_2.1.2          bitops_1.0-6        
+[46] commonmark_1.7       grid_3.7.0           gtable_0.3.0        
+[49] magrittr_1.5         scales_1.0.0         cli_1.1.0           
+[52] stringi_1.4.3        fs_1.3.1             remotes_2.1.0       
+[55] testthat_2.2.1       xml2_1.2.2           ellipsis_0.2.0.1    
+[58] tools_3.7.0          glue_1.3.1           purrr_0.3.2         
+[61] processx_3.4.1       pkgload_1.0.2        parallel_3.7.0      
+[64] yaml_2.2.0           colorspace_1.4-1     sessioninfo_1.1.1   
+[67] memoise_1.1.0        knitr_1.24           usethis_1.5.1       
 \end{verbatim}
 
 \hypertarget{references}{%
@@ -2657,7 +2668,7 @@ loaded via a namespace (and not attached):
 \hypertarget{refs}{}
 \leavevmode\hypertarget{ref-knupffer1988european}{}%
 Knüpffer, H. 1988. ``The European Barley Database of the ECP/GR: An
-Introduction.'' \emph{Die Kulturpflanze} 36 (1):135--62.
+Introduction.'' \emph{Die Kulturpflanze} 36 (1): 135--62.
 \url{https://doi.org/https://doi.org/10.1007/BF01986957}.
 
 \leavevmode\hypertarget{ref-kfj97}{}%
@@ -2672,12 +2683,12 @@ Resources Institute and Centre for Genetic Resources.
 
 \leavevmode\hypertarget{ref-p00}{}%
 Philips, Lawrence. 2000. ``The Double Metaphone Search Algorithm.''
-\emph{C/C++ Users Journal} 18 (6):38--43.
+\emph{C/C++ Users Journal} 18 (6): 38--43.
 \url{http://dl.acm.org/citation.cfm?id=349124.349132}.
 
 \leavevmode\hypertarget{ref-van2014stringdist}{}%
 van der Loo, M. P. J. 2014. ``The Stringdist Package for Approximate
-String Matching.'' \emph{R Journal} 6 (1):111--22.
+String Matching.'' \emph{R Journal} 6 (1): 111--22.
 \url{https://journal.r-project.org/archive/2014/RJ-2014-011/index.html}.
 
 
