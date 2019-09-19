@@ -259,18 +259,21 @@ void DoubleMetaphone(char *str, char **codes,char **codes1)
     if (str == NULL)
 			str = empty_string;
     original->length  = strlen(str);
+    //original->size  = sizeof(str);
     /* preallocate a bit more for potential growth */
     original->bufsize = original->length + 7;
 
     META_MALLOC(original->str, original->bufsize, char);
     assert( original->str != NULL );
     
-    strncpy(original->str, str, original->length + 1);
+	  strcpy(original->str, str);
+	//strlcpy(original->str, str, sizeof(original->bufsize))
+	//[Org]strncpy(original->str, str, original->length + 1);
+	//[Test]strncpy(original->str, str, sizeof(original->str) - 1);
+  //memcpy(original->str, str, sizeof(original->str));
     original->free_string_on_destroy = 1; 
     
-    
-    
-    
+
     /* Pad original so we can index beyond end */
     MetaphAdd(original, "     ");
 
@@ -289,6 +292,7 @@ void DoubleMetaphone(char *str, char **codes,char **codes1)
     assert( primary->str != NULL );
     
 	strcpy(primary->str,"");
+	//[qrt]strncpy(primary->str, "", primary->length + 1);
     //strncpy(primary->str, test_string, primary->length + 1);
     primary->free_string_on_destroy = 1; 
     
@@ -309,6 +313,7 @@ void DoubleMetaphone(char *str, char **codes,char **codes1)
     assert( secondary->str != NULL );
     
 	strcpy(secondary->str,"");
+	//[qrt]strncpy(secondary->str, "", secondary->length + 1);
     //strncpy(secondary->str, test_string, secondary->length + 1);
     secondary->free_string_on_destroy = 1; 
     
@@ -1442,6 +1447,9 @@ void DoubleMetaphone(char *str, char **codes,char **codes1)
 
     strcpy(*codes,primary->str);
     strcpy(*codes1,secondary->str);
+	
+	  //[qrt]strncpy(*codes,primary->str, strlen(*codes) + 1);
+	  //[qrt] strncpy(*codes1,secondary->str, strlen(*codes1) + 1);
 	
     DestroyMetaString(original);
     DestroyMetaString(primary);

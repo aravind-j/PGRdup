@@ -59,13 +59,13 @@ Suggests:
     XML,
     knitr,
     rmarkdown,
-	pander
+	  pander
 Copyright: 2014-2018, ICAR-NBPGR
 License: GPL-2 | GPL-3
 Encoding: latin1
 LazyData: true
 VignetteBuilder: knitr
-RoxygenNote: 6.1.0
+RoxygenNote: 6.1.1
 URL: https://cran.r-project.org/package=PGRdup,
     https://github.com/aravind-j/PGRdup,
     https://doi.org/10.5281/zenodo.841963,

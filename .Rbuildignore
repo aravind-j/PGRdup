@@ -19,5 +19,9 @@
 ^vignettes/Introduction\.tex$
 ^vignettes/Introduction\.aux$
 ^vignettes/Introduction\.out$
+^vignettes/Introduction\.log$
 ^PGRdup\.pdf$
-^inst/extdata/PGRdup v2\.png$
+^vignettes/Introduction\.html$
+^Introduction\.aux$
+^Introduction\.out$
+^Introduction\.log$

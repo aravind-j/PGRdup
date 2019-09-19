@@ -8,3 +8,6 @@ src/register.o
 Release.R
 docs/articles/Introduction.pdf
 desktop.ini
+vignettes/Introduction.log
+vignettes/Introduction.tex
+vignettes/Introduction.out

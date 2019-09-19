@@ -103,7 +103,7 @@ MergeKW <- function(x, y, delim = c("space", "dash", "period")) {
   # Escape all Regex special characters in y
   y <- lapply(y, function(x) gsub(pattern = "([.|()\\^{}+$*?]|\\[|\\])",
                                   replacement = "\\\\\\1", x))
-  options <- c("\\s", "-", ".")
+  options <- c("\\s", "\\-", ".")
   options2 <- logical(length = 3)
   if (is.element("space", delim)) {
     options2[1] <- TRUE
@@ -143,7 +143,7 @@ MergePrefix <- function(x, y, delim = c("space", "dash", "period")) {
   y <- unique(toupper(y))
   y <- gsub(pattern = "([.|()\\^{}+$*?]|\\[|\\])",
             replacement = "\\\\\\1", y)
-  options <- c("\\s", "-", ".")
+  options <- c("\\s", "\\-", ".")
   options2 <- logical(length = 3)
   if (is.element("space", delim)) {
     options2[1] <- TRUE
@@ -181,7 +181,7 @@ MergeSuffix <- function(x, y, delim = c("space", "dash", "period")) {
   y <- unique(toupper(y))
   y <- gsub(pattern = "([.|()\\^{}+$*?]|\\[|\\])",
             replacement = "\\\\\\1", y)
-  options <- c("\\s", "-", ".")
+  options <- c("\\s", "\\-", ".")
   options2 <- logical(length = 3)
   if (is.element("space", delim)) {
     options2[1] <- TRUE

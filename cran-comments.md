@@ -1,3 +1,22 @@
+# Version 0.2.3.4 - Second submission
+
+* Fixed issue with missing vignette files in 'inst/doc' leading to failure of CRAN pre-tests.
+
+### Test environments
+* local Windows 10 Home v1809, R-release (R 3.6.1) & R-devel (R 3.7.0 Pre-release).
+* local Ubuntu 16.04, R-release (R 3.6.1) & R-devel (R 3.7.0 Pre-release).
+* win-builder, R-release (R 3.6.1) & R-devel (R 3.7.0 Pre-release).
+
+# Version 0.2.3.4 - First submission
+
+* Updated regular expressions to be PCRE2 compliant.
+* Fixed issue with underlying `C` code with ‘strncpy’. Changed all specified bound depending on the length of the source argument to that of destination argument.
+
+### Test environments
+* local Windows 10 Home v1809, R-release (R 3.6.1) & R-devel (R 3.7.0 Pre-release).
+* local Ubuntu 16.04, R-release (R 3.6.1) & R-devel (R 3.7.0 Pre-release).
+* win-builder, R-release (R 3.6.1) & R-devel (R 3.7.0 Pre-release).
+
 # Version 0.2.3.3 - First submission
 
 * Use of packages in Suggests such as microbenchmark made conditional to avoid problems when they are not available for an OS.

@@ -1,7 +1,9 @@
 # PGRdup 0.2.3.4
 
 ## UPDATED FUNCTIONS:
+* `MergeKW` - Updated regular expressions to be PCRE2 compliant.
 * `read.genesys` - Updated for reading of doi field.
+* `DoubleMetaphone` - Fixed issue with underlying `C` code with ‘strncpy’. Changed all specified bound depending on the length of the source argument to that of destination argument.
 
 ***
 # PGRdup 0.2.3.3
