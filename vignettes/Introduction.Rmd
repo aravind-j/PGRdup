@@ -5,7 +5,11 @@ date: '`r Sys.Date()`'
 output:
   pdf_document:
     dev: cairo_pdf
-    fig_caption: false
+    fig_caption: no
+    toc: no
+  html_document:
+    df_print: paged
+    toc: yes
 header-includes:
 - \usepackage{fancyhdr}
 - \usepackage{wrapfig}
@@ -19,7 +23,6 @@ header-includes:
 - \hypersetup{linkcolor=blue}
 bibliography: bibliography.bibtex
 link-citations: yes
-toc: no
 vignette: |
   %\VignetteIndexEntry{Introduction}
   %\usepackage[utf8]{inputenc}
@@ -65,10 +68,8 @@ switch(out_type,
 \end{center}
 
 ```{r, echo = FALSE}
-knitr::opts_chunk$set(
-  comment = "",
-  fig.cap= ""
-)
+knitr::opts_chunk$set(comment = "",
+                      fig.cap= "")
 ```
 
 \tableofcontents
@@ -81,7 +82,9 @@ knitr::opts_chunk$set(
   \vspace{-1.5cm}
 \end{wrapfigure}\leavevmode
 
-## Introduction <img src="https://raw.githubusercontent.com/aravind-j/PGRdup/master/inst/extdata/PGRdup_v2.png" align="left" alt="logo" width="173" height = "200" style = "padding: 10px; border: none; float: right;">
+<img src="https://raw.githubusercontent.com/aravind-j/PGRdup/master/inst/extdata/PGRdup_v2.png" align="left" alt="logo" width="173" height = "200" style = "padding: 10px; border: none; float: right;">
+
+## Introduction
 
 **PGRdup** is an `R` package to facilitate the search for probable/possible duplicate accessions in Plant Genetic Resources (PGR) collections using passport databases. Primarily this package implements a workflow (Fig.&nbsp;1) designed to fetch groups or sets of germplasm accessions with similar passport data particularly in fields associated with accession names within or across PGR passport databases. It offers a suite of functions for data pre-processing, creation of a searchable Key Word in Context (KWIC) index of keywords associated with accession records and the identification of probable duplicate sets by fuzzy, phonetic and semantic matching of keywords. It also has functions to enable the user to review, modify and validate the probable duplicate sets retrieved.
 
