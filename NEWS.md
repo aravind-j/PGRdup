@@ -1,5 +1,8 @@
 # PGRdup 0.2.3.5
 
+## OTHER NOTES:
+* Removed reference to `RecordLinkage`package which was removed from CRAN.
+
 # PGRdup 0.2.3.4
 
 ## UPDATED FUNCTIONS:

@@ -18,34 +18,35 @@
 
 
 #' 'Double Metaphone' phonetic algorithm
-#' 
+#'
 #' \code{DoubleMetaphone} converts strings to double metaphone phonetic codes.
-#' 
-#' An implementation of the Double Metaphone phonetic algorithm in \code{R}. If 
-#' non-ASCII characters encountered in the input character vector \code{str}, a 
+#'
+#' An implementation of the Double Metaphone phonetic algorithm in \code{R}. If
+#' non-ASCII characters encountered in the input character vector \code{str}, a
 #' warning is issued and they are transliterated so that the accented characters
 #' are converted to their ASCII unaccented versions.
-#' 
-#' @param str A character vector whose strings are to be encoded by double 
+#'
+#' @param str A character vector whose strings are to be encoded by double
 #'   metaphone algorithm.
-#' @return Returns a list with two character vectors of the same length as the 
-#'   input vector. The first character vector contains the primary double 
-#'   metaphone encodings, while the second character vector contains the 
+#' @return Returns a list with two character vectors of the same length as the
+#'   input vector. The first character vector contains the primary double
+#'   metaphone encodings, while the second character vector contains the
 #'   alternate encodings.
-#' @seealso \code{\link[stringdist]{phonetic}}, 
-#'   \code{\link[RecordLinkage]{phonetics}}
-#' @section Acknowledgement: The \code{C} code for the double metaphone 
-#'   algorithm was adapted from Maurice Aubrey's perl module hosted at the 
-#'   \strong{gitpan/Text-DoubleMetaphone} 
+#' @seealso \code{\link[stringdist]{phonetic}},
+#'   \code{\href{https://cran.r-project.org/web/packages/RecordLinkage/index.html}{phonetics}}
+#'
+#' @section Acknowledgement: The \code{C} code for the double metaphone
+#'   algorithm was adapted from Maurice Aubrey's perl module hosted at the
+#'   \strong{gitpan/Text-DoubleMetaphone}
 #'   \href{https://github.com/gitpan/Text-DoubleMetaphone/blob/master/double_metaphone.c}{public
-#'    github library} along with the corresponding 
+#'    github library} along with the corresponding
 #'   \href{https://github.com/gitpan/Text-DoubleMetaphone/blob/master/README}{license
 #'    information}.
 #' @references Philips, Lawrence. 2000. "The Double Metaphone Search Algorithm."
 #'   \emph{C/C++ Users Journal} 18 (6): 38-43.
 #'   \url{http://dl.acm.org/citation.cfm?id=349124.349132}.
 #' @encoding UTF-8
-#' @note In case of non-ASCII characters in strings, a warning is issued and 
+#' @note In case of non-ASCII characters in strings, a warning is issued and
 #'   accented characters are converted to their ASCII unaccented versions.
 #' @examples
 #' # Return the primary and secondary Double Metaphone encodings for a character vector.
