@@ -49,9 +49,9 @@ out_type <- ifelse(out_type == "", "latex", out_type)
 
 ```{r, results='asis', echo=FALSE}
 switch(out_type,
-    html = {cat("<p>ICAR-National Bureau of Plant Genetic Resources, New Delhi, India.</p>
+    html = {cat("<p>1. ICAR-National Bureau of Plant Genetic Resources, New Delhi, India.</p>
 	
-<p>Centre for Development of Advanced Computing, Thiruvananthapuram, Kerala, India.</p>")},
+<p>2. Centre for Development of Advanced Computing, Thiruvananthapuram, Kerala, India.</p>")},
     latex = cat("\\begin{center}
 1. ICAR-National Bureau of Plant Genetic Resources, New Delhi, India.
 

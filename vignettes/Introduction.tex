@@ -1,34 +1,47 @@
-\documentclass[]{article}
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
 \usepackage{lmodern}
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
-\usepackage{fixltx2e} % provides \textsubscript
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
-\else % if luatex or xelatex
-  \ifxetex
-    \usepackage{mathspec}
-  \else
-    \usepackage{fontspec}
-  \fi
-  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
 \fi
-% use upquote if available, for straight quotes in verbatim environments
+% Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-% use microtype if available
-\IfFileExists{microtype.sty}{%
-\usepackage{microtype}
-\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={An Introduction to PGRdup Package},
+  pdfauthor={Aravind, J.1, Radhamani, J.1, Kalyani Srinivasan1, Ananda Subhash, B.2, and Tyagi, R. K.1},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
 \usepackage[margin=1in]{geometry}
-\usepackage{hyperref}
-\hypersetup{unicode=true,
-            pdftitle={An Introduction to PGRdup Package},
-            pdfauthor={Aravind, J.1, Radhamani, J.1, Kalyani Srinivasan1, Ananda Subhash, B.2, and Tyagi, R. K.1},
-            pdfborder={0 0 0},
-            breaklinks=true}
-\urlstyle{same}  % don't use monospace font for urls
 \usepackage{color}
 \usepackage{fancyvrb}
 \newcommand{\VerbBar}{|}
@@ -70,6 +83,14 @@
 \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \usepackage{longtable,booktabs}
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
 \usepackage{graphicx,grffile}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
@@ -79,54 +100,14 @@
 % margins by default, and it is still possible to overwrite the defaults
 % using explicit options in \includegraphics[width, height, ...]{}
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
-\IfFileExists{parskip.sty}{%
-\usepackage{parskip}
-}{% else
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{6pt plus 2pt minus 1pt}
-}
-\setlength{\emergencystretch}{3em}  % prevent overfull lines
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-\setcounter{secnumdepth}{0}
-% Redefines (sub)paragraphs to behave more like sections
-\ifx\paragraph\undefined\else
-\let\oldparagraph\paragraph
-\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
-\fi
-\ifx\subparagraph\undefined\else
-\let\oldsubparagraph\subparagraph
-\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
-\fi
-
-%%% Use protect on footnotes to avoid problems with footnotes in titles
-\let\rmarkdownfootnote\footnote%
-\def\footnote{\protect\rmarkdownfootnote}
-
-%%% Change title format to be more compact
-\usepackage{titling}
-
-% Create subtitle command for use in maketitle
-\providecommand{\subtitle}[1]{
-  \posttitle{
-    \begin{center}\large#1\end{center}
-    }
-}
-
-\setlength{\droptitle}{-2em}
-
-  \title{An Introduction to \texttt{PGRdup} Package}
-    \pretitle{\vspace{\droptitle}\centering\huge}
-  \posttitle{\par}
-    \author{Aravind, J.\textsuperscript{1}, Radhamani, J.\textsuperscript{1},
-Kalyani Srinivasan\textsuperscript{1}, Ananda Subhash,
-B.\textsuperscript{2}, and Tyagi, R. K.\textsuperscript{1}}
-    \preauthor{\centering\large\emph}
-  \postauthor{\par}
-      \predate{\centering\large\emph}
-  \postdate{\par}
-    \date{2019-09-20}
-
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
 \usepackage{fancyhdr}
 \usepackage{wrapfig}
 \pagestyle{fancy}
@@ -138,13 +119,15 @@ B.\textsuperscript{2}, and Tyagi, R. K.\textsuperscript{1}}
 \hypersetup{linktoc=all}
 \hypersetup{linkcolor=blue}
 
+\title{An Introduction to \texttt{PGRdup} Package}
+\author{Aravind, J.\textsuperscript{1}, Radhamani, J.\textsuperscript{1},
+Kalyani Srinivasan\textsuperscript{1}, Ananda Subhash,
+B.\textsuperscript{2}, and Tyagi, R. K.\textsuperscript{1}}
+\date{2020-02-04}
+
 \begin{document}
 \maketitle
 
-{
-\setcounter{tocdepth}{3}
-\tableofcontents
-}
 \begin{center}
 1. ICAR-National Bureau of Plant Genetic Resources, New Delhi, India.
 
@@ -162,13 +145,13 @@ B.\textsuperscript{2}, and Tyagi, R. K.\textsuperscript{1}}
 \begin{wrapfigure}{r}{0.35\textwidth}
   \vspace{1cm}
   \begin{center}
-    \includegraphics[width=0.33\textwidth]{C:/Users/J. Aravind/Dropbox/R packages/PGRdup/inst/extdata/PGRdup_v2.png}
+    \includegraphics[width=0.33\textwidth]{C:/Users/J. Aravind/Documents/R/win-library/4.0/PGRdup/extdata/PGRdup_v2.png}
   \end{center}
   \vspace{-1.5cm}
 \end{wrapfigure}\leavevmode
 
 \hypertarget{introduction}{%
-\subsection{Introduction }\label{introduction}}
+\subsection{Introduction}\label{introduction}}
 
 \textbf{PGRdup} is an \texttt{R} package to facilitate the search for
 probable/possible duplicate accessions in Plant Genetic Resources (PGR)
@@ -199,7 +182,7 @@ and \href{https://CRAN.R-project.org/package=stringi}{\texttt{stringi}}.
 \pagebreak
 
 \begin{center}
-    \includegraphics{C:/Users/J. Aravind/Dropbox/R packages/PGRdup/inst/extdata/PGRdup.png}
+    \includegraphics{C:/Users/J. Aravind/Documents/R/win-library/4.0/PGRdup/extdata/PGRdup.png}
 \end{center}
 
 \includegraphics{Introduction_files/figure-latex/unnamed-chunk-5-1.pdf}
@@ -294,20 +277,20 @@ supplied along with the package.
 \end{Shaded}
 
 \begin{verbatim}
-  CommonName    BotanicalName NationalID                CollNo   DonorID
-1  Groundnut Arachis hypogaea   EC100277 Shulamith/ NRCG-14555  ICG-4709
-2  Groundnut Arachis hypogaea   EC100280                    NC   ICG5288
-3  Groundnut Arachis hypogaea   EC100281               MALIMBA   ICG5289
-4  Groundnut Arachis hypogaea   EC100713            EC 100713;   ICG5296
-5  Groundnut Arachis hypogaea   EC100715             EC 100715   ICG5298
-6  Groundnut Arachis hypogaea   EC100716                        ICG-3150
-  OtherID1  OtherID2 BioStatus            SourceCountry TransferYear
-1           U4-47-12  Landrace                   Israel         2014
-2      NCS      NC 5  Landrace United States of America         2004
-3          EC 100281  Landrace                   Malawi         2004
-4              STARR  Landrace United States of America         2004
-5              COMET  Landrace United States of America         2004
-6          ARGENTINE  Landrace United States of America         2014
+  CommonName    BotanicalName NationalID                CollNo   DonorID OtherID1
+1  Groundnut Arachis hypogaea   EC100277 Shulamith/ NRCG-14555  ICG-4709         
+2  Groundnut Arachis hypogaea   EC100280                    NC   ICG5288      NCS
+3  Groundnut Arachis hypogaea   EC100281               MALIMBA   ICG5289         
+4  Groundnut Arachis hypogaea   EC100713            EC 100713;   ICG5296         
+5  Groundnut Arachis hypogaea   EC100715             EC 100715   ICG5298         
+6  Groundnut Arachis hypogaea   EC100716                        ICG-3150         
+   OtherID2 BioStatus            SourceCountry TransferYear
+1  U4-47-12  Landrace                   Israel         2014
+2      NC 5  Landrace United States of America         2004
+3 EC 100281  Landrace                   Malawi         2004
+4     STARR  Landrace United States of America         2004
+5     COMET  Landrace United States of America         2004
+6 ARGENTINE  Landrace United States of America         2014
 \end{verbatim}
 
 If the passport data exists as an excel sheet, it can be first converted
@@ -838,18 +821,18 @@ the primary key/ID field mentioned.
 \end{Shaded}
 
 \begin{verbatim}
-     CommonName    BotanicalName NationalID              CollNo DonorID
-1001  Groundnut Arachis hypogaea            SHULAMITH NRCG14555 ICG4709
-1002  Groundnut Arachis hypogaea                             NC ICG5288
-1003  Groundnut Arachis hypogaea   EC100281             MALIMBA ICG5289
-1004  Groundnut Arachis hypogaea   EC100713            EC100713 ICG5296
-1005  Groundnut Arachis hypogaea   EC100715            EC100715 ICG5298
-     OtherID1 OtherID2 BioStatus            SourceCountry TransferYear
-1001            U44712  Landrace                   Israel         2014
-1002      NCS      NC5  Landrace United States of America         2004
-1003          EC100281  Landrace                   Malawi         2004
-1004             STARR  Landrace United States of America         2004
-1005             COMET  Landrace United States of America         2004
+     CommonName    BotanicalName NationalID              CollNo DonorID OtherID1
+1001  Groundnut Arachis hypogaea            SHULAMITH NRCG14555 ICG4709         
+1002  Groundnut Arachis hypogaea                             NC ICG5288      NCS
+1003  Groundnut Arachis hypogaea   EC100281             MALIMBA ICG5289         
+1004  Groundnut Arachis hypogaea   EC100713            EC100713 ICG5296         
+1005  Groundnut Arachis hypogaea   EC100715            EC100715 ICG5298         
+     OtherID2 BioStatus            SourceCountry TransferYear
+1001   U44712  Landrace                   Israel         2014
+1002      NC5  Landrace United States of America         2004
+1003 EC100281  Landrace                   Malawi         2004
+1004    STARR  Landrace United States of America         2004
+1005    COMET  Landrace United States of America         2004
 \end{verbatim}
 
 \begin{Shaded}
@@ -879,38 +862,35 @@ $message1
 [1] "ERROR: Duplicated records found in prim.key field"
 
 $Duplicates
-     CommonName    BotanicalName NationalID              CollNo DonorID
-1001  Groundnut Arachis hypogaea            SHULAMITH NRCG14555 ICG4709
-1002  Groundnut Arachis hypogaea                             NC ICG5288
-3     Groundnut Arachis hypogaea   EC100281             MALIMBA ICG5289
-1003  Groundnut Arachis hypogaea   EC100281             MALIMBA ICG5289
-4     Groundnut Arachis hypogaea   EC100713            EC100713 ICG5296
-1004  Groundnut Arachis hypogaea   EC100713            EC100713 ICG5296
-5     Groundnut Arachis hypogaea   EC100715            EC100715 ICG5298
-1005  Groundnut Arachis hypogaea   EC100715            EC100715 ICG5298
-     OtherID1 OtherID2 BioStatus            SourceCountry TransferYear
-1001            U44712  Landrace                   Israel         2014
-1002      NCS      NC5  Landrace United States of America         2004
-3             EC100281  Landrace                   Malawi         2004
-1003          EC100281  Landrace                   Malawi         2004
-4                STARR  Landrace United States of America         2004
-1004             STARR  Landrace United States of America         2004
-5                COMET  Landrace United States of America         2004
-1005             COMET  Landrace United States of America         2004
+     CommonName    BotanicalName NationalID              CollNo DonorID OtherID1
+1001  Groundnut Arachis hypogaea            SHULAMITH NRCG14555 ICG4709         
+1002  Groundnut Arachis hypogaea                             NC ICG5288      NCS
+3     Groundnut Arachis hypogaea   EC100281             MALIMBA ICG5289         
+1003  Groundnut Arachis hypogaea   EC100281             MALIMBA ICG5289         
+4     Groundnut Arachis hypogaea   EC100713            EC100713 ICG5296         
+1004  Groundnut Arachis hypogaea   EC100713            EC100713 ICG5296         
+5     Groundnut Arachis hypogaea   EC100715            EC100715 ICG5298         
+1005  Groundnut Arachis hypogaea   EC100715            EC100715 ICG5298         
+     OtherID2 BioStatus            SourceCountry TransferYear
+1001   U44712  Landrace                   Israel         2014
+1002      NC5  Landrace United States of America         2004
+3    EC100281  Landrace                   Malawi         2004
+1003 EC100281  Landrace                   Malawi         2004
+4       STARR  Landrace United States of America         2004
+1004    STARR  Landrace United States of America         2004
+5       COMET  Landrace United States of America         2004
+1005    COMET  Landrace United States of America         2004
 
 $message2
 [1] "ERROR: NULL records found in prim.key field"
 
 $NullRecords
-     CommonName    BotanicalName NationalID              CollNo DonorID
-1001  Groundnut Arachis hypogaea            SHULAMITH NRCG14555 ICG4709
-1002  Groundnut Arachis hypogaea                             NC ICG5288
-     OtherID1 OtherID2 BioStatus            SourceCountry TransferYear
-1001            U44712  Landrace                   Israel         2014
-1002      NCS      NC5  Landrace United States of America         2004
-     primdup
-1001    TRUE
-1002    TRUE
+     CommonName    BotanicalName NationalID              CollNo DonorID OtherID1
+1001  Groundnut Arachis hypogaea            SHULAMITH NRCG14555 ICG4709         
+1002  Groundnut Arachis hypogaea                             NC ICG5288      NCS
+     OtherID2 BioStatus            SourceCountry TransferYear primdup
+1001   U44712  Landrace                   Israel         2014    TRUE
+1002      NC5  Landrace United States of America         2004    TRUE
 \end{verbatim}
 
 \begin{Shaded}
@@ -1012,19 +992,7 @@ Fuzzy matching
 \end{verbatim}
 
 \begin{verbatim}
-
-  |                                                                       
-  |================                                                 |  25%
-Block 1 / 4 |
-  |                                                                       
-  |================================                                 |  50%
-Block 2 / 4 |
-  |                                                                       
-  |=================================================                |  75%
-Block 3 / 4 |
-  |                                                                       
-  |=================================================================| 100%
-Block 4 / 4 |
+  |                                                                                    |===================                                                         |  25%Block 1 / 4 |  |                                                                                    |======================================                                      |  50%Block 2 / 4 |  |                                                                                    |=========================================================                   |  75%Block 3 / 4 |  |                                                                                    |============================================================================| 100%Block 4 / 4 |
 \end{verbatim}
 
 \begin{Shaded}
@@ -1066,19 +1034,7 @@ Phonetic matching
 \end{verbatim}
 
 \begin{verbatim}
-
-  |                                                                       
-  |================                                                 |  25%
-Block 1 / 4 |
-  |                                                                       
-  |================================                                 |  50%
-Block 2 / 4 |
-  |                                                                       
-  |=================================================                |  75%
-Block 3 / 4 |
-  |                                                                       
-  |=================================================================| 100%
-Block 4 / 4 |
+  |                                                                                    |===================                                                         |  25%Block 1 / 4 |  |                                                                                    |======================================                                      |  50%Block 2 / 4 |  |                                                                                    |=========================================================                   |  75%Block 3 / 4 |  |                                                                                    |============================================================================| 100%Block 4 / 4 |
 \end{verbatim}
 
 \begin{Shaded}
@@ -1183,10 +1139,7 @@ Fuzzy matching
 \end{verbatim}
 
 \begin{verbatim}
-
-  |                                                                       
-  |=================================================================| 100%
-Block 1 / 1 |
+  |                                                                                    |============================================================================| 100%Block 1 / 1 |
 \end{verbatim}
 
 \begin{verbatim}
@@ -1194,10 +1147,7 @@ Phonetic matching
 \end{verbatim}
 
 \begin{verbatim}
-
-  |                                                                       
-  |=================================================================| 100%
-Block 1 / 1 |
+  |                                                                                    |============================================================================| 100%Block 1 / 1 |
 \end{verbatim}
 
 \begin{Shaded}
@@ -1243,16 +1193,7 @@ Fuzzy matching
 \end{verbatim}
 
 \begin{verbatim}
-
-  |                                                                       
-  |======================                                           |  33%
-Block 1 / 3 |
-  |                                                                       
-  |===========================================                      |  67%
-Block 2 / 3 |
-  |                                                                       
-  |=================================================================| 100%
-Block 3 / 3 |
+  |                                                                                    |=========================                                                   |  33%Block 1 / 3 |  |                                                                                    |===================================================                         |  67%Block 2 / 3 |  |                                                                                    |============================================================================| 100%Block 3 / 3 |
 \end{verbatim}
 
 \begin{verbatim}
@@ -1260,16 +1201,7 @@ Phonetic matching
 \end{verbatim}
 
 \begin{verbatim}
-
-  |                                                                       
-  |======================                                           |  33%
-Block 1 / 3 |
-  |                                                                       
-  |===========================================                      |  67%
-Block 2 / 3 |
-  |                                                                       
-  |=================================================================| 100%
-Block 3 / 3 |
+  |                                                                                    |=========================                                                   |  33%Block 1 / 3 |  |                                                                                    |===================================================                         |  67%Block 2 / 3 |  |                                                                                    |============================================================================| 100%Block 3 / 3 |
 \end{verbatim}
 
 \begin{Shaded}
@@ -1362,19 +1294,7 @@ Fuzzy matching
 \end{verbatim}
 
 \begin{verbatim}
-
-  |                                                                       
-  |================                                                 |  25%
-Block 1 / 4 |
-  |                                                                       
-  |================================                                 |  50%
-Block 2 / 4 |
-  |                                                                       
-  |=================================================                |  75%
-Block 3 / 4 |
-  |                                                                       
-  |=================================================================| 100%
-Block 4 / 4 |
+  |                                                                                    |===================                                                         |  25%Block 1 / 4 |  |                                                                                    |======================================                                      |  50%Block 2 / 4 |  |                                                                                    |=========================================================                   |  75%Block 3 / 4 |  |                                                                                    |============================================================================| 100%Block 4 / 4 |
 \end{verbatim}
 
 \begin{Shaded}
@@ -1409,19 +1329,7 @@ Fuzzy matching
 \end{verbatim}
 
 \begin{verbatim}
-
-  |                                                                       
-  |================                                                 |  25%
-Block 1 / 4 |
-  |                                                                       
-  |================================                                 |  50%
-Block 2 / 4 |
-  |                                                                       
-  |=================================================                |  75%
-Block 3 / 4 |
-  |                                                                       
-  |=================================================================| 100%
-Block 4 / 4 |
+  |                                                                                    |===================                                                         |  25%Block 1 / 4 |  |                                                                                    |======================================                                      |  50%Block 2 / 4 |  |                                                                                    |=========================================================                   |  75%Block 3 / 4 |  |                                                                                    |============================================================================| 100%Block 4 / 4 |
 \end{verbatim}
 
 \begin{Shaded}
@@ -1468,19 +1376,7 @@ Fuzzy matching
 \end{verbatim}
 
 \begin{verbatim}
-
-  |                                                                       
-  |================                                                 |  25%
-Block 1 / 4 |
-  |                                                                       
-  |================================                                 |  50%
-Block 2 / 4 |
-  |                                                                       
-  |=================================================                |  75%
-Block 3 / 4 |
-  |                                                                       
-  |=================================================================| 100%
-Block 4 / 4 |
+  |                                                                                    |===================                                                         |  25%Block 1 / 4 |  |                                                                                    |======================================                                      |  50%Block 2 / 4 |  |                                                                                    |=========================================================                   |  75%Block 3 / 4 |  |                                                                                    |============================================================================| 100%Block 4 / 4 |
 \end{verbatim}
 
 \begin{Shaded}
@@ -1525,19 +1421,7 @@ Phonetic matching
 \end{verbatim}
 
 \begin{verbatim}
-
-  |                                                                       
-  |================                                                 |  25%
-Block 1 / 4 |
-  |                                                                       
-  |================================                                 |  50%
-Block 2 / 4 |
-  |                                                                       
-  |=================================================                |  75%
-Block 3 / 4 |
-  |                                                                       
-  |=================================================================| 100%
-Block 4 / 4 |
+  |                                                                                    |===================                                                         |  25%Block 1 / 4 |  |                                                                                    |======================================                                      |  50%Block 2 / 4 |  |                                                                                    |=========================================================                   |  75%Block 3 / 4 |  |                                                                                    |============================================================================| 100%Block 4 / 4 |
 \end{verbatim}
 
 \begin{Shaded}
@@ -1573,19 +1457,7 @@ Phonetic matching
 \end{verbatim}
 
 \begin{verbatim}
-
-  |                                                                       
-  |================                                                 |  25%
-Block 1 / 4 |
-  |                                                                       
-  |================================                                 |  50%
-Block 2 / 4 |
-  |                                                                       
-  |=================================================                |  75%
-Block 3 / 4 |
-  |                                                                       
-  |=================================================================| 100%
-Block 4 / 4 |
+  |                                                                                    |===================                                                         |  25%Block 1 / 4 |  |                                                                                    |======================================                                      |  50%Block 2 / 4 |  |                                                                                    |=========================================================                   |  75%Block 3 / 4 |  |                                                                                    |============================================================================| 100%Block 4 / 4 |
 \end{verbatim}
 
 \begin{Shaded}
@@ -1622,19 +1494,7 @@ Phonetic matching
 \end{verbatim}
 
 \begin{verbatim}
-
-  |                                                                       
-  |================                                                 |  25%
-Block 1 / 4 |
-  |                                                                       
-  |================================                                 |  50%
-Block 2 / 4 |
-  |                                                                       
-  |=================================================                |  75%
-Block 3 / 4 |
-  |                                                                       
-  |=================================================================| 100%
-Block 4 / 4 |
+  |                                                                                    |===================                                                         |  25%Block 1 / 4 |  |                                                                                    |======================================                                      |  50%Block 2 / 4 |  |                                                                                    |=========================================================                   |  75%Block 3 / 4 |  |                                                                                    |============================================================================| 100%Block 4 / 4 |
 \end{verbatim}
 
 \begin{Shaded}
@@ -1670,19 +1530,7 @@ Phonetic matching
 \end{verbatim}
 
 \begin{verbatim}
-
-  |                                                                       
-  |================                                                 |  25%
-Block 1 / 4 |
-  |                                                                       
-  |================================                                 |  50%
-Block 2 / 4 |
-  |                                                                       
-  |=================================================                |  75%
-Block 3 / 4 |
-  |                                                                       
-  |=================================================================| 100%
-Block 4 / 4 |
+  |                                                                                    |===================                                                         |  25%Block 1 / 4 |  |                                                                                    |======================================                                      |  50%Block 2 / 4 |  |                                                                                    |=========================================================                   |  75%Block 3 / 4 |  |                                                                                    |============================================================================| 100%Block 4 / 4 |
 \end{verbatim}
 
 \begin{Shaded}
@@ -1737,19 +1585,7 @@ Semantic matching
 \end{verbatim}
 
 \begin{verbatim}
-
-  |                                                                       
-  |================                                                 |  25%
-Block 1 / 4 |
-  |                                                                       
-  |================================                                 |  50%
-Block 2 / 4 |
-  |                                                                       
-  |=================================================                |  75%
-Block 3 / 4 |
-  |                                                                       
-  |=================================================================| 100%
-Block 4 / 4 |
+  |                                                                                    |===================                                                         |  25%Block 1 / 4 |  |                                                                                    |======================================                                      |  50%Block 2 / 4 |  |                                                                                    |=========================================================                   |  75%Block 3 / 4 |  |                                                                                    |============================================================================| 100%Block 4 / 4 |
 \end{verbatim}
 
 \begin{Shaded}
@@ -2030,7 +1866,7 @@ case, it is recommended to use an identical data standardization
 operation on the primary ID/key field of databases specified in
 \texttt{db1} and \texttt{db2} before running this function.
 
-With \texttt{R} \textless{}= v3.0.2, due to copying of named objects by
+With \texttt{R} \textless= v3.0.2, due to copying of named objects by
 \texttt{list()},
 \texttt{Invalid\ .internal.selfref\ detected\ and\ fixed...} warning can
 appear, which may be safely ignored.
@@ -2068,27 +1904,27 @@ indicate that they are to be removed and assembled into a new set.
 \end{Shaded}
 
 \begin{verbatim}
-  SET_NO TYPE K[a]  PRIM_ID                IDKW  DEL SPLIT COUNT
-1      1    F [K1] EC100277 [K1]EC100277:U44712    N     0     3
-2      1    F [K1]  EC21118  [K1]EC21118:U44712    N     0     3
-3      1    F [K1] IC494796 [K1]IC494796:U44712    N     0     3
-4     NA      <NA>     <NA>                <NA> <NA>    NA    NA
-5      1    P [K1] EC100713  [K1]EC100713:STARR    N     0    14
-6      1    P [K1] EC106985  [K1]EC106985:STARR    N     0    14
-  K1_NationalID                K1_CollNo K1_DonorID K1_OtherID1
-1      EC100277    Shulamith/ NRCG-14555   ICG-4709            
-2       EC21118 U 4-47-12; EC 21118; UKA    ICG3265            
-3      IC494796                U-4-47-12   ICG-6890            
-4          <NA>                     <NA>       <NA>        <NA>
-5      EC100713               EC 100713;    ICG5296            
-6      EC106985                    Starr    ICG3479            
-   K1_OtherID2        K1X_SourceCountry K1X_TransferYear
-1     U4-47-12                   Israel             2014
-2 U44712 U K A                Australia             1989
-3       U44712                  Unknown             2010
-4         <NA>                     <NA>               NA
-5        STARR United States of America             2004
-6              United States of America             2001
+  SET_NO TYPE K[a]  PRIM_ID                IDKW  DEL SPLIT COUNT K1_NationalID
+1      1    F [K1] EC100277 [K1]EC100277:U44712    N     0     3      EC100277
+2      1    F [K1]  EC21118  [K1]EC21118:U44712    N     0     3       EC21118
+3      1    F [K1] IC494796 [K1]IC494796:U44712    N     0     3      IC494796
+4     NA      <NA>     <NA>                <NA> <NA>    NA    NA          <NA>
+5      1    P [K1] EC100713  [K1]EC100713:STARR    N     0    14      EC100713
+6      1    P [K1] EC106985  [K1]EC106985:STARR    N     0    14      EC106985
+                 K1_CollNo K1_DonorID K1_OtherID1  K1_OtherID2
+1    Shulamith/ NRCG-14555   ICG-4709                 U4-47-12
+2 U 4-47-12; EC 21118; UKA    ICG3265             U44712 U K A
+3                U-4-47-12   ICG-6890                   U44712
+4                     <NA>       <NA>        <NA>         <NA>
+5               EC 100713;    ICG5296                    STARR
+6                    Starr    ICG3479                         
+         K1X_SourceCountry K1X_TransferYear
+1                   Israel             2014
+2                Australia             1989
+3                  Unknown             2010
+4                     <NA>               NA
+5 United States of America             2004
+6 United States of America             2001
 \end{verbatim}
 
 \begin{Shaded}
@@ -2439,16 +2275,7 @@ Fuzzy matching
 \end{verbatim}
 
 \begin{verbatim}
-
-  |                                                                       
-  |======================                                           |  33%
-Block 1 / 3 |
-  |                                                                       
-  |===========================================                      |  67%
-Block 2 / 3 |
-  |                                                                       
-  |=================================================================| 100%
-Block 3 / 3 |
+  |                                                                                    |=========================                                                   |  33%Block 1 / 3 |  |                                                                                    |===================================================                         |  67%Block 2 / 3 |  |                                                                                    |============================================================================| 100%Block 3 / 3 |
 \end{verbatim}
 
 \begin{verbatim}
@@ -2456,16 +2283,7 @@ Phonetic matching
 \end{verbatim}
 
 \begin{verbatim}
-
-  |                                                                       
-  |======================                                           |  33%
-Block 1 / 3 |
-  |                                                                       
-  |===========================================                      |  67%
-Block 2 / 3 |
-  |                                                                       
-  |=================================================================| 100%
-Block 3 / 3 |
+  |                                                                                    |=========================                                                   |  33%Block 1 / 3 |  |                                                                                    |===================================================                         |  67%Block 2 / 3 |  |                                                                                    |============================================================================| 100%Block 3 / 3 |
 \end{verbatim}
 
 \begin{verbatim}
@@ -2473,16 +2291,7 @@ Semantic matching
 \end{verbatim}
 
 \begin{verbatim}
-
-  |                                                                       
-  |======================                                           |  33%
-Block 1 / 3 |
-  |                                                                       
-  |===========================================                      |  67%
-Block 2 / 3 |
-  |                                                                       
-  |=================================================================| 100%
-Block 3 / 3 |
+  |                                                                                    |=========================                                                   |  33%Block 1 / 3 |  |                                                                                    |===================================================                         |  67%Block 2 / 3 |  |                                                                                    |============================================================================| 100%Block 3 / 3 |
 \end{verbatim}
 
 \begin{Shaded}
@@ -2586,10 +2395,9 @@ alone and \textbf{C.}~the unique records alone.
 
 To cite the R package 'PGRdup' in publications use:
 
-  Aravind, J., Radhamani, J., Kalyani Srinivasan, Ananda Subhash,
-  B., and Tyagi, R. K.  (2019).  PGRdup: Discover Probable
-  Duplicates in Plant Genetic Resources Collections. R package
-  version 0.2.3.4,
+  Aravind, J., Radhamani, J., Kalyani Srinivasan, Ananda Subhash, B., and
+  Tyagi, R. K.  (2020).  PGRdup: Discover Probable Duplicates in Plant
+  Genetic Resources Collections. R package version 0.2.3.5,
   https://github.com/aravind-j/PGRdup,https://cran.r-project.org/package=PGRdup.
 
 A BibTeX entry for LaTeX users is
@@ -2597,15 +2405,15 @@ A BibTeX entry for LaTeX users is
   @Manual{,
     title = {PGRdup: Discover Probable Duplicates in Plant Genetic Resources Collections},
     author = {J. Aravind and J. Radhamani and {Kalyani Srinivasan} and B. {Ananda Subhash} and Rishi Kumar Tyagi},
-    year = {2019},
-    note = {R package version 0.2.3.4},
+    year = {2020},
+    note = {R package version 0.2.3.5},
     note = {https://github.com/aravind-j/PGRdup,},
     note = {https://cran.r-project.org/package=PGRdup},
   }
 
-This free and open-source software implements academic research by
-the authors and co-workers. If you use it, please support the
-project by citing the package.
+This free and open-source software implements academic research by the
+authors and co-workers. If you use it, please support the project by citing
+the package.
 \end{verbatim}
 
 \hypertarget{session-info}{%
@@ -2618,9 +2426,9 @@ project by citing the package.
 \end{Shaded}
 
 \begin{verbatim}
-R Under development (unstable) (2019-09-07 r77160)
+R Under development (unstable) (2019-11-08 r77393)
 Platform: x86_64-w64-mingw32/x64 (64-bit)
-Running under: Windows 10 x64 (build 17763)
+Running under: Windows 10 x64 (build 18362)
 
 Matrix products: default
 
@@ -2633,33 +2441,33 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] PGRdup_0.2.3.4     gridExtra_2.3      wordcloud_2.6     
-[4] RColorBrewer_1.1-2 diagram_1.6.4      shape_1.4.4       
+[1] PGRdup_0.2.3.5     gridExtra_2.3      wordcloud_2.6      RColorBrewer_1.1-2
+[5] diagram_1.6.4      shape_1.4.4       
 
 loaded via a namespace (and not attached):
- [1] Rcpp_1.0.2           stringdist_0.9.5.2   prettyunits_1.0.2   
+ [1] Rcpp_1.0.3           stringdist_0.9.5.5   prettyunits_1.1.1   
  [4] ps_1.3.0             assertthat_0.2.1     rprojroot_1.3-2     
- [7] digest_0.6.20        packrat_0.5.0        R6_2.4.0            
-[10] backports_1.1.4      evaluate_0.14        httr_1.4.1          
-[13] ggplot2_3.2.1        highr_0.8            pillar_1.4.2        
-[16] rlang_0.4.0          lazyeval_0.2.2       curl_4.0            
-[19] rstudioapi_0.10      data.table_1.12.2    callr_3.3.1         
-[22] DT_0.8               rmarkdown_1.15       labeling_0.3        
-[25] desc_1.2.0           devtools_2.2.0       stringr_1.4.0       
-[28] htmlwidgets_1.3      igraph_1.2.4.1       RCurl_1.95-4.12     
-[31] munsell_0.5.0        compiler_3.7.0       xfun_0.9            
-[34] microbenchmark_1.4-6 pkgconfig_2.0.2      pkgbuild_1.0.5      
-[37] htmltools_0.3.6      tidyselect_0.2.5     tibble_2.1.3        
-[40] roxygen2_6.1.1       XML_3.98-1.20        crayon_1.3.4        
-[43] dplyr_0.8.3          withr_2.1.2          bitops_1.0-6        
-[46] commonmark_1.7       grid_3.7.0           gtable_0.3.0        
-[49] magrittr_1.5         scales_1.0.0         cli_1.1.0           
-[52] stringi_1.4.3        fs_1.3.1             remotes_2.1.0       
-[55] testthat_2.2.1       xml2_1.2.2           ellipsis_0.2.0.1    
-[58] tools_3.7.0          glue_1.3.1           purrr_0.3.2         
-[61] processx_3.4.1       pkgload_1.0.2        parallel_3.7.0      
+ [7] digest_0.6.23        packrat_0.5.0        R6_2.4.1            
+[10] backports_1.1.5      evaluate_0.14        highr_0.8           
+[13] httr_1.4.1           ggplot2_3.2.1        pillar_1.4.3        
+[16] rlang_0.4.3          curl_4.3             lazyeval_0.2.2      
+[19] rstudioapi_0.10      data.table_1.12.8    callr_3.4.1         
+[22] rmarkdown_2.1        labeling_0.3         desc_1.2.0          
+[25] devtools_2.2.1       stringr_1.4.0        igraph_1.2.4.2      
+[28] RCurl_1.95-4.12      munsell_0.5.0        compiler_4.0.0      
+[31] xfun_0.12            microbenchmark_1.4-7 pkgconfig_2.0.3     
+[34] pkgbuild_1.0.6       htmltools_0.4.0      tidyselect_0.2.5    
+[37] tibble_2.1.3         roxygen2_7.0.2       XML_3.99-0.3        
+[40] fansi_0.4.1          crayon_1.3.4         dplyr_0.8.3         
+[43] withr_2.1.2          bitops_1.0-6         grid_4.0.0          
+[46] gtable_0.3.0         lifecycle_0.1.0      magrittr_1.5        
+[49] scales_1.1.0         cli_2.0.1            stringi_1.4.5       
+[52] farver_2.0.3         fs_1.3.1             remotes_2.1.0       
+[55] testthat_2.3.1       xml2_1.2.2           ellipsis_0.3.0      
+[58] tools_4.0.0          glue_1.3.1           purrr_0.3.3         
+[61] processx_3.4.1       pkgload_1.0.2        parallel_4.0.0      
 [64] yaml_2.2.0           colorspace_1.4-1     sessioninfo_1.1.1   
-[67] memoise_1.1.0        knitr_1.24           usethis_1.5.1       
+[67] memoise_1.1.0        knitr_1.27           usethis_1.5.1       
 \end{verbatim}
 
 \hypertarget{references}{%
@@ -2691,6 +2499,5 @@ Philips, Lawrence. 2000. ``The Double Metaphone Search Algorithm.''
 van der Loo, M. P. J. 2014. ``The Stringdist Package for Approximate
 String Matching.'' \emph{R Journal} 6 (1): 111--22.
 \url{https://journal.r-project.org/archive/2014/RJ-2014-011/index.html}.
-
 
 \end{document}

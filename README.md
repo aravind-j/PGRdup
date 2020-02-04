@@ -24,7 +24,7 @@ downloads](https://cranlogs.r-pkg.org/badges/grand-total/PGRdup?color=green)](ht
 [![Project Status:
 Inactive](http://www.repostatus.org/badges/latest/inactive.svg)](http://www.repostatus.org/#inactive)
 [![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
-[![Last-changedate](https://img.shields.io/badge/last%20change-2019--09--20-yellowgreen.svg)](https://github.com/aravind-j/PGRdup)
+[![Last-changedate](https://img.shields.io/badge/last%20change-2020--02--04-yellowgreen.svg)](https://github.com/aravind-j/PGRdup)
 [![Rdoc](http://www.rdocumentation.org/badges/version/PGRdup)](http://www.rdocumentation.org/packages/PGRdup)
 [![Zenodo
 DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.841963.svg)](https://doi.org/10.5281/zenodo.841963)
@@ -219,10 +219,9 @@ citation("PGRdup")
 
 To cite the R package 'PGRdup' in publications use:
 
-  Aravind, J., Radhamani, J., Kalyani Srinivasan, Ananda Subhash,
-  B., and Tyagi, R. K.  (2019).  PGRdup: Discover Probable
-  Duplicates in Plant Genetic Resources Collections. R package
-  version 0.2.3.4,
+  Aravind, J., Radhamani, J., Kalyani Srinivasan, Ananda Subhash, B., and
+  Tyagi, R. K.  (2020).  PGRdup: Discover Probable Duplicates in Plant
+  Genetic Resources Collections. R package version 0.2.3.5,
   https://github.com/aravind-j/PGRdup,https://cran.r-project.org/package=PGRdup.
 
 A BibTeX entry for LaTeX users is
@@ -230,13 +229,13 @@ A BibTeX entry for LaTeX users is
   @Manual{,
     title = {PGRdup: Discover Probable Duplicates in Plant Genetic Resources Collections},
     author = {J. Aravind and J. Radhamani and {Kalyani Srinivasan} and B. {Ananda Subhash} and Rishi Kumar Tyagi},
-    year = {2019},
-    note = {R package version 0.2.3.4},
+    year = {2020},
+    note = {R package version 0.2.3.5},
     note = {https://github.com/aravind-j/PGRdup,},
     note = {https://cran.r-project.org/package=PGRdup},
   }
 
-This free and open-source software implements academic research by
-the authors and co-workers. If you use it, please support the
-project by citing the package.
+This free and open-source software implements academic research by the
+authors and co-workers. If you use it, please support the project by citing
+the package.
 ```

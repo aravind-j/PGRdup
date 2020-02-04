@@ -4,8 +4,17 @@
 \alias{ViewProbDup}
 \title{Visualize the probable duplicate sets retrieved in a \code{ProbDup} object}
 \usage{
-ViewProbDup(pdup, db1, db2 = NULL, factor.db1, factor.db2 = NULL,
-  max.count = 30, select, order = "type", main = NULL)
+ViewProbDup(
+  pdup,
+  db1,
+  db2 = NULL,
+  factor.db1,
+  factor.db2 = NULL,
+  max.count = 30,
+  select,
+  order = "type",
+  main = NULL
+)
 }
 \arguments{
 \item{pdup}{An object of class \code{ProbDup}.}

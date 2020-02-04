@@ -4,9 +4,17 @@
 \alias{DataClean}
 \title{Clean PGR passport data}
 \usage{
-DataClean(x, fix.comma = TRUE, fix.semcol = TRUE, fix.col = TRUE,
-  fix.bracket = TRUE, fix.punct = TRUE, fix.space = TRUE,
-  fix.sep = TRUE, fix.leadzero = TRUE)
+DataClean(
+  x,
+  fix.comma = TRUE,
+  fix.semcol = TRUE,
+  fix.col = TRUE,
+  fix.bracket = TRUE,
+  fix.punct = TRUE,
+  fix.space = TRUE,
+  fix.sep = TRUE,
+  fix.leadzero = TRUE
+)
 }
 \arguments{
 \item{x}{A character vector. If not, coerced to character by 

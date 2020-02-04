@@ -5,8 +5,15 @@
 \title{Retrieve probable duplicate set information from PGR passport database for 
 review}
 \usage{
-ReviewProbDup(pdup, db1, db2 = NULL, extra.db1 = NULL,
-  extra.db2 = NULL, max.count = 30, insert.blanks = TRUE)
+ReviewProbDup(
+  pdup,
+  db1,
+  db2 = NULL,
+  extra.db1 = NULL,
+  extra.db2 = NULL,
+  max.count = 30,
+  insert.blanks = TRUE
+)
 }
 \arguments{
 \item{pdup}{An object of class \code{ProbDup}.}
