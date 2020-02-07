@@ -58,5 +58,5 @@ Philips, Lawrence. 2000. "The Double Metaphone Search Algorithm."
 }
 \seealso{
 \code{\link[stringdist]{phonetic}},
-  \code{\href{https://cran.r-project.org/web/packages/RecordLinkage/index.html}{phonetics}}
+  \href{https://cran.r-project.org/package=RecordLinkage}{\code{phonetics}}
 }

@@ -33,7 +33,7 @@
 #'   metaphone encodings, while the second character vector contains the
 #'   alternate encodings.
 #' @seealso \code{\link[stringdist]{phonetic}},
-#'   \code{\href{https://cran.r-project.org/web/packages/RecordLinkage/index.html}{phonetics}}
+#'   \href{https://cran.r-project.org/package=RecordLinkage}{\code{phonetics}}
 #'
 #' @section Acknowledgement: The \code{C} code for the double metaphone
 #'   algorithm was adapted from Maurice Aubrey's perl module hosted at the
