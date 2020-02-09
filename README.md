@@ -24,7 +24,7 @@ downloads](https://cranlogs.r-pkg.org/badges/grand-total/PGRdup?color=green)](ht
 [![Project Status:
 Inactive](http://www.repostatus.org/badges/latest/inactive.svg)](http://www.repostatus.org/#inactive)
 [![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
-[![Last-changedate](https://img.shields.io/badge/last%20change-2020--02--04-yellowgreen.svg)](https://github.com/aravind-j/PGRdup)
+[![Last-changedate](https://img.shields.io/badge/last%20change-2020--02--08-yellowgreen.svg)](https://github.com/aravind-j/PGRdup)
 [![Rdoc](http://www.rdocumentation.org/badges/version/PGRdup)](http://www.rdocumentation.org/packages/PGRdup)
 [![Zenodo
 DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.841963.svg)](https://doi.org/10.5281/zenodo.841963)
