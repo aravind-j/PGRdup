@@ -1,3 +1,11 @@
+# Version 0.2.3.5 - First submission
+Fixed problems with missing link to orphaned `RecordLinkage` package leading to warning flags in CRAN checks.
+
+### Test environments
+* local Windows 10 Home v1809, R-release (R 3.6.2) & R-devel (R 3.7.0 Pre-release).
+* local Ubuntu 16.04, R-release (R 3.6.2) & R-devel (R 3.7.0 Pre-release).
+* win-builder, R-release (R 3.6.2) & R-devel (R 3.7.0 Pre-release).
+
 # Version 0.2.3.4 - Second submission
 
 * Fixed issue with missing vignette files in 'inst/doc' leading to failure of CRAN pre-tests.
