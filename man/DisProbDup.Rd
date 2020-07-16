@@ -9,31 +9,31 @@ DisProbDup(pdup, combine = c("F", "P", "S"))
 \arguments{
 \item{pdup}{An object of class \code{ProbDup}.}
 
-\item{combine}{A character vector indicating the type of sets to be 
-considered together for retrieving disjoint sets. If \code{NULL}, then 
+\item{combine}{A character vector indicating the type of sets to be
+considered together for retrieving disjoint sets. If \code{NULL}, then
 disjoint sets within each type are retrieved (see \strong{Details}).}
 }
 \value{
-Returns an object of class \code{ProbDup} with either the disjoint 
-  sets within each type - \code{FuzzyDuplicates}, \code{PhoneticDuplicates} 
-  and \code{SemanticDuplicates} when \code{combine = NULL} or the combined 
+Returns an object of class \code{ProbDup} with either the disjoint
+  sets within each type - \code{FuzzyDuplicates}, \code{PhoneticDuplicates}
+  and \code{SemanticDuplicates} when \code{combine = NULL} or the combined
   disjoint duplicate sets as an additional element \code{DisjointDupicates}
   according to the choice specified in the argument \code{combine}.
 }
 \description{
-\code{DisProbDup} finds and joins intersecting sets in an object of class 
+\code{DisProbDup} finds and joins intersecting sets in an object of class
 \code{ProbDup} to get disjoint probable duplicate sets.
 }
 \details{
-This function considers the accession primary keys/IDs for finding 
-intersecting sets and subsequently joins them to retrieve disjoint sets. 
-These operations are implemented utilizing the \code{\link[igraph]{igraph}} 
-package functions.
+This function considers the accession primary keys/IDs for finding
+intersecting sets and subsequently joins them to retrieve disjoint sets.
+These operations are implemented utilizing the
+\code{\link[igraph]{igraph-package}} package functions.
 
-Disjoint sets are retrieved either individually for each type of probable 
+Disjoint sets are retrieved either individually for each type of probable
 duplicate sets or considering all type of sets simultaneously. In case of the
 latter, the disjoint of all the type of sets alone are returned in the output
-as an additional data frame \code{DisjointDuplicates} in an object of class 
+as an additional data frame \code{DisjointDuplicates} in an object of class
 \code{ProbDup}
 }
 \examples{
@@ -61,19 +61,19 @@ GN[GNfields] <- lapply(GN[GNfields], function(x) MergeSuffix(x, y3, delim = c("s
 GNKWIC <- KWIC(GN, GNfields)
 
 # Specify the exceptions as a vector
-exep <- c("A", "B", "BIG", "BOLD", "BUNCH", "C", "COMPANY", "CULTURE", 
-         "DARK", "E", "EARLY", "EC", "ERECT", "EXOTIC", "FLESH", "GROUNDNUT", 
-         "GUTHUKAI", "IMPROVED", "K", "KUTHUKADAL", "KUTHUKAI", "LARGE", 
-         "LIGHT", "LOCAL", "OF", "OVERO", "P", "PEANUT", "PURPLE", "R", 
-         "RED", "RUNNER", "S1", "SAM", "SMALL", "SPANISH", "TAN", "TYPE", 
+exep <- c("A", "B", "BIG", "BOLD", "BUNCH", "C", "COMPANY", "CULTURE",
+         "DARK", "E", "EARLY", "EC", "ERECT", "EXOTIC", "FLESH", "GROUNDNUT",
+         "GUTHUKAI", "IMPROVED", "K", "KUTHUKADAL", "KUTHUKAI", "LARGE",
+         "LIGHT", "LOCAL", "OF", "OVERO", "P", "PEANUT", "PURPLE", "R",
+         "RED", "RUNNER", "S1", "SAM", "SMALL", "SPANISH", "TAN", "TYPE",
          "U", "VALENCIA", "VIRGINIA", "WHITE")
-          
+
 # Specify the synsets as a list
 syn <- list(c("CHANDRA", "AH114"), c("TG1", "VIKRAM"))
 
 # Fetch probable duplicate sets
 GNdup <- ProbDup(kwic1 = GNKWIC, method = "a", excep = exep, fuzzy = TRUE,
-                 phonetic = TRUE, encoding = "primary", 
+                 phonetic = TRUE, encoding = "primary",
                  semantic = TRUE, syn = syn)
 lapply(GNdup, dim)
 
@@ -84,8 +84,8 @@ lapply(disGNdup1, nrow)
 # Get disjoint probable duplicate sets combining all the kinds of sets
 disGNdup2 <- DisProbDup(GNdup, combine = c("F", "P", "S"))
 lapply(disGNdup2, nrow)
-                  
-}                 
+
+}
 }
 \seealso{
 \code{\link[PGRdup]{ProbDup}}

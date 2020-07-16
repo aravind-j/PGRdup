@@ -65,7 +65,7 @@ character vector.
 
 This function is designed particularly for use with fields corresponding to 
 accession names such as accession ids, collection numbers, accession names 
-etc. It is essentially a wrapper around the \code{\link[base]{gsub}} base 
+etc. It is essentially a wrapper around the \code{\link[base:grep]{gsub}} base 
 function with \code{\link[base]{regex}} arguments. It also converts all 
 strings to upper case and removes leading and trailing spaces.
 
@@ -100,7 +100,7 @@ names <- c("S7-12-6", "ICG-3505", "U 4-47-18;EC 21127", "AH 6481", "RS   1",
 DataClean(names)
 }
 \seealso{
-\code{\link[base]{gsub}}, \code{\link[base]{regex}}, 
+\code{\link[base:grep]{gsub}}, \code{\link[base]{regex}}, 
   \code{\link[PGRdup]{MergeKW}}, \code{\link[PGRdup]{KWIC}}, 
   \code{\link[PGRdup]{ProbDup}}
 }

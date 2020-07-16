@@ -33,7 +33,7 @@
 #' 
 #' This function is designed particularly for use with fields corresponding to 
 #' accession names such as accession ids, collection numbers, accession names 
-#' etc. It is essentially a wrapper around the \code{\link[base]{gsub}} base 
+#' etc. It is essentially a wrapper around the \code{\link[base:grep]{gsub}} base 
 #' function with \code{\link[base]{regex}} arguments. It also converts all 
 #' strings to upper case and removes leading and trailing spaces.
 #' 
@@ -82,7 +82,7 @@
 #'   \strong{Details}).
 #' @return A character vector with the cleaned data converted to upper case. 
 #'   \code{NAs} if any are converted to blank strings.
-#' @seealso \code{\link[base]{gsub}}, \code{\link[base]{regex}}, 
+#' @seealso \code{\link[base:grep]{gsub}}, \code{\link[base]{regex}}, 
 #'   \code{\link[PGRdup]{MergeKW}}, \code{\link[PGRdup]{KWIC}}, 
 #'   \code{\link[PGRdup]{ProbDup}}
 #' @examples
