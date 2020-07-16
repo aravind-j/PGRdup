@@ -1,6 +1,6 @@
 Package: PGRdup
 Title: Discover Probable Duplicates in Plant Genetic Resources Collections
-Version: 0.2.3.5.9000
+Version: 0.2.3.6
 Authors@R: c(
     person(given = "J.", family = "Aravind",
            email = "j.aravind@icar.gov.in",
@@ -65,7 +65,7 @@ License: GPL-2 | GPL-3
 Encoding: latin1
 LazyData: true
 VignetteBuilder: knitr
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.0
 URL: https://cran.r-project.org/package=PGRdup,
     https://github.com/aravind-j/PGRdup,
     https://doi.org/10.5281/zenodo.841963,

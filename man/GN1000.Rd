@@ -3,14 +3,16 @@
 \name{GN1000}
 \alias{GN1000}
 \title{Sample groundnut PGR passport data}
-\format{A data frame having 1000 records with the following 10 
+\format{
+A data frame having 1000 records with the following 10 
   columns(fields): \itemize{ \item{CommonName}{ : }{Common name} 
   \item{BotanicalName}{ : }{Botanical name} \item{NationalID}{ : }{NBPGR 
   National identifier} \item{CollNo}{ : }{Collector number} \item{DonorID}{ :
   }{Donor ID} \item{OtherID1}{ : }{Other ID field 1} \item{OtherID2}{ : 
   }{Other ID field 2} \item{BioStatus}{ : }{Biological status}
   \item{SourceCountry}{ : }{Country of origin} \item{TransferYear}{ : }{Year
-  of transfer} }}
+  of transfer} }
+}
 \usage{
 data(GN1000)
 }
