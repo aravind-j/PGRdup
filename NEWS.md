@@ -1,5 +1,8 @@
 # PGRdup 0.2.3.6
 
+## VIGNETTE:
+* Reverted to using system certificates instead of RCurl ones for fetching and displaying version history as suggested by Prof. Brian Ripley (ripley@stats.ox.ac.uk).
+
 # PGRdup 0.2.3.5
 
 ## OTHER NOTES:
