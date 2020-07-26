@@ -65,7 +65,7 @@ License: GPL-2 | GPL-3
 Encoding: latin1
 LazyData: true
 VignetteBuilder: knitr
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1
 URL: https://cran.r-project.org/package=PGRdup,
     https://github.com/aravind-j/PGRdup,
     https://doi.org/10.5281/zenodo.841963,

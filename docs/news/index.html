@@ -10,23 +10,27 @@
 
 
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/united/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
 <!-- headroom.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -35,7 +39,7 @@
 
 <!-- docsearch -->
 <script src="../docsearch.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/docsearch.js/2.6.1/docsearch.min.css" integrity="sha256-QOSRU/ra9ActyXkIBbiIB144aDBdtvXBcNc3OTNuX/Q=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/docsearch.js/2.6.3/docsearch.min.css" integrity="sha256-QOSRU/ra9ActyXkIBbiIB144aDBdtvXBcNc3OTNuX/Q=" crossorigin="anonymous" />
 <link href="../docsearch.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
 
@@ -69,7 +73,7 @@
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-news">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -83,7 +87,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">PGRdup</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.3.5.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.3.6</span>
       </span>
     </div>
 
@@ -145,17 +149,24 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Changelog <small></small></h1>
+      <h1 data-toc-skip>Changelog <small></small></h1>
       <small>Source: <a href='https://github.com/aravind-j/PGRdup/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
     <div id="pgrdup-0236" class="section level1">
-<h1 class="page-header">
+<h1 class="page-header" data-toc-text="0.2.3.6">
 <a href="#pgrdup-0236" class="anchor"></a>PGRdup 0.2.3.6<small> Unreleased </small>
 </h1>
+<div id="vignette" class="section level2">
+<h2 class="hasAnchor">
+<a href="#vignette" class="anchor"></a>VIGNETTE:</h2>
+<ul>
+<li>Reverted to using system certificates instead of RCurl ones for fetching and displaying version history as suggested by Prof. Brian Ripley (<a href="mailto:ripley@stats.ox.ac.uk" class="email">ripley@stats.ox.ac.uk</a>).</li>
+</ul>
+</div>
 </div>
     <div id="pgrdup-0235" class="section level1">
-<h1 class="page-header">
+<h1 class="page-header" data-toc-text="0.2.3.5">
 <a href="#pgrdup-0235" class="anchor"></a>PGRdup 0.2.3.5<small> 2020-02-10 </small>
 </h1>
 <div id="other-notes" class="section level2">
@@ -167,7 +178,7 @@
 </div>
 </div>
     <div id="pgrdup-0234" class="section level1">
-<h1 class="page-header">
+<h1 class="page-header" data-toc-text="0.2.3.4">
 <a href="#pgrdup-0234" class="anchor"></a>PGRdup 0.2.3.4<small> 2019-09-19 </small>
 </h1>
 <div id="updated-functions" class="section level2">
@@ -185,7 +196,7 @@
 </div>
 </div>
     <div id="pgrdup-0233" class="section level1">
-<h1 class="page-header">
+<h1 class="page-header" data-toc-text="0.2.3.3">
 <a href="#pgrdup-0233" class="anchor"></a>PGRdup 0.2.3.3<small> 2018-01-13 </small>
 </h1>
 <div id="other-notes-1" class="section level2">
@@ -198,7 +209,7 @@
 </div>
 </div>
     <div id="pgrdup-0232" class="section level1">
-<h1 class="page-header">
+<h1 class="page-header" data-toc-text="0.2.3.2">
 <a href="#pgrdup-0232" class="anchor"></a>PGRdup 0.2.3.2<small> 2017-08-04 </small>
 </h1>
 <div id="updated-functions-1" class="section level2">
@@ -225,7 +236,7 @@
 </div>
 </div>
     <div id="pgrdup-0231" class="section level1">
-<h1 class="page-header">
+<h1 class="page-header" data-toc-text="0.2.3.1">
 <a href="#pgrdup-0231" class="anchor"></a>PGRdup 0.2.3.1<small> 2017-03-15 </small>
 </h1>
 <div id="other-notes-3" class="section level2">
@@ -238,7 +249,7 @@
 </div>
 </div>
     <div id="pgrdup-023" class="section level1">
-<h1 class="page-header">
+<h1 class="page-header" data-toc-text="0.2.3">
 <a href="#pgrdup-023" class="anchor"></a>PGRdup 0.2.3<small> 2017-02-01 </small>
 </h1>
 <div id="updated-functions-2" class="section level2">
@@ -265,7 +276,7 @@
 </div>
 </div>
     <div id="pgrdup-0221" class="section level1">
-<h1 class="page-header">
+<h1 class="page-header" data-toc-text="0.2.2.1">
 <a href="#pgrdup-0221" class="anchor"></a>PGRdup 0.2.2.1<small> 2016-03-09 </small>
 </h1>
 <div id="other-notes-5" class="section level2">
@@ -278,7 +289,7 @@
 </div>
 </div>
     <div id="pgrdup-022" class="section level1">
-<h1 class="page-header">
+<h1 class="page-header" data-toc-text="0.2.2">
 <a href="#pgrdup-022" class="anchor"></a>PGRdup 0.2.2<small> 2016-03-05 </small>
 </h1>
 <div id="new-functions" class="section level2">
@@ -312,7 +323,7 @@
 </div>
 </div>
     <div id="pgrdup-021" class="section level1">
-<h1 class="page-header">
+<h1 class="page-header" data-toc-text="0.2.1">
 <a href="#pgrdup-021" class="anchor"></a>PGRdup 0.2.1<small> 2015-07-23 </small>
 </h1>
 <div id="new-functions-1" class="section level2">
@@ -363,9 +374,9 @@
 <li>Dropped the abbreviation PGR in the title in DESCRIPTION as it is mentioned in the description text.</li>
 </ul>
 </div>
-<div id="vignette" class="section level2">
+<div id="vignette-1" class="section level2">
 <h2 class="hasAnchor">
-<a href="#vignette" class="anchor"></a>VIGNETTE:</h2>
+<a href="#vignette-1" class="anchor"></a>VIGNETTE:</h2>
 <ul>
 <li>Added vignette “An Introduction to PGRdup package”.</li>
 </ul>
@@ -373,7 +384,7 @@
 </div>
 </div>
     <div id="pgrdup-020" class="section level1">
-<h1 class="page-header">
+<h1 class="page-header" data-toc-text="0.2.0">
 <a href="#pgrdup-020" class="anchor"></a>PGRdup 0.2.0<small> Unreleased </small>
 </h1>
 <ul>
@@ -382,23 +393,10 @@
 </div>
   </div>
 
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <div id="tocnav">
-      <h2>Contents</h2>
-      <ul class="nav nav-pills nav-stacked">
-        <li><a href="#pgrdup-0236">0.2.3.6</a></li>
-        <li><a href="#pgrdup-0235">0.2.3.5</a></li>
-        <li><a href="#pgrdup-0234">0.2.3.4</a></li>
-        <li><a href="#pgrdup-0233">0.2.3.3</a></li>
-        <li><a href="#pgrdup-0232">0.2.3.2</a></li>
-        <li><a href="#pgrdup-0231">0.2.3.1</a></li>
-        <li><a href="#pgrdup-023">0.2.3</a></li>
-        <li><a href="#pgrdup-0221">0.2.2.1</a></li>
-        <li><a href="#pgrdup-022">0.2.2</a></li>
-        <li><a href="#pgrdup-021">0.2.1</a></li>
-        <li><a href="#pgrdup-020">0.2.0</a></li>
-      </ul>
-    </div>
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 
 </div>
@@ -410,7 +408,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
 </div>
 
       </footer>

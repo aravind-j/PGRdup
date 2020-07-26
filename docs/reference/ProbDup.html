@@ -10,23 +10,27 @@
 
 
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/united/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
 <!-- headroom.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -35,7 +39,7 @@
 
 <!-- docsearch -->
 <script src="../docsearch.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/docsearch.js/2.6.1/docsearch.min.css" integrity="sha256-QOSRU/ra9ActyXkIBbiIB144aDBdtvXBcNc3OTNuX/Q=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/docsearch.js/2.6.3/docsearch.min.css" integrity="sha256-QOSRU/ra9ActyXkIBbiIB144aDBdtvXBcNc3OTNuX/Q=" crossorigin="anonymous" />
 <link href="../docsearch.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
 
@@ -43,9 +47,8 @@
 
 <meta property="og:title" content="Identify probable duplicates of accessions — ProbDup" />
 <meta property="og:description" content="ProbDup identifies probable duplicates of germplasm accessions in KWIC
-indexes created from PGR passport databases using fuzzy, phonetic and 
+indexes created from PGR passport databases using fuzzy, phonetic and
 semantic matching strategies." />
-<meta name="twitter:card" content="summary" />
 
 
 
@@ -73,7 +76,7 @@ semantic matching strategies." />
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -87,7 +90,7 @@ semantic matching strategies." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">PGRdup</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.3.5.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.3.6</span>
       </span>
     </div>
 
@@ -156,7 +159,7 @@ semantic matching strategies." />
 
     <div class="ref-description">
     <p><code>ProbDup</code> identifies probable duplicates of germplasm accessions in KWIC
-indexes created from PGR passport databases using fuzzy, phonetic and 
+indexes created from PGR passport databases using fuzzy, phonetic and
 semantic matching strategies.</p>
     </div>
 
@@ -189,83 +192,83 @@ semantic matching strategies.</p>
     </tr>
     <tr>
       <th>kwic2</th>
-      <td><p>An object of class <code>KWIC</code>. Required for <code>method</code> 
+      <td><p>An object of class <code>KWIC</code>. Required for <code>method</code>
 <code>"b"</code> and <code>"c"</code> only (see <strong>Details</strong>).</p></td>
     </tr>
     <tr>
       <th>method</th>
-      <td><p>The method to be followed for identification of probable 
-duplicates. Either <code>"a"</code>, <code>"b"</code> or <code>"c"</code>. (see 
+      <td><p>The method to be followed for identification of probable
+duplicates. Either <code>"a"</code>, <code>"b"</code> or <code>"c"</code>. (see
 <strong>Details</strong>).</p></td>
     </tr>
     <tr>
       <th>excep</th>
-      <td><p>A vector of the keywords in KWIC not to be used for probable 
+      <td><p>A vector of the keywords in KWIC not to be used for probable
 duplicate search (see <strong>Details</strong>).</p></td>
     </tr>
     <tr>
       <th>chunksize</th>
-      <td><p>A value indicating the size of KWIC index keyword block to 
-be used for searching for matches at a time in case of large number of 
+      <td><p>A value indicating the size of KWIC index keyword block to
+be used for searching for matches at a time in case of large number of
 keywords(see <strong>Note</strong>).</p></td>
     </tr>
     <tr>
       <th>useBytes</th>
-      <td><p>logical. If <code>TRUE</code>, performs byte-wise comparison 
+      <td><p>logical. If <code>TRUE</code>, performs byte-wise comparison
 instead of character-wise comparison (see <strong>Note</strong>).</p></td>
     </tr>
     <tr>
       <th>fuzzy</th>
-      <td><p>logical. If <code>TRUE</code> identifies probable duplicates based on 
+      <td><p>logical. If <code>TRUE</code> identifies probable duplicates based on
 fuzzy matching.</p></td>
     </tr>
     <tr>
       <th>max.dist</th>
-      <td><p>The maximum levenshtein distance between keyword strings 
+      <td><p>The maximum levenshtein distance between keyword strings
 allowed for a match. Default is 3 (see <strong>Details</strong>).</p></td>
     </tr>
     <tr>
       <th>force.exact</th>
-      <td><p>logical. If <code>TRUE</code>, enforces exact matching instead 
+      <td><p>logical. If <code>TRUE</code>, enforces exact matching instead
 of fuzzy matching for keyword strings which match the criteria specified in
 arguments <code>max.alpha</code> and <code>max.digit</code> (see <strong>Details</strong>).</p></td>
     </tr>
     <tr>
       <th>max.alpha</th>
-      <td><p>Maximum number of alphabet characters present in a keyword 
-string up to which exact matching is enforced rather than fuzzy matching. 
+      <td><p>Maximum number of alphabet characters present in a keyword
+string up to which exact matching is enforced rather than fuzzy matching.
 Default is 4 (see <strong>Details</strong>).</p></td>
     </tr>
     <tr>
       <th>max.digit</th>
-      <td><p>Maximum number of numeric characters present in a keyword 
-string up to which exact matching is enforced rather than fuzzy matching. 
+      <td><p>Maximum number of numeric characters present in a keyword
+string up to which exact matching is enforced rather than fuzzy matching.
 Default is Inf (see <strong>Details</strong>).</p></td>
     </tr>
     <tr>
       <th>phonetic</th>
-      <td><p>logical. If <code>TRUE</code> identifies probable duplicates based 
+      <td><p>logical. If <code>TRUE</code> identifies probable duplicates based
 on phonetic matching.</p></td>
     </tr>
     <tr>
       <th>encoding</th>
-      <td><p>Double metaphone encoding for phonetic matching. The default 
+      <td><p>Double metaphone encoding for phonetic matching. The default
 is <code>"primary"</code> (see <strong>Details</strong>).</p></td>
     </tr>
     <tr>
       <th>phon.min.alpha</th>
-      <td><p>Minimum number of alphabet characters to be present in 
+      <td><p>Minimum number of alphabet characters to be present in
 a keyword string for phonetic matching (see <strong>Details</strong>).</p></td>
     </tr>
     <tr>
       <th>min.enc</th>
-      <td><p>Minimum number of characters to be be present in double 
-metaphone encoding of a keyword string for phonetic matching (see 
+      <td><p>Minimum number of characters to be be present in double
+metaphone encoding of a keyword string for phonetic matching (see
 <strong>Details</strong>).</p></td>
     </tr>
     <tr>
       <th>semantic</th>
-      <td><p>logical. If <code>TRUE</code> identifies probable duplicates based 
+      <td><p>logical. If <code>TRUE</code> identifies probable duplicates based
 on semantic matching.</p></td>
     </tr>
     <tr>
@@ -276,7 +279,7 @@ on semantic matching.</p></td>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A list of class <code>ProbDup</code> containing the following data frames 
+    <p>A list of class <code>ProbDup</code> containing the following data frames
   of probable duplicate sets identified along with the corresponding keywords
   and set counts:</p><ol>
 <li><p><code>FuzzyDuplicates</code></p></li>
@@ -287,96 +290,96 @@ on semantic matching.</p></td>
 <tr><td><code>SET_NO</code></td><td>The set number.</td></tr>
 <tr><td><code>TYPE</code></td><td>The type of probable duplicate set. 'F' for fuzzy, 'P'
   for phonetic and 'S' for semantic matching sets.</td></tr>
-<tr><td><code>ID</code></td><td>The 
+<tr><td><code>ID</code></td><td>The
   primary IDs of records of accessions comprising a set.</td></tr>
 <tr><td><code>ID:KW</code></td><td>The 'matching' keywords along with the IDs.</td></tr>
-<tr><td><code>COUNT</code></td><td>The 
+<tr><td><code>COUNT</code></td><td>The
   number of elements in a set.</td></tr>
 </table>
 
-  
+
 <p>The prefix <code>[K*]</code> indicates the KWIC index of origin of the KEYWORD or
   PRIM_ID.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>This function performs fuzzy, phonetic and semantic matching of keywords in 
-KWIC indexes of PGR passport databases (created using 
-<code><a href='KWIC.html'>KWIC</a></code> function) to identify probable duplicates of 
-germplasm accessions. The function can execute matching according to either 
+    <p>This function performs fuzzy, phonetic and semantic matching of keywords in
+KWIC indexes of PGR passport databases (created using
+<code><a href='KWIC.html'>KWIC</a></code> function) to identify probable duplicates of
+germplasm accessions. The function can execute matching according to either
 of the following three methods as specified by the <code>method</code> argument.</p>
-<dl class='dl-horizontal'>
-<dt>Method <code>a</code>:</dt><dd><p>Perform string matching of keywords in a 
-single KWIC index to identify probable duplicates of accessions in a single 
-PGR passport database.</p></dd> <dt>Method <code>b</code>:</dt><dd><p>Perform string matching of 
-keywords in the first KWIC index (query) with that of the keywords in the 
-second index (source) to identify probable duplicates of accessions of the 
-first PGR passport database among the accessions in the second database.</p></dd> 
-<dt>Method <code>c</code>:</dt><dd><p>Perform string matching of keywords in two different 
+<dl'>
+<dt>Method <code>a</code>:</dt><dd><p>Perform string matching of keywords in a
+single KWIC index to identify probable duplicates of accessions in a single
+PGR passport database.</p></dd> <dt>Method <code>b</code>:</dt><dd><p>Perform string matching of
+keywords in the first KWIC index (query) with that of the keywords in the
+second index (source) to identify probable duplicates of accessions of the
+first PGR passport database among the accessions in the second database.</p></dd>
+<dt>Method <code>c</code>:</dt><dd><p>Perform string matching of keywords in two different
 KWIC indexes jointly to identify probable duplicates of accessions from among
 two PGR passport databases.</p></dd>
 </dl>
 
 <p><strong>Fuzzy matching</strong> or approximate string matching of keywords is carried
-out by computing the generalized levenshtein (edit) distance between them. 
-This distance measure  counts the number of deletions, insertions and 
-substitutions necessary to turn one string to the another. A distance of up 
+out by computing the generalized levenshtein (edit) distance between them.
+This distance measure  counts the number of deletions, insertions and
+substitutions necessary to turn one string to the another. A distance of up
 to <code>max.dist</code> are considered for a match.</p>
-<p>Exact matching will be enforced when the argument <code>force.exact</code> is 
-<code>TRUE</code>. It can be used to avoid fuzzy matching when the number of 
-alphabet characters in keywords is lesser than a critical value 
-(<code>max.alpha</code>). Similarly, the value of <code>max.digit</code> can also be set 
-according to the requirements. The default value of <code>Inf</code> avoids fuzzy 
-matching and enforces exact matching for all keywords having any numerical 
-characters. If <code>max.digit</code> and <code>max.alpha</code> are both set to 
+<p>Exact matching will be enforced when the argument <code>force.exact</code> is
+<code>TRUE</code>. It can be used to avoid fuzzy matching when the number of
+alphabet characters in keywords is lesser than a critical value
+(<code>max.alpha</code>). Similarly, the value of <code>max.digit</code> can also be set
+according to the requirements. The default value of <code>Inf</code> avoids fuzzy
+matching and enforces exact matching for all keywords having any numerical
+characters. If <code>max.digit</code> and <code>max.alpha</code> are both set to
 <code>Inf</code>, exact matching will be enforced for all the keywords.</p>
-<p>When exact matching is enforced, for keywords having both alphabet and 
-numeric characters and with the number of alphabet characters greater than 
-<code>max.digit</code>, matching will be carried out separately for alphabet and 
+<p>When exact matching is enforced, for keywords having both alphabet and
+numeric characters and with the number of alphabet characters greater than
+<code>max.digit</code>, matching will be carried out separately for alphabet and
 numeric characters present.</p>
-<p><strong>Phonetic matching</strong> of keywords is carried out using the Double 
-Metaphone phonetic algorithm (<code><a href='DoubleMetaphone.html'>DoubleMetaphone</a></code>) to 
-identify keywords that have the similar pronunciation. Either the 
-<code>primary</code> or <code>alternate</code> encodings can be used by specifying the 
-<code>encoding</code> argument. The argument <code>phon.min.alpha</code> sets the limits 
+<p><strong>Phonetic matching</strong> of keywords is carried out using the Double
+Metaphone phonetic algorithm (<code><a href='DoubleMetaphone.html'>DoubleMetaphone</a></code>) to
+identify keywords that have the similar pronunciation. Either the
+<code>primary</code> or <code>alternate</code> encodings can be used by specifying the
+<code>encoding</code> argument. The argument <code>phon.min.alpha</code> sets the limits
 for the number of alphabet characters to be present in a string for executing
 phonetic matching. Similarly <code>min.enc</code> sets the limits for the number of
 characters to be present in the encoding of a keyword for phonetic matching.</p>
 <p><strong>Semantic matching</strong> matches keywords based on a list of accession name
 synonyms supplied as list with character vectors of synonym sets (synsets) to
-the <code>syn</code> argument. Synonyms in this context refers to interchangeable 
-identifiers or names by which an accession is recognized. Multiple keywords 
+the <code>syn</code> argument. Synonyms in this context refers to interchangeable
+identifiers or names by which an accession is recognized. Multiple keywords
 specified as members of the same synset in <code>syn</code> are merged together. To
 facilitate accurate identification of synonyms from the KWIC index, identical
 data standardization operations using the <code><a href='MergeKW.html'>MergeKW</a></code> and
 <code><a href='DataClean.html'>DataClean</a></code> functions for both the original database
 fields and the synset list are recommended.</p>
-<p>The probable duplicate sets identified initially here may be intersecting 
-with other sets. To get the disjoint sets after the union of all the 
+<p>The probable duplicate sets identified initially here may be intersecting
+with other sets. To get the disjoint sets after the union of all the
 intersecting sets use the <code><a href='DisProbDup.html'>DisProbDup</a></code> function.</p>
-<p>The function <code><a href='AddProbDup.html'>AddProbDup</a></code> can be used to add the 
-information associated with the identified sets in an object of class 
+<p>The function <code><a href='AddProbDup.html'>AddProbDup</a></code> can be used to add the
+information associated with the identified sets in an object of class
 <code>ProbDup</code> as fields(columns) to the original PGR passport database.</p>
-<p>All of the string matching operations here are executed through the 
+<p>All of the string matching operations here are executed through the
 <code><a href='https://rdrr.io/pkg/stringdist/man/stringdist-package.html'>stringdist-package</a></code> functions.</p>
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
-    <p>As the number of keywords in the KWIC indexes increases, the memory 
-  consumption by the function also increases. For string matching, this 
-  function relies upon creation of a \(n\)*\(m\) matrix of all possible 
-  keyword pairs for comparison, where \(n\) and \(m\) are the number of 
-  keywords in the query and source indexes respectively. This can lead to 
-  <code>cannot allocate vector of size</code> errors in case very large KWIC 
-  indexes where the comparison matrix is too large to reside in memory. In 
-  such a case, try to adjust the <code>chunksize</code> argument to get the 
-  appropriate size of the KWIC index keyword block to be used for searching 
-  for matches at a time. However a smaller chunksize may lead to longer 
-  computation time due to the memory-time trade-off.</p>  
-<p>The progress of matching is displayed in the console as number of blocks 
-  completed out of total (e.g. 6 / 30), the percentage of achievement (e.g. 
-  30%) and a text-based progress bar.</p>  
+    <p>As the number of keywords in the KWIC indexes increases, the memory
+  consumption by the function also increases. For string matching, this
+  function relies upon creation of a \(n\)*\(m\) matrix of all possible
+  keyword pairs for comparison, where \(n\) and \(m\) are the number of
+  keywords in the query and source indexes respectively. This can lead to
+  <code>cannot allocate vector of size</code> errors in case very large KWIC
+  indexes where the comparison matrix is too large to reside in memory. In
+  such a case, try to adjust the <code>chunksize</code> argument to get the
+  appropriate size of the KWIC index keyword block to be used for searching
+  for matches at a time. However a smaller chunksize may lead to longer
+  computation time due to the memory-time trade-off.</p>
+<p>The progress of matching is displayed in the console as number of blocks
+  completed out of total (e.g. 6 / 30), the percentage of achievement (e.g.
+  30%) and a text-based progress bar.</p>
 <p>In case of multi-byte characters in keywords, the matching speed is further
-  dependent upon the <code>useBytes</code> argument as described in 
-  <strong>Encoding issues</strong> for the <code><a href='https://rdrr.io/pkg/stringdist/man/stringdist.html'>stringdist</a></code> 
+  dependent upon the <code>useBytes</code> argument as described in
+  <strong>Encoding issues</strong> for the <code><a href='https://rdrr.io/pkg/stringdist/man/stringdist.html'>stringdist</a></code>
   function, which is made use of here for string matching.</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
@@ -385,9 +388,9 @@ information associated with the identified sets in an object of class
   <a href='https://journal.r-project.org/archive/2014/RJ-2014-011/index.html'>https://journal.r-project.org/archive/2014/RJ-2014-011/index.html</a>.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='KWIC.html'>KWIC</a></code>, <code><a href='DoubleMetaphone.html'>DoubleMetaphone</a></code> 
-  <code><a href='https://rdrr.io/pkg/stringdist/man/stringdist.html'>stringdistmatrix</a></code>, <code><a href='https://rdrr.io/r/utils/adist.html'>adist</a></code>, 
-  <code><a href='print.ProbDup.html'>print.ProbDup</a></code></p></div>
+    <div class='dont-index'><p><code><a href='KWIC.html'>KWIC</a></code>, <code><a href='DoubleMetaphone.html'>DoubleMetaphone</a></code>
+  <code><a href='https://rdrr.io/pkg/stringdist/man/stringdist.html'>stringdistmatrix</a></code>,
+  <code><a href='https://rdrr.io/r/utils/adist.html'>adist</a></code>, <code><a href='print.ProbDup.html'>print.ProbDup</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
@@ -494,18 +497,10 @@ information associated with the identified sets in an object of class
 
 }</div></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#value">Value</a></li>
-      <li><a href="#details">Details</a></li>
-      <li><a href="#note">Note</a></li>
-      <li><a href="#references">References</a></li>
-      <li><a href="#see-also">See also</a></li>
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 
@@ -516,7 +511,7 @@ information associated with the identified sets in an object of class
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
 </div>
 
       </footer>
