@@ -28,7 +28,7 @@ Returns an object of class \code{ProbDup} with either the disjoint
 This function considers the accession primary keys/IDs for finding
 intersecting sets and subsequently joins them to retrieve disjoint sets.
 These operations are implemented utilizing the
-\code{\link[igraph]{igraph-package}} package functions.
+\code{\link[igraph:aaa-igraph-package]{igraph}} package functions.
 
 Disjoint sets are retrieved either individually for each type of probable
 duplicate sets or considering all type of sets simultaneously. In case of the
