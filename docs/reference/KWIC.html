@@ -52,6 +52,8 @@ fields." />
 
 
 
+
+
 <!-- mathjax -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script>
@@ -89,7 +91,7 @@ fields." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">PGRdup</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.3.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.3.7</span>
       </span>
     </div>
 
@@ -97,28 +99,28 @@ fields." />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
     Home
   </a>
 </li>
 <li>
   <a href="../reference/index.html">
-    <span class="fa fa-code"></span>
+    <span class="fas fa-code"></span>
      
     Reference
   </a>
 </li>
 <li>
   <a href="../articles/Introduction.html">
-    <span class="fa fa-file-o"></span>
+    <span class="fas fa-file-o"></span>
      
     Introduction
   </a>
 </li>
 <li>
   <a href="../news/index.html">
-    <span class="fa fa-newspaper-o"></span>
+    <span class="fas fa-newspaper-o"></span>
      
     News
   </a>
@@ -127,7 +129,7 @@ fields." />
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/aravind-j/PGRdup">
-    <span class="fa fa-github-alt"></span>
+    <span class="fas fa-github-alt"></span>
      
     Github
   </a>
@@ -161,7 +163,7 @@ fields." />
 fields.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>KWIC</span>(<span class='no'>x</span>, <span class='no'>fields</span>, <span class='kw'>min.freq</span> <span class='kw'>=</span> <span class='fl'>10</span>)</pre>
+    <pre class="usage"><span class='fu'>KWIC</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>fields</span>, min.freq <span class='op'>=</span> <span class='fl'>10</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -209,7 +211,8 @@ suggested before running this function.</p>
 
     <p>Knüpffer, H. 1988. "The European Barley Database of the ECP/GR:
   An Introduction." <em>Die Kulturpflanze</em> 36 (1): 135-62.
-  doi:<a href='https://doi.org/10.1007/BF01986957'>https://doi.org/10.1007/BF01986957</a>.</p>
+  doi: <a href='https://doi.org/10.1007/BF01986957'>10.1007/BF01986957</a>
+.</p>
 <p>Knüpffer, H., L. Frese, and M. W. M. Jongen. 1997. "Using Central Crop
   Databases: Searching for Duplicates and Gaps." In <em>Central Crop
   Databases: Tools for Plant Genetic Resources Management. Report of a
@@ -224,32 +227,33 @@ suggested before running this function.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># Load PGR passport database</span>
-<span class='no'>GN</span> <span class='kw'>&lt;-</span> <span class='no'>GN1000</span>
+<span class='va'>GN</span> <span class='op'>&lt;-</span> <span class='va'>GN1000</span>
 
 <span class='co'># Specify as a vector the database fields to be used</span>
-<span class='no'>GNfields</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"NationalID"</span>, <span class='st'>"CollNo"</span>, <span class='st'>"DonorID"</span>, <span class='st'>"OtherID1"</span>, <span class='st'>"OtherID2"</span>)
+<span class='va'>GNfields</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"NationalID"</span>, <span class='st'>"CollNo"</span>, <span class='st'>"DonorID"</span>, <span class='st'>"OtherID1"</span>, <span class='st'>"OtherID2"</span><span class='op'>)</span>
 
 <span class='co'># Clean the data</span>
-<span class='no'>GN</span>[<span class='no'>GNfields</span>] <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/lapply.html'>lapply</a></span>(<span class='no'>GN</span>[<span class='no'>GNfields</span>], <span class='kw'>function</span>(<span class='no'>x</span>) <span class='fu'><a href='DataClean.html'>DataClean</a></span>(<span class='no'>x</span>))
+<span class='va'>GN</span><span class='op'>[</span><span class='va'>GNfields</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/lapply.html'>lapply</a></span><span class='op'>(</span><span class='va'>GN</span><span class='op'>[</span><span class='va'>GNfields</span><span class='op'>]</span>, <span class='kw'>function</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span> <span class='fu'><a href='DataClean.html'>DataClean</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span><span class='op'>)</span>
 
-<span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
+<span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
 
 <span class='co'># Generate KWIC index</span>
-<span class='no'>GNKWIC</span> <span class='kw'>&lt;-</span> <span class='fu'>KWIC</span>(<span class='no'>GN</span>, <span class='no'>GNfields</span>)
-<span class='no'>GNKWIC</span>
+<span class='va'>GNKWIC</span> <span class='op'>&lt;-</span> <span class='fu'>KWIC</span><span class='op'>(</span><span class='va'>GN</span>, <span class='va'>GNfields</span><span class='op'>)</span>
+<span class='va'>GNKWIC</span>
 
 <span class='co'># Retrieve the KWIC index from the KWIC object</span>
-<span class='no'>KWIC</span> <span class='kw'>&lt;-</span> <span class='no'>GNKWIC</span><span class='kw'>[[</span><span class='fl'>1</span>]]
+<span class='va'>KWIC</span> <span class='op'>&lt;-</span> <span class='va'>GNKWIC</span><span class='op'>[[</span><span class='fl'>1</span><span class='op'>]</span><span class='op'>]</span>
 
 <span class='co'># Retrieve the keyword frequencies from the KWIC object</span>
-<span class='no'>KeywordFreq</span> <span class='kw'>&lt;-</span> <span class='no'>GNKWIC</span><span class='kw'>[[</span><span class='fl'>2</span>]]
+<span class='va'>KeywordFreq</span> <span class='op'>&lt;-</span> <span class='va'>GNKWIC</span><span class='op'>[[</span><span class='fl'>2</span><span class='op'>]</span><span class='op'>]</span>
 
 <span class='co'># Show error in case of duplicates and NULL values</span>
 <span class='co'># in the primary key/ID field "NationalID"</span>
-<span class='no'>GN</span>[<span class='fl'>1001</span>:<span class='fl'>1005</span>,] <span class='kw'>&lt;-</span> <span class='no'>GN</span>[<span class='fl'>1</span>:<span class='fl'>5</span>,]
-<span class='no'>GN</span>[<span class='fl'>1001</span>,<span class='fl'>3</span>] <span class='kw'>&lt;-</span> <span class='st'>""</span>
-<span class='no'>GNKWIC</span> <span class='kw'>&lt;-</span> <span class='fu'>KWIC</span>(<span class='no'>GN</span>, <span class='no'>GNfields</span>)
-}</div></pre>
+<span class='va'>GN</span><span class='op'>[</span><span class='fl'>1001</span><span class='op'>:</span><span class='fl'>1005</span>,<span class='op'>]</span> <span class='op'>&lt;-</span> <span class='va'>GN</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>5</span>,<span class='op'>]</span>
+<span class='va'>GN</span><span class='op'>[</span><span class='fl'>1001</span>,<span class='fl'>3</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='st'>""</span>
+<span class='va'>GNKWIC</span> <span class='op'>&lt;-</span> <span class='fu'>KWIC</span><span class='op'>(</span><span class='va'>GN</span>, <span class='va'>GNfields</span><span class='op'>)</span>
+<span class='op'>}</span>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -265,7 +269,7 @@ suggested before running this function.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
 </div>
 
       </footer>

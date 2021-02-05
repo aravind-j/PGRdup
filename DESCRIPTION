@@ -1,6 +1,6 @@
 Package: PGRdup
 Title: Discover Probable Duplicates in Plant Genetic Resources Collections
-Version: 0.2.3.6.9000
+Version: 0.2.3.7
 Authors@R: c(
     person(given = "J.", family = "Aravind",
            email = "j.aravind@icar.gov.in",

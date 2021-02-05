@@ -1,7 +1,7 @@
 
 <img src="https://raw.githubusercontent.com/aravind-j/PGRdup/master/inst/extdata/PGRdup.png" width="100%" />
 
-###### Version : [0.2.3.6](https://aravind-j.github.io/PGRdup/articles/Introduction.html#version-history); Copyright (C) 2014-2017: [ICAR-NBPGR](http://www.nbpgr.ernet.in/); License: [GPL-2|GPL-3](https://www.r-project.org/Licenses/)
+###### Version : [0.2.3.7](https://aravind-j.github.io/PGRdup/articles/Introduction.html#version-history); Copyright (C) 2014-2017: [ICAR-NBPGR](http://www.nbpgr.ernet.in/); License: [GPL-2\|GPL-3](https://www.r-project.org/Licenses/)
 
 ##### *Aravind, J.<sup>1</sup>, Radhamani, J.<sup>1</sup>, Kalyani Srinivasan<sup>1</sup>, Ananda Subhash, B.<sup>2</sup>, and Tyagi, R. K.<sup>1</sup>*
 
@@ -9,7 +9,7 @@
 2.  Centre for Development of Advanced Computing, Thiruvananthapuram,
     Kerala, India
 
------
+------------------------------------------------------------------------
 
 [![minimal R
 version](https://img.shields.io/badge/R%3E%3D-3.0.2-6666ff.svg)](https://cran.r-project.org/)
@@ -22,15 +22,15 @@ downloads](https://cranlogs.r-pkg.org/badges/grand-total/PGRdup?color=green)](ht
 [![develVersion](https://img.shields.io/badge/devel%20version-0.2.3.6-orange.svg)](https://github.com/aravind-j/PGRdup)
 <!-- [![GitHub Download Count](https://github-basic-badges.herokuapp.com/downloads/aravind-j/PGRdup/total.svg)] -->
 [![Project Status:
-Inactive](http://www.repostatus.org/badges/latest/inactive.svg)](http://www.repostatus.org/#inactive)
-[![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
-[![Last-changedate](https://img.shields.io/badge/last%20change-2020--07--26-yellowgreen.svg)](https://github.com/aravind-j/PGRdup)
-[![Rdoc](http://www.rdocumentation.org/badges/version/PGRdup)](http://www.rdocumentation.org/packages/PGRdup)
+Inactive](https://www.repostatus.org/badges/latest/inactive.svg)](https://www.repostatus.org/#inactive)
+[![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
+[![Last-changedate](https://img.shields.io/badge/last%20change-2021--02--05-yellowgreen.svg)](https://github.com/aravind-j/PGRdup)
+[![Rdoc](https://www.rdocumentation.org/badges/version/PGRdup)](https://www.rdocumentation.org/packages/PGRdup)
 [![Zenodo
 DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.841963.svg)](https://doi.org/10.5281/zenodo.841963)
 [![Analytics](https://pro-pulsar-193905.appspot.com/UA-112827210-2/welcome-page)](https://github.com/aravind-j/google-analytics-beacon)
 
------
+------------------------------------------------------------------------
 
 ## Introduction <img src="https://raw.githubusercontent.com/aravind-j/PGRdup/master/inst/extdata/PGRdup_v2.png" align="right" alt="logo" width="173" height = "200" style = "padding: 10px; border: none; float: right;">
 
@@ -46,10 +46,10 @@ databases.
 The functions in this package are primarily built using the following R
 packages:
 
-  - [`data.table`](https://cran.r-project.org/package=data.table)
-  - [`igraph`](https://cran.r-project.org/package=igraph)
-  - [`stringdist`](https://cran.r-project.org/package=stringdist)
-  - [`stringi`](https://cran.r-project.org/package=stringi)
+-   [`data.table`](https://cran.r-project.org/package=data.table)
+-   [`igraph`](https://cran.r-project.org/package=igraph)
+-   [`stringdist`](https://cran.r-project.org/package=stringdist)
+-   [`stringi`](https://cran.r-project.org/package=stringi)
 
 ## Installation
 
@@ -73,10 +73,10 @@ functions are are illustrated below:
 
 **Function(s) :**
 
-  - `DataClean`
-  - `MergeKW`
-  - `MergePrefix`
-  - `MergeSuffix`
+-   `DataClean`
+-   `MergeKW`
+-   `MergePrefix`
+-   `MergeSuffix`
 
 Use these functions for the appropriate data standardisation of the
 relevant fields in the passport databases to harmonize punctuation,
@@ -86,7 +86,7 @@ leading zeros, prefixes, suffixes etc. associated with accession names.
 
 **Function(s) :**
 
-  - `KWIC`
+-   `KWIC`
 
 Use this function to extract the information in the relevant fields as
 keywords or text strings in the form of a searchable Keyword in Context
@@ -96,7 +96,7 @@ keywords or text strings in the form of a searchable Keyword in Context
 
 **Function(s) :**
 
-  - `ProbDup`
+-   `ProbDup`
 
 Execute fuzzy, phonetic and semantic matching of keywords to identify
 probable duplicate sets either within a single KWIC index or between two
@@ -111,9 +111,9 @@ tweak the matching strategies used are also available in this function.
 
 **Function(s) :**
 
-  - `DisProbDup`
-  - `ReviewProbDup`
-  - `ReconstructProbDup`
+-   `DisProbDup`
+-   `ReviewProbDup`
+-   `ReconstructProbDup`
 
 Inspect, revise and improve the retrieved sets using these functions. If
 considerable intersections exist between the initially identified sets,
@@ -127,15 +127,15 @@ back using `ReconstructProbDup`.
 
 **Function(s) :**
 
-  - `ValidatePrimKey`
-  - `DoubleMetaphone`
-  - `ParseProbDup`
-  - `AddProbDup`
-  - `SplitProbDup`
-  - `MergeProbDup`
-  - `ViewProbDup`
-  - `KWCounts`
-  - `read.genesys`
+-   `ValidatePrimKey`
+-   `DoubleMetaphone`
+-   `ParseProbDup`
+-   `AddProbDup`
+-   `SplitProbDup`
+-   `MergeProbDup`
+-   `ViewProbDup`
+-   `KWCounts`
+-   `read.genesys`
 
 Use these helper functions if needed. `ValidatePrimKey` can be used to
 check whether a column chosen in a data.frame as the primary primary
@@ -164,17 +164,17 @@ environment.
 
 ## Tips
 
-  - Use [`fread`](https://rdrr.io/cran/data.table/man/fread.html) to
+-   Use [`fread`](https://rdrr.io/cran/data.table/man/fread.html) to
     rapidly read large files instead of `read.csv` or `read.table` in
     `base`.
-  - In case the PGR passport data is in any DBMS, use the appropriate
+-   In case the PGR passport data is in any DBMS, use the appropriate
     [`R`-database interface
-    packages](http://www.burns-stat.com/r-database-interfaces/) to get
+    packages](https://www.burns-stat.com/r-database-interfaces/) to get
     the required table as a `data.frame` in `R`.
 
 ## Note
 
-  - The `ProbDup` function can be memory hungry with large passport
+-   The `ProbDup` function can be memory hungry with large passport
     databases. In such cases, ensure that the system has sufficient
     memory for smooth functioning (See `?ProbDup`).
 
@@ -215,25 +215,25 @@ To cite the methods in the package use:
 citation("PGRdup")
 ```
 
-``` 
 
-To cite the R package 'PGRdup' in publications use:
+    To cite the R package 'PGRdup' in publications use:
 
-  Aravind, J., Radhamani, J., Kalyani Srinivasan, Ananda Subhash, B., and Tyagi, R. K.  (2020).  PGRdup:
-  Discover Probable Duplicates in Plant Genetic Resources Collections. R package version 0.2.3.6,
-  https://github.com/aravind-j/PGRdup,https://cran.r-project.org/package=PGRdup.
+      Aravind, J., Radhamani, J., Kalyani Srinivasan, Ananda Subhash, B., and
+      Tyagi, R. K.  (2021).  PGRdup: Discover Probable Duplicates in Plant
+      Genetic Resources Collections. R package version 0.2.3.7,
+      https://github.com/aravind-j/PGRdup,https://cran.r-project.org/package=PGRdup.
 
-A BibTeX entry for LaTeX users is
+    A BibTeX entry for LaTeX users is
 
-  @Manual{,
-    title = {PGRdup: Discover Probable Duplicates in Plant Genetic Resources Collections},
-    author = {J. Aravind and J. Radhamani and {Kalyani Srinivasan} and B. {Ananda Subhash} and Rishi Kumar Tyagi},
-    year = {2020},
-    note = {R package version 0.2.3.6},
-    note = {https://github.com/aravind-j/PGRdup,},
-    note = {https://cran.r-project.org/package=PGRdup},
-  }
+      @Manual{,
+        title = {PGRdup: Discover Probable Duplicates in Plant Genetic Resources Collections},
+        author = {J. Aravind and J. Radhamani and {Kalyani Srinivasan} and B. {Ananda Subhash} and Rishi Kumar Tyagi},
+        year = {2021},
+        note = {R package version 0.2.3.7},
+        note = {https://github.com/aravind-j/PGRdup,},
+        note = {https://cran.r-project.org/package=PGRdup},
+      }
 
-This free and open-source software implements academic research by the authors and co-workers. If you use
-it, please support the project by citing the package.
-```
+    This free and open-source software implements academic research by the
+    authors and co-workers. If you use it, please support the project by citing
+    the package.

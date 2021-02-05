@@ -52,6 +52,8 @@ fields(columns)." />
 
 
 
+
+
 <!-- mathjax -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script>
@@ -89,7 +91,7 @@ fields(columns)." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">PGRdup</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.3.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.3.7</span>
       </span>
     </div>
 
@@ -97,28 +99,28 @@ fields(columns)." />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
     Home
   </a>
 </li>
 <li>
   <a href="../reference/index.html">
-    <span class="fa fa-code"></span>
+    <span class="fas fa-code"></span>
      
     Reference
   </a>
 </li>
 <li>
   <a href="../articles/Introduction.html">
-    <span class="fa fa-file-o"></span>
+    <span class="fas fa-file-o"></span>
      
     Introduction
   </a>
 </li>
 <li>
   <a href="../news/index.html">
-    <span class="fa fa-newspaper-o"></span>
+    <span class="fas fa-newspaper-o"></span>
      
     News
   </a>
@@ -127,7 +129,7 @@ fields(columns)." />
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/aravind-j/PGRdup">
-    <span class="fa fa-github-alt"></span>
+    <span class="fas fa-github-alt"></span>
      
     Github
   </a>
@@ -161,7 +163,7 @@ fields(columns)." />
 fields(columns).</p>
     </div>
 
-    <pre class="usage"><span class='fu'>KWCounts</span>(<span class='no'>x</span>, <span class='no'>fields</span>, <span class='no'>excep</span>)</pre>
+    <pre class="usage"><span class='fu'>KWCounts</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>fields</span>, <span class='va'>excep</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -206,25 +208,27 @@ keyword counts may take some time.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># Load PGR passport database</span>
-<span class='no'>GN</span> <span class='kw'>&lt;-</span> <span class='no'>GN1000</span>
+<span class='va'>GN</span> <span class='op'>&lt;-</span> <span class='va'>GN1000</span>
 
 <span class='co'># Specify database fields to use as a vector</span>
-<span class='no'>GNfields</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"NationalID"</span>, <span class='st'>"CollNo"</span>, <span class='st'>"DonorID"</span>, <span class='st'>"OtherID1"</span>, <span class='st'>"OtherID2"</span>)
+<span class='va'>GNfields</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"NationalID"</span>, <span class='st'>"CollNo"</span>, <span class='st'>"DonorID"</span>, <span class='st'>"OtherID1"</span>, <span class='st'>"OtherID2"</span><span class='op'>)</span>
 
 <span class='co'># Specify the exceptions as a vector</span>
-<span class='no'>exep</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"A"</span>, <span class='st'>"B"</span>, <span class='st'>"BIG"</span>, <span class='st'>"BOLD"</span>, <span class='st'>"BUNCH"</span>, <span class='st'>"C"</span>, <span class='st'>"COMPANY"</span>, <span class='st'>"CULTURE"</span>,
-         <span class='st'>"DARK"</span>, <span class='st'>"E"</span>, <span class='st'>"EARLY"</span>, <span class='st'>"EC"</span>, <span class='st'>"ERECT"</span>, <span class='st'>"EXOTIC"</span>, <span class='st'>"FLESH"</span>, <span class='st'>"GROUNDNUT"</span>,
-         <span class='st'>"GUTHUKAI"</span>, <span class='st'>"IMPROVED"</span>, <span class='st'>"K"</span>, <span class='st'>"KUTHUKADAL"</span>, <span class='st'>"KUTHUKAI"</span>, <span class='st'>"LARGE"</span>,
-         <span class='st'>"LIGHT"</span>, <span class='st'>"LOCAL"</span>, <span class='st'>"OF"</span>, <span class='st'>"OVERO"</span>, <span class='st'>"P"</span>, <span class='st'>"PEANUT"</span>, <span class='st'>"PURPLE"</span>, <span class='st'>"R"</span>,
-         <span class='st'>"RED"</span>, <span class='st'>"RUNNER"</span>, <span class='st'>"S1"</span>, <span class='st'>"SAM"</span>, <span class='st'>"SMALL"</span>, <span class='st'>"SPANISH"</span>, <span class='st'>"TAN"</span>, <span class='st'>"TYPE"</span>,
-         <span class='st'>"U"</span>, <span class='st'>"VALENCIA"</span>, <span class='st'>"VIRGINIA"</span>, <span class='st'>"WHITE"</span>)
-
+<span class='va'>exep</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"A"</span>, <span class='st'>"B"</span>, <span class='st'>"BIG"</span>, <span class='st'>"BOLD"</span>, <span class='st'>"BUNCH"</span>, <span class='st'>"C"</span>, <span class='st'>"COMPANY"</span>, <span class='st'>"CULTURE"</span>, 
+         <span class='st'>"DARK"</span>, <span class='st'>"E"</span>, <span class='st'>"EARLY"</span>, <span class='st'>"EC"</span>, <span class='st'>"ERECT"</span>, <span class='st'>"EXOTIC"</span>, <span class='st'>"FLESH"</span>, <span class='st'>"GROUNDNUT"</span>, 
+         <span class='st'>"GUTHUKAI"</span>, <span class='st'>"IMPROVED"</span>, <span class='st'>"K"</span>, <span class='st'>"KUTHUKADAL"</span>, <span class='st'>"KUTHUKAI"</span>, <span class='st'>"LARGE"</span>, 
+         <span class='st'>"LIGHT"</span>, <span class='st'>"LOCAL"</span>, <span class='st'>"OF"</span>, <span class='st'>"OVERO"</span>, <span class='st'>"P"</span>, <span class='st'>"PEANUT"</span>, <span class='st'>"PURPLE"</span>, <span class='st'>"R"</span>, 
+         <span class='st'>"RED"</span>, <span class='st'>"RUNNER"</span>, <span class='st'>"S1"</span>, <span class='st'>"SAM"</span>, <span class='st'>"SMALL"</span>, <span class='st'>"SPANISH"</span>, <span class='st'>"TAN"</span>, <span class='st'>"TYPE"</span>, 
+         <span class='st'>"U"</span>, <span class='st'>"VALENCIA"</span>, <span class='st'>"VIRGINIA"</span>, <span class='st'>"WHITE"</span><span class='op'>)</span>
+         
 <span class='co'># Compute the keyword counts</span>
-<span class='no'>GNKWCouts</span> <span class='kw'>&lt;-</span> <span class='fu'>KWCounts</span>(<span class='no'>GN</span>, <span class='no'>GNfields</span>, <span class='no'>exep</span>)
+<span class='va'>GNKWCouts</span> <span class='op'>&lt;-</span> <span class='fu'>KWCounts</span><span class='op'>(</span><span class='va'>GN</span>, <span class='va'>GNfields</span>, <span class='va'>exep</span><span class='op'>)</span>
 
 <span class='co'># Plot the keyword counts</span>
-<span class='no'>bp</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/graphics/barplot.html'>barplot</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/table.html'>table</a></span>(<span class='no'>GNKWCouts</span>$<span class='no'>COUNT</span>),
-              <span class='kw'>xlab</span> <span class='kw'>=</span> <span class='st'>"Word count"</span>, <span class='kw'>ylab</span> <span class='kw'>=</span> <span class='st'>"Frequency"</span>, <span class='kw'>col</span> <span class='kw'>=</span> <span class='st'>"#CD5555"</span>)</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/graphics/text.html'>text</a></span>(<span class='no'>bp</span>, <span class='fl'>0</span>, <span class='fu'><a href='https://rdrr.io/r/base/table.html'>table</a></span>(<span class='no'>GNKWCouts</span>$<span class='no'>COUNT</span>),<span class='kw'>cex</span><span class='kw'>=</span><span class='fl'>1</span>,<span class='kw'>pos</span><span class='kw'>=</span><span class='fl'>3</span>)</div><div class='img'><img src='KWCounts-1.png' alt='' width='700' height='433' /></div></pre>
+<span class='va'>bp</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/graphics/barplot.html'>barplot</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/table.html'>table</a></span><span class='op'>(</span><span class='va'>GNKWCouts</span><span class='op'>$</span><span class='va'>COUNT</span><span class='op'>)</span>,
+              xlab <span class='op'>=</span> <span class='st'>"Word count"</span>, ylab <span class='op'>=</span> <span class='st'>"Frequency"</span>, col <span class='op'>=</span> <span class='st'>"#CD5555"</span><span class='op'>)</span>
+</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/graphics/text.html'>text</a></span><span class='op'>(</span><span class='va'>bp</span>, <span class='fl'>0</span>, <span class='fu'><a href='https://rdrr.io/r/base/table.html'>table</a></span><span class='op'>(</span><span class='va'>GNKWCouts</span><span class='op'>$</span><span class='va'>COUNT</span><span class='op'>)</span>,cex<span class='op'>=</span><span class='fl'>1</span>,pos<span class='op'>=</span><span class='fl'>3</span><span class='op'>)</span>
+</div><div class='img'><img src='KWCounts-1.png' alt='' width='700' height='433' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -240,7 +244,7 @@ keyword counts may take some time.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
 </div>
 
       </footer>

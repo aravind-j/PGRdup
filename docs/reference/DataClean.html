@@ -52,6 +52,8 @@ conditions in the arguments." />
 
 
 
+
+
 <!-- mathjax -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script>
@@ -89,7 +91,7 @@ conditions in the arguments." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">PGRdup</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.3.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.3.7</span>
       </span>
     </div>
 
@@ -97,28 +99,28 @@ conditions in the arguments." />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
     Home
   </a>
 </li>
 <li>
   <a href="../reference/index.html">
-    <span class="fa fa-code"></span>
+    <span class="fas fa-code"></span>
      
     Reference
   </a>
 </li>
 <li>
   <a href="../articles/Introduction.html">
-    <span class="fa fa-file-o"></span>
+    <span class="fas fa-file-o"></span>
      
     Introduction
   </a>
 </li>
 <li>
   <a href="../news/index.html">
-    <span class="fa fa-newspaper-o"></span>
+    <span class="fas fa-newspaper-o"></span>
      
     News
   </a>
@@ -127,7 +129,7 @@ conditions in the arguments." />
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/aravind-j/PGRdup">
-    <span class="fa fa-github-alt"></span>
+    <span class="fas fa-github-alt"></span>
      
     Github
   </a>
@@ -161,17 +163,17 @@ conditions in the arguments." />
 conditions in the arguments.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>DataClean</span>(
-  <span class='no'>x</span>,
-  <span class='kw'>fix.comma</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>fix.semcol</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>fix.col</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>fix.bracket</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>fix.punct</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>fix.space</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>fix.sep</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>fix.leadzero</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>
-)</pre>
+    <pre class="usage"><span class='fu'>DataClean</span><span class='op'>(</span>
+  <span class='va'>x</span>,
+  fix.comma <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  fix.semcol <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  fix.col <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  fix.bracket <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  fix.punct <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  fix.space <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  fix.sep <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  fix.leadzero <span class='op'>=</span> <span class='cn'>TRUE</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -268,10 +270,11 @@ IR64</p>
   <code><a href='ProbDup.html'>ProbDup</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>names</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"S7-12-6"</span>, <span class='st'>"ICG-3505"</span>, <span class='st'>"U 4-47-18;EC 21127"</span>, <span class='st'>"AH 6481"</span>, <span class='st'>"RS   1"</span>,
+    <pre class="examples"><div class='input'><span class='va'>names</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"S7-12-6"</span>, <span class='st'>"ICG-3505"</span>, <span class='st'>"U 4-47-18;EC 21127"</span>, <span class='st'>"AH 6481"</span>, <span class='st'>"RS   1"</span>,
            <span class='st'>"AK 12-24"</span>, <span class='st'>"2-5 (NRCG-4053)"</span>, <span class='st'>"T78, Mwitunde"</span>, <span class='st'>"ICG 3410"</span>,
-           <span class='st'>"#648-4 (Gwalior)"</span>, <span class='st'>"TG4;U/4/47/13"</span>, <span class='st'>"EC0021003"</span>)
-<span class='fu'>DataClean</span>(<span class='no'>names</span>)</div><div class='output co'>#&gt;  [1] "S7126"          "ICG3505"        "U44718 EC21127" "AH6481"        
+           <span class='st'>"#648-4 (Gwalior)"</span>, <span class='st'>"TG4;U/4/47/13"</span>, <span class='st'>"EC0021003"</span><span class='op'>)</span>
+<span class='fu'>DataClean</span><span class='op'>(</span><span class='va'>names</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;  [1] "S7126"          "ICG3505"        "U44718 EC21127" "AH6481"        
 #&gt;  [5] "RS1"            "AK1224"         "25 NRCG4053"    "T78 MWITUNDE"  
 #&gt;  [9] "ICG3410"        "6484 GWALIOR"   "TG4 U44713"     "EC21003"       </div></pre>
   </div>
@@ -289,7 +292,7 @@ IR64</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
 </div>
 
       </footer>

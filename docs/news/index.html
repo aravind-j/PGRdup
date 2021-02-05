@@ -50,6 +50,8 @@
 
 
 
+
+
 <!-- mathjax -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script>
@@ -87,7 +89,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">PGRdup</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.3.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.3.7</span>
       </span>
     </div>
 
@@ -95,28 +97,28 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
     Home
   </a>
 </li>
 <li>
   <a href="../reference/index.html">
-    <span class="fa fa-code"></span>
+    <span class="fas fa-code"></span>
      
     Reference
   </a>
 </li>
 <li>
   <a href="../articles/Introduction.html">
-    <span class="fa fa-file-o"></span>
+    <span class="fas fa-file-o"></span>
      
     Introduction
   </a>
 </li>
 <li>
   <a href="../news/index.html">
-    <span class="fa fa-newspaper-o"></span>
+    <span class="fas fa-newspaper-o"></span>
      
     News
   </a>
@@ -125,7 +127,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/aravind-j/PGRdup">
-    <span class="fa fa-github-alt"></span>
+    <span class="fas fa-github-alt"></span>
      
     Github
   </a>
@@ -153,15 +155,27 @@
       <small>Source: <a href='https://github.com/aravind-j/PGRdup/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
-    <div id="pgrdup-0236" class="section level1">
-<h1 class="page-header" data-toc-text="0.2.3.6">
-<a href="#pgrdup-0236" class="anchor"></a>PGRdup 0.2.3.6<small> Unreleased </small>
+    <div id="pgrdup-0237" class="section level1">
+<h1 class="page-header" data-toc-text="0.2.3.7">
+<a href="#pgrdup-0237" class="anchor"></a>PGRdup 0.2.3.7<small> Unreleased </small>
 </h1>
 <div id="vignette" class="section level2">
 <h2 class="hasAnchor">
 <a href="#vignette" class="anchor"></a>VIGNETTE:</h2>
 <ul>
-<li>Reverted to using system certificates instead of RCurl ones for fetching and displaying version history as suggested by Prof. Brian Ripley (<a href="mailto:ripley@stats.ox.ac.uk" class="email">ripley@stats.ox.ac.uk</a>).</li>
+<li>Removed cairo dependency.</li>
+</ul>
+</div>
+</div>
+    <div id="pgrdup-0236" class="section level1">
+<h1 class="page-header" data-toc-text="0.2.3.6">
+<a href="#pgrdup-0236" class="anchor"></a>PGRdup 0.2.3.6<small> 2020-07-27 </small>
+</h1>
+<div id="vignette-1" class="section level2">
+<h2 class="hasAnchor">
+<a href="#vignette-1" class="anchor"></a>VIGNETTE:</h2>
+<ul>
+<li>Reverted to using system certificates instead of RCurl ones for fetching and displaying version history as suggested by Prof. Brian Ripley (ripley@stats.ox.ac.uk).</li>
 </ul>
 </div>
 </div>
@@ -229,7 +243,7 @@
 <li>Added version history to vignette</li>
 <li>Replaced all <code>1:nrow()</code> and <code>1:length()</code> usage in function with <code><a href="https://rdrr.io/r/base/seq.html">seq_len(nrow())</a></code> and <code><a href="https://rdrr.io/r/base/seq.html">seq_len(length())</a></code> respectively.</li>
 <li>Added package to github.</li>
-<li>Added package documentation website (<a href="https://aravind-j.github.io/PGRdup/" class="uri">https://aravind-j.github.io/PGRdup/</a>) as a github page with <code>pkgdown</code>.</li>
+<li>Added package documentation website (https://aravind-j.github.io/PGRdup/) as a github page with <code>pkgdown</code>.</li>
 <li>Added copyright to <code>Authors@R</code> along with original contributors for the underlying <code>C</code> code for <code>DoubleMetaphone</code>.</li>
 </ul>
 <hr>
@@ -374,9 +388,9 @@
 <li>Dropped the abbreviation PGR in the title in DESCRIPTION as it is mentioned in the description text.</li>
 </ul>
 </div>
-<div id="vignette-1" class="section level2">
+<div id="vignette-2" class="section level2">
 <h2 class="hasAnchor">
-<a href="#vignette-1" class="anchor"></a>VIGNETTE:</h2>
+<a href="#vignette-2" class="anchor"></a>VIGNETTE:</h2>
 <ul>
 <li>Added vignette “An Introduction to PGRdup package”.</li>
 </ul>
@@ -408,7 +422,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
 </div>
 
       </footer>

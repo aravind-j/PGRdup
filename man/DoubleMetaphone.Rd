@@ -54,7 +54,7 @@ DoubleMetaphone(str3) }
 \references{
 Philips, Lawrence. 2000. "The Double Metaphone Search Algorithm."
   \emph{C/C++ Users Journal} 18 (6): 38-43.
-  \url{http://dl.acm.org/citation.cfm?id=349124.349132}.
+  \url{https://dl.acm.org/doi/10.5555/349124.349132}.
 }
 \seealso{
 \code{\link[stringdist]{phonetic}},

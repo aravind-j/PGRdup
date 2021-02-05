@@ -51,6 +51,8 @@
 
 
 
+
+
 <!-- mathjax -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script>
@@ -88,7 +90,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">PGRdup</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.3.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.3.7</span>
       </span>
     </div>
 
@@ -96,28 +98,28 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
     Home
   </a>
 </li>
 <li>
   <a href="../reference/index.html">
-    <span class="fa fa-code"></span>
+    <span class="fas fa-code"></span>
      
     Reference
   </a>
 </li>
 <li>
   <a href="../articles/Introduction.html">
-    <span class="fa fa-file-o"></span>
+    <span class="fas fa-file-o"></span>
      
     Introduction
   </a>
 </li>
 <li>
   <a href="../news/index.html">
-    <span class="fa fa-newspaper-o"></span>
+    <span class="fas fa-newspaper-o"></span>
      
     News
   </a>
@@ -126,7 +128,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/aravind-j/PGRdup">
-    <span class="fa fa-github-alt"></span>
+    <span class="fas fa-github-alt"></span>
      
     Github
   </a>
@@ -159,7 +161,7 @@
     <p><code>DoubleMetaphone</code> converts strings to double metaphone phonetic codes.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>DoubleMetaphone</span>(<span class='no'>str</span>)</pre>
+    <pre class="usage"><span class='fu'>DoubleMetaphone</span><span class='op'>(</span><span class='va'>str</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -200,7 +202,7 @@ are converted to their ASCII unaccented versions.</p>
 
     <p>Philips, Lawrence. 2000. "The Double Metaphone Search Algorithm."
   <em>C/C++ Users Journal</em> 18 (6): 38-43.
-  <a href='http://dl.acm.org/citation.cfm?id=349124.349132'>http://dl.acm.org/citation.cfm?id=349124.349132</a>.</p>
+  <a href='https://dl.acm.org/doi/10.5555/349124.349132'>https://dl.acm.org/doi/10.5555/349124.349132</a>.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><code><a href='https://rdrr.io/pkg/stringdist/man/phonetic.html'>phonetic</a></code>,
@@ -208,22 +210,25 @@ are converted to their ASCII unaccented versions.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># Return the primary and secondary Double Metaphone encodings for a character vector.</span>
-<span class='no'>str1</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"Jyothi"</span>, <span class='st'>"Jyoti"</span>)
-<span class='no'>str2</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"POLLACHI"</span>, <span class='st'>"BOLLACHI"</span>)
-<span class='fu'>DoubleMetaphone</span>(<span class='no'>str1</span>)</div><div class='output co'>#&gt; $primary
+<span class='va'>str1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Jyothi"</span>, <span class='st'>"Jyoti"</span><span class='op'>)</span>
+<span class='va'>str2</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"POLLACHI"</span>, <span class='st'>"BOLLACHI"</span><span class='op'>)</span>
+<span class='fu'>DoubleMetaphone</span><span class='op'>(</span><span class='va'>str1</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; $primary
 #&gt; [1] "J0" "JT"
 #&gt; 
 #&gt; $alternate
 #&gt; [1] "AT" "AT"
-#&gt; </div><div class='input'><span class='fu'>DoubleMetaphone</span>(<span class='no'>str2</span>)</div><div class='output co'>#&gt; $primary
+#&gt; </div><div class='input'><span class='fu'>DoubleMetaphone</span><span class='op'>(</span><span class='va'>str2</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; $primary
 #&gt; [1] "PLX" "PLX"
 #&gt; 
 #&gt; $alternate
 #&gt; [1] "PLK" "PLK"
-#&gt; </div><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
+#&gt; </div><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
 <span class='co'># Issue a warning in case of non-ASCII characters.</span>
-<span class='no'>str3</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"J\xf5geva"</span>, <span class='st'>"Jogeva"</span>)
-<span class='fu'>DoubleMetaphone</span>(<span class='no'>str3</span>) }</div></pre>
+<span class='va'>str3</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"J\xf5geva"</span>, <span class='st'>"Jogeva"</span><span class='op'>)</span>
+<span class='fu'>DoubleMetaphone</span><span class='op'>(</span><span class='va'>str3</span><span class='op'>)</span> <span class='op'>}</span>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -239,7 +244,7 @@ are converted to their ASCII unaccented versions.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
 </div>
 
       </footer>

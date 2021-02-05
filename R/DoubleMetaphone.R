@@ -44,7 +44,7 @@
 #'    information}.
 #' @references Philips, Lawrence. 2000. "The Double Metaphone Search Algorithm."
 #'   \emph{C/C++ Users Journal} 18 (6): 38-43.
-#'   \url{http://dl.acm.org/citation.cfm?id=349124.349132}.
+#'   \url{https://dl.acm.org/doi/10.5555/349124.349132}.
 #' @encoding UTF-8
 #' @note In case of non-ASCII characters in strings, a warning is issued and
 #'   accented characters are converted to their ASCII unaccented versions.

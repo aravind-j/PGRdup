@@ -1,3 +1,9 @@
+# PGRdup 0.2.3.7
+
+## VIGNETTE:
+* Removed cairo dependency.
+
+
 # PGRdup 0.2.3.6
 
 ## VIGNETTE:

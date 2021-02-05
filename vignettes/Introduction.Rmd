@@ -4,7 +4,6 @@ author: "Aravind, J.^1^, Radhamani, J.^1^, Kalyani Srinivasan^1^, Ananda Subhash
 date: '`r Sys.Date()`'
 output:
   pdf_document:
-    dev: cairo_pdf
     fig_caption: no
     toc: no
   html_document:
@@ -74,6 +73,8 @@ knitr::opts_chunk$set(comment = "",
 
 \tableofcontents
 
+\pagebreak
+
 \begin{wrapfigure}{r}{0.35\textwidth}
   \vspace{1cm}
   \begin{center}
@@ -93,7 +94,6 @@ The goal of this document is to introduce the users to these functions and famil
 The functions in this package are primarily built using the `R` packages [`data.table`](https://CRAN.R-project.org/package=data.table), [`igraph`](https://CRAN.R-project.org/package=igraph), [`stringdist`](https://CRAN.R-project.org/package=stringdist) and [`stringi`](https://CRAN.R-project.org/package=stringi).
 
 \clearpage
-\pagebreak
 
 \begin{center}
     \includegraphics{`r system.file("extdata", "PGRdup.png", package = "PGRdup")`}
@@ -241,9 +241,6 @@ print("Packages 'RCurl', 'httr' and 'XML' are required to generate this table")
 ```
 
 To know detailed history of changes use `news(package='PGRdup')`.
-
-\pagebreak
-
 
 ## Installation
 The package can be installed using the following functions:

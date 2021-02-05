@@ -53,6 +53,8 @@ clerical review, back into an object of class ProbDup." />
 
 
 
+
+
 <!-- mathjax -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script>
@@ -90,7 +92,7 @@ clerical review, back into an object of class ProbDup." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">PGRdup</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.3.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.3.7</span>
       </span>
     </div>
 
@@ -98,28 +100,28 @@ clerical review, back into an object of class ProbDup." />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
     Home
   </a>
 </li>
 <li>
   <a href="../reference/index.html">
-    <span class="fa fa-code"></span>
+    <span class="fas fa-code"></span>
      
     Reference
   </a>
 </li>
 <li>
   <a href="../articles/Introduction.html">
-    <span class="fa fa-file-o"></span>
+    <span class="fas fa-file-o"></span>
      
     Introduction
   </a>
 </li>
 <li>
   <a href="../news/index.html">
-    <span class="fa fa-newspaper-o"></span>
+    <span class="fas fa-newspaper-o"></span>
      
     News
   </a>
@@ -128,7 +130,7 @@ clerical review, back into an object of class ProbDup." />
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/aravind-j/PGRdup">
-    <span class="fa fa-github-alt"></span>
+    <span class="fas fa-github-alt"></span>
      
     Github
   </a>
@@ -163,7 +165,7 @@ sets created using the function <code>ReviewProbDup</code> and subjected to manu
 clerical review, back into an object of class <code>ProbDup</code>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>ReconstructProbDup</span>(<span class='no'>rev</span>)</pre>
+    <pre class="usage"><span class='fu'>ReconstructProbDup</span><span class='op'>(</span><span class='va'>rev</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -198,71 +200,72 @@ are reassembled into a new set.</p>
     <div class='dont-index'><p><code><a href='ProbDup.html'>ProbDup</a></code>, <code><a href='ReviewProbDup.html'>ReviewProbDup</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
 
 <span class='co'># Load PGR passport database</span>
-<span class='no'>GN</span> <span class='kw'>&lt;-</span> <span class='no'>GN1000</span>
+<span class='va'>GN</span> <span class='op'>&lt;-</span> <span class='va'>GN1000</span>
 
 <span class='co'># Specify as a vector the database fields to be used</span>
-<span class='no'>GNfields</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"NationalID"</span>, <span class='st'>"CollNo"</span>, <span class='st'>"DonorID"</span>, <span class='st'>"OtherID1"</span>, <span class='st'>"OtherID2"</span>)
+<span class='va'>GNfields</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"NationalID"</span>, <span class='st'>"CollNo"</span>, <span class='st'>"DonorID"</span>, <span class='st'>"OtherID1"</span>, <span class='st'>"OtherID2"</span><span class='op'>)</span>
 
 <span class='co'># Clean the data</span>
-<span class='no'>GN</span>[<span class='no'>GNfields</span>] <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/lapply.html'>lapply</a></span>(<span class='no'>GN</span>[<span class='no'>GNfields</span>], <span class='kw'>function</span>(<span class='no'>x</span>) <span class='fu'><a href='DataClean.html'>DataClean</a></span>(<span class='no'>x</span>))
-<span class='no'>y1</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"Gujarat"</span>, <span class='st'>"Dwarf"</span>), <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"Castle"</span>, <span class='st'>"Cary"</span>), <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"Small"</span>, <span class='st'>"Japan"</span>),
-<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"Big"</span>, <span class='st'>"Japan"</span>), <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"Mani"</span>, <span class='st'>"Blanco"</span>), <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"Uganda"</span>, <span class='st'>"Erect"</span>),
-<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"Mota"</span>, <span class='st'>"Company"</span>))
-<span class='no'>y2</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"Dark"</span>, <span class='st'>"Light"</span>, <span class='st'>"Small"</span>, <span class='st'>"Improved"</span>, <span class='st'>"Punjab"</span>, <span class='st'>"SAM"</span>)
-<span class='no'>y3</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"Local"</span>, <span class='st'>"Bold"</span>, <span class='st'>"Cary"</span>, <span class='st'>"Mutant"</span>, <span class='st'>"Runner"</span>, <span class='st'>"Giant"</span>, <span class='st'>"No."</span>,
-        <span class='st'>"Bunch"</span>, <span class='st'>"Peanut"</span>)
-<span class='no'>GN</span>[<span class='no'>GNfields</span>] <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/lapply.html'>lapply</a></span>(<span class='no'>GN</span>[<span class='no'>GNfields</span>], <span class='kw'>function</span>(<span class='no'>x</span>) <span class='fu'><a href='MergeKW.html'>MergeKW</a></span>(<span class='no'>x</span>, <span class='no'>y1</span>, <span class='kw'>delim</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"space"</span>, <span class='st'>"dash"</span>)))
-<span class='no'>GN</span>[<span class='no'>GNfields</span>] <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/lapply.html'>lapply</a></span>(<span class='no'>GN</span>[<span class='no'>GNfields</span>], <span class='kw'>function</span>(<span class='no'>x</span>) <span class='fu'><a href='MergeKW.html'>MergePrefix</a></span>(<span class='no'>x</span>, <span class='no'>y2</span>, <span class='kw'>delim</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"space"</span>, <span class='st'>"dash"</span>)))
-<span class='no'>GN</span>[<span class='no'>GNfields</span>] <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/lapply.html'>lapply</a></span>(<span class='no'>GN</span>[<span class='no'>GNfields</span>], <span class='kw'>function</span>(<span class='no'>x</span>) <span class='fu'><a href='MergeKW.html'>MergeSuffix</a></span>(<span class='no'>x</span>, <span class='no'>y3</span>, <span class='kw'>delim</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"space"</span>, <span class='st'>"dash"</span>)))
+<span class='va'>GN</span><span class='op'>[</span><span class='va'>GNfields</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/lapply.html'>lapply</a></span><span class='op'>(</span><span class='va'>GN</span><span class='op'>[</span><span class='va'>GNfields</span><span class='op'>]</span>, <span class='kw'>function</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span> <span class='fu'><a href='DataClean.html'>DataClean</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>y1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Gujarat"</span>, <span class='st'>"Dwarf"</span><span class='op'>)</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Castle"</span>, <span class='st'>"Cary"</span><span class='op'>)</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Small"</span>, <span class='st'>"Japan"</span><span class='op'>)</span>,
+<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Big"</span>, <span class='st'>"Japan"</span><span class='op'>)</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Mani"</span>, <span class='st'>"Blanco"</span><span class='op'>)</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Uganda"</span>, <span class='st'>"Erect"</span><span class='op'>)</span>,
+<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Mota"</span>, <span class='st'>"Company"</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>y2</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Dark"</span>, <span class='st'>"Light"</span>, <span class='st'>"Small"</span>, <span class='st'>"Improved"</span>, <span class='st'>"Punjab"</span>, <span class='st'>"SAM"</span><span class='op'>)</span>
+<span class='va'>y3</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Local"</span>, <span class='st'>"Bold"</span>, <span class='st'>"Cary"</span>, <span class='st'>"Mutant"</span>, <span class='st'>"Runner"</span>, <span class='st'>"Giant"</span>, <span class='st'>"No."</span>,
+        <span class='st'>"Bunch"</span>, <span class='st'>"Peanut"</span><span class='op'>)</span>
+<span class='va'>GN</span><span class='op'>[</span><span class='va'>GNfields</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/lapply.html'>lapply</a></span><span class='op'>(</span><span class='va'>GN</span><span class='op'>[</span><span class='va'>GNfields</span><span class='op'>]</span>, <span class='kw'>function</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span> <span class='fu'><a href='MergeKW.html'>MergeKW</a></span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>y1</span>, delim <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"space"</span>, <span class='st'>"dash"</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>GN</span><span class='op'>[</span><span class='va'>GNfields</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/lapply.html'>lapply</a></span><span class='op'>(</span><span class='va'>GN</span><span class='op'>[</span><span class='va'>GNfields</span><span class='op'>]</span>, <span class='kw'>function</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span> <span class='fu'><a href='MergeKW.html'>MergePrefix</a></span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>y2</span>, delim <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"space"</span>, <span class='st'>"dash"</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>GN</span><span class='op'>[</span><span class='va'>GNfields</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/lapply.html'>lapply</a></span><span class='op'>(</span><span class='va'>GN</span><span class='op'>[</span><span class='va'>GNfields</span><span class='op'>]</span>, <span class='kw'>function</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span> <span class='fu'><a href='MergeKW.html'>MergeSuffix</a></span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>y3</span>, delim <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"space"</span>, <span class='st'>"dash"</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
 
 <span class='co'># Generate KWIC index</span>
-<span class='no'>GNKWIC</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='KWIC.html'>KWIC</a></span>(<span class='no'>GN</span>, <span class='no'>GNfields</span>)
+<span class='va'>GNKWIC</span> <span class='op'>&lt;-</span> <span class='fu'><a href='KWIC.html'>KWIC</a></span><span class='op'>(</span><span class='va'>GN</span>, <span class='va'>GNfields</span><span class='op'>)</span>
 
 <span class='co'># Specify the exceptions as a vector</span>
-<span class='no'>exep</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"A"</span>, <span class='st'>"B"</span>, <span class='st'>"BIG"</span>, <span class='st'>"BOLD"</span>, <span class='st'>"BUNCH"</span>, <span class='st'>"C"</span>, <span class='st'>"COMPANY"</span>, <span class='st'>"CULTURE"</span>,
-         <span class='st'>"DARK"</span>, <span class='st'>"E"</span>, <span class='st'>"EARLY"</span>, <span class='st'>"EC"</span>, <span class='st'>"ERECT"</span>, <span class='st'>"EXOTIC"</span>, <span class='st'>"FLESH"</span>, <span class='st'>"GROUNDNUT"</span>,
-         <span class='st'>"GUTHUKAI"</span>, <span class='st'>"IMPROVED"</span>, <span class='st'>"K"</span>, <span class='st'>"KUTHUKADAL"</span>, <span class='st'>"KUTHUKAI"</span>, <span class='st'>"LARGE"</span>,
-         <span class='st'>"LIGHT"</span>, <span class='st'>"LOCAL"</span>, <span class='st'>"OF"</span>, <span class='st'>"OVERO"</span>, <span class='st'>"P"</span>, <span class='st'>"PEANUT"</span>, <span class='st'>"PURPLE"</span>, <span class='st'>"R"</span>,
-         <span class='st'>"RED"</span>, <span class='st'>"RUNNER"</span>, <span class='st'>"S1"</span>, <span class='st'>"SAM"</span>, <span class='st'>"SMALL"</span>, <span class='st'>"SPANISH"</span>, <span class='st'>"TAN"</span>, <span class='st'>"TYPE"</span>,
-         <span class='st'>"U"</span>, <span class='st'>"VALENCIA"</span>, <span class='st'>"VIRGINIA"</span>, <span class='st'>"WHITE"</span>)
-
+<span class='va'>exep</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"A"</span>, <span class='st'>"B"</span>, <span class='st'>"BIG"</span>, <span class='st'>"BOLD"</span>, <span class='st'>"BUNCH"</span>, <span class='st'>"C"</span>, <span class='st'>"COMPANY"</span>, <span class='st'>"CULTURE"</span>, 
+         <span class='st'>"DARK"</span>, <span class='st'>"E"</span>, <span class='st'>"EARLY"</span>, <span class='st'>"EC"</span>, <span class='st'>"ERECT"</span>, <span class='st'>"EXOTIC"</span>, <span class='st'>"FLESH"</span>, <span class='st'>"GROUNDNUT"</span>, 
+         <span class='st'>"GUTHUKAI"</span>, <span class='st'>"IMPROVED"</span>, <span class='st'>"K"</span>, <span class='st'>"KUTHUKADAL"</span>, <span class='st'>"KUTHUKAI"</span>, <span class='st'>"LARGE"</span>, 
+         <span class='st'>"LIGHT"</span>, <span class='st'>"LOCAL"</span>, <span class='st'>"OF"</span>, <span class='st'>"OVERO"</span>, <span class='st'>"P"</span>, <span class='st'>"PEANUT"</span>, <span class='st'>"PURPLE"</span>, <span class='st'>"R"</span>, 
+         <span class='st'>"RED"</span>, <span class='st'>"RUNNER"</span>, <span class='st'>"S1"</span>, <span class='st'>"SAM"</span>, <span class='st'>"SMALL"</span>, <span class='st'>"SPANISH"</span>, <span class='st'>"TAN"</span>, <span class='st'>"TYPE"</span>, 
+         <span class='st'>"U"</span>, <span class='st'>"VALENCIA"</span>, <span class='st'>"VIRGINIA"</span>, <span class='st'>"WHITE"</span><span class='op'>)</span>
+          
 <span class='co'># Specify the synsets as a list</span>
-<span class='no'>syn</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"CHANDRA"</span>, <span class='st'>"AH114"</span>), <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"TG1"</span>, <span class='st'>"VIKRAM"</span>))
+<span class='va'>syn</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"CHANDRA"</span>, <span class='st'>"AH114"</span><span class='op'>)</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"TG1"</span>, <span class='st'>"VIKRAM"</span><span class='op'>)</span><span class='op'>)</span>
 
 <span class='co'># Fetch probable duplicate sets</span>
-<span class='no'>GNdup</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='ProbDup.html'>ProbDup</a></span>(<span class='kw'>kwic1</span> <span class='kw'>=</span> <span class='no'>GNKWIC</span>, <span class='kw'>method</span> <span class='kw'>=</span> <span class='st'>"a"</span>, <span class='kw'>excep</span> <span class='kw'>=</span> <span class='no'>exep</span>, <span class='kw'>fuzzy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-                 <span class='kw'>phonetic</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>encoding</span> <span class='kw'>=</span> <span class='st'>"primary"</span>,
-                 <span class='kw'>semantic</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>syn</span> <span class='kw'>=</span> <span class='no'>syn</span>)
+<span class='va'>GNdup</span> <span class='op'>&lt;-</span> <span class='fu'><a href='ProbDup.html'>ProbDup</a></span><span class='op'>(</span>kwic1 <span class='op'>=</span> <span class='va'>GNKWIC</span>, method <span class='op'>=</span> <span class='st'>"a"</span>, excep <span class='op'>=</span> <span class='va'>exep</span>, fuzzy <span class='op'>=</span> <span class='cn'>TRUE</span>,
+                 phonetic <span class='op'>=</span> <span class='cn'>TRUE</span>, encoding <span class='op'>=</span> <span class='st'>"primary"</span>, 
+                 semantic <span class='op'>=</span> <span class='cn'>TRUE</span>, syn <span class='op'>=</span> <span class='va'>syn</span><span class='op'>)</span>
 
 <span class='co'># Get disjoint probable duplicate sets of each kind</span>
-<span class='no'>disGNdup</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='DisProbDup.html'>DisProbDup</a></span>(<span class='no'>GNdup</span>, <span class='kw'>combine</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
+<span class='va'>disGNdup</span> <span class='op'>&lt;-</span> <span class='fu'><a href='DisProbDup.html'>DisProbDup</a></span><span class='op'>(</span><span class='va'>GNdup</span>, combine <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span>
 
 <span class='co'># Get the data frame for reviewing the duplicate sets identified</span>
-<span class='no'>RevGNdup</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='ReviewProbDup.html'>ReviewProbDup</a></span>(<span class='kw'>pdup</span> <span class='kw'>=</span> <span class='no'>disGNdup</span>, <span class='kw'>db1</span> <span class='kw'>=</span> <span class='no'>GN1000</span>,
-                          <span class='kw'>extra.db1</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"SourceCountry"</span>, <span class='st'>"TransferYear"</span>),
-                          <span class='kw'>max.count</span> <span class='kw'>=</span> <span class='fl'>30</span>, <span class='kw'>insert.blanks</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='va'>RevGNdup</span> <span class='op'>&lt;-</span> <span class='fu'><a href='ReviewProbDup.html'>ReviewProbDup</a></span><span class='op'>(</span>pdup <span class='op'>=</span> <span class='va'>disGNdup</span>, db1 <span class='op'>=</span> <span class='va'>GN1000</span>,
+                          extra.db1 <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"SourceCountry"</span>, <span class='st'>"TransferYear"</span><span class='op'>)</span>, 
+                          max.count <span class='op'>=</span> <span class='fl'>30</span>, insert.blanks <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
 <span class='co'># Examine and review the duplicate sets using edit function</span>
-<span class='no'>RevGNdup</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/utils/edit.html'>edit</a></span>(<span class='no'>RevGNdup</span>)
+<span class='va'>RevGNdup</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/utils/edit.html'>edit</a></span><span class='op'>(</span><span class='va'>RevGNdup</span><span class='op'>)</span>
 
 <span class='co'># Examine and make changes to a set</span>
-<span class='fu'><a href='https://rdrr.io/r/base/subset.html'>subset</a></span>(<span class='no'>RevGNdup</span>, <span class='no'>SET_NO</span><span class='kw'>==</span><span class='fl'>12</span> <span class='kw'>&amp;</span> <span class='no'>TYPE</span><span class='kw'>==</span><span class='st'>"P"</span>, <span class='kw'>select</span><span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='no'>IDKW</span>, <span class='no'>DEL</span>, <span class='no'>SPLIT</span>))
-<span class='no'>RevGNdup</span>[<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>110</span>, <span class='fl'>112</span>, <span class='fl'>114</span>, <span class='fl'>118</span>, <span class='fl'>121</span>, <span class='fl'>122</span>, <span class='fl'>124</span>), <span class='fl'>6</span>] <span class='kw'>&lt;-</span> <span class='st'>"Y"</span>
-<span class='no'>RevGNdup</span>[<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>111</span>, <span class='fl'>115</span>, <span class='fl'>128</span>), <span class='fl'>7</span>] <span class='kw'>&lt;-</span> <span class='fl'>1</span>
-<span class='no'>RevGNdup</span>[<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>113</span>, <span class='fl'>117</span>, <span class='fl'>120</span>), <span class='fl'>7</span>] <span class='kw'>&lt;-</span> <span class='fl'>2</span>
-<span class='no'>RevGNdup</span>[<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>116</span>, <span class='fl'>119</span>), <span class='fl'>7</span>] <span class='kw'>&lt;-</span> <span class='fl'>3</span>
-<span class='no'>RevGNdup</span>[<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>123</span>, <span class='fl'>125</span>), <span class='fl'>7</span>] <span class='kw'>&lt;-</span> <span class='fl'>4</span>
-<span class='no'>RevGNdup</span>[<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>126</span>, <span class='fl'>127</span>), <span class='fl'>7</span>] <span class='kw'>&lt;-</span> <span class='fl'>5</span>
-<span class='fu'><a href='https://rdrr.io/r/base/subset.html'>subset</a></span>(<span class='no'>RevGNdup</span>, <span class='no'>SET_NO</span><span class='kw'>==</span><span class='fl'>12</span> <span class='kw'>&amp;</span> <span class='no'>TYPE</span><span class='kw'>==</span><span class='st'>"P"</span>, <span class='kw'>select</span><span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='no'>IDKW</span>, <span class='no'>DEL</span>, <span class='no'>SPLIT</span>))
+<span class='fu'><a href='https://rdrr.io/r/base/subset.html'>subset</a></span><span class='op'>(</span><span class='va'>RevGNdup</span>, <span class='va'>SET_NO</span><span class='op'>==</span><span class='fl'>12</span> <span class='op'>&amp;</span> <span class='va'>TYPE</span><span class='op'>==</span><span class='st'>"P"</span>, select<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='va'>IDKW</span>, <span class='va'>DEL</span>, <span class='va'>SPLIT</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>RevGNdup</span><span class='op'>[</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>110</span>, <span class='fl'>112</span>, <span class='fl'>114</span>, <span class='fl'>118</span>, <span class='fl'>121</span>, <span class='fl'>122</span>, <span class='fl'>124</span><span class='op'>)</span>, <span class='fl'>6</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='st'>"Y"</span>
+<span class='va'>RevGNdup</span><span class='op'>[</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>111</span>, <span class='fl'>115</span>, <span class='fl'>128</span><span class='op'>)</span>, <span class='fl'>7</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='fl'>1</span>
+<span class='va'>RevGNdup</span><span class='op'>[</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>113</span>, <span class='fl'>117</span>, <span class='fl'>120</span><span class='op'>)</span>, <span class='fl'>7</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='fl'>2</span>
+<span class='va'>RevGNdup</span><span class='op'>[</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>116</span>, <span class='fl'>119</span><span class='op'>)</span>, <span class='fl'>7</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='fl'>3</span>
+<span class='va'>RevGNdup</span><span class='op'>[</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>123</span>, <span class='fl'>125</span><span class='op'>)</span>, <span class='fl'>7</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='fl'>4</span>
+<span class='va'>RevGNdup</span><span class='op'>[</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>126</span>, <span class='fl'>127</span><span class='op'>)</span>, <span class='fl'>7</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='fl'>5</span>
+<span class='fu'><a href='https://rdrr.io/r/base/subset.html'>subset</a></span><span class='op'>(</span><span class='va'>RevGNdup</span>, <span class='va'>SET_NO</span><span class='op'>==</span><span class='fl'>12</span> <span class='op'>&amp;</span> <span class='va'>TYPE</span><span class='op'>==</span><span class='st'>"P"</span>, select<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='va'>IDKW</span>, <span class='va'>DEL</span>, <span class='va'>SPLIT</span><span class='op'>)</span><span class='op'>)</span>
 
 <span class='co'># Reconstruct ProDup object</span>
-<span class='no'>GNdup2</span> <span class='kw'>&lt;-</span> <span class='fu'>ReconstructProbDup</span>(<span class='no'>RevGNdup</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/lapply.html'>lapply</a></span>(<span class='no'>disGNdup</span>, <span class='no'>nrow</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/lapply.html'>lapply</a></span>(<span class='no'>GNdup2</span>, <span class='no'>nrow</span>)
+<span class='va'>GNdup2</span> <span class='op'>&lt;-</span> <span class='fu'>ReconstructProbDup</span><span class='op'>(</span><span class='va'>RevGNdup</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/base/lapply.html'>lapply</a></span><span class='op'>(</span><span class='va'>disGNdup</span>, <span class='va'>nrow</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/base/lapply.html'>lapply</a></span><span class='op'>(</span><span class='va'>GNdup2</span>, <span class='va'>nrow</span><span class='op'>)</span>
 
-}</div></pre>
+<span class='op'>}</span>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -278,7 +281,7 @@ are reassembled into a new set.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
 </div>
 
       </footer>
