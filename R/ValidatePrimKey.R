@@ -93,7 +93,7 @@ ValidatePrimKey <- function(x, prim.key) {
                                                       fromLast = TRUE)
     Result$Duplicates <- subset(x, primdup == TRUE)
     Result$Duplicates[, "primdup"] <- NULL
-    Result$Duplicates <- Result$Duplicates[order(Result$Duplicates[prim.key]), ]
+    Result$Duplicates <- Result$Duplicates[order(Result$Duplicates[, prim.key]), ]
   } else {
     Result$message1 <- "OK: No duplicated records found in prim.key field"
     message(Result$message1)
