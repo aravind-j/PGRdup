@@ -1,3 +1,13 @@
+# Version 0.2.3.7 - Second submission
+
+* Fixed `cairo_pdf` unconditional use.
+* Fixed `xtfrm` on `data.frame` in `ValidatePrimKey()`.
+
+### Test environments
+* local Windows 10 Home v1803, R-release (R 4.0.3) & R-devel (R 4.1.0 Pre-release).
+* local Ubuntu 16.04, R-release (R 4.0.3) & R-devel (R 4.1.0 Pre-release).
+* win-builder, R-release (R 4.0.3) & R-devel (R 4.1.0 Pre-release).
+
 # Version 0.2.3.7 - First submission
 
 * Fixed `cairo_pdf` unconditional use.

@@ -105,7 +105,7 @@
                         <h4 class="author">Aravind, J.<sup>1</sup>, Radhamani, J.<sup>1</sup>, Kalyani Srinivasan<sup>1</sup>, Ananda Subhash, B.<sup>2</sup>, and Tyagi, R. K.<sup>1</sup>
 </h4>
             
-            <h4 class="date">2021-02-05</h4>
+            <h4 class="date">2021-02-07</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/aravind-j/PGRdup/blob/master/vignettes/Introduction.Rmd"><code>vignettes/Introduction.Rmd</code></a></small>
       <div class="hidden name"><code>Introduction.Rmd</code></div>
@@ -595,7 +595,6 @@ Number of distinct keywords : 3109</code></pre>
 <div class="sourceCode" id="cb58"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Validate the primary key/ID field for duplication or existence of NULL values</span>
 <span class="fu"><a href="../reference/ValidatePrimKey.html">ValidatePrimKey</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">GN</span>, prim.key <span class="op">=</span> <span class="st">"NationalID"</span><span class="op">)</span></code></pre></div>
-<pre><code>Warning in xtfrm.data.frame(x): cannot xtfrm data frames</code></pre>
 <pre><code>$message1
 [1] "ERROR: Duplicated records found in prim.key field"
 
@@ -629,7 +628,7 @@ $NullRecords
      OtherID1 OtherID2 BioStatus            SourceCountry TransferYear primdup
 1001            U44712  Landrace                   Israel         2014    TRUE
 1002      NCS      NC5  Landrace United States of America         2004    TRUE</code></pre>
-<div class="sourceCode" id="cb61"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb60"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Remove the offending records</span>
 <span class="va">GN</span> <span class="op">&lt;-</span> <span class="va">GN</span><span class="op">[</span><span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1001</span><span class="op">:</span><span class="fl">1005</span><span class="op">)</span>, <span class="op">]</span>
 <span class="co"># Validate again</span>
@@ -659,7 +658,7 @@ NULL</code></pre>
 <li>
 <strong>Method <code>"a"</code></strong> : Performs string matching of keywords in a single KWIC index to identify probable duplicates of accessions in a single PGR passport database.</li>
 </ol>
-<div class="sourceCode" id="cb63"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb62"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Load example dataset</span>
 <span class="va">GN</span> <span class="op">&lt;-</span> <span class="va">GN1000</span>
 
@@ -683,7 +682,7 @@ NULL</code></pre>
 
 <span class="co"># Generate the KWIC index</span>
 <span class="va">GNKWIC</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/KWIC.html">KWIC</a></span><span class="op">(</span><span class="va">GN</span>, <span class="va">GNfields</span><span class="op">)</span></code></pre></div>
-<div class="sourceCode" id="cb64"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb63"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Specify the exceptions as a vector</span>
 <span class="va">exep</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"BIG"</span>, <span class="st">"BOLD"</span>, <span class="st">"BUNCH"</span>, <span class="st">"C"</span>, <span class="st">"COMPANY"</span>, <span class="st">"CULTURE"</span>,
          <span class="st">"DARK"</span>, <span class="st">"E"</span>, <span class="st">"EARLY"</span>, <span class="st">"EC"</span>, <span class="st">"ERECT"</span>, <span class="st">"EXOTIC"</span>, <span class="st">"FLESH"</span>, <span class="st">"GROUNDNUT"</span>,
@@ -709,10 +708,10 @@ Block 3 / 4 |
   |                                                                            
   |======================================================================| 100%
 Block 4 / 4 |</code></pre>
-<div class="sourceCode" id="cb67"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb66"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">GNdup</span><span class="op">)</span></code></pre></div>
 <pre><code>[1] "ProbDup"</code></pre>
-<div class="sourceCode" id="cb69"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb68"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">GNdup</span></code></pre></div>
 <pre><code>Method : a
 
@@ -721,7 +720,7 @@ KWIC1 fields : NationalID CollNo DonorID OtherID1 OtherID2
                 No..of.Sets    No..of.Records
 FuzzyDuplicates         378               745
 Total                   378 745(Distinct:745)</code></pre>
-<div class="sourceCode" id="cb71"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb70"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Fetch phonetic duplicates by method 'a'</span>
 <span class="va">GNdup</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/ProbDup.html">ProbDup</a></span><span class="op">(</span>kwic1 <span class="op">=</span> <span class="va">GNKWIC</span>, method <span class="op">=</span> <span class="st">"a"</span>, excep <span class="op">=</span> <span class="va">exep</span>, fuzzy <span class="op">=</span> <span class="cn">FALSE</span>,
                  phonetic <span class="op">=</span> <span class="cn">TRUE</span>, semantic <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
@@ -739,10 +738,10 @@ Block 3 / 4 |
   |                                                                            
   |======================================================================| 100%
 Block 4 / 4 |</code></pre>
-<div class="sourceCode" id="cb74"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb73"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">GNdup</span><span class="op">)</span></code></pre></div>
 <pre><code>[1] "ProbDup"</code></pre>
-<div class="sourceCode" id="cb76"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb75"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">GNdup</span></code></pre></div>
 <pre><code>Method : a
 
@@ -755,7 +754,7 @@ Total                       99 260(Distinct:260)</code></pre>
 <li><p><strong>Method <code>"b"</code></strong> : Performs string matching of keywords in the first KWIC index (query) with that of the keywords in the second index (source) to identify probable duplicates of accessions of the first PGR passport database among the accessions in the second database.</p></li>
 <li><p><strong>Method <code>"c"</code></strong> : Performs string matching of keywords in two different KWIC indexes jointly to identify probable duplicates of accessions from among two PGR passport databases.</p></li>
 </ol>
-<div class="sourceCode" id="cb78"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb77"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Load PGR passport databases</span>
 <span class="va">GN1</span> <span class="op">&lt;-</span> <span class="va">GN1000</span><span class="op">[</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/grep.html">grepl</a></span><span class="op">(</span><span class="st">"^ICG"</span>, <span class="va">GN1000</span><span class="op">$</span><span class="va">DonorID</span><span class="op">)</span>, <span class="op">]</span>
 <span class="va">GN1</span><span class="op">$</span><span class="va">DonorID</span> <span class="op">&lt;-</span> <span class="cn">NULL</span>
@@ -817,10 +816,10 @@ Block 1 / 1 |</code></pre>
   |                                                                            
   |======================================================================| 100%
 Block 1 / 1 |</code></pre>
-<div class="sourceCode" id="cb83"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb82"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">GNdupb</span><span class="op">)</span></code></pre></div>
 <pre><code>[1] "ProbDup"</code></pre>
-<div class="sourceCode" id="cb85"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb84"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">GNdupb</span></code></pre></div>
 <pre><code>Method : b
 
@@ -832,7 +831,7 @@ KWIC2 fields : DonorID CollNo OtherID1 OtherID2
 FuzzyDuplicates            107               353
 PhoneticDuplicates          41               126
 Total                      148 479(Distinct:383)</code></pre>
-<div class="sourceCode" id="cb87"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb86"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Fetch fuzzy and phonetic duplicate sets by method c</span>
 <span class="va">GNdupc</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/ProbDup.html">ProbDup</a></span><span class="op">(</span>kwic1 <span class="op">=</span> <span class="va">GN1KWIC</span>, kwic2 <span class="op">=</span> <span class="va">GN2KWIC</span>, method <span class="op">=</span> <span class="st">"c"</span>,
                   excep <span class="op">=</span> <span class="va">exep</span>, fuzzy <span class="op">=</span> <span class="cn">TRUE</span>, phonetic <span class="op">=</span> <span class="cn">TRUE</span>,
@@ -859,10 +858,10 @@ Block 2 / 3 |
   |                                                                            
   |======================================================================| 100%
 Block 3 / 3 |</code></pre>
-<div class="sourceCode" id="cb92"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb91"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">GNdupc</span><span class="op">)</span></code></pre></div>
 <pre><code>[1] "ProbDup"</code></pre>
-<div class="sourceCode" id="cb94"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb93"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">GNdupc</span></code></pre></div>
 <pre><code>Method : c
 
@@ -882,7 +881,7 @@ Total                      461 981(Distinct:741)</code></pre>
 <li>
 <strong>Fuzzy matching</strong> or approximate string matching of keywords is carried out by computing the <a href="https://en.wikipedia.org/wiki/Levenshtein_distance">generalized levenshtein (edit) distance</a> between them. This distance measure counts the number of deletions, insertions and substitutions necessary to turn one string to another.</li>
 </ol>
-<div class="sourceCode" id="cb96"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb95"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Load example dataset</span>
 <span class="va">GN</span> <span class="op">&lt;-</span> <span class="va">GN1000</span>
 
@@ -933,7 +932,7 @@ Block 3 / 4 |
   |                                                                            
   |======================================================================| 100%
 Block 4 / 4 |</code></pre>
-<div class="sourceCode" id="cb99"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb98"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">GNdup</span></code></pre></div>
 <pre><code>Method : a
 
@@ -943,7 +942,7 @@ KWIC1 fields : NationalID CollNo DonorID OtherID1 OtherID2
 FuzzyDuplicates         378               745
 Total                   378 745(Distinct:745)</code></pre>
 <p>The maximum distance to be considered for a match can be specified by <code>max.dist</code> argument.</p>
-<div class="sourceCode" id="cb101"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb100"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">GNdup</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/ProbDup.html">ProbDup</a></span><span class="op">(</span>kwic1 <span class="op">=</span> <span class="va">GNKWIC</span>, method <span class="op">=</span> <span class="st">"a"</span>, excep <span class="op">=</span> <span class="va">exep</span>, 
                  fuzzy <span class="op">=</span> <span class="cn">TRUE</span>, max.dist <span class="op">=</span> <span class="fl">1</span>,
                  phonetic <span class="op">=</span> <span class="cn">FALSE</span>, semantic <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
@@ -961,7 +960,7 @@ Block 3 / 4 |
   |                                                                            
   |======================================================================| 100%
 Block 4 / 4 |</code></pre>
-<div class="sourceCode" id="cb104"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb103"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">GNdup</span></code></pre></div>
 <pre><code>Method : a
 
@@ -972,7 +971,7 @@ FuzzyDuplicates         288               679
 Total                   288 679(Distinct:679)</code></pre>
 <p>Exact matching can be enforced with the argument <code>force.exact</code> set as TRUE. It can be used to avoid fuzzy matching when the number of alphabet characters in keywords is lesser than a critical value (<code>max.alpha</code>). Similarly, the value of <code>max.digit</code> can also be set according to the requirements to enforce exact matching. The default value of <code>Inf</code> avoids fuzzy matching and enforces exact matching for all keywords having any numerical characters. If <code>max.digit</code> and <code>max.alpha</code> are both set to <code>Inf</code>, exact matching will be enforced for all the keywords.</p>
 <p>When exact matching is enforced, for keywords having both alphabet and numeric characters and with the number of alphabet characters greater than <code>max.digit</code>, matching will be carried out separately for alphabet and numeric characters present.</p>
-<div class="sourceCode" id="cb106"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb105"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">GNdup</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/ProbDup.html">ProbDup</a></span><span class="op">(</span>kwic1 <span class="op">=</span> <span class="va">GNKWIC</span>, method <span class="op">=</span> <span class="st">"a"</span>, excep <span class="op">=</span> <span class="va">exep</span>, 
                  fuzzy <span class="op">=</span> <span class="cn">TRUE</span>, force.exact <span class="op">=</span> <span class="cn">TRUE</span>, max.alpha <span class="op">=</span> <span class="fl">4</span>, max.digit <span class="op">=</span> <span class="cn">Inf</span>,
                  phonetic <span class="op">=</span> <span class="cn">FALSE</span>, semantic <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
@@ -990,7 +989,7 @@ Block 3 / 4 |
   |                                                                            
   |======================================================================| 100%
 Block 4 / 4 |</code></pre>
-<div class="sourceCode" id="cb109"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb108"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">GNdup</span></code></pre></div>
 <pre><code>Method : a
 
@@ -1003,7 +1002,7 @@ Total                   378 745(Distinct:745)</code></pre>
 <li>
 <strong>Phonetic matching</strong> of keywords is carried out using the Double Metaphone phonetic algorithm which is implemented as the helper function <code>DoubleMetaphone</code>, <span class="citation">(<a href="#ref-p00" role="doc-biblioref">Philips 2000</a>)</span>, to identify keywords that have the similar pronunciation.</li>
 </ol>
-<div class="sourceCode" id="cb111"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb110"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">GNdup</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/ProbDup.html">ProbDup</a></span><span class="op">(</span>kwic1 <span class="op">=</span> <span class="va">GNKWIC</span>, method <span class="op">=</span> <span class="st">"a"</span>, excep <span class="op">=</span> <span class="va">exep</span>, 
                  fuzzy <span class="op">=</span> <span class="cn">FALSE</span>,
                  phonetic <span class="op">=</span> <span class="cn">TRUE</span>,
@@ -1022,7 +1021,7 @@ Block 3 / 4 |
   |                                                                            
   |======================================================================| 100%
 Block 4 / 4 |</code></pre>
-<div class="sourceCode" id="cb114"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb113"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">GNdup</span></code></pre></div>
 <pre><code>Method : a
 
@@ -1032,7 +1031,7 @@ KWIC1 fields : NationalID CollNo DonorID OtherID1 OtherID2
 PhoneticDuplicates          99               260
 Total                       99 260(Distinct:260)</code></pre>
 <p>Either the primary or alternate encodings can be used by specifying the <code>encoding</code> argument.</p>
-<div class="sourceCode" id="cb116"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb115"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">GNdup</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/ProbDup.html">ProbDup</a></span><span class="op">(</span>kwic1 <span class="op">=</span> <span class="va">GNKWIC</span>, method <span class="op">=</span> <span class="st">"a"</span>, excep <span class="op">=</span> <span class="va">exep</span>, 
                  fuzzy <span class="op">=</span> <span class="cn">FALSE</span>,
                  phonetic <span class="op">=</span> <span class="cn">TRUE</span>, encoding <span class="op">=</span> <span class="st">"alternate"</span>,
@@ -1051,7 +1050,7 @@ Block 3 / 4 |
   |                                                                            
   |======================================================================| 100%
 Block 4 / 4 |</code></pre>
-<div class="sourceCode" id="cb119"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb118"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">GNdup</span></code></pre></div>
 <pre><code>Method : a
 
@@ -1061,7 +1060,7 @@ KWIC1 fields : NationalID CollNo DonorID OtherID1 OtherID2
 PhoneticDuplicates          98               263
 Total                       98 263(Distinct:263)</code></pre>
 <p>The argument <code>phon.min.alpha</code> sets the limits for the number of alphabet characters to be present in a string for executing phonetic matching.</p>
-<div class="sourceCode" id="cb121"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb120"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">GNdup</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/ProbDup.html">ProbDup</a></span><span class="op">(</span>kwic1 <span class="op">=</span> <span class="va">GNKWIC</span>, method <span class="op">=</span> <span class="st">"a"</span>, excep <span class="op">=</span> <span class="va">exep</span>, 
                  fuzzy <span class="op">=</span> <span class="cn">FALSE</span>,
                  phonetic <span class="op">=</span> <span class="cn">TRUE</span>, encoding <span class="op">=</span> <span class="st">"alternate"</span>, phon.min.alpha <span class="op">=</span> <span class="fl">4</span>,
@@ -1080,7 +1079,7 @@ Block 3 / 4 |
   |                                                                            
   |======================================================================| 100%
 Block 4 / 4 |</code></pre>
-<div class="sourceCode" id="cb124"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb123"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">GNdup</span></code></pre></div>
 <pre><code>Method : a
 
@@ -1090,7 +1089,7 @@ KWIC1 fields : NationalID CollNo DonorID OtherID1 OtherID2
 PhoneticDuplicates         304               451
 Total                      304 451(Distinct:451)</code></pre>
 <p>Similarly <code>min.enc</code> sets the limits for the number of characters to be present in the encoding of a keyword for phonetic matching.</p>
-<div class="sourceCode" id="cb126"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb125"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">GNdup</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/ProbDup.html">ProbDup</a></span><span class="op">(</span>kwic1 <span class="op">=</span> <span class="va">GNKWIC</span>, method <span class="op">=</span> <span class="st">"a"</span>, excep <span class="op">=</span> <span class="va">exep</span>, 
                  fuzzy <span class="op">=</span> <span class="cn">FALSE</span>,
                  phonetic <span class="op">=</span> <span class="cn">TRUE</span>, encoding <span class="op">=</span> <span class="st">"alternate"</span>, min.enc <span class="op">=</span> <span class="fl">4</span>,
@@ -1109,7 +1108,7 @@ Block 3 / 4 |
   |                                                                            
   |======================================================================| 100%
 Block 4 / 4 |</code></pre>
-<div class="sourceCode" id="cb129"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb128"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">GNdup</span></code></pre></div>
 <pre><code>Method : a
 
@@ -1122,7 +1121,7 @@ Total                       59 156(Distinct:156)</code></pre>
 <li>
 <strong>Semantic matching</strong> matches keywords based on a list of accession name synonyms supplied as list with character vectors of synonym sets (synsets) to the <code>syn</code> argument. Synonyms in this context refer to interchangeable identifiers or names by which an accession is recognized. Multiple keywords specified as members of the same synset in <code>syn</code> are matched. To facilitate accurate identification of synonyms from the KWIC index, identical data standardization operations using the <code>Merge*</code> and <code>DataClean</code> functions for both the original database fields and the synset list are recommended.</li>
 </ol>
-<div class="sourceCode" id="cb131"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb130"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Specify the synsets as a list</span>
 <span class="va">syn</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"CHANDRA"</span>, <span class="st">"AH 114"</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"TG-1"</span>, <span class="st">"VIKRAM"</span><span class="op">)</span><span class="op">)</span>
 
@@ -1146,7 +1145,7 @@ Block 3 / 4 |
   |                                                                            
   |======================================================================| 100%
 Block 4 / 4 |</code></pre>
-<div class="sourceCode" id="cb134"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb133"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">GNdup</span></code></pre></div>
 <pre><code>Method : a
 
@@ -1163,7 +1162,7 @@ Total                        2  5(Distinct:5)</code></pre>
 <p>The progress of matching is displayed in the console as number of keyword blocks completed out of the total number of blocks, the percentage of achievement and a text-based progress bar.</p>
 <p>In case of multi-byte characters in keywords, the speed of keyword matching is further dependent upon the <code>useBytes</code> argument as described in <code>help("stringdist-encoding")</code> for the <code>stringdist</code> function in the namesake <a href="https://CRAN.R-project.org/package=stringdist">package</a> <span class="citation">(<a href="#ref-van2014stringdist" role="doc-biblioref">Loo 2014</a>)</span>, which is made use of here for string matching.</p>
 <p>The CPU time taken for retrieval of probable duplicate sets under different options for the arguments <code>chunksize</code> and <code>useBytes</code> can be visualized using the <a href="https://CRAN.R-project.org/package=microbenchmark"><code>microbenchmark</code></a> package (Fig. 3).</p>
-<div class="sourceCode" id="cb136"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb135"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Load example dataset</span>
 <span class="va">GN</span> <span class="op">&lt;-</span> <span class="va">GN1000</span>
 
@@ -1197,7 +1196,7 @@ Total                        2  5(Distinct:5)</code></pre>
 <span class="co"># Specify the synsets as a list</span>
 <span class="va">syn</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"CHANDRA"</span>, <span class="st">"AH 114"</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"TG-1"</span>, <span class="st">"VIKRAM"</span><span class="op">)</span><span class="op">)</span>
 <span class="va">syn</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">syn</span>, <span class="va">DataClean</span><span class="op">)</span></code></pre></div>
-<div class="sourceCode" id="cb137"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb136"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">timings</span> <span class="op">&lt;-</span> <span class="fu">microbenchmark</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/microbenchmark/man/microbenchmark.html">microbenchmark</a></span><span class="op">(</span>
   <span class="co"># Fetch duplicate sets with default chunk.size</span>
   t1 <span class="op">=</span> <span class="fu"><a href="../reference/ProbDup.html">ProbDup</a></span><span class="op">(</span>kwic1 <span class="op">=</span> <span class="va">GNKWIC</span>, method <span class="op">=</span> <span class="st">"a"</span>, excep <span class="op">=</span> <span class="va">exep</span>,
@@ -1219,7 +1218,7 @@ Total                        2  5(Distinct:5)</code></pre>
                                      chunksize <span class="op">=</span> <span class="fl">1000</span>, useBytes <span class="op">=</span> <span class="cn">FALSE</span>,
                                      fuzzy <span class="op">=</span> <span class="cn">TRUE</span>, phonetic <span class="op">=</span> <span class="cn">TRUE</span>,
                                      semantic <span class="op">=</span> <span class="cn">TRUE</span>, syn <span class="op">=</span> <span class="va">syn</span><span class="op">)</span>, times <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></code></pre></div>
-<div class="sourceCode" id="cb138"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb137"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">timings</span>, col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"#1B9E77"</span>, <span class="st">"#D95F02"</span>, <span class="st">"#7570B3"</span>, <span class="st">"#E7298A"</span><span class="op">)</span>,
      xlab <span class="op">=</span> <span class="st">"Expression"</span>, ylab <span class="op">=</span> <span class="st">"Time"</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/graphics/legend.html">legend</a></span><span class="op">(</span><span class="st">"topright"</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"t1 : chunksize = 1000,\n     useBytes = T (default)\n"</span>,
@@ -1236,7 +1235,7 @@ Total                        2  5(Distinct:5)</code></pre>
 <a href="#set-review-modification-and-validation" class="anchor"></a>Set Review, Modification and Validation</h2>
 <p>The initially retrieved sets may be intersecting with each other because there might be accessions which occur in more than duplicate set. Disjoint sets can be generated by merging such overlapping sets using the function <code>DisProbDup</code>.</p>
 <p>Disjoint sets are retrieved either individually for each type of probable duplicate sets or considering all type of sets simultaneously. In case of the latter, the disjoint of all the type of sets alone are returned in the output as an additional data frame <code>DisjointDupicates</code> in an object of class <code>ProbDup</code>.</p>
-<div class="sourceCode" id="cb139"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb138"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Load example dataset</span>
 <span class="va">GN</span> <span class="op">&lt;-</span> <span class="va">GN1000</span>
 
@@ -1276,7 +1275,7 @@ Total                        2  5(Distinct:5)</code></pre>
 <span class="va">GNdup</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/ProbDup.html">ProbDup</a></span><span class="op">(</span>kwic1 <span class="op">=</span> <span class="va">GNKWIC</span>, method <span class="op">=</span> <span class="st">"a"</span>, excep <span class="op">=</span> <span class="va">exep</span>, fuzzy <span class="op">=</span> <span class="cn">TRUE</span>,
                  phonetic <span class="op">=</span> <span class="cn">TRUE</span>, encoding <span class="op">=</span> <span class="st">"primary"</span>,
                  semantic <span class="op">=</span> <span class="cn">TRUE</span>, syn <span class="op">=</span> <span class="va">syn</span><span class="op">)</span></code></pre></div>
-<div class="sourceCode" id="cb140"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb139"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Initial number of sets</span>
 <span class="va">GNdup</span></code></pre></div>
 <pre><code>Method : a
@@ -1288,7 +1287,7 @@ FuzzyDuplicates            378                745
 PhoneticDuplicates          99                260
 SemanticDuplicates           2                  5
 Total                      479 1010(Distinct:762)</code></pre>
-<div class="sourceCode" id="cb142"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb141"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Get disjoint probable duplicate sets of each kind</span>
 <span class="va">disGNdup1</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/DisProbDup.html">DisProbDup</a></span><span class="op">(</span><span class="va">GNdup</span>, combine <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span>
 <span class="co"># # Number of sets after combining intersecting sets</span>
@@ -1302,7 +1301,7 @@ FuzzyDuplicates            181                745
 PhoneticDuplicates          80                260
 SemanticDuplicates           2                  5
 Total                      263 1010(Distinct:762)</code></pre>
-<div class="sourceCode" id="cb144"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb143"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Get disjoint probable duplicate sets combining all the kinds of sets</span>
 <span class="va">disGNdup2</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/DisProbDup.html">DisProbDup</a></span><span class="op">(</span><span class="va">GNdup</span>, combine <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"F"</span>, <span class="st">"P"</span>, <span class="st">"S"</span><span class="op">)</span><span class="op">)</span>
 <span class="co"># Number of sets after combining intersecting sets</span>
@@ -1321,7 +1320,7 @@ Total                     167 762(Distinct:762)</code></pre>
 <p>The output data frame can be subjected to clerical review either after exporting into an external spreadsheet using <code>write.csv</code> function or by using the <code>edit</code> function.</p>
 <p>The column <code>DEL</code> can be used to indicate whether a record has to be deleted from a set or not. <code>Y</code> indicates “Yes,” and the default <code>N</code> indicates “No.”</p>
 <p>The column <code>SPLIT</code> similarly can be used to indicate whether a record in a set has to be branched into a new set. A set of identical integers in this column other than the default <code>0</code> can be used to indicate that they are to be removed and assembled into a new set.</p>
-<div class="sourceCode" id="cb146"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb145"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Load the original database and clean the Primary ID/key field</span>
 <span class="va">GN1000</span> <span class="op">&lt;-</span> <span class="va">GN1000</span>
 <span class="va">GN1000</span><span class="op">$</span><span class="va">NationalID</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/DataClean.html">DataClean</a></span><span class="op">(</span><span class="va">GN1000</span><span class="op">$</span><span class="va">NationalID</span><span class="op">)</span>
@@ -1330,7 +1329,7 @@ Total                     167 762(Distinct:762)</code></pre>
 <span class="va">RevGNdup</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/ReviewProbDup.html">ReviewProbDup</a></span><span class="op">(</span>pdup <span class="op">=</span> <span class="va">disGNdup1</span>, db1 <span class="op">=</span> <span class="va">GN1000</span>,
                           extra.db1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"SourceCountry"</span>, <span class="st">"TransferYear"</span><span class="op">)</span>,
                           max.count <span class="op">=</span> <span class="fl">30</span>, insert.blanks <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
-<div class="sourceCode" id="cb147"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb146"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">RevGNdup</span><span class="op">)</span></code></pre></div>
 <pre><code>  SET_NO TYPE K[a]  PRIM_ID                IDKW  DEL SPLIT COUNT K1_NationalID
 1      1    F [K1] EC100277 [K1]EC100277:U44712    N     0     3      EC100277
@@ -1353,7 +1352,7 @@ Total                     167 762(Distinct:762)</code></pre>
 4                     &lt;NA&gt;               NA
 5 United States of America             2004
 6 United States of America             2001</code></pre>
-<div class="sourceCode" id="cb149"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb148"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Examine and review the duplicate sets using edit function</span>
 <span class="va">RevGNdup</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/edit.html">edit</a></span><span class="op">(</span><span class="va">RevGNdup</span><span class="op">)</span>
 
@@ -1361,7 +1360,7 @@ Total                     167 762(Distinct:762)</code></pre>
 <span class="fu"><a href="https://rdrr.io/r/utils/write.table.html">write.csv</a></span><span class="op">(</span>file<span class="op">=</span><span class="st">"Duplicate sets for review.csv"</span>, x<span class="op">=</span><span class="va">RevGNdup</span><span class="op">)</span></code></pre></div>
 <p>After clerical review, the data frame created using the function <code>ReviewProbDup</code> from an object of class <code>ProbDup</code> can be reconstituted back to the same object after the review using the function <code>ReconstructProbDup</code>.</p>
 <p>The instructions for modifying the sets entered in the appropriate format in the columns <code>DEL</code> and <code>SPLIT</code> during clerical review are taken into account for reconstituting the probable duplicate sets. Any records with <code>Y</code> in column <code>DEL</code> are deleted and records with identical integers in the column <code>SPLIT</code> other than the default <code>0</code> are reassembled into a new set.</p>
-<div class="sourceCode" id="cb150"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb149"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># The original set data</span>
 <span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">RevGNdup</span>, <span class="va">SET_NO</span><span class="op">==</span><span class="fl">13</span> <span class="op">&amp;</span> <span class="va">TYPE</span><span class="op">==</span><span class="st">"P"</span>, select<span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">IDKW</span>, <span class="va">DEL</span>, <span class="va">SPLIT</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <pre><code>                                             IDKW DEL SPLIT
@@ -1372,7 +1371,7 @@ Total                     167 762(Distinct:762)</code></pre>
 115 [K1]EC552714:CHAMPAQUI, [K1]EC552714:MANFREDI   N     0
 116                       [K1]EC573128:MANFREDI84   N     0
 117 [K1]IC304523:CHAMPAGUE, [K1]IC304523:MANFREDI   N     0</code></pre>
-<div class="sourceCode" id="cb152"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb151"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Make dummy changes to the set for illustration</span>
 <span class="va">RevGNdup</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">113</span>, <span class="fl">116</span><span class="op">)</span>, <span class="fl">6</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"Y"</span>
 <span class="va">RevGNdup</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">111</span>, <span class="fl">114</span><span class="op">)</span>, <span class="fl">7</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fl">1</span>
@@ -1387,7 +1386,7 @@ Total                     167 762(Distinct:762)</code></pre>
 115 [K1]EC552714:CHAMPAQUI, [K1]EC552714:MANFREDI   N     2
 116                       [K1]EC573128:MANFREDI84   Y     0
 117 [K1]IC304523:CHAMPAGUE, [K1]IC304523:MANFREDI   N     2</code></pre>
-<div class="sourceCode" id="cb154"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb153"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Reconstruct ProDup object</span>
 <span class="va">GNdup2</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/ReconstructProbDup.html">ReconstructProbDup</a></span><span class="op">(</span><span class="va">RevGNdup</span><span class="op">)</span>
 <span class="co"># Initial no. of sets</span>
@@ -1401,7 +1400,7 @@ FuzzyDuplicates            181                745
 PhoneticDuplicates          80                260
 SemanticDuplicates           2                  5
 Total                      263 1010(Distinct:762)</code></pre>
-<div class="sourceCode" id="cb156"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb155"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># No. of sets after modifications</span>
 <span class="va">GNdup2</span></code></pre></div>
 <pre><code>Method : a
@@ -1418,7 +1417,7 @@ Total                      263 786(Distinct:674)</code></pre>
 <h2 class="hasAnchor">
 <a href="#other-functions" class="anchor"></a>Other Functions</h2>
 <p>The <code>ProbDup</code> object is a list of data frames of different kinds of probable duplicate sets <em>viz</em>- <code>FuzzyDuplicates</code>, <code>PhoneticDuplicates</code>, <code>SemanticDuplicates</code> and <code>DisjointDuplicates</code>. Each row of the component data frame will have information of a set, the type of set, the set members as well as the keywords based on which the set was formed. This data can be reshaped into long form using the function <code>ParseProbDup</code>. This function which will transform a <code>ProbDup</code> object into a single data frame.</p>
-<div class="sourceCode" id="cb158"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb157"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Convert 'ProbDup' object to a long form data frame of sets</span>
 <span class="va">GNdupParsed</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/ParseProbDup.html">ParseProbDup</a></span><span class="op">(</span><span class="va">GNdup</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">GNdupParsed</span><span class="op">)</span></code></pre></div>
@@ -1431,7 +1430,7 @@ Total                      263 786(Distinct:674)</code></pre>
 6      2    F [K1] EC100721    [K1]EC100721:NC5     3</code></pre>
 <p>The prefix <code>K*</code> here indicates the KWIC index of origin. This is useful in ascertaining the database of origin of the accessions when method <code>"b"</code> or <code>"c"</code> was used to create the input <code>ProbDup</code> object.</p>
 <p>Once the sets are reviewed and modified, the validated set data fields from the <code>ProbDup</code> object can be added to the original PGR passport database using the function <code>AddProbDup</code>. The associated data fields such as <code>SET_NO</code>, <code>ID</code> and <code>IDKW</code> are added based on the <code>PRIM_ID</code> field(column).</p>
-<div class="sourceCode" id="cb160"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb159"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Loading original database</span>
 <span class="va">GN2</span> <span class="op">&lt;-</span> <span class="va">GN1000</span>
 
@@ -1439,7 +1438,7 @@ Total                      263 786(Distinct:674)</code></pre>
 <span class="va">GNwithdup</span> <span class="op">&lt;-</span>  <span class="fu"><a href="../reference/AddProbDup.html">AddProbDup</a></span><span class="op">(</span>pdup <span class="op">=</span> <span class="va">GNdup</span>, db <span class="op">=</span> <span class="va">GN2</span>, addto <span class="op">=</span> <span class="st">"I"</span><span class="op">)</span></code></pre></div>
 <p>In case more than one KWIC index was used to generate the object of class <code>ProbDup</code>, the argument <code>addto</code> can be used to specify to which database the data fields are to be added. The default <code>"I"</code> indicates the database from which the first KWIC index was created and <code>"II"</code> indicates the database from which the second index was created.</p>
 <p>The function <code>SplitProbDup</code> can be used to split an object of class <code>ProbDup</code> into two on the basis of set counts. This is useful for reviewing separately the sets with larger set counts.</p>
-<div class="sourceCode" id="cb161"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb160"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Load PGR passport database</span>
 <span class="va">GN</span> <span class="op">&lt;-</span> <span class="va">GN1000</span>
 
@@ -1479,7 +1478,7 @@ Total                      263 786(Distinct:674)</code></pre>
 <span class="va">GNdup</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/ProbDup.html">ProbDup</a></span><span class="op">(</span>kwic1 <span class="op">=</span> <span class="va">GNKWIC</span>, method <span class="op">=</span> <span class="st">"a"</span>, excep <span class="op">=</span> <span class="va">exep</span>, fuzzy <span class="op">=</span> <span class="cn">TRUE</span>,
                  phonetic <span class="op">=</span> <span class="cn">TRUE</span>, encoding <span class="op">=</span> <span class="st">"primary"</span>,
                  semantic <span class="op">=</span> <span class="cn">TRUE</span>, syn <span class="op">=</span> <span class="va">syn</span><span class="op">)</span></code></pre></div>
-<div class="sourceCode" id="cb162"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb161"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Split the probable duplicate sets</span>
 <span class="va">GNdupSplit</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/SplitProbDup.html">SplitProbDup</a></span><span class="op">(</span><span class="va">GNdup</span>, splitat <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fl">10</span>, <span class="fl">10</span><span class="op">)</span><span class="op">)</span>
 <span class="va">GNdupSplit</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span></code></pre></div>
@@ -1492,7 +1491,7 @@ FuzzyDuplicates            338                744
 PhoneticDuplicates          99                260
 SemanticDuplicates           2                  5
 Total                      439 1009(Distinct:762)</code></pre>
-<div class="sourceCode" id="cb164"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb163"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">GNdupSplit</span><span class="op">[[</span><span class="fl">3</span><span class="op">]</span><span class="op">]</span></code></pre></div>
 <pre><code>Method : a
 
@@ -1502,7 +1501,7 @@ KWIC1 fields : NationalID CollNo DonorID OtherID1 OtherID2
 FuzzyDuplicates          40               136
 Total                    40 136(Distinct:136)</code></pre>
 <p>Alternatively, two different <code>ProbDup</code> objects can be merged together using the function <code>MergeProbDup</code>.</p>
-<div class="sourceCode" id="cb166"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb165"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">GNdupMerged</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/MergeProbDup.html">MergeProbDup</a></span><span class="op">(</span><span class="va">GNdupSplit</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span>, <span class="va">GNdupSplit</span><span class="op">[[</span><span class="fl">3</span><span class="op">]</span><span class="op">]</span><span class="op">)</span>
 <span class="va">GNdupMerged</span></code></pre></div>
 <pre><code>Method : a
@@ -1515,7 +1514,7 @@ PhoneticDuplicates          99                260
 SemanticDuplicates           2                  5
 Total                      479 1010(Distinct:762)</code></pre>
 <p>The summary of accessions according to a grouping factor field(column) in the original database(s) within the probable duplicate sets retrieved in a <code>ProbDup</code> object can be visualized by the <code>ViewProbDup</code> function. The resulting plot can be used to examine the extent of probable duplication within and between groups of accessions records.</p>
-<div class="sourceCode" id="cb168"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb167"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Load PGR passport databases</span>
 <span class="va">GN1</span> <span class="op">&lt;-</span> <span class="va">GN1000</span><span class="op">[</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/grep.html">grepl</a></span><span class="op">(</span><span class="st">"^ICG"</span>, <span class="va">GN1000</span><span class="op">$</span><span class="va">DonorID</span><span class="op">)</span>, <span class="op">]</span>
 <span class="va">GN1</span><span class="op">$</span><span class="va">DonorID</span> <span class="op">&lt;-</span> <span class="cn">NULL</span>
@@ -1572,7 +1571,7 @@ Total                      479 1010(Distinct:762)</code></pre>
 
 <span class="co"># Specify the synsets as a list</span>
 <span class="va">syn</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"CHANDRA"</span>, <span class="st">"AH114"</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"TG1"</span>, <span class="st">"VIKRAM"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
-<div class="sourceCode" id="cb169"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb168"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">GNdupc</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/ProbDup.html">ProbDup</a></span><span class="op">(</span>kwic1 <span class="op">=</span> <span class="va">GN1KWIC</span>, kwic2 <span class="op">=</span> <span class="va">GN2KWIC</span>, method <span class="op">=</span> <span class="st">"c"</span>,
                   excep <span class="op">=</span> <span class="va">exep</span>, fuzzy <span class="op">=</span> <span class="cn">TRUE</span>, phonetic <span class="op">=</span> <span class="cn">TRUE</span>,
                   encoding <span class="op">=</span> <span class="st">"primary"</span>, semantic <span class="op">=</span> <span class="cn">TRUE</span>, syn <span class="op">=</span> <span class="va">syn</span><span class="op">)</span></code></pre></div>
@@ -1609,23 +1608,23 @@ Block 2 / 3 |
   |                                                                            
   |======================================================================| 100%
 Block 3 / 3 |</code></pre>
-<div class="sourceCode" id="cb176"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb175"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Get the summary data.frames and Grob</span>
 <span class="va">GNdupcView</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/ViewProbDup.html">ViewProbDup</a></span><span class="op">(</span><span class="va">GNdupc</span>, <span class="va">GN1</span>, <span class="va">GN2</span>, <span class="st">"SourceCountry"</span>, <span class="st">"SourceCountry"</span>,
                          max.count <span class="op">=</span> <span class="fl">30</span>, select <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"INDIA"</span>, <span class="st">"USA"</span><span class="op">)</span>, order <span class="op">=</span> <span class="st">"type"</span>,
                          main <span class="op">=</span> <span class="st">"Groundnut Probable Duplicates"</span><span class="op">)</span></code></pre></div>
-<div class="sourceCode" id="cb177"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb176"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># View the summary data.frames</span>
 <span class="va">GNdupcView</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span>
 <span class="va">GNdupcView</span><span class="op">[[</span><span class="fl">2</span><span class="op">]</span><span class="op">]</span></code></pre></div>
-<div class="sourceCode" id="cb178"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb177"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Plot the summary visualization</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">gridExtra</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/pkg/gridExtra/man/arrangeGrob.html">grid.arrange</a></span><span class="op">(</span><span class="va">GNdupcView</span><span class="op">[[</span><span class="fl">3</span><span class="op">]</span><span class="op">]</span><span class="op">)</span></code></pre></div>
 <p><img src="Introduction_files/figure-html/unnamed-chunk-60-1.png" width="960"></p>
 <p><strong>Fig. 5.</strong> Summary visualization of groundnut probable duplicate sets retrieved according to <code>SourceCountry</code> field.</p>
 <p>The function <code>KWCounts</code> can be used to compute the keyword counts from PGR passport database fields(columns) which are considered for identification of probable duplicates. These keyword counts can give a rough indication of the completeness of the data in such fields (Fig. 3).</p>
-<div class="sourceCode" id="cb179"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb178"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Compute the keyword counts for the whole data</span>
 <span class="va">GNKWCouts</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/KWCounts.html">KWCounts</a></span><span class="op">(</span><span class="va">GN</span>, <span class="va">GNfields</span>, <span class="va">exep</span><span class="op">)</span>
 
@@ -1672,7 +1671,7 @@ Block 3 / 3 |</code></pre>
 <h2 class="hasAnchor">
 <a href="#citing-pgrdup" class="anchor"></a>Citing <code>PGRdup</code>
 </h2>
-<div class="sourceCode" id="cb180"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb179"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/citation.html">citation</a></span><span class="op">(</span><span class="st">"PGRdup"</span><span class="op">)</span></code></pre></div>
 <pre><code>
 To cite the R package 'PGRdup' in publications use:
@@ -1700,9 +1699,9 @@ citing the package.</code></pre>
 <div id="session-info" class="section level2">
 <h2 class="hasAnchor">
 <a href="#session-info" class="anchor"></a>Session Info</h2>
-<div class="sourceCode" id="cb182"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb181"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<pre><code>R Under development (unstable) (2021-02-03 r79933)
+<pre><code>R Under development (unstable) (2021-02-02 r79929)
 Platform: x86_64-w64-mingw32/x64 (64-bit)
 Running under: Windows 10 x64 (build 19041)
 
@@ -1724,14 +1723,14 @@ loaded via a namespace (and not attached):
  [1] stringdist_0.9.6.3   tidyselect_1.1.0     xfun_0.20           
  [4] purrr_0.3.4          colorspace_2.0-0     vctrs_0.3.6         
  [7] generics_0.1.0       htmltools_0.5.1.1    yaml_2.2.1          
-[10] XML_3.99-0.5         rlang_0.4.10         pkgdown_1.6.1.9000  
+[10] XML_3.99-0.5         rlang_0.4.10         pkgdown_1.6.1       
 [13] pillar_1.4.7         glue_1.4.2           DBI_1.1.1           
 [16] lifecycle_0.2.0      stringr_1.4.0        munsell_0.5.0       
 [19] gtable_0.3.0         ragg_0.4.1           memoise_2.0.0       
 [22] evaluate_0.14        labeling_0.4.2       knitr_1.31          
 [25] fastmap_1.1.0        parallel_4.1.0       curl_4.3            
 [28] highr_0.8            Rcpp_1.0.6           scales_1.1.1        
-[31] cachem_1.0.3         desc_1.2.0           farver_2.0.3        
+[31] cachem_1.0.2         desc_1.2.0           farver_2.0.3        
 [34] systemfonts_1.0.0    fs_1.5.0             microbenchmark_1.4-7
 [37] textshaping_0.2.1    ggplot2_3.3.3        digest_0.6.27       
 [40] stringi_1.5.3        dplyr_1.0.4          grid_4.1.0          
@@ -1777,7 +1776,7 @@ Philips, Lawrence. 2000. <span>“The <span>Double</span> <span>Metaphone</span>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

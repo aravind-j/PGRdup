@@ -1,5 +1,8 @@
 # PGRdup 0.2.3.7
 
+## UPDATED FUNCTIONS:
+* `ValidatePrimKey` - Fixed `xtfrm` on `data.frame`.
+
 ## VIGNETTE:
 * Removed cairo dependency.
 
