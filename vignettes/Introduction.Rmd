@@ -34,7 +34,6 @@ options(tinytex.verbose = TRUE)
 ```{r, echo=FALSE}
 out_type <- knitr::opts_knit$get("rmarkdown.pandoc.to")
 
-
 r = getOption("repos")
 r["CRAN"] = "https://cran.rstudio.com/"
 #r["CRAN"] = "https://cloud.r-project.org/"
@@ -43,7 +42,10 @@ options(repos = r)
 
 # Workaround for missing pandoc in CRAN OSX build machines
 out_type <- ifelse(out_type == "", "latex", out_type)
-# out_type <- "latex"
+
+# Workaround for missing pandoc in Solaris build machines
+out_type <- ifelse(identical (out_type, vector(mode = "logical", length = 0)),
+                   "latex", out_type)
 ```
 
 ```{r, results='asis', echo=FALSE}
