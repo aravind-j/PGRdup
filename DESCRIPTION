@@ -57,6 +57,8 @@ Suggests:
     wordcloud,
     microbenchmark,
     XML,
+    httr,
+    RCurl,
     knitr,
     rmarkdown,
 	  pander

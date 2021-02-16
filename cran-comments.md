@@ -1,3 +1,17 @@
+# Version 0.2.3.7 - Third submission
+
+* Fixed `cairo_pdf` unconditional use.
+* Fixed `xtfrm` on `data.frame` in `ValidatePrimKey()`.
+* Fixed issue with vignette in Solaris build.
+
+### Test environments
+* local Windows 10 Home v1803, R-release (R 4.0.4) & R-devel (R 4.1.0 Pre-release).
+* local Ubuntu 16.04, R-release (R 4.0.4) & R-devel (R 4.1.0 Pre-release).
+* win-builder, R-release (R 4.0.4) & R-devel (R 4.1.0 Pre-release).
+* rhub:solaris-x86-patched - i386-pc-solaris2.10 (32-bit), R-release (R 4.0.3).
+* rhub:solaris-x86-patched-ods - i386-pc-solaris2.10 (32-bit), R-release (R 4.0.3).
+* rhub:macos-highsierra-release-cran - x86_64-apple-darwin17.0 (64-bit), R-release (R 4.0.3).
+
 # Version 0.2.3.7 - Second submission
 
 * Fixed `cairo_pdf` unconditional use.
