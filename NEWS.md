@@ -1,3 +1,5 @@
+# PGRdup 0.2.3.8
+
 # PGRdup 0.2.3.7
 
 ## UPDATED FUNCTIONS:
@@ -5,7 +7,6 @@
 
 ## VIGNETTE:
 * Removed cairo dependency.
-
 
 # PGRdup 0.2.3.6
 
