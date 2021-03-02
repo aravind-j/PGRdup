@@ -17,7 +17,7 @@ knitr::include_graphics("https://raw.githubusercontent.com/aravind-j/PGRdup/mast
 
 
 ```{r,echo = FALSE, message = FALSE}
-devtools::load_all(".")
+devtools::load_all(".", quiet = TRUE) # quiet = T for hiding macOS compiler warnings
 
 ```
 
