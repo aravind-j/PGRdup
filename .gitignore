@@ -11,3 +11,5 @@ desktop.ini
 vignettes/Introduction.log
 vignettes/Introduction.tex
 vignettes/Introduction.out
+.DS_Store
+.httr-oauth
