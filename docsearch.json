@@ -2,21 +2,21 @@
   "index_name": "pgrdup",
   "start_urls": [
     {
-      "url": "https://aravind-j.github.io/PGRdup//index.html",
+      "url": "https://aravind-j.github.io/PGRdup/index.html",
       "selectors_key": "homepage",
       "tags": [
         "homepage"
       ]
     },
     {
-      "url": "https://aravind-j.github.io/PGRdup//reference",
+      "url": "https://aravind-j.github.io/PGRdup/reference",
       "selectors_key": "reference",
       "tags": [
         "reference"
       ]
     },
     {
-      "url": "https://aravind-j.github.io/PGRdup//articles",
+      "url": "https://aravind-j.github.io/PGRdup/articles",
       "selectors_key": "articles",
       "tags": [
         "articles"
@@ -30,7 +30,7 @@
     "/articles/index.html"
   ],
   "sitemap_urls": [
-    "https://aravind-j.github.io/PGRdup//sitemap.xml"
+    "https://aravind-j.github.io/PGRdup/sitemap.xml"
   ],
   "selectors": {
     "homepage": {
