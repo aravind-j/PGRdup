@@ -30,6 +30,10 @@ navbar:
       href: https://github.com/aravind-j/PGRdup
 
 reference:
+    - title: Overview
+      contents:
+         - '`PGRdup-package`'
+
     - title: Data pre-processing
       contents:
          - '`DataClean`'
