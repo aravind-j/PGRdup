@@ -1,4 +1,4 @@
-# Workflow derived from https://github.com/ms609/TreeTools/.github/workflows/rchk.yml
+# Workflow derived from https://github.com/r-lib/actions/tree/v2-branch/run-rchk
 
 on:
   push:
@@ -18,21 +18,12 @@ jobs:
       options: --user=root
     steps:
     - uses: actions/checkout@v2
-      
-    - name: Set up rchk
-      uses: r-lib/actions/run-rchk@v2
+    - uses: r-lib/actions/run-rchk@v2
       with:
         setup-only: true
-        
-    - uses: randy3k/gh-actions/r-install-deps@main
+    - uses: r-lib/actions/setup-r-dependencies@v2
       with:
         cache-version: rchk-1
-        
-    - name: Install package
-      run: |
-        remotes::install_local()
-      shell: Rscript {0}
-      
     - uses: r-lib/actions/run-rchk@v2
       with:
         run-only: true
