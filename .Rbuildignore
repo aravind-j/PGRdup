@@ -27,3 +27,4 @@
 ^Introduction\.log$
 ^CRAN-RELEASE$
 ^\.github$
+^pkgdown$
