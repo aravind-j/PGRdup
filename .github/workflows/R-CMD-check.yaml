@@ -95,7 +95,8 @@ jobs:
             }
           }
 
-          rcmdcheck::rcmdcheck(args = c("--as-cran", "--run-donttest"),
+          rcmdcheck::rcmdcheck(args = c("--as-cran", "--run-donttest",
+                                        "--use-valgrind"),
                                build_args = c("--compact-vignettes=gs+qpdf"),
                                error_on = "warning", check_dir = "check",
                                env = c(`NOT_CRAN` = "true",
