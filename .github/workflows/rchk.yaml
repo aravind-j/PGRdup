@@ -10,8 +10,6 @@ on:
 
 name: R-CMD-check
 
-jobs: rchk
-
 jobs:  
   rchk:
     runs-on: ubuntu-latest
