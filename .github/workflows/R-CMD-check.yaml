@@ -41,10 +41,6 @@ jobs:
           # install full prebuilt version
           TINYTEX_INSTALLER: TinyTeX
 
-      - name: Install Valgrind on macOS
-        if: runner.os == 'macOS'
-        run: brew install valgrind
-        
       - name: Install Valgrind on Linux
         if: runner.os == 'Linux'
         run: sudo apt-get -y install valgrind
@@ -102,9 +98,14 @@ jobs:
               }
             }
           }
+          
+          rckargs <- c("--as-cran", "--run-donttest")
+          
+          if (Sys.info()['sysname'] == "Darwin") {
+            rckargs <- c(rckargs, "--use-valgrind")
+          }
 
-          rcmdcheck::rcmdcheck(args = c("--as-cran", "--run-donttest",
-                                        "--use-valgrind"),
+          rcmdcheck::rcmdcheck(args = rckargs,
                                build_args = c("--compact-vignettes=gs+qpdf"),
                                error_on = "warning", check_dir = "check",
                                env = c(`NOT_CRAN` = "true",
