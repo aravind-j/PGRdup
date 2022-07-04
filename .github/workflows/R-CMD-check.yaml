@@ -41,6 +41,14 @@ jobs:
           # install full prebuilt version
           TINYTEX_INSTALLER: TinyTeX
 
+      - name: Install Valgrind on macOS
+        if: runner.os == 'macOS'
+        run: brew install valgrind
+        
+      - name: Install Valgrind on Linux
+        if: runner.os == 'Linux'
+        run: sudo apt-get -y install valgrind
+
       - name: Install Ghostscript on Linux
         if: runner.os == 'Linux'
         run: sudo DEBIAN_FRONTEND=noninteractive apt-get install --yes ghostscript
