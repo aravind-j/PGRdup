@@ -3,7 +3,7 @@ pkgdown: 2.0.5
 pkgdown_sha: ~
 articles:
   Introduction: Introduction.html
-last_built: 2022-07-04T22:20Z
+last_built: 2022-07-04T22:36Z
 urls:
   reference: https://aravind-j.github.io/PGRdup/reference
   article: https://aravind-j.github.io/PGRdup/articles
