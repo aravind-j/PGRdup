@@ -1,4 +1,5 @@
 # Workflow derived from https://github.com/r-lib/actions/tree/v2-branch/run-rchk
+#                   and https://github.com/r-lib/actions/issues/494#issuecomment-1051088019
 
 on:
   push:
@@ -8,10 +9,7 @@ on:
   schedule:
     - cron:  '0 0 * * 0'
 
-name: rchk
-
-jobs:  
-  rchk:
+rchk:
     runs-on: ubuntu-latest
     container:
       image: rhub/ubuntu-rchk
@@ -21,9 +19,13 @@ jobs:
     - uses: r-lib/actions/run-rchk@v2
       with:
         setup-only: true
-    - uses: r-lib/actions/setup-r-dependencies@v1
+    - uses: randy3k/gh-actions/r-install-deps@main
       with:
         cache-version: rchk-1
+    - name: Install package
+      run: |
+        remotes::install_local()
+      shell: Rscript {0}
     - uses: r-lib/actions/run-rchk@v2
       with:
         run-only: true
