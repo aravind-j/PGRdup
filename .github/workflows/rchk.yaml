@@ -9,7 +9,10 @@ on:
   schedule:
     - cron:  '0 0 * * 0'
 
-rchk:
+name: rchk
+
+jobs:  
+  rchk:
     runs-on: ubuntu-latest
     container:
       image: rhub/ubuntu-rchk
