@@ -101,7 +101,7 @@ jobs:
           
           rckargs <- c("--as-cran", "--run-donttest")
           
-          if (Sys.info()['sysname'] == "Darwin") {
+          if (Sys.info()['sysname'] != "Darwin") {
             rckargs <- c(rckargs, "--use-valgrind")
           }
 
