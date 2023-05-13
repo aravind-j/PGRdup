@@ -106,14 +106,18 @@
 
       
 
-      </header><script src="Introduction_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
+      </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1 data-toc-skip>An Introduction to <code>PGRdup</code> Package</h1>
-                        <h4 data-toc-skip class="author">Aravind, J.<sup>1</sup>, Radhamani, J.<sup>1</sup>, Kalyani Srinivasan<sup>1</sup>, Ananda Subhash, B.<sup>2</sup>, and Tyagi, R. K.<sup>1</sup>
+      <h1 data-toc-skip>An Introduction to <code>PGRdup</code>
+Package</h1>
+                        <h4 data-toc-skip class="author">Aravind,
+J.<sup>1</sup>, Radhamani, J.<sup>1</sup>, Kalyani
+Srinivasan<sup>1</sup>, Ananda Subhash, B.<sup>2</sup>, and Tyagi, R.
+K.<sup>1</sup>
 </h4>
             
-            <h4 data-toc-skip class="date">2022-07-06</h4>
+            <h4 data-toc-skip class="date">2023-05-13</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/aravind-j/PGRdup/blob/HEAD/vignettes/Introduction.Rmd" class="external-link"><code>vignettes/Introduction.Rmd</code></a></small>
       <div class="hidden name"><code>Introduction.Rmd</code></div>
@@ -131,20 +135,36 @@
 <p>
 </p>
 <ol start="2" style="list-style-type: decimal">
-<li>Centre for Development of Advanced Computing, Thiruvananthapuram, Kerala, India.
+<li>Centre for Development of Advanced Computing, Thiruvananthapuram,
+Kerala, India.
 </li>
 </ol>
 <div style="page-break-after: always;"></div>
-
 <p><img src="https://raw.githubusercontent.com/aravind-j/PGRdup/master/inst/extdata/PGRdup_v2.png" align="left" alt="logo" width="173" height="200" style="padding: 10px; border: none; float: right;"></p>
 <div class="section level2">
 <h2 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h2>
-<p><strong>PGRdup</strong> is an <code>R</code> package to facilitate the search for probable/possible duplicate accessions in Plant Genetic Resources (PGR) collections using passport databases. Primarily this package implements a workflow (Fig. 1) designed to fetch groups or sets of germplasm accessions with similar passport data particularly in fields associated with accession names within or across PGR passport databases. It offers a suite of functions for data pre-processing, creation of a searchable Key Word in Context (KWIC) index of keywords associated with accession records and the identification of probable duplicate sets by fuzzy, phonetic and semantic matching of keywords. It also has functions to enable the user to review, modify and validate the probable duplicate sets retrieved.</p>
-<p>The goal of this document is to introduce the users to these functions and familiarise them with the workflow intended to fetch probable duplicate sets. This document assumes a basic knowledge of <code>R</code> programming language.</p>
-<p>The functions in this package are primarily built using the <code>R</code> packages <a href="https://CRAN.R-project.org/package=data.table" class="external-link"><code>data.table</code></a>, <a href="https://CRAN.R-project.org/package=igraph" class="external-link"><code>igraph</code></a>, <a href="https://CRAN.R-project.org/package=stringdist" class="external-link"><code>stringdist</code></a> and <a href="https://CRAN.R-project.org/package=stringi" class="external-link"><code>stringi</code></a>.</p>
-
-
+<p><strong>PGRdup</strong> is an <code>R</code> package to facilitate
+the search for probable/possible duplicate accessions in Plant Genetic
+Resources (PGR) collections using passport databases. Primarily this
+package implements a workflow (Fig. 1) designed to fetch groups or sets
+of germplasm accessions with similar passport data particularly in
+fields associated with accession names within or across PGR passport
+databases. It offers a suite of functions for data pre-processing,
+creation of a searchable Key Word in Context (KWIC) index of keywords
+associated with accession records and the identification of probable
+duplicate sets by fuzzy, phonetic and semantic matching of keywords. It
+also has functions to enable the user to review, modify and validate the
+probable duplicate sets retrieved.</p>
+<p>The goal of this document is to introduce the users to these
+functions and familiarise them with the workflow intended to fetch
+probable duplicate sets. This document assumes a basic knowledge of
+<code>R</code> programming language.</p>
+<p>The functions in this package are primarily built using the
+<code>R</code> packages <a href="https://CRAN.R-project.org/package=data.table" class="external-link"><code>data.table</code></a>,
+<a href="https://CRAN.R-project.org/package=igraph" class="external-link"><code>igraph</code></a>,
+<a href="https://CRAN.R-project.org/package=stringdist" class="external-link"><code>stringdist</code></a>
+and <a href="https://CRAN.R-project.org/package=stringi" class="external-link"><code>stringi</code></a>.</p>
 <p><img src="https://raw.githubusercontent.com/aravind-j/PGRdup/master/inst/extdata/PGRdup.png" align="center" alt="logo" width="750" height="85" style="border: none;"></p>
 <p><img src="Introduction_files/figure-html/unnamed-chunk-5-1.png" width="700"></p>
 <p><strong>Fig. 1.</strong> PGRdup workflow and associated functions</p>
@@ -152,8 +172,10 @@
 <div class="section level2">
 <h2 id="version-history">Version History<a class="anchor" aria-label="anchor" href="#version-history"></a>
 </h2>
-<p>The current version of the package is 0.2.3.7.9000. The previous versions are as follows.</p>
-<p><strong>Table 1.</strong> Version history of <code>PGRdup</code> <code>R</code> package.</p>
+<p>The current version of the package is 0.2.3.7.9000. The previous
+versions are as follows.</p>
+<p><strong>Table 1.</strong> Version history of <code>PGRdup</code>
+<code>R</code> package.</p>
 <table class="table">
 <thead><tr class="header">
 <th align="left">Version</th>
@@ -206,7 +228,8 @@
 </tr>
 </tbody>
 </table>
-<p>To know detailed history of changes use <code>news(package='PGRdup')</code>.</p>
+<p>To know detailed history of changes use
+<code>news(package='PGRdup')</code>.</p>
 </div>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
@@ -215,7 +238,13 @@
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Install from CRAN</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">'PGRdup'</span>, dependencies<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
-<p>Uninstalled dependencies (packages which <code>PGRdup</code> depends on <em>viz</em>- <a href="https://CRAN.R-project.org/package=data.table" class="external-link"><code>data.table</code></a>, <a href="https://CRAN.R-project.org/package=igraph" class="external-link"><code>igraph</code></a>, <a href="https://CRAN.R-project.org/package=stringdist" class="external-link"><code>stringdist</code></a> and <a href="https://CRAN.R-project.org/package=stringi" class="external-link"><code>stringi</code></a> are also installed because of the argument <code>dependencies=TRUE</code>.</p>
+<p>Uninstalled dependencies (packages which <code>PGRdup</code> depends
+on <em>viz</em>- <a href="https://CRAN.R-project.org/package=data.table" class="external-link"><code>data.table</code></a>,
+<a href="https://CRAN.R-project.org/package=igraph" class="external-link"><code>igraph</code></a>,
+<a href="https://CRAN.R-project.org/package=stringdist" class="external-link"><code>stringdist</code></a>
+and <a href="https://CRAN.R-project.org/package=stringi" class="external-link"><code>stringi</code></a>
+are also installed because of the argument
+<code>dependencies=TRUE</code>.</p>
 <p>Then the package can be loaded using the function</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://cran.r-project.org/package=PGRdup" class="external-link">PGRdup</a></span><span class="op">)</span></span></code></pre></div>
@@ -223,7 +252,11 @@
 <div class="section level2">
 <h2 id="data-format">Data Format<a class="anchor" aria-label="anchor" href="#data-format"></a>
 </h2>
-<p>The package is essentially designed to operate on PGR passport data present in a <a href="http://google.com/#q=%5BR%5D+data.frame" class="external-link">data frame object</a>, with each row holding one record and columns representing the attribute fields. For example, consider the dataset <code>GN1000</code> supplied along with the package.</p>
+<p>The package is essentially designed to operate on PGR passport data
+present in a <a href="http://google.com/#q=%5BR%5D+data.frame" class="external-link">data
+frame object</a>, with each row holding one record and columns
+representing the attribute fields. For example, consider the dataset
+<code>GN1000</code> supplied along with the package.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://cran.r-project.org/package=PGRdup" class="external-link">PGRdup</a></span><span class="op">)</span></span></code></pre></div>
 <pre><code>
@@ -268,9 +301,26 @@ Welcome to PGRdup version 0.2.3.7.9000
 4              STARR  Landrace United States of America         2004
 5              COMET  Landrace United States of America         2004
 6          ARGENTINE  Landrace United States of America         2014</code></pre>
-<p>If the passport data exists as an excel sheet, it can be first converted to a comma-separated values (csv) file or tab delimited file and then easily imported into the <code>R</code> environment using the base functions <code>read.csv</code> and <code>read.table</code> respectively. Similarly <code>read_csv()</code> and <code>read_tsv()</code> from the <a href="https://CRAN.R-project.org/package=readr" class="external-link"><code>readr</code></a> package can also be used. Alternatively, the package <a href="https://CRAN.R-project.org/package=readxl" class="external-link"><code>readxl</code></a> can be used to directly read the data from excel. In case of large csv files, the function <code>fread</code> in the <a href="https://CRAN.R-project.org/package=data.table" class="external-link"><code>data.table</code></a> package can be used to rapidly load the data.</p>
-<p>If the PGR passport data is in a database management system (DBMS), the required table can be imported as a data frame into <code>R</code>. using the appropriate <a href="http://www.burns-stat.com/r-database-interfaces/" class="external-link"><code>R</code>-database interface package</a>. For example <a href="https://CRAN.R-project.org/package=dbConnect" class="external-link"><code>dbConnect</code></a> for MySQL, <a href="https://CRAN.R-project.org/package=ROracle" class="external-link"><code>ROracle</code></a> for Oracle etc.</p>
-<p>The PGR data downloaded from the <a href="https://www.genesys-pgr.org/welcome" class="external-link">genesys</a> database as a <a href="https://github.com/dagendresen/darwincore-germplasm" class="external-link">Darwin Core - Germplasm</a> zip archive can be imported into the <code>R</code> environment as a flat file <code>data.frame</code> using the <code>read.genesys</code> function.</p>
+<p>If the passport data exists as an excel sheet, it can be first
+converted to a comma-separated values (csv) file or tab delimited file
+and then easily imported into the <code>R</code> environment using the
+base functions <code>read.csv</code> and <code>read.table</code>
+respectively. Similarly <code>read_csv()</code> and
+<code>read_tsv()</code> from the <a href="https://CRAN.R-project.org/package=readr" class="external-link"><code>readr</code></a>
+package can also be used. Alternatively, the package <a href="https://CRAN.R-project.org/package=readxl" class="external-link"><code>readxl</code></a>
+can be used to directly read the data from excel. In case of large csv
+files, the function <code>fread</code> in the <a href="https://CRAN.R-project.org/package=data.table" class="external-link"><code>data.table</code></a>
+package can be used to rapidly load the data.</p>
+<p>If the PGR passport data is in a database management system (DBMS),
+the required table can be imported as a data frame into <code>R</code>.
+using the appropriate <a href="http://www.burns-stat.com/r-database-interfaces/" class="external-link"><code>R</code>-database
+interface package</a>. For example <a href="https://CRAN.R-project.org/package=dbConnect" class="external-link"><code>dbConnect</code></a>
+for MySQL, <a href="https://CRAN.R-project.org/package=ROracle" class="external-link"><code>ROracle</code></a>
+for Oracle etc.</p>
+<p>The PGR data downloaded from the <a href="https://www.genesys-pgr.org/welcome" class="external-link">genesys</a> database as a <a href="https://github.com/dagendresen/darwincore-germplasm" class="external-link">Darwin Core -
+Germplasm</a> zip archive can be imported into the <code>R</code>
+environment as a flat file <code>data.frame</code> using the
+<code>read.genesys</code> function.</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Import the DwC-Germplasm zip archive "genesys-accessions-filtered.zip"</span></span>
 <span><span class="va">PGRgenesys</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/read.genesys.html">read.genesys</a></span><span class="op">(</span><span class="st">"genesys-accessions-filtered.zip"</span>,</span>
@@ -279,9 +329,19 @@ Welcome to PGRdup version 0.2.3.7.9000
 <div class="section level2">
 <h2 id="data-pre-processing">Data Pre-processing<a class="anchor" aria-label="anchor" href="#data-pre-processing"></a>
 </h2>
-<p>Data pre-processing is a critical step which can affect the quality of the probable duplicate sets being retrieved. It involves data standardization as well as data cleaning which can be achieved using the functions <code>DataClean</code>, <code>MergeKW</code>, <code>MergePrefix</code> and <code>MergeSuffix</code>.</p>
-<p><code>DataClean</code> function can be used to clean the character strings in passport data fields(columns) specified as the input <a href="http://google.com/#q=%5BR%5D+character+vector" class="external-link">character vector</a> <code>x</code> according to the conditions specified in the arguments.</p>
-<p>Commas, semicolons and colons which are sometimes used to separate multiple strings or names within the same field can be replaced with a single space using the logical arguments <code>fix.comma</code>, <code>fix.semcol</code> and <code>fix.col</code> respectively.</p>
+<p>Data pre-processing is a critical step which can affect the quality
+of the probable duplicate sets being retrieved. It involves data
+standardization as well as data cleaning which can be achieved using the
+functions <code>DataClean</code>, <code>MergeKW</code>,
+<code>MergePrefix</code> and <code>MergeSuffix</code>.</p>
+<p><code>DataClean</code> function can be used to clean the character
+strings in passport data fields(columns) specified as the input <a href="http://google.com/#q=%5BR%5D+character+vector" class="external-link">character
+vector</a> <code>x</code> according to the conditions specified in the
+arguments.</p>
+<p>Commas, semicolons and colons which are sometimes used to separate
+multiple strings or names within the same field can be replaced with a
+single space using the logical arguments <code>fix.comma</code>,
+<code>fix.semcol</code> and <code>fix.col</code> respectively.</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"A 14; EC 1697"</span>, <span class="st">"U 4-4-28; EC 21078; A 32"</span>, <span class="st">"PI 262801:CIAT 9075:GKP 9553/90"</span>,</span>
 <span>       <span class="st">"NCAC 16049, PI 261987, RCM 493-3"</span><span class="op">)</span></span>
@@ -295,7 +355,9 @@ Welcome to PGRdup version 0.2.3.7.9000
 <span>          fix.leadzero<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 <pre><code>[1] "A 14  EC 1697"                    "U 4-4-28  EC 21078  A 32"        
 [3] "PI 262801 CIAT 9075 GKP 9553/90"  "NCAC 16049  PI 261987  RCM 493-3"</code></pre>
-<p>Similarly the logical argument <code>fix.bracket</code> can be used to replace all brackets including parenthesis, square brackets and curly brackets with space.</p>
+<p>Similarly the logical argument <code>fix.bracket</code> can be used
+to replace all brackets including parenthesis, square brackets and curly
+brackets with space.</p>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"(NRCG-1738)/(NFG649)"</span>, <span class="st">"26-5-1[NRCG-2528]"</span>, <span class="st">"Ah 1182 {NRCG-4340}"</span><span class="op">)</span></span>
 <span><span class="va">x</span></span></code></pre></div>
@@ -306,7 +368,8 @@ Welcome to PGRdup version 0.2.3.7.9000
 <span>          fix.bracket<span class="op">=</span><span class="cn">TRUE</span>,</span>
 <span>          fix.punct<span class="op">=</span><span class="cn">FALSE</span>, fix.space<span class="op">=</span><span class="cn">FALSE</span>, fix.sep<span class="op">=</span><span class="cn">FALSE</span>, fix.leadzero<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 <pre><code>[1] "NRCG-1738 / NFG649" "26-5-1 NRCG-2528"   "AH 1182  NRCG-4340"</code></pre>
-<p>The logical argument <code>fix.punct</code> can be used to remove all punctuation from the data.</p>
+<p>The logical argument <code>fix.punct</code> can be used to remove all
+punctuation from the data.</p>
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"#26-6-3-1"</span>, <span class="st">"Culture No. 857"</span>, <span class="st">"U/4/47/13"</span><span class="op">)</span></span>
 <span><span class="va">x</span></span></code></pre></div>
@@ -317,7 +380,9 @@ Welcome to PGRdup version 0.2.3.7.9000
 <span>          fix.punct<span class="op">=</span><span class="cn">TRUE</span>,</span>
 <span>          fix.space<span class="op">=</span><span class="cn">FALSE</span>, fix.sep<span class="op">=</span><span class="cn">FALSE</span>, fix.leadzero<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 <pre><code>[1] "26631"          "CULTURE NO 857" "U44713"        </code></pre>
-<p><code>fix.space</code> can be used to convert all space characters such as tab, newline, vertical tab, form feed and carriage return to spaces and finally convert multiple spaces to single space.</p>
+<p><code>fix.space</code> can be used to convert all space characters
+such as tab, newline, vertical tab, form feed and carriage return to
+spaces and finally convert multiple spaces to single space.</p>
 <div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"RS   1"</span>, <span class="st">"GKSPScGb 208  PI 475855"</span><span class="op">)</span></span>
 <span><span class="va">x</span></span></code></pre></div>
@@ -329,7 +394,9 @@ Welcome to PGRdup version 0.2.3.7.9000
 <span>          fix.space<span class="op">=</span><span class="cn">TRUE</span>,</span>
 <span>          fix.sep<span class="op">=</span><span class="cn">FALSE</span>, fix.leadzero<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 <pre><code>[1] "RS 1"                   "GKSPSCGB 208 PI 475855"</code></pre>
-<p><code>fix.sep</code> can be used to merge together accession identifiers composed of alphabetic characters separated from a series of digits by a space character.</p>
+<p><code>fix.sep</code> can be used to merge together accession
+identifiers composed of alphabetic characters separated from a series of
+digits by a space character.</p>
 <div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"NCAC 18078"</span>, <span class="st">"AH 6481"</span>, <span class="st">"ICG 2791"</span><span class="op">)</span></span>
 <span><span class="va">x</span></span></code></pre></div>
@@ -341,7 +408,9 @@ Welcome to PGRdup version 0.2.3.7.9000
 <span>          fix.sep<span class="op">=</span><span class="cn">TRUE</span>,</span>
 <span>          fix.leadzero<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 <pre><code>[1] "NCAC18078" "AH6481"    "ICG2791"  </code></pre>
-<p><code>fix.leadzero</code> can be used to remove leading zeros from accession name fields to facilitate matching to identify probable duplicates.</p>
+<p><code>fix.leadzero</code> can be used to remove leading zeros from
+accession name fields to facilitate matching to identify probable
+duplicates.</p>
 <div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"EC 0016664"</span>, <span class="st">"EC0001690"</span><span class="op">)</span></span>
 <span><span class="va">x</span></span></code></pre></div>
@@ -352,7 +421,9 @@ Welcome to PGRdup version 0.2.3.7.9000
 <span>          fix.bracket<span class="op">=</span><span class="cn">FALSE</span>, fix.punct<span class="op">=</span><span class="cn">FALSE</span>, fix.space<span class="op">=</span><span class="cn">FALSE</span>, fix.sep<span class="op">=</span><span class="cn">FALSE</span>,</span>
 <span>          fix.leadzero<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <pre><code>[1] "EC 16664" "EC1690"  </code></pre>
-<p>This function can hence be made use of in tidying up multiple forms of messy data existing in fields associated with accession names in PGR passport databases (Table 1).</p>
+<p>This function can hence be made use of in tidying up multiple forms
+of messy data existing in fields associated with accession names in PGR
+passport databases (Table 1).</p>
 <div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">names</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"S7-12-6"</span>, <span class="st">"ICG-3505"</span>, <span class="st">"U 4-47-18;EC 21127"</span>, <span class="st">"AH 6481"</span>, <span class="st">"RS   1"</span>,</span>
 <span>           <span class="st">"AK 12-24"</span>, <span class="st">"2-5 (NRCG-4053)"</span>, <span class="st">"T78, Mwitunde"</span>, <span class="st">"ICG 3410"</span>,</span>
@@ -368,7 +439,8 @@ Welcome to PGRdup version 0.2.3.7.9000
 <pre><code> [1] "S7126"          "ICG3505"        "U44718 EC21127" "AH6481"        
  [5] "RS1"            "AK1224"         "25 NRCG4053"    "T78 MWITUNDE"  
  [9] "ICG3410"        "6484 GWALIOR"   "TG4 U44713"     "EC21003"       </code></pre>
-<p><strong>Table 2.</strong> Data pre-processing using <code>DataClean</code>.</p>
+<p><strong>Table 2.</strong> Data pre-processing using
+<code>DataClean</code>.</p>
 <table class="table">
 <thead><tr class="header">
 <th align="left"><strong>names</strong></th>
@@ -425,7 +497,12 @@ Welcome to PGRdup version 0.2.3.7.9000
 </tr>
 </tbody>
 </table>
-<p>Several common keyword string pairs or keyword prefixes and suffixes exist in fields associated with accession names in PGR passport databases. They can be merged using the functions <code>MergeKW</code>, <code>MergePrefix</code> and <code>MergeSuffix</code> respectively. The keyword string pairs, prefixes and suffixes can be supplied as a <a href="http://google.com/#q=%5BR%5D+list" class="external-link">list</a> or a <a href="http://google.com/#q=%5BR%5D+vector" class="external-link">vector</a> to the argument <code>y</code> in these functions.</p>
+<p>Several common keyword string pairs or keyword prefixes and suffixes
+exist in fields associated with accession names in PGR passport
+databases. They can be merged using the functions <code>MergeKW</code>,
+<code>MergePrefix</code> and <code>MergeSuffix</code> respectively. The
+keyword string pairs, prefixes and suffixes can be supplied as a <a href="http://google.com/#q=%5BR%5D+list" class="external-link">list</a> or a <a href="http://google.com/#q=%5BR%5D+vector" class="external-link">vector</a> to the argument
+<code>y</code> in these functions.</p>
 <div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">names</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Punjab Bold"</span>, <span class="st">"Gujarat- Dwarf"</span>, <span class="st">"Nagpur.local"</span>, <span class="st">"SAM COL 144"</span>,</span>
 <span>           <span class="st">"SAM COL--280"</span>, <span class="st">"NIZAMABAD-LOCAL"</span>, <span class="st">"Dark Green Mutant"</span>,</span>
@@ -460,7 +537,9 @@ Welcome to PGRdup version 0.2.3.7.9000
  [7] "DarkGreenMutant"    "DixieGiant"         "GeorgiaBunch"      
 [10] "Ugandaerect"        "SmallJapan"         "CastleCary"        
 [13] "Punjaberect"        "Improvedsmalljapan" "DarkPurple"        </code></pre>
-<p>These functions can be applied over multiple columns(fields) in a data frame using the <a href="http://google.com/#q=%5BR%5D+lapply" class="external-link"><code>lapply</code></a> function.</p>
+<p>These functions can be applied over multiple columns(fields) in a
+data frame using the <a href="http://google.com/#q=%5BR%5D+lapply" class="external-link"><code>lapply</code></a>
+function.</p>
 <div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Load example dataset</span></span>
 <span><span class="va">GN</span> <span class="op">&lt;-</span> <span class="va">GN1000</span></span>
@@ -502,8 +581,19 @@ Welcome to PGRdup version 0.2.3.7.9000
 <div class="section level2">
 <h2 id="generation-of-kwic-index">Generation of KWIC Index<a class="anchor" aria-label="anchor" href="#generation-of-kwic-index"></a>
 </h2>
-<p>The function <code>KWIC</code> generates a Key Word in Context index <span class="citation">(Knüpffer <a href="#ref-knupffer1988european" role="doc-biblioref">1988</a>; Knüpffer, Frese, and Jongen <a href="#ref-kfj97" role="doc-biblioref">1997</a>)</span> from the data frame of a PGR passport database based on the fields(columns) specified in the argument <code>fields</code> along with the keyword frequencies and gives the output as a list of class <code>KWIC</code>. The first element of the vector specified in <code>fields</code> is considered as the primary key or identifier which uniquely identifies all rows in the data frame.</p>
-<p>This function fetches keywords from different fields specified, which can be subsequently used for matching to identify probable duplicates. The frequencies of the keywords retrieved can help in determining if further data pre-processing is required and also to decide whether any common keywords can be exempted from matching (Fig. 2).</p>
+<p>The function <code>KWIC</code> generates a Key Word in Context index
+<span class="citation">(<a href="#ref-knupffer1988european" role="doc-biblioref">Knüpffer 1988</a>; <a href="#ref-kfj97" role="doc-biblioref">Knüpffer, Frese, and Jongen 1997</a>)</span> from
+the data frame of a PGR passport database based on the fields(columns)
+specified in the argument <code>fields</code> along with the keyword
+frequencies and gives the output as a list of class <code>KWIC</code>.
+The first element of the vector specified in <code>fields</code> is
+considered as the primary key or identifier which uniquely identifies
+all rows in the data frame.</p>
+<p>This function fetches keywords from different fields specified, which
+can be subsequently used for matching to identify probable duplicates.
+The frequencies of the keywords retrieved can help in determining if
+further data pre-processing is required and also to decide whether any
+common keywords can be exempted from matching (Fig. 2).</p>
 <div class="sourceCode" id="cb46"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Load example dataset</span></span>
 <span><span class="va">GN</span> <span class="op">&lt;-</span> <span class="va">GN1000</span></span>
@@ -575,7 +665,8 @@ Number of distinct keywords : 3109</code></pre>
 6  PURPLE   10</code></pre>
 <p><img src="Introduction_files/figure-html/unnamed-chunk-23-1.png" width="700"></p>
 <p><strong>Fig. 2.</strong> Word cloud of keywords retrieved</p>
-<p>The function will throw an error in case of duplicates or NULL values in the primary key/ID field mentioned.</p>
+<p>The function will throw an error in case of duplicates or NULL values
+in the primary key/ID field mentioned.</p>
 <div class="sourceCode" id="cb54"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">GN</span> <span class="op">&lt;-</span> <span class="va">GN1000</span></span>
 <span><span class="va">GN</span><span class="op">[</span><span class="va">GNfields</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">lapply</a></span><span class="op">(</span><span class="va">GN</span><span class="op">[</span><span class="va">GNfields</span><span class="op">]</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="../reference/DataClean.html">DataClean</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span></span>
@@ -602,7 +693,8 @@ Number of distinct keywords : 3109</code></pre>
 <pre><code>Error in KWIC(GN, GNfields, min.freq = 1) :
   Primary key/ID field should be unique and not NULL
  Use PGRdup::ValidatePrimKey() to identify and rectify the aberrant records first</code></pre>
-<p>The erroneous records can be identified using the helper function <code>ValidatePrimKey</code>.</p>
+<p>The erroneous records can be identified using the helper function
+<code>ValidatePrimKey</code>.</p>
 <div class="sourceCode" id="cb58"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Validate the primary key/ID field for duplication or existence of NULL values</span></span>
 <span><span class="fu"><a href="../reference/ValidatePrimKey.html">ValidatePrimKey</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">GN</span>, prim.key <span class="op">=</span> <span class="st">"NationalID"</span><span class="op">)</span></span></code></pre></div>
@@ -659,15 +751,24 @@ NULL</code></pre>
 <div class="section level2">
 <h2 id="retrieval-of-probable-duplicate-sets">Retrieval of Probable Duplicate Sets<a class="anchor" aria-label="anchor" href="#retrieval-of-probable-duplicate-sets"></a>
 </h2>
-<p>Once KWIC indexes are generated, probable duplicates of germplasm accessions can be identified by fuzzy, phonetic and semantic matching of the associated keywords using the function <code>ProbDup</code>. The sets are retrieved as a list of data frames of class <code>ProbDup</code>.</p>
-<p>Keywords that are not to be used for matching can be specified as a vector in the <code>excep</code> argument.</p>
+<p>Once KWIC indexes are generated, probable duplicates of germplasm
+accessions can be identified by fuzzy, phonetic and semantic matching of
+the associated keywords using the function <code>ProbDup</code>. The
+sets are retrieved as a list of data frames of class
+<code>ProbDup</code>.</p>
+<p>Keywords that are not to be used for matching can be specified as a
+vector in the <code>excep</code> argument.</p>
 <div class="section level3">
 <h3 id="methods">Methods<a class="anchor" aria-label="anchor" href="#methods"></a>
 </h3>
-<p>The function can execute matching according to either one of the following three methods as specified by the <code>method</code> argument.</p>
+<p>The function can execute matching according to either one of the
+following three methods as specified by the <code>method</code>
+argument.</p>
 <ol style="list-style-type: decimal">
 <li>
-<strong>Method <code>"a"</code></strong> : Performs string matching of keywords in a single KWIC index to identify probable duplicates of accessions in a single PGR passport database.</li>
+<strong>Method <code>"a"</code></strong> : Performs string matching
+of keywords in a single KWIC index to identify probable duplicates of
+accessions in a single PGR passport database.</li>
 </ol>
 <div class="sourceCode" id="cb62"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Load example dataset</span></span>
@@ -762,8 +863,15 @@ KWIC1 fields : NationalID CollNo DonorID OtherID1 OtherID2
 PhoneticDuplicates          99               260
 Total                       99 260(Distinct:260)</code></pre>
 <ol start="2" style="list-style-type: decimal">
-<li><p><strong>Method <code>"b"</code></strong> : Performs string matching of keywords in the first KWIC index (query) with that of the keywords in the second index (source) to identify probable duplicates of accessions of the first PGR passport database among the accessions in the second database.</p></li>
-<li><p><strong>Method <code>"c"</code></strong> : Performs string matching of keywords in two different KWIC indexes jointly to identify probable duplicates of accessions from among two PGR passport databases.</p></li>
+<li><p><strong>Method <code>"b"</code></strong> : Performs string
+matching of keywords in the first KWIC index (query) with that of the
+keywords in the second index (source) to identify probable duplicates of
+accessions of the first PGR passport database among the accessions in
+the second database.</p></li>
+<li><p><strong>Method <code>"c"</code></strong> : Performs string
+matching of keywords in two different KWIC indexes jointly to identify
+probable duplicates of accessions from among two PGR passport
+databases.</p></li>
 </ol>
 <div class="sourceCode" id="cb77"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Load PGR passport databases</span></span>
@@ -890,7 +998,11 @@ Total                      461 981(Distinct:741)</code></pre>
 </h3>
 <ol style="list-style-type: decimal">
 <li>
-<strong>Fuzzy matching</strong> or approximate string matching of keywords is carried out by computing the <a href="https://en.wikipedia.org/wiki/Levenshtein_distance" class="external-link">generalized levenshtein (edit) distance</a> between them. This distance measure counts the number of deletions, insertions and substitutions necessary to turn one string to another.</li>
+<strong>Fuzzy matching</strong> or approximate string matching of
+keywords is carried out by computing the <a href="https://en.wikipedia.org/wiki/Levenshtein_distance" class="external-link">generalized
+levenshtein (edit) distance</a> between them. This distance measure
+counts the number of deletions, insertions and substitutions necessary
+to turn one string to another.</li>
 </ol>
 <div class="sourceCode" id="cb95"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Load example dataset</span></span>
@@ -952,7 +1064,8 @@ KWIC1 fields : NationalID CollNo DonorID OtherID1 OtherID2
                 No..of.Sets    No..of.Records
 FuzzyDuplicates         378               745
 Total                   378 745(Distinct:745)</code></pre>
-<p>The maximum distance to be considered for a match can be specified by <code>max.dist</code> argument.</p>
+<p>The maximum distance to be considered for a match can be specified by
+<code>max.dist</code> argument.</p>
 <div class="sourceCode" id="cb100"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">GNdup</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/ProbDup.html">ProbDup</a></span><span class="op">(</span>kwic1 <span class="op">=</span> <span class="va">GNKWIC</span>, method <span class="op">=</span> <span class="st">"a"</span>, excep <span class="op">=</span> <span class="va">exep</span>, </span>
 <span>                 fuzzy <span class="op">=</span> <span class="cn">TRUE</span>, max.dist <span class="op">=</span> <span class="fl">1</span>,</span>
@@ -980,8 +1093,20 @@ KWIC1 fields : NationalID CollNo DonorID OtherID1 OtherID2
                 No..of.Sets    No..of.Records
 FuzzyDuplicates         288               679
 Total                   288 679(Distinct:679)</code></pre>
-<p>Exact matching can be enforced with the argument <code>force.exact</code> set as TRUE. It can be used to avoid fuzzy matching when the number of alphabet characters in keywords is lesser than a critical value (<code>max.alpha</code>). Similarly, the value of <code>max.digit</code> can also be set according to the requirements to enforce exact matching. The default value of <code>Inf</code> avoids fuzzy matching and enforces exact matching for all keywords having any numerical characters. If <code>max.digit</code> and <code>max.alpha</code> are both set to <code>Inf</code>, exact matching will be enforced for all the keywords.</p>
-<p>When exact matching is enforced, for keywords having both alphabet and numeric characters and with the number of alphabet characters greater than <code>max.digit</code>, matching will be carried out separately for alphabet and numeric characters present.</p>
+<p>Exact matching can be enforced with the argument
+<code>force.exact</code> set as TRUE. It can be used to avoid fuzzy
+matching when the number of alphabet characters in keywords is lesser
+than a critical value (<code>max.alpha</code>). Similarly, the value of
+<code>max.digit</code> can also be set according to the requirements to
+enforce exact matching. The default value of <code>Inf</code> avoids
+fuzzy matching and enforces exact matching for all keywords having any
+numerical characters. If <code>max.digit</code> and
+<code>max.alpha</code> are both set to <code>Inf</code>, exact matching
+will be enforced for all the keywords.</p>
+<p>When exact matching is enforced, for keywords having both alphabet
+and numeric characters and with the number of alphabet characters
+greater than <code>max.digit</code>, matching will be carried out
+separately for alphabet and numeric characters present.</p>
 <div class="sourceCode" id="cb105"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">GNdup</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/ProbDup.html">ProbDup</a></span><span class="op">(</span>kwic1 <span class="op">=</span> <span class="va">GNKWIC</span>, method <span class="op">=</span> <span class="st">"a"</span>, excep <span class="op">=</span> <span class="va">exep</span>, </span>
 <span>                 fuzzy <span class="op">=</span> <span class="cn">TRUE</span>, force.exact <span class="op">=</span> <span class="cn">TRUE</span>, max.alpha <span class="op">=</span> <span class="fl">4</span>, max.digit <span class="op">=</span> <span class="cn">Inf</span>,</span>
@@ -1011,7 +1136,10 @@ FuzzyDuplicates         378               745
 Total                   378 745(Distinct:745)</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li>
-<strong>Phonetic matching</strong> of keywords is carried out using the Double Metaphone phonetic algorithm which is implemented as the helper function <code>DoubleMetaphone</code>, <span class="citation">(Philips <a href="#ref-p00" role="doc-biblioref">2000</a>)</span>, to identify keywords that have the similar pronunciation.</li>
+<strong>Phonetic matching</strong> of keywords is carried out using
+the Double Metaphone phonetic algorithm which is implemented as the
+helper function <code>DoubleMetaphone</code>, <span class="citation">(<a href="#ref-p00" role="doc-biblioref">Philips 2000</a>)</span>, to
+identify keywords that have the similar pronunciation.</li>
 </ol>
 <div class="sourceCode" id="cb110"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">GNdup</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/ProbDup.html">ProbDup</a></span><span class="op">(</span>kwic1 <span class="op">=</span> <span class="va">GNKWIC</span>, method <span class="op">=</span> <span class="st">"a"</span>, excep <span class="op">=</span> <span class="va">exep</span>, </span>
@@ -1041,7 +1169,8 @@ KWIC1 fields : NationalID CollNo DonorID OtherID1 OtherID2
                    No..of.Sets    No..of.Records
 PhoneticDuplicates          99               260
 Total                       99 260(Distinct:260)</code></pre>
-<p>Either the primary or alternate encodings can be used by specifying the <code>encoding</code> argument.</p>
+<p>Either the primary or alternate encodings can be used by specifying
+the <code>encoding</code> argument.</p>
 <div class="sourceCode" id="cb115"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">GNdup</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/ProbDup.html">ProbDup</a></span><span class="op">(</span>kwic1 <span class="op">=</span> <span class="va">GNKWIC</span>, method <span class="op">=</span> <span class="st">"a"</span>, excep <span class="op">=</span> <span class="va">exep</span>, </span>
 <span>                 fuzzy <span class="op">=</span> <span class="cn">FALSE</span>,</span>
@@ -1070,7 +1199,9 @@ KWIC1 fields : NationalID CollNo DonorID OtherID1 OtherID2
                    No..of.Sets    No..of.Records
 PhoneticDuplicates          98               263
 Total                       98 263(Distinct:263)</code></pre>
-<p>The argument <code>phon.min.alpha</code> sets the limits for the number of alphabet characters to be present in a string for executing phonetic matching.</p>
+<p>The argument <code>phon.min.alpha</code> sets the limits for the
+number of alphabet characters to be present in a string for executing
+phonetic matching.</p>
 <div class="sourceCode" id="cb120"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">GNdup</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/ProbDup.html">ProbDup</a></span><span class="op">(</span>kwic1 <span class="op">=</span> <span class="va">GNKWIC</span>, method <span class="op">=</span> <span class="st">"a"</span>, excep <span class="op">=</span> <span class="va">exep</span>, </span>
 <span>                 fuzzy <span class="op">=</span> <span class="cn">FALSE</span>,</span>
@@ -1099,7 +1230,9 @@ KWIC1 fields : NationalID CollNo DonorID OtherID1 OtherID2
                    No..of.Sets    No..of.Records
 PhoneticDuplicates         304               451
 Total                      304 451(Distinct:451)</code></pre>
-<p>Similarly <code>min.enc</code> sets the limits for the number of characters to be present in the encoding of a keyword for phonetic matching.</p>
+<p>Similarly <code>min.enc</code> sets the limits for the number of
+characters to be present in the encoding of a keyword for phonetic
+matching.</p>
 <div class="sourceCode" id="cb125"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">GNdup</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/ProbDup.html">ProbDup</a></span><span class="op">(</span>kwic1 <span class="op">=</span> <span class="va">GNKWIC</span>, method <span class="op">=</span> <span class="st">"a"</span>, excep <span class="op">=</span> <span class="va">exep</span>, </span>
 <span>                 fuzzy <span class="op">=</span> <span class="cn">FALSE</span>,</span>
@@ -1130,7 +1263,16 @@ PhoneticDuplicates          59               156
 Total                       59 156(Distinct:156)</code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li>
-<strong>Semantic matching</strong> matches keywords based on a list of accession name synonyms supplied as list with character vectors of synonym sets (synsets) to the <code>syn</code> argument. Synonyms in this context refer to interchangeable identifiers or names by which an accession is recognized. Multiple keywords specified as members of the same synset in <code>syn</code> are matched. To facilitate accurate identification of synonyms from the KWIC index, identical data standardization operations using the <code>Merge*</code> and <code>DataClean</code> functions for both the original database fields and the synset list are recommended.</li>
+<strong>Semantic matching</strong> matches keywords based on a list
+of accession name synonyms supplied as list with character vectors of
+synonym sets (synsets) to the <code>syn</code> argument. Synonyms in
+this context refer to interchangeable identifiers or names by which an
+accession is recognized. Multiple keywords specified as members of the
+same synset in <code>syn</code> are matched. To facilitate accurate
+identification of synonyms from the KWIC index, identical data
+standardization operations using the <code>Merge*</code> and
+<code>DataClean</code> functions for both the original database fields
+and the synset list are recommended.</li>
 </ol>
 <div class="sourceCode" id="cb130"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Specify the synsets as a list</span></span>
@@ -1169,10 +1311,31 @@ Total                        2  5(Distinct:5)</code></pre>
 <div class="section level3">
 <h3 id="memory-and-speed-constraints">Memory and Speed Constraints<a class="anchor" aria-label="anchor" href="#memory-and-speed-constraints"></a>
 </h3>
-<p>As the number of keywords in the KWIC indexes increases, the memory consumption by the function also increases proportionally. This is due to the reason that for string matching, this function relies upon creation of a <em>n</em><span class="math inline">\(\times\)</span><em>m</em> matrix of all possible keyword pairs for comparison, where <em>n</em> and <em>m</em> are the number of keywords in the query and source indexes respectively. This can lead to <code>cannot allocate vector of size...</code> errors in case of large KWIC indexes where the comparison matrix is too large to reside in memory. In such a case, the <code>chunksize</code> argument can be reduced from the default 1000 to get the appropriate size of the KWIC index keyword block to be used for searching for matches at a time. However a smaller <code>chunksize</code> may lead to longer computation time due to the memory-time trade-off.</p>
-<p>The progress of matching is displayed in the console as number of keyword blocks completed out of the total number of blocks, the percentage of achievement and a text-based progress bar.</p>
-<p>In case of multi-byte characters in keywords, the speed of keyword matching is further dependent upon the <code>useBytes</code> argument as described in <code>help("stringdist-encoding")</code> for the <code>stringdist</code> function in the namesake <a href="https://CRAN.R-project.org/package=stringdist" class="external-link">package</a> <span class="citation">(Loo <a href="#ref-van2014stringdist" role="doc-biblioref">2014</a>)</span>, which is made use of here for string matching.</p>
-<p>The CPU time taken for retrieval of probable duplicate sets under different options for the arguments <code>chunksize</code> and <code>useBytes</code> can be visualized using the <a href="https://CRAN.R-project.org/package=microbenchmark" class="external-link"><code>microbenchmark</code></a> package (Fig. 3).</p>
+<p>As the number of keywords in the KWIC indexes increases, the memory
+consumption by the function also increases proportionally. This is due
+to the reason that for string matching, this function relies upon
+creation of a <em>n</em><span class="math inline">\(\times\)</span><em>m</em> matrix of all possible
+keyword pairs for comparison, where <em>n</em> and <em>m</em> are the
+number of keywords in the query and source indexes respectively. This
+can lead to <code>cannot allocate vector of size...</code> errors in
+case of large KWIC indexes where the comparison matrix is too large to
+reside in memory. In such a case, the <code>chunksize</code> argument
+can be reduced from the default 1000 to get the appropriate size of the
+KWIC index keyword block to be used for searching for matches at a time.
+However a smaller <code>chunksize</code> may lead to longer computation
+time due to the memory-time trade-off.</p>
+<p>The progress of matching is displayed in the console as number of
+keyword blocks completed out of the total number of blocks, the
+percentage of achievement and a text-based progress bar.</p>
+<p>In case of multi-byte characters in keywords, the speed of keyword
+matching is further dependent upon the <code>useBytes</code> argument as
+described in <code>help("stringdist-encoding")</code> for the
+<code>stringdist</code> function in the namesake <a href="https://CRAN.R-project.org/package=stringdist" class="external-link">package</a> <span class="citation">(<a href="#ref-van2014stringdist" role="doc-biblioref">Loo 2014</a>)</span>, which is made use of here for
+string matching.</p>
+<p>The CPU time taken for retrieval of probable duplicate sets under
+different options for the arguments <code>chunksize</code> and
+<code>useBytes</code> can be visualized using the <a href="https://CRAN.R-project.org/package=microbenchmark" class="external-link"><code>microbenchmark</code></a>
+package (Fig. 3).</p>
 <div class="sourceCode" id="cb135"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Load example dataset</span></span>
 <span><span class="va">GN</span> <span class="op">&lt;-</span> <span class="va">GN1000</span></span>
@@ -1238,14 +1401,23 @@ Total                        2  5(Distinct:5)</code></pre>
 <span>         <span class="st">"t4 : chunksize = 1000,\n     useBytes = F\n"</span><span class="op">)</span>,</span>
 <span>       bty <span class="op">=</span> <span class="st">"n"</span>, cex <span class="op">=</span> <span class="fl">0.6</span><span class="op">)</span></span></code></pre></div>
 <p><img src="Introduction_files/figure-html/unnamed-chunk-45-1.png" width="700"></p>
-<p><strong>Fig. 3.</strong> CPU time with different <code>ProbDup</code> arguments estimated using the <code>microbenchmark</code> package.</p>
+<p><strong>Fig. 3.</strong> CPU time with different <code>ProbDup</code>
+arguments estimated using the <code>microbenchmark</code> package.</p>
 </div>
 </div>
 <div class="section level2">
 <h2 id="set-review-modification-and-validation">Set Review, Modification and Validation<a class="anchor" aria-label="anchor" href="#set-review-modification-and-validation"></a>
 </h2>
-<p>The initially retrieved sets may be intersecting with each other because there might be accessions which occur in more than duplicate set. Disjoint sets can be generated by merging such overlapping sets using the function <code>DisProbDup</code>.</p>
-<p>Disjoint sets are retrieved either individually for each type of probable duplicate sets or considering all type of sets simultaneously. In case of the latter, the disjoint of all the type of sets alone are returned in the output as an additional data frame <code>DisjointDupicates</code> in an object of class <code>ProbDup</code>.</p>
+<p>The initially retrieved sets may be intersecting with each other
+because there might be accessions which occur in more than duplicate
+set. Disjoint sets can be generated by merging such overlapping sets
+using the function <code>DisProbDup</code>.</p>
+<p>Disjoint sets are retrieved either individually for each type of
+probable duplicate sets or considering all type of sets simultaneously.
+In case of the latter, the disjoint of all the type of sets alone are
+returned in the output as an additional data frame
+<code>DisjointDupicates</code> in an object of class
+<code>ProbDup</code>.</p>
 <div class="sourceCode" id="cb138"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Load example dataset</span></span>
 <span><span class="va">GN</span> <span class="op">&lt;-</span> <span class="va">GN1000</span></span>
@@ -1324,13 +1496,46 @@ KWIC1 fields : NationalID CollNo DonorID OtherID1 OtherID2
                   No..of.Sets    No..of.Records
 DisjointDupicates         167               762
 Total                     167 762(Distinct:762)</code></pre>
-<p>Once duplicate sets are retrieved they can be validated by manual clerical review by comparing with original PGR passport database(s) using the <code>ReviewProbDup</code> function. This function helps to retrieve PGR passport information associated with fuzzy, phonetic or semantic probable duplicate sets in an object of class <code>ProbDup</code> from the original databases(s) from which they were identified. The original information of accessions comprising a set, which have not been subjected to data standardization can be compared under manual clerical review for the validation of the set. By default only the fields(columns) which were used initially for creation of the KWIC indexes using the KWIC function are retrieved. Additional fields(columns) if necessary can be specified using the <code>extra.db1</code> and <code>extra.db2</code> arguments.</p>
-<p>When any primary ID/key records in the fuzzy, phonetic or semantic duplicate sets are found to be missing from the original databases specified in <code>db1</code> and <code>db2</code>, then they are ignored and only the matching records are considered for retrieving the information with a warning.</p>
-<p>This may be due to data standardization of the primary ID/key field using the function <code>DataClean</code> before creation of the KWIC index and subsequent identification of probable duplicate sets. In such a case, it is recommended to use an identical data standardization operation on the primary ID/key field of databases specified in <code>db1</code> and <code>db2</code> before running this function.</p>
-<p>With <code>R</code> &lt;= v3.0.2, due to copying of named objects by <code><a href="https://rdrr.io/r/base/list.html" class="external-link">list()</a></code>, <code>Invalid .internal.selfref detected and fixed...</code> warning can appear, which may be safely ignored.</p>
-<p>The output data frame can be subjected to clerical review either after exporting into an external spreadsheet using <code>write.csv</code> function or by using the <code>edit</code> function.</p>
-<p>The column <code>DEL</code> can be used to indicate whether a record has to be deleted from a set or not. <code>Y</code> indicates “Yes”, and the default <code>N</code> indicates “No”.</p>
-<p>The column <code>SPLIT</code> similarly can be used to indicate whether a record in a set has to be branched into a new set. A set of identical integers in this column other than the default <code>0</code> can be used to indicate that they are to be removed and assembled into a new set.</p>
+<p>Once duplicate sets are retrieved they can be validated by manual
+clerical review by comparing with original PGR passport database(s)
+using the <code>ReviewProbDup</code> function. This function helps to
+retrieve PGR passport information associated with fuzzy, phonetic or
+semantic probable duplicate sets in an object of class
+<code>ProbDup</code> from the original databases(s) from which they were
+identified. The original information of accessions comprising a set,
+which have not been subjected to data standardization can be compared
+under manual clerical review for the validation of the set. By default
+only the fields(columns) which were used initially for creation of the
+KWIC indexes using the KWIC function are retrieved. Additional
+fields(columns) if necessary can be specified using the
+<code>extra.db1</code> and <code>extra.db2</code> arguments.</p>
+<p>When any primary ID/key records in the fuzzy, phonetic or semantic
+duplicate sets are found to be missing from the original databases
+specified in <code>db1</code> and <code>db2</code>, then they are
+ignored and only the matching records are considered for retrieving the
+information with a warning.</p>
+<p>This may be due to data standardization of the primary ID/key field
+using the function <code>DataClean</code> before creation of the KWIC
+index and subsequent identification of probable duplicate sets. In such
+a case, it is recommended to use an identical data standardization
+operation on the primary ID/key field of databases specified in
+<code>db1</code> and <code>db2</code> before running this function.</p>
+<p>With <code>R</code> &lt;= v3.0.2, due to copying of named objects by
+<code><a href="https://rdrr.io/r/base/list.html" class="external-link">list()</a></code>,
+<code>Invalid .internal.selfref detected and fixed...</code> warning can
+appear, which may be safely ignored.</p>
+<p>The output data frame can be subjected to clerical review either
+after exporting into an external spreadsheet using
+<code>write.csv</code> function or by using the <code>edit</code>
+function.</p>
+<p>The column <code>DEL</code> can be used to indicate whether a record
+has to be deleted from a set or not. <code>Y</code> indicates “Yes”, and
+the default <code>N</code> indicates “No”.</p>
+<p>The column <code>SPLIT</code> similarly can be used to indicate
+whether a record in a set has to be branched into a new set. A set of
+identical integers in this column other than the default <code>0</code>
+can be used to indicate that they are to be removed and assembled into a
+new set.</p>
 <div class="sourceCode" id="cb145"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Load the original database and clean the Primary ID/key field</span></span>
 <span><span class="va">GN1000</span> <span class="op">&lt;-</span> <span class="va">GN1000</span></span>
@@ -1369,8 +1574,17 @@ Total                     167 762(Distinct:762)</code></pre>
 <span></span>
 <span><span class="co"># OR examine and review the duplicate sets after exporting them as a csv file</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/write.table.html" class="external-link">write.csv</a></span><span class="op">(</span>file<span class="op">=</span><span class="st">"Duplicate sets for review.csv"</span>, x<span class="op">=</span><span class="va">RevGNdup</span><span class="op">)</span></span></code></pre></div>
-<p>After clerical review, the data frame created using the function <code>ReviewProbDup</code> from an object of class <code>ProbDup</code> can be reconstituted back to the same object after the review using the function <code>ReconstructProbDup</code>.</p>
-<p>The instructions for modifying the sets entered in the appropriate format in the columns <code>DEL</code> and <code>SPLIT</code> during clerical review are taken into account for reconstituting the probable duplicate sets. Any records with <code>Y</code> in column <code>DEL</code> are deleted and records with identical integers in the column <code>SPLIT</code> other than the default <code>0</code> are reassembled into a new set.</p>
+<p>After clerical review, the data frame created using the function
+<code>ReviewProbDup</code> from an object of class <code>ProbDup</code>
+can be reconstituted back to the same object after the review using the
+function <code>ReconstructProbDup</code>.</p>
+<p>The instructions for modifying the sets entered in the appropriate
+format in the columns <code>DEL</code> and <code>SPLIT</code> during
+clerical review are taken into account for reconstituting the probable
+duplicate sets. Any records with <code>Y</code> in column
+<code>DEL</code> are deleted and records with identical integers in the
+column <code>SPLIT</code> other than the default <code>0</code> are
+reassembled into a new set.</p>
 <div class="sourceCode" id="cb149"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># The original set data</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/subset.html" class="external-link">subset</a></span><span class="op">(</span><span class="va">RevGNdup</span>, <span class="va">SET_NO</span><span class="op">==</span><span class="fl">13</span> <span class="op">&amp;</span> <span class="va">TYPE</span><span class="op">==</span><span class="st">"P"</span>, select<span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">IDKW</span>, <span class="va">DEL</span>, <span class="va">SPLIT</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
@@ -1427,7 +1641,15 @@ Total                      263 786(Distinct:674)</code></pre>
 <div class="section level2">
 <h2 id="other-functions">Other Functions<a class="anchor" aria-label="anchor" href="#other-functions"></a>
 </h2>
-<p>The <code>ProbDup</code> object is a list of data frames of different kinds of probable duplicate sets <em>viz</em>- <code>FuzzyDuplicates</code>, <code>PhoneticDuplicates</code>, <code>SemanticDuplicates</code> and <code>DisjointDuplicates</code>. Each row of the component data frame will have information of a set, the type of set, the set members as well as the keywords based on which the set was formed. This data can be reshaped into long form using the function <code>ParseProbDup</code>. This function which will transform a <code>ProbDup</code> object into a single data frame.</p>
+<p>The <code>ProbDup</code> object is a list of data frames of different
+kinds of probable duplicate sets <em>viz</em>-
+<code>FuzzyDuplicates</code>, <code>PhoneticDuplicates</code>,
+<code>SemanticDuplicates</code> and <code>DisjointDuplicates</code>.
+Each row of the component data frame will have information of a set, the
+type of set, the set members as well as the keywords based on which the
+set was formed. This data can be reshaped into long form using the
+function <code>ParseProbDup</code>. This function which will transform a
+<code>ProbDup</code> object into a single data frame.</p>
 <div class="sourceCode" id="cb157"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Convert 'ProbDup' object to a long form data frame of sets</span></span>
 <span><span class="va">GNdupParsed</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/ParseProbDup.html">ParseProbDup</a></span><span class="op">(</span><span class="va">GNdup</span><span class="op">)</span></span>
@@ -1439,16 +1661,31 @@ Total                      263 786(Distinct:674)</code></pre>
 4     NA      &lt;NA&gt;     &lt;NA&gt;                &lt;NA&gt;    NA
 5      2    F [K1] EC100280    [K1]EC100280:NC5     3
 6      2    F [K1] EC100721    [K1]EC100721:NC5     3</code></pre>
-<p>The prefix <code>K*</code> here indicates the KWIC index of origin. This is useful in ascertaining the database of origin of the accessions when method <code>"b"</code> or <code>"c"</code> was used to create the input <code>ProbDup</code> object.</p>
-<p>Once the sets are reviewed and modified, the validated set data fields from the <code>ProbDup</code> object can be added to the original PGR passport database using the function <code>AddProbDup</code>. The associated data fields such as <code>SET_NO</code>, <code>ID</code> and <code>IDKW</code> are added based on the <code>PRIM_ID</code> field(column).</p>
+<p>The prefix <code>K*</code> here indicates the KWIC index of origin.
+This is useful in ascertaining the database of origin of the accessions
+when method <code>"b"</code> or <code>"c"</code> was used to create the
+input <code>ProbDup</code> object.</p>
+<p>Once the sets are reviewed and modified, the validated set data
+fields from the <code>ProbDup</code> object can be added to the original
+PGR passport database using the function <code>AddProbDup</code>. The
+associated data fields such as <code>SET_NO</code>, <code>ID</code> and
+<code>IDKW</code> are added based on the <code>PRIM_ID</code>
+field(column).</p>
 <div class="sourceCode" id="cb159"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Loading original database</span></span>
 <span><span class="va">GN2</span> <span class="op">&lt;-</span> <span class="va">GN1000</span></span>
 <span></span>
 <span><span class="co"># Add the duplicates set data to the original database</span></span>
 <span><span class="va">GNwithdup</span> <span class="op">&lt;-</span>  <span class="fu"><a href="../reference/AddProbDup.html">AddProbDup</a></span><span class="op">(</span>pdup <span class="op">=</span> <span class="va">GNdup</span>, db <span class="op">=</span> <span class="va">GN2</span>, addto <span class="op">=</span> <span class="st">"I"</span><span class="op">)</span></span></code></pre></div>
-<p>In case more than one KWIC index was used to generate the object of class <code>ProbDup</code>, the argument <code>addto</code> can be used to specify to which database the data fields are to be added. The default <code>"I"</code> indicates the database from which the first KWIC index was created and <code>"II"</code> indicates the database from which the second index was created.</p>
-<p>The function <code>SplitProbDup</code> can be used to split an object of class <code>ProbDup</code> into two on the basis of set counts. This is useful for reviewing separately the sets with larger set counts.</p>
+<p>In case more than one KWIC index was used to generate the object of
+class <code>ProbDup</code>, the argument <code>addto</code> can be used
+to specify to which database the data fields are to be added. The
+default <code>"I"</code> indicates the database from which the first
+KWIC index was created and <code>"II"</code> indicates the database from
+which the second index was created.</p>
+<p>The function <code>SplitProbDup</code> can be used to split an object
+of class <code>ProbDup</code> into two on the basis of set counts. This
+is useful for reviewing separately the sets with larger set counts.</p>
 <div class="sourceCode" id="cb160"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Load PGR passport database</span></span>
 <span><span class="va">GN</span> <span class="op">&lt;-</span> <span class="va">GN1000</span></span>
@@ -1511,7 +1748,8 @@ KWIC1 fields : NationalID CollNo DonorID OtherID1 OtherID2
                 No..of.Sets    No..of.Records
 FuzzyDuplicates          40               136
 Total                    40 136(Distinct:136)</code></pre>
-<p>Alternatively, two different <code>ProbDup</code> objects can be merged together using the function <code>MergeProbDup</code>.</p>
+<p>Alternatively, two different <code>ProbDup</code> objects can be
+merged together using the function <code>MergeProbDup</code>.</p>
 <div class="sourceCode" id="cb165"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">GNdupMerged</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/MergeProbDup.html">MergeProbDup</a></span><span class="op">(</span><span class="va">GNdupSplit</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span>, <span class="va">GNdupSplit</span><span class="op">[[</span><span class="fl">3</span><span class="op">]</span><span class="op">]</span><span class="op">)</span></span>
 <span><span class="va">GNdupMerged</span></span></code></pre></div>
@@ -1524,7 +1762,12 @@ FuzzyDuplicates            378                745
 PhoneticDuplicates          99                260
 SemanticDuplicates           2                  5
 Total                      479 1010(Distinct:762)</code></pre>
-<p>The summary of accessions according to a grouping factor field(column) in the original database(s) within the probable duplicate sets retrieved in a <code>ProbDup</code> object can be visualized by the <code>ViewProbDup</code> function. The resulting plot can be used to examine the extent of probable duplication within and between groups of accessions records.</p>
+<p>The summary of accessions according to a grouping factor
+field(column) in the original database(s) within the probable duplicate
+sets retrieved in a <code>ProbDup</code> object can be visualized by the
+<code>ViewProbDup</code> function. The resulting plot can be used to
+examine the extent of probable duplication within and between groups of
+accessions records.</p>
 <div class="sourceCode" id="cb167"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Load PGR passport databases</span></span>
 <span><span class="va">GN1</span> <span class="op">&lt;-</span> <span class="va">GN1000</span><span class="op">[</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/grep.html" class="external-link">grepl</a></span><span class="op">(</span><span class="st">"^ICG"</span>, <span class="va">GN1000</span><span class="op">$</span><span class="va">DonorID</span><span class="op">)</span>, <span class="op">]</span></span>
@@ -1624,10 +1867,13 @@ Block 3 / 3 |</code></pre>
 <span><span class="va">GNdupcView</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/ViewProbDup.html">ViewProbDup</a></span><span class="op">(</span><span class="va">GNdupc</span>, <span class="va">GN1</span>, <span class="va">GN2</span>, <span class="st">"SourceCountry"</span>, <span class="st">"SourceCountry"</span>,</span>
 <span>                         max.count <span class="op">=</span> <span class="fl">30</span>, select <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"INDIA"</span>, <span class="st">"USA"</span><span class="op">)</span>, order <span class="op">=</span> <span class="st">"type"</span>,</span>
 <span>                         main <span class="op">=</span> <span class="st">"Groundnut Probable Duplicates"</span><span class="op">)</span></span></code></pre></div>
-<pre><code>Warning: `guides(&lt;scale&gt; = FALSE)` is deprecated. Please use `guides(&lt;scale&gt; = "none")` instead.
-`guides(&lt;scale&gt; = FALSE)` is deprecated. Please use `guides(&lt;scale&gt; = "none")` instead.
-`guides(&lt;scale&gt; = FALSE)` is deprecated. Please use `guides(&lt;scale&gt; = "none")` instead.
-`guides(&lt;scale&gt; = FALSE)` is deprecated. Please use `guides(&lt;scale&gt; = "none")` instead.</code></pre>
+<pre><code>Warning:  [1m [22mThe `&lt;scale&gt;` argument of `guides()` cannot be `FALSE`. Use "none" instead as
+of ggplot2 3.3.4.
+ [36mℹ [39m The deprecated feature was likely used in the  [34mPGRdup [39m package.
+  Please report the issue at  [3m [34m&lt;https://github.com/aravind-j/PGRdup/issues&gt; [39m [23m.
+This warning is displayed once every 8 hours.
+Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+generated.</code></pre>
 <div class="sourceCode" id="cb177"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># View the summary data.frames</span></span>
 <span><span class="va">GNdupcView</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span></span>
@@ -1637,8 +1883,14 @@ Block 3 / 3 |</code></pre>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">gridExtra</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/gridExtra/man/arrangeGrob.html" class="external-link">grid.arrange</a></span><span class="op">(</span><span class="va">GNdupcView</span><span class="op">[[</span><span class="fl">3</span><span class="op">]</span><span class="op">]</span><span class="op">)</span></span></code></pre></div>
 <p><img src="Introduction_files/figure-html/unnamed-chunk-60-1.png" width="960"></p>
-<p><strong>Fig. 5.</strong> Summary visualization of groundnut probable duplicate sets retrieved according to <code>SourceCountry</code> field.</p>
-<p>The function <code>KWCounts</code> can be used to compute the keyword counts from PGR passport database fields(columns) which are considered for identification of probable duplicates. These keyword counts can give a rough indication of the completeness of the data in such fields (Fig. 3).</p>
+<p><strong>Fig. 5.</strong> Summary visualization of groundnut probable
+duplicate sets retrieved according to <code>SourceCountry</code>
+field.</p>
+<p>The function <code>KWCounts</code> can be used to compute the keyword
+counts from PGR passport database fields(columns) which are considered
+for identification of probable duplicates. These keyword counts can give
+a rough indication of the completeness of the data in such fields
+(Fig. 3).</p>
 <div class="sourceCode" id="cb179"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Compute the keyword counts for the whole data</span></span>
 <span><span class="va">GNKWCouts</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/KWCounts.html">KWCounts</a></span><span class="op">(</span><span class="va">GN</span>, <span class="va">GNfields</span>, <span class="va">exep</span><span class="op">)</span></span>
@@ -1680,18 +1932,21 @@ Block 3 / 3 |</code></pre>
 <span>                   <span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">GN</span><span class="op">[</span><span class="op">!</span><span class="va">GN</span><span class="op">$</span><span class="va">NationalID</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="va">GND</span>, <span class="op">]</span><span class="op">)</span><span class="op">)</span>,</span>
 <span>       bty <span class="op">=</span> <span class="st">"n"</span><span class="op">)</span></span></code></pre></div>
 <p><img src="Introduction_files/figure-html/unnamed-chunk-61-1.png" width="700"></p>
-<p><strong>Fig. 6.</strong> The keyword counts in the database fields considered for identification of probable duplicates for <strong>A.</strong> the entire <code>GN1000</code> dataset, <strong>B.</strong> the probable duplicate records alone and <strong>C.</strong> the unique records alone.</p>
+<p><strong>Fig. 6.</strong> The keyword counts in the database fields
+considered for identification of probable duplicates for
+<strong>A.</strong> the entire <code>GN1000</code> dataset,
+<strong>B.</strong> the probable duplicate records alone and
+<strong>C.</strong> the unique records alone.</p>
 </div>
 <div class="section level2">
 <h2 id="citing-pgrdup">Citing <code>PGRdup</code><a class="anchor" aria-label="anchor" href="#citing-pgrdup"></a>
 </h2>
 <div class="sourceCode" id="cb180"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/citation.html" class="external-link">citation</a></span><span class="op">(</span><span class="st">"PGRdup"</span><span class="op">)</span></span></code></pre></div>
-<pre><code>
-To cite the R package 'PGRdup' in publications use:
+<pre><code>To cite the R package 'PGRdup' in publications use:
 
   Aravind, J., Radhamani, J., Kalyani Srinivasan, Ananda Subhash, B.,
-  and Tyagi, R. K.  (2022).  PGRdup: Discover Probable Duplicates in
+  and Tyagi, R. K.  (2023).  PGRdup: Discover Probable Duplicates in
   Plant Genetic Resources Collections. R package version 0.2.3.7.9000,
   https://github.com/aravind-j/PGRdup,https://cran.r-project.org/package=PGRdup.
 
@@ -1700,7 +1955,7 @@ A BibTeX entry for LaTeX users is
   @Manual{,
     title = {PGRdup: Discover Probable Duplicates in Plant Genetic Resources Collections},
     author = {J. Aravind and J. Radhamani and {Kalyani Srinivasan} and B. {Ananda Subhash} and Rishi Kumar Tyagi},
-    year = {2022},
+    year = {2023},
     note = {R package version 0.2.3.7.9000},
     note = {https://github.com/aravind-j/PGRdup,},
     note = {https://cran.r-project.org/package=PGRdup},
@@ -1715,16 +1970,19 @@ citing the package.</code></pre>
 </h2>
 <div class="sourceCode" id="cb182"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html" class="external-link">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<pre><code>R version 4.2.1 (2022-06-23)
-Platform: x86_64-apple-darwin17.0 (64-bit)
-Running under: macOS Big Sur ... 10.16
+<pre><code>R version 4.3.0 (2023-04-21)
+Platform: x86_64-apple-darwin20 (64-bit)
+Running under: macOS Monterey 12.6.5
 
 Matrix products: default
-BLAS:   /Library/Frameworks/R.framework/Versions/4.2/Resources/lib/libRblas.0.dylib
-LAPACK: /Library/Frameworks/R.framework/Versions/4.2/Resources/lib/libRlapack.dylib
+BLAS:   /Library/Frameworks/R.framework/Versions/4.3-x86_64/Resources/lib/libRblas.0.dylib 
+LAPACK: /Library/Frameworks/R.framework/Versions/4.3-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.11.0
 
 locale:
 [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+
+time zone: UTC
+tzcode source: internal
 
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
@@ -1734,42 +1992,58 @@ other attached packages:
 [4] RColorBrewer_1.1-3  diagram_1.6.5       shape_1.4.6        
 
 loaded via a namespace (and not attached):
- [1] stringdist_0.9.8     xfun_0.31            bslib_0.3.1         
- [4] purrr_0.3.4          colorspace_2.0-3     vctrs_0.4.1         
- [7] htmltools_0.5.2      yaml_2.3.5           XML_3.99-0.10       
-[10] utf8_1.2.2           rlang_1.0.3          pkgdown_2.0.5       
-[13] jquerylib_0.1.4      pillar_1.7.0         glue_1.6.2          
-[16] lifecycle_1.0.1      stringr_1.4.0        munsell_0.5.0       
-[19] gtable_0.3.0         ragg_1.2.2           memoise_2.0.1       
-[22] evaluate_0.15        labeling_0.4.2       knitr_1.39          
-[25] fastmap_1.1.0        curl_4.3.2           parallel_4.2.1      
-[28] fansi_1.0.3          highr_0.9            Rcpp_1.0.8.3        
-[31] scales_1.2.0         cachem_1.0.6         desc_1.4.1          
-[34] jsonlite_1.8.0       farver_2.1.0         systemfonts_1.0.4   
-[37] fs_1.5.2             microbenchmark_1.4.9 textshaping_0.3.6   
-[40] ggplot2_3.3.6        digest_0.6.29        stringi_1.7.6       
-[43] grid_4.2.1           rprojroot_2.0.3      cli_3.3.0           
-[46] tools_4.2.1          bitops_1.0-7         magrittr_2.0.3      
-[49] sass_0.4.1           RCurl_1.98-1.7       tibble_3.1.7        
-[52] crayon_1.5.1         pkgconfig_2.0.3      ellipsis_0.3.2      
-[55] data.table_1.14.2    rmarkdown_2.14       httr_1.4.3          
-[58] R6_2.5.1             igraph_1.3.2         compiler_4.2.1      </code></pre>
+ [1] sass_0.4.6            utf8_1.2.3            bitops_1.0-7         
+ [4] stringi_1.7.12        digest_0.6.31         magrittr_2.0.3       
+ [7] evaluate_0.21         grid_4.3.0            fastmap_1.1.1        
+[10] rprojroot_2.0.3       jsonlite_1.8.4        httr_1.4.6           
+[13] purrr_1.0.1           fansi_1.0.4           scales_1.2.1         
+[16] stringdist_0.9.10     XML_3.99-0.14         microbenchmark_1.4.10
+[19] textshaping_0.3.6     jquerylib_0.1.4       cli_3.6.1            
+[22] rlang_1.1.1           munsell_0.5.0         withr_2.5.0          
+[25] cachem_1.0.8          yaml_2.3.7            tools_4.3.0          
+[28] parallel_4.3.0        memoise_2.0.1         colorspace_2.1-0     
+[31] ggplot2_3.4.2         curl_5.0.0            vctrs_0.6.2          
+[34] R6_2.5.1              lifecycle_1.0.3       stringr_1.5.0        
+[37] fs_1.6.2              ragg_1.2.5            pkgconfig_2.0.3      
+[40] desc_1.4.2            pkgdown_2.0.7         bslib_0.4.2          
+[43] pillar_1.9.0          gtable_0.3.3          Rcpp_1.0.10          
+[46] data.table_1.14.8     glue_1.6.2            systemfonts_1.0.4    
+[49] xfun_0.39             tibble_3.2.1          highr_0.10           
+[52] knitr_1.42            farver_2.1.1          htmltools_0.5.5      
+[55] igraph_1.4.2          labeling_0.4.2        rmarkdown_2.21       
+[58] compiler_4.3.0        RCurl_1.98-1.12      </code></pre>
 </div>
 <div class="section level2 unnumbered">
-<h2 id="references">References<a class="anchor" aria-label="anchor" href="#references"></a>
+<h2 class="unnumbered" id="references">References<a class="anchor" aria-label="anchor" href="#references"></a>
 </h2>
-<div id="refs" class="references">
-<div id="ref-knupffer1988european">
-<p>Knüpffer, H. 1988. “The European Barley Database of the ECP/GR: An Introduction.” <em>Die Kulturpflanze</em> 36 (1): 135–62. <a href="https://doi.org/10.1007/BF01986957" class="external-link">https://doi.org/10.1007/BF01986957</a>.</p>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-knupffer1988european" class="csl-entry">
+Knüpffer, H. 1988. <span>“The <span>European</span> <span>Barley</span>
+<span>Database</span> of the <span>ECP</span>/<span>GR</span>: An
+Introduction.”</span> <em>Die Kulturpflanze</em> 36 (1): 135–62. <a href="https://doi.org/10.1007/BF01986957" class="external-link">https://doi.org/10.1007/BF01986957</a>.
 </div>
-<div id="ref-kfj97">
-<p>Knüpffer, H., L. Frese, and M. W. M. Jongen. 1997. “Using Central Crop Databases: Searching for Duplicates and Gaps.” In <em>Central Crop Databases: Tools for Plant Genetic Resources Management. Report of a Workshop, Budapest, Hungary, 13-16 October 1996</em>, edited by E. Lipman, M. W. M. Jongen, T. J. L. van Hintum, T. Gass, and L. Maggioni, 67–77. Rome, Italy and Wageningen, The Netherlands: International Plant Genetic Resources Institute and Centre for Genetic Resources. <a href="https://www.bioversityinternational.org/index.php?id=244&amp;tx_news_pi1%5Bnews%5D=334&amp;cHash=3738ae238a450ff71bb1cb087687ac9c" class="external-link">https://www.bioversityinternational.org/index.php?id=244&amp;tx_news_pi1%5Bnews%5D=334&amp;cHash=3738ae238a450ff71bb1cb087687ac9c</a>.</p>
+<div id="ref-kfj97" class="csl-entry">
+Knüpffer, H., L. Frese, and M. W. M. Jongen. 1997. <span>“Using Central
+Crop Databases: Searching for Duplicates and Gaps.”</span> In
+<em>Central <span>Crop</span> <span>Databases</span>: <span>Tools</span>
+for <span>Plant</span> <span>Genetic</span> <span>Resources</span>
+<span>Management</span>. <span>Report</span> of a <span>Workshop</span>,
+<span>Budapest</span>, <span>Hungary</span>, 13-16 <span>October</span>
+1996</em>, edited by E. Lipman, M. W. M. Jongen, T. J. L. van Hintum, T.
+Gass, and L. Maggioni, 67–77. Rome, Italy and Wageningen, The
+Netherlands: International Plant Genetic Resources Institute and Centre
+for Genetic Resources. <a href="https://www.bioversityinternational.org/index.php?id=244&amp;tx_news_pi1%5Bnews%5D=334&amp;cHash=3738ae238a450ff71bb1cb087687ac9c" class="external-link">https://www.bioversityinternational.org/index.php?id=244&amp;tx_news_pi1%5Bnews%5D=334&amp;cHash=3738ae238a450ff71bb1cb087687ac9c</a>.
 </div>
-<div id="ref-van2014stringdist">
-<p>Loo, M. P. J. van der. 2014. “The Stringdist Package for Approximate String Matching.” <em>R Journal</em> 6 (1): 111–22. <a href="https://journal.r-project.org/archive/2014/RJ-2014-011/index.html" class="external-link">https://journal.r-project.org/archive/2014/RJ-2014-011/index.html</a>.</p>
+<div id="ref-van2014stringdist" class="csl-entry">
+Loo, M. P. J. van der. 2014. <span>“The Stringdist <span>Package</span>
+for <span>Approximate</span> <span>String</span>
+<span>Matching</span>.”</span> <em>R Journal</em> 6 (1): 111–22. <a href="https://journal.r-project.org/archive/2014/RJ-2014-011/index.html" class="external-link">https://journal.r-project.org/archive/2014/RJ-2014-011/index.html</a>.
 </div>
-<div id="ref-p00">
-<p>Philips, Lawrence. 2000. “The Double Metaphone Search Algorithm.” <em>C/C++ Users Journal</em> 18 (6): 38–43. <a href="https://dl.acm.org/citation.cfm?id=349124.349132" class="external-link">https://dl.acm.org/citation.cfm?id=349124.349132</a>.</p>
+<div id="ref-p00" class="csl-entry">
+Philips, Lawrence. 2000. <span>“The <span>Double</span>
+<span>Metaphone</span> <span>Search</span>
+<span>Algorithm</span>.”</span> <em>C/C++ Users Journal</em> 18 (6):
+38–43. <a href="https://dl.acm.org/citation.cfm?id=349124.349132" class="external-link">https://dl.acm.org/citation.cfm?id=349124.349132</a>.
 </div>
 </div>
 </div>
@@ -1792,7 +2066,7 @@ loaded via a namespace (and not attached):
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.5.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer>
