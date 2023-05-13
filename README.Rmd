@@ -197,7 +197,7 @@ osdf <-
         data.frame(OS = "Windows", 
                    Flavour = c("r-devel-windows-x86_64", 
                                "r-release-windows-x86_64",
-                               "r-oldrel-windows-ix86+x86_64")),
+                               "r-oldrel-windows-x86_64")),
         data.frame(OS = "macOS", 
                    Flavour = c("r-release-macos-x86_64", 
                                "r-oldrel-macos-x86_64",
