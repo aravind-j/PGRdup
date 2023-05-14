@@ -1,7 +1,7 @@
 
-<img src="https://raw.githubusercontent.com/aravind-j/PGRdup/master/inst/extdata/PGRdup.png" width="100%" />
+<img src="https://raw.githubusercontent.com/aravind-j/PGRdup/master/inst/extdata/PGRdup.png" align="center" alt="logo" width="750" height = "85" style = "border: solid white 10px;">
 
-###### Version : [0.2.3.7.9000](https://aravind-j.github.io/PGRdup/articles/Introduction.html#version-history); Copyright (C) 2014-2022: [ICAR-NBPGR](http://www.nbpgr.ernet.in/); License: [GPL-2\|GPL-3](https://www.r-project.org/Licenses/)
+###### Version : [0.2.3.7.9000](https://aravind-j.github.io/PGRdup/articles/Introduction.html#version-history); Copyright (C) 2014-2023: [ICAR-NBPGR](http://www.nbpgr.ernet.in/); License: [GPL-2\|GPL-3](https://www.r-project.org/Licenses/)
 
 ##### *Aravind, J.<sup>1</sup>, Radhamani, J.<sup>1</sup>, Kalyani Srinivasan<sup>1</sup>, Ananda Subhash, B.<sup>2</sup>, and Tyagi, R. K.<sup>1</sup>*
 
@@ -15,7 +15,7 @@
 version](https://img.shields.io/badge/R%3E%3D-3.0.2-6666ff.svg?logo=R)](https://cran.r-project.org/)
 [![License: GPL
 v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version-last-release/PGRdup)](https://cran.r-project.org/package=PGRdup)
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version-last-release/PGRdup)](https://cran.r-project.org/package=PGRdup)
 [![Dependencies](https://tinyverse.netlify.com/badge/PGRdup)](https://cran.r-project.org/package=PGRdup)
 [![rstudio mirror
 downloads](https://cranlogs.r-pkg.org/badges/grand-total/PGRdup?color=green)](https://CRAN.R-project.org/package=PGRdup)
@@ -26,7 +26,7 @@ Size](https://img.shields.io/github/languages/code-size/aravind-j/PGRdup.svg)](h
 [![Project Status:
 Inactive](https://www.repostatus.org/badges/latest/inactive.svg)](https://www.repostatus.org/#inactive)
 [![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
-[![Last-changedate](https://img.shields.io/badge/last%20change-2022--07--04-yellowgreen.svg)](https://github.com/aravind-j/PGRdup)
+[![Last-changedate](https://img.shields.io/badge/last%20change-2023--05--14-yellowgreen.svg)](https://github.com/aravind-j/PGRdup)
 [![Rdoc](https://api.rdocumentation.org/badges/version/PGRdup)](https://rdocumentation.org/packages/PGRdup/)
 [![Zenodo
 DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.841963.svg)](https://doi.org/10.5281/zenodo.841963)
@@ -52,10 +52,10 @@ databases.
 The functions in this package are primarily built using the following R
 packages:
 
--   [`data.table`](https://cran.r-project.org/package=data.table)
--   [`igraph`](https://cran.r-project.org/package=igraph)
--   [`stringdist`](https://cran.r-project.org/package=stringdist)
--   [`stringi`](https://cran.r-project.org/package=stringi)
+- [`data.table`](https://cran.r-project.org/package=data.table)
+- [`igraph`](https://cran.r-project.org/package=igraph)
+- [`stringdist`](https://cran.r-project.org/package=stringdist)
+- [`stringi`](https://cran.r-project.org/package=stringi)
 
 ## Installation
 
@@ -79,10 +79,10 @@ functions are are illustrated below:
 
 **Function(s) :**
 
--   `DataClean`
--   `MergeKW`
--   `MergePrefix`
--   `MergeSuffix`
+- `DataClean`
+- `MergeKW`
+- `MergePrefix`
+- `MergeSuffix`
 
 Use these functions for the appropriate data standardisation of the
 relevant fields in the passport databases to harmonize punctuation,
@@ -92,7 +92,7 @@ leading zeros, prefixes, suffixes etc. associated with accession names.
 
 **Function(s) :**
 
--   `KWIC`
+- `KWIC`
 
 Use this function to extract the information in the relevant fields as
 keywords or text strings in the form of a searchable Keyword in Context
@@ -102,7 +102,7 @@ keywords or text strings in the form of a searchable Keyword in Context
 
 **Function(s) :**
 
--   `ProbDup`
+- `ProbDup`
 
 Execute fuzzy, phonetic and semantic matching of keywords to identify
 probable duplicate sets either within a single KWIC index or between two
@@ -117,9 +117,9 @@ tweak the matching strategies used are also available in this function.
 
 **Function(s) :**
 
--   `DisProbDup`
--   `ReviewProbDup`
--   `ReconstructProbDup`
+- `DisProbDup`
+- `ReviewProbDup`
+- `ReconstructProbDup`
 
 Inspect, revise and improve the retrieved sets using these functions. If
 considerable intersections exist between the initially identified sets,
@@ -133,15 +133,15 @@ back using `ReconstructProbDup`.
 
 **Function(s) :**
 
--   `ValidatePrimKey`
--   `DoubleMetaphone`
--   `ParseProbDup`
--   `AddProbDup`
--   `SplitProbDup`
--   `MergeProbDup`
--   `ViewProbDup`
--   `KWCounts`
--   `read.genesys`
+- `ValidatePrimKey`
+- `DoubleMetaphone`
+- `ParseProbDup`
+- `AddProbDup`
+- `SplitProbDup`
+- `MergeProbDup`
+- `ViewProbDup`
+- `KWCounts`
+- `read.genesys`
 
 Use these helper functions if needed. `ValidatePrimKey` can be used to
 check whether a column chosen in a data.frame as the primary primary
@@ -170,19 +170,19 @@ environment.
 
 ## Tips
 
--   Use [`fread`](https://rdrr.io/cran/data.table/man/fread.html) to
-    rapidly read large files instead of `read.csv` or `read.table` in
-    `base`.
--   In case the PGR passport data is in any DBMS, use the appropriate
-    [`R`-database interface
-    packages](https://www.burns-stat.com/r-database-interfaces/) to get
-    the required table as a `data.frame` in `R`.
+- Use [`fread`](https://rdrr.io/cran/data.table/man/fread.html) to
+  rapidly read large files instead of `read.csv` or `read.table` in
+  `base`.
+- In case the PGR passport data is in any DBMS, use the appropriate
+  [`R`-database interface
+  packages](https://www.burns-stat.com/r-database-interfaces/) to get
+  the required table as a `data.frame` in `R`.
 
 ## Note
 
--   The `ProbDup` function can be memory hungry with large passport
-    databases. In such cases, ensure that the system has sufficient
-    memory for smooth functioning (See `?ProbDup`).
+- The `ProbDup` function can be memory hungry with large passport
+  databases. In such cases, ensure that the system has sufficient memory
+  for smooth functioning (See `?ProbDup`).
 
 ## Detailed tutorial
 
@@ -215,8 +215,6 @@ news(package='PGRdup')
 
 ## CRAN checks
 
-    Warning: package 'RCurl' was built under R version 4.1.3
-
 <table class="table table-striped table-hover" style="width: auto !important; ">
 <thead>
 <tr>
@@ -236,56 +234,56 @@ CRAN check
 </tr>
 <tr>
 <td style="text-align:left;padding-left: 2em;" indentlevel="1">
-r-devel-linux-x86\_64-debian-clang
+r-devel-linux-x86_64-debian-clang
 </td>
 <td style="text-align:left;">
 [![CRAN check -
-r-devel-linux-x86\_64-debian-clang](https://cranchecks.info/badges/flavor/r-devel-linux-x86_64-debian-clang/PGRdup)](https://cran.r-project.org/web/checks/check_results_PGRdup.html)
+r-devel-linux-x86_64-debian-clang](https://cranchecks.info/badges/flavor/r-devel-linux-x86_64-debian-clang/PGRdup)](https://cran.r-project.org/web/checks/check_results_PGRdup.html)
 </td>
 </tr>
 <tr>
 <td style="text-align:left;padding-left: 2em;" indentlevel="1">
-r-devel-linux-x86\_64-debian-gcc
+r-devel-linux-x86_64-debian-gcc
 </td>
 <td style="text-align:left;">
 [![CRAN check -
-r-devel-linux-x86\_64-debian-gcc](https://cranchecks.info/badges/flavor/r-devel-linux-x86_64-debian-gcc/PGRdup)](https://cran.r-project.org/web/checks/check_results_PGRdup.html)
+r-devel-linux-x86_64-debian-gcc](https://cranchecks.info/badges/flavor/r-devel-linux-x86_64-debian-gcc/PGRdup)](https://cran.r-project.org/web/checks/check_results_PGRdup.html)
 </td>
 </tr>
 <tr>
 <td style="text-align:left;padding-left: 2em;" indentlevel="1">
-r-devel-linux-x86\_64-fedora-clang
+r-devel-linux-x86_64-fedora-clang
 </td>
 <td style="text-align:left;">
 [![CRAN check -
-r-devel-linux-x86\_64-fedora-clang](https://cranchecks.info/badges/flavor/r-devel-linux-x86_64-fedora-clang/PGRdup)](https://cran.r-project.org/web/checks/check_results_PGRdup.html)
+r-devel-linux-x86_64-fedora-clang](https://cranchecks.info/badges/flavor/r-devel-linux-x86_64-fedora-clang/PGRdup)](https://cran.r-project.org/web/checks/check_results_PGRdup.html)
 </td>
 </tr>
 <tr>
 <td style="text-align:left;padding-left: 2em;" indentlevel="1">
-r-devel-linux-x86\_64-fedora-gcc
+r-devel-linux-x86_64-fedora-gcc
 </td>
 <td style="text-align:left;">
 [![CRAN check -
-r-devel-linux-x86\_64-fedora-gcc](https://cranchecks.info/badges/flavor/r-devel-linux-x86_64-fedora-gcc/PGRdup)](https://cran.r-project.org/web/checks/check_results_PGRdup.html)
+r-devel-linux-x86_64-fedora-gcc](https://cranchecks.info/badges/flavor/r-devel-linux-x86_64-fedora-gcc/PGRdup)](https://cran.r-project.org/web/checks/check_results_PGRdup.html)
 </td>
 </tr>
 <tr>
 <td style="text-align:left;padding-left: 2em;" indentlevel="1">
-r-patched-linux-x86\_64
+r-patched-linux-x86_64
 </td>
 <td style="text-align:left;">
 [![CRAN check -
-r-patched-linux-x86\_64](https://cranchecks.info/badges/flavor/r-patched-linux-x86_64/PGRdup)](https://cran.r-project.org/web/checks/check_results_PGRdup.html)
+r-patched-linux-x86_64](https://cranchecks.info/badges/flavor/r-patched-linux-x86_64/PGRdup)](https://cran.r-project.org/web/checks/check_results_PGRdup.html)
 </td>
 </tr>
 <tr>
 <td style="text-align:left;padding-left: 2em;" indentlevel="1">
-r-release-linux-x86\_64
+r-release-linux-x86_64
 </td>
 <td style="text-align:left;">
 [![CRAN check -
-r-release-linux-x86\_64](https://cranchecks.info/badges/flavor/r-release-linux-x86_64/PGRdup)](https://cran.r-project.org/web/checks/check_results_PGRdup.html)
+r-release-linux-x86_64](https://cranchecks.info/badges/flavor/r-release-linux-x86_64/PGRdup)](https://cran.r-project.org/web/checks/check_results_PGRdup.html)
 </td>
 </tr>
 <tr grouplength="3">
@@ -295,29 +293,29 @@ r-release-linux-x86\_64](https://cranchecks.info/badges/flavor/r-release-linux-x
 </tr>
 <tr>
 <td style="text-align:left;padding-left: 2em;" indentlevel="1">
-r-devel-windows-x86\_64
+r-devel-windows-x86_64
 </td>
 <td style="text-align:left;">
 [![CRAN check -
-r-devel-windows-x86\_64](https://cranchecks.info/badges/flavor/r-devel-windows-x86_64/PGRdup)](https://cran.r-project.org/web/checks/check_results_PGRdup.html)
+r-devel-windows-x86_64](https://cranchecks.info/badges/flavor/r-devel-windows-x86_64/PGRdup)](https://cran.r-project.org/web/checks/check_results_PGRdup.html)
 </td>
 </tr>
 <tr>
 <td style="text-align:left;padding-left: 2em;" indentlevel="1">
-r-release-windows-x86\_64
+r-release-windows-x86_64
 </td>
 <td style="text-align:left;">
 [![CRAN check -
-r-release-windows-x86\_64](https://cranchecks.info/badges/flavor/r-release-windows-x86_64/PGRdup)](https://cran.r-project.org/web/checks/check_results_PGRdup.html)
+r-release-windows-x86_64](https://cranchecks.info/badges/flavor/r-release-windows-x86_64/PGRdup)](https://cran.r-project.org/web/checks/check_results_PGRdup.html)
 </td>
 </tr>
 <tr>
 <td style="text-align:left;padding-left: 2em;" indentlevel="1">
-r-oldrel-windows-ix86+x86\_64
+r-oldrel-windows-x86_64
 </td>
 <td style="text-align:left;">
 [![CRAN check -
-r-oldrel-windows-ix86+x86\_64](https://cranchecks.info/badges/flavor/r-oldrel-windows-ix86+x86_64/PGRdup)](https://cran.r-project.org/web/checks/check_results_PGRdup.html)
+r-oldrel-windows-x86_64](https://cranchecks.info/badges/flavor/r-oldrel-windows-x86_64/PGRdup)](https://cran.r-project.org/web/checks/check_results_PGRdup.html)
 </td>
 </tr>
 <tr grouplength="4">
@@ -327,20 +325,20 @@ r-oldrel-windows-ix86+x86\_64](https://cranchecks.info/badges/flavor/r-oldrel-wi
 </tr>
 <tr>
 <td style="text-align:left;padding-left: 2em;" indentlevel="1">
-r-release-macos-x86\_64
+r-release-macos-x86_64
 </td>
 <td style="text-align:left;">
 [![CRAN check -
-r-release-macos-x86\_64](https://cranchecks.info/badges/flavor/r-release-macos-x86_64/PGRdup)](https://cran.r-project.org/web/checks/check_results_PGRdup.html)
+r-release-macos-x86_64](https://cranchecks.info/badges/flavor/r-release-macos-x86_64/PGRdup)](https://cran.r-project.org/web/checks/check_results_PGRdup.html)
 </td>
 </tr>
 <tr>
 <td style="text-align:left;padding-left: 2em;" indentlevel="1">
-r-oldrel-macos-x86\_64
+r-oldrel-macos-x86_64
 </td>
 <td style="text-align:left;">
 [![CRAN check -
-r-oldrel-macos-x86\_64](https://cranchecks.info/badges/flavor/r-oldrel-macos-x86_64/PGRdup)](https://cran.r-project.org/web/checks/check_results_PGRdup.html)
+r-oldrel-macos-x86_64](https://cranchecks.info/badges/flavor/r-oldrel-macos-x86_64/PGRdup)](https://cran.r-project.org/web/checks/check_results_PGRdup.html)
 </td>
 </tr>
 <tr>
@@ -372,12 +370,10 @@ To cite the methods in the package use:
 citation("PGRdup")
 ```
 
-
     To cite the R package 'PGRdup' in publications use:
 
-      Aravind, J., Radhamani, J., Kalyani Srinivasan, Ananda Subhash, B., and Tyagi, R. K.
-      (2021).  PGRdup: Discover Probable Duplicates in Plant Genetic Resources Collections.
-      R package version 0.2.3.7,
+      Aravind, J., Radhamani, J., Kalyani Srinivasan, Ananda Subhash, B., and Tyagi, R. K.  (2022).  PGRdup: Discover Probable
+      Duplicates in Plant Genetic Resources Collections. R package version 0.2.3.7.9000,
       https://github.com/aravind-j/PGRdup,https://cran.r-project.org/package=PGRdup.
 
     A BibTeX entry for LaTeX users is
@@ -385,11 +381,11 @@ citation("PGRdup")
       @Manual{,
         title = {PGRdup: Discover Probable Duplicates in Plant Genetic Resources Collections},
         author = {J. Aravind and J. Radhamani and {Kalyani Srinivasan} and B. {Ananda Subhash} and Rishi Kumar Tyagi},
-        year = {2021},
-        note = {R package version 0.2.3.7},
+        year = {2022},
+        note = {R package version 0.2.3.7.9000},
         note = {https://github.com/aravind-j/PGRdup,},
         note = {https://cran.r-project.org/package=PGRdup},
       }
 
-    This free and open-source software implements academic research by the authors and
-    co-workers. If you use it, please support the project by citing the package.
+    This free and open-source software implements academic research by the authors and co-workers. If you use it, please
+    support the project by citing the package.

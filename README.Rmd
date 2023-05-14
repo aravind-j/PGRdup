@@ -11,9 +11,11 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r, out.width = '100%', echo = FALSE}
+```{r, out.width = '100%', echo = FALSE, eval = FALSE}
 knitr::include_graphics("https://raw.githubusercontent.com/aravind-j/PGRdup/master/inst/extdata/PGRdup.png")
 ```
+
+<img src="https://raw.githubusercontent.com/aravind-j/PGRdup/master/inst/extdata/PGRdup.png" align="center" alt="logo" width="750" height = "85" style = "border: solid white 10px;">
 
 
 ```{r,echo = FALSE, message = FALSE}
