@@ -1,5 +1,8 @@
 # PGRdup 0.2.3.8
 
+## OTHER NOTES:
+* Fixed non-ascii content and replaced `latin1` encoding with `utf-8`.
+
 # PGRdup 0.2.3.7
 
 ## UPDATED FUNCTIONS:
