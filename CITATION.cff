@@ -1,0 +1,81 @@
+# -----------------------------------------------------------
+# CITATION file created with {cffr} R package, v0.5.0
+# See also: https://docs.ropensci.org/cffr/
+# -----------------------------------------------------------
+ 
+cff-version: 1.2.0
+message: 'To cite package "PGRdup" in publications use:'
+type: software
+license:
+- GPL-2.0-only
+- GPL-3.0-only
+title: 'PGRdup: Discover Probable Duplicates in Plant Genetic Resources Collections'
+version: 0.2.3.8
+abstract: Provides functions to aid the identification of probable/possible duplicates
+  in Plant Genetic Resources (PGR) collections using 'passport databases' comprising
+  of information records of each constituent sample. These include methods for cleaning
+  the data, creation of a searchable Key Word in Context (KWIC) index of keywords
+  associated with sample records and the identification of nearly identical records
+  with similar information by fuzzy, phonetic and semantic matching of keywords.
+authors:
+- family-names: Aravind
+  given-names: J.
+  email: j.aravind@icar.gov.in
+  orcid: https://orcid.org/0000-0002-4791-442X
+- family-names: Radhamani
+  given-names: J.
+  email: jalli.radhamani@icar.gov.in
+- name: Kalyani Srinivasan
+  email: kalyani.srinivasan@icar.gov.in
+- family-names: Ananda Subhash
+  given-names: B.
+  email: anandasubhash@gmail.com
+- family-names: Tyagi
+  given-names: Rishi Kumar
+  email: rishi.tyagi@icar.gov.in
+preferred-citation:
+  type: manual
+  title: 'PGRdup: Discover Probable Duplicates in Plant Genetic Resources Collections'
+  authors:
+  - family-names: Aravind
+    given-names: J.
+    email: j.aravind@icar.gov.in
+    orcid: https://orcid.org/0000-0002-4791-442X
+  - family-names: Radhamani
+    given-names: J.
+    email: jalli.radhamani@icar.gov.in
+  - name: Kalyani Srinivasan
+    email: kalyani.srinivasan@icar.gov.in
+  - family-names: Ananda Subhash
+    given-names: B.
+    email: anandasubhash@gmail.com
+  - family-names: Tyagi
+    given-names: Rishi Kumar
+    email: rishi.tyagi@icar.gov.in
+  notes:
+  - R package version 0.2.3.8
+  - https://github.com/aravind-j/PGRdup,
+  - https://cran.r-project.org/package=PGRdup
+repository: https://CRAN.R-project.org/package=PGRdup
+repository-code: https://github.com/aravind-j/PGRdup
+url: https://cran.r-project.org/package=PGRdup
+contact:
+- family-names: Aravind
+  given-names: J.
+  email: j.aravind@icar.gov.in
+  orcid: https://orcid.org/0000-0002-4791-442X
+keywords:
+- double-metaphone
+- double-metaphone-algorithm
+- natural-language-processing
+- pgr
+- plant-genetic-resources
+- r
+- record-linkage
+identifiers:
+- type: url
+  value: https://doi.org/10.5281/zenodo.841963
+- type: url
+  value: https://aravind-j.github.io/PGRdup/
+- type: url
+  value: https://www.rdocumentation.org/packages/PGRdup

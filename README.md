@@ -1,7 +1,140 @@
 
+<script type="application/ld+json">
+      {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "type": "SoftwareSourceCode",
+      "author": [
+        {
+          "id": "https://orcid.org/0000-0002-4791-442X",
+          "type": "Person",
+          "email": "j.aravind@icar.gov.in",
+          "familyName": "Aravind",
+          "givenName": "J."
+        },
+        {
+          "type": "Person",
+          "email": "jalli.radhamani@icar.gov.in",
+          "familyName": "Radhamani",
+          "givenName": "J."
+        },
+        {
+          "type": "Organization",
+          "email": "kalyani.srinivasan@icar.gov.in",
+          "name": "Kalyani Srinivasan"
+        },
+        {
+          "type": "Person",
+          "email": "anandasubhash@gmail.com",
+          "familyName": "Ananda Subhash",
+          "givenName": "B."
+        },
+        {
+          "type": "Person",
+          "email": "rishi.tyagi@icar.gov.in",
+          "familyName": "Tyagi",
+          "givenName": [
+            "Rishi",
+            "Kumar"
+          ]
+        }
+      ],
+      "codeRepository": "https://github.com/aravind-j/PGRdup",
+      "contributor": [
+        {
+          "type": "Person",
+          "email": "maurice@hevanet.com",
+          "familyName": "Aubrey",
+          "givenName": "Maurice"
+        },
+        {
+          "type": "Person",
+          "email": "kevina@users.sourceforge.net",
+          "familyName": "Atkinson",
+          "givenName": "Kevin"
+        },
+        {
+          "type": "Person",
+          "familyName": "Philips",
+          "givenName": "Lawrence"
+        }
+      ],
+      "copyrightHolder": {
+        "type": "Organization",
+        "name": "ICAR-NBGPR"
+      },
+      "description": "Provides functions to aid the identification of probable/possible duplicates in Plant Genetic Resources (PGR) collections using 'passport databases' comprising of information records of each constituent sample. These include methods for cleaning the data, creation of a searchable Key Word in Context (KWIC) index of keywords associated with sample records and the identification of nearly identical records with similar information by fuzzy, phonetic and semantic matching of keywords.",
+      "license": "https://spdx.org/licenses/GPL-2.0",
+      "name": "PGRdup: Discover Probable Duplicates in Plant Genetic Resources Collections",
+      "programmingLanguage": {
+        "type": "ComputerLanguage",
+        "name": "R",
+        "url": "https://r-project.org"
+      },
+      "provider": {
+        "id": "https://cran.r-project.org",
+        "type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "runtimePlatform": "R Under development (unstable) (2023-04-28 r84338 ucrt)",
+      "version": "0.2.3.8"
+    },
+    {
+      "type": "SoftwareSourceCode",
+      "author": [
+        {
+          "id": "https://orcid.org/0000-0002-4791-442X",
+          "type": "Person",
+          "email": "j.aravind@icar.gov.in",
+          "familyName": "Aravind",
+          "givenName": "J."
+        },
+        {
+          "type": "Person",
+          "email": "jalli.radhamani@icar.gov.in",
+          "familyName": "Radhamani",
+          "givenName": "J."
+        },
+        {
+          "type": "Organization",
+          "email": "kalyani.srinivasan@icar.gov.in",
+          "name": [
+            "Kalyani",
+            "Srinivasan"
+          ]
+        },
+        {
+          "type": "Person",
+          "email": "anandasubhash@gmail.com",
+          "familyName": "Ananda Subhash",
+          "givenName": "B."
+        },
+        {
+          "type": "Person",
+          "email": "rishi.tyagi@icar.gov.in",
+          "familyName": "Tyagi",
+          "givenName": [
+            "Rishi",
+            "Kumar"
+          ]
+        }
+      ],
+      "description": [
+        "R package version 0.2.3.8",
+        "https://github.com/aravind-j/PGRdup,",
+        "https://cran.r-project.org/package=PGRdup"
+      ],
+      "name": "PGRdup: Discover Probable Duplicates in Plant Genetic Resources Collections"
+    }
+  ]
+}
+    </script>
+
 <img src="https://raw.githubusercontent.com/aravind-j/PGRdup/master/inst/extdata/PGRdup.png" align="center" alt="logo" width="750" height = "85" style = "border: solid white 10px;">
 
-###### Version : [0.2.3.7.9000](https://aravind-j.github.io/PGRdup/articles/Introduction.html#version-history); Copyright (C) 2014-2023: [ICAR-NBPGR](http://www.nbpgr.ernet.in/); License: [GPL-2\|GPL-3](https://www.r-project.org/Licenses/)
+###### Version : [0.2.3.8](https://aravind-j.github.io/PGRdup/articles/Introduction.html#version-history); Copyright (C) 2014-2023: [ICAR-NBPGR](http://www.nbpgr.ernet.in/); License: [GPL-2\|GPL-3](https://www.r-project.org/Licenses/)
 
 ##### *Aravind, J.<sup>1</sup>, Radhamani, J.<sup>1</sup>, Kalyani Srinivasan<sup>1</sup>, Ananda Subhash, B.<sup>2</sup>, and Tyagi, R. K.<sup>1</sup>*
 
@@ -19,14 +152,14 @@ v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org
 [![Dependencies](https://tinyverse.netlify.com/badge/PGRdup)](https://cran.r-project.org/package=PGRdup)
 [![rstudio mirror
 downloads](https://cranlogs.r-pkg.org/badges/grand-total/PGRdup?color=green)](https://CRAN.R-project.org/package=PGRdup)
-[![develVersion](https://img.shields.io/badge/devel%20version-0.2.3.7.9000-orange.svg)](https://github.com/aravind-j/PGRdup)
+[![develVersion](https://img.shields.io/badge/devel%20version-0.2.3.8-orange.svg)](https://github.com/aravind-j/PGRdup)
 [![Github Code
 Size](https://img.shields.io/github/languages/code-size/aravind-j/PGRdup.svg)](https://github.com/aravind-j/PGRdup)
 [![R-CMD-check](https://github.com/aravind-j/PGRdup/workflows/R-CMD-check/badge.svg)](https://github.com/aravind-j/PGRdup/actions)
 [![Project Status:
 Inactive](https://www.repostatus.org/badges/latest/inactive.svg)](https://www.repostatus.org/#inactive)
 [![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
-[![Last-changedate](https://img.shields.io/badge/last%20change-2023--05--14-yellowgreen.svg)](https://github.com/aravind-j/PGRdup)
+[![Last-changedate](https://img.shields.io/badge/last%20change-2023--05--19-yellowgreen.svg)](https://github.com/aravind-j/PGRdup)
 [![Rdoc](https://api.rdocumentation.org/badges/version/PGRdup)](https://rdocumentation.org/packages/PGRdup/)
 [![Zenodo
 DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.841963.svg)](https://doi.org/10.5281/zenodo.841963)
@@ -215,152 +348,31 @@ news(package='PGRdup')
 
 ## CRAN checks
 
-<table class="table table-striped table-hover" style="width: auto !important; ">
-<thead>
-<tr>
-<th style="text-align:left;">
-Flavour
-</th>
-<th style="text-align:left;">
-CRAN check
-</th>
-</tr>
-</thead>
-<tbody>
-<tr grouplength="6">
-<td colspan="2" style="border-bottom: 1px solid;">
-<strong>[![Linux](https://shields.io/badge/Linux--9cf?logo=Linux&style=social)](https://cran.r-project.org/web/checks/check_results_PGRdup.html)</strong>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;padding-left: 2em;" indentlevel="1">
-r-devel-linux-x86_64-debian-clang
-</td>
-<td style="text-align:left;">
-[![CRAN check -
-r-devel-linux-x86_64-debian-clang](https://cranchecks.info/badges/flavor/r-devel-linux-x86_64-debian-clang/PGRdup)](https://cran.r-project.org/web/checks/check_results_PGRdup.html)
-</td>
-</tr>
-<tr>
-<td style="text-align:left;padding-left: 2em;" indentlevel="1">
-r-devel-linux-x86_64-debian-gcc
-</td>
-<td style="text-align:left;">
-[![CRAN check -
-r-devel-linux-x86_64-debian-gcc](https://cranchecks.info/badges/flavor/r-devel-linux-x86_64-debian-gcc/PGRdup)](https://cran.r-project.org/web/checks/check_results_PGRdup.html)
-</td>
-</tr>
-<tr>
-<td style="text-align:left;padding-left: 2em;" indentlevel="1">
-r-devel-linux-x86_64-fedora-clang
-</td>
-<td style="text-align:left;">
-[![CRAN check -
-r-devel-linux-x86_64-fedora-clang](https://cranchecks.info/badges/flavor/r-devel-linux-x86_64-fedora-clang/PGRdup)](https://cran.r-project.org/web/checks/check_results_PGRdup.html)
-</td>
-</tr>
-<tr>
-<td style="text-align:left;padding-left: 2em;" indentlevel="1">
-r-devel-linux-x86_64-fedora-gcc
-</td>
-<td style="text-align:left;">
-[![CRAN check -
-r-devel-linux-x86_64-fedora-gcc](https://cranchecks.info/badges/flavor/r-devel-linux-x86_64-fedora-gcc/PGRdup)](https://cran.r-project.org/web/checks/check_results_PGRdup.html)
-</td>
-</tr>
-<tr>
-<td style="text-align:left;padding-left: 2em;" indentlevel="1">
-r-patched-linux-x86_64
-</td>
-<td style="text-align:left;">
-[![CRAN check -
-r-patched-linux-x86_64](https://cranchecks.info/badges/flavor/r-patched-linux-x86_64/PGRdup)](https://cran.r-project.org/web/checks/check_results_PGRdup.html)
-</td>
-</tr>
-<tr>
-<td style="text-align:left;padding-left: 2em;" indentlevel="1">
-r-release-linux-x86_64
-</td>
-<td style="text-align:left;">
-[![CRAN check -
-r-release-linux-x86_64](https://cranchecks.info/badges/flavor/r-release-linux-x86_64/PGRdup)](https://cran.r-project.org/web/checks/check_results_PGRdup.html)
-</td>
-</tr>
-<tr grouplength="3">
-<td colspan="2" style="border-bottom: 1px solid;">
-<strong>[![Windows](https://shields.io/badge/Windows--9cf?logo=Windows&style=social)](https://cran.r-project.org/web/checks/check_results_PGRdup.html)</strong>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;padding-left: 2em;" indentlevel="1">
-r-devel-windows-x86_64
-</td>
-<td style="text-align:left;">
-[![CRAN check -
-r-devel-windows-x86_64](https://cranchecks.info/badges/flavor/r-devel-windows-x86_64/PGRdup)](https://cran.r-project.org/web/checks/check_results_PGRdup.html)
-</td>
-</tr>
-<tr>
-<td style="text-align:left;padding-left: 2em;" indentlevel="1">
-r-release-windows-x86_64
-</td>
-<td style="text-align:left;">
-[![CRAN check -
-r-release-windows-x86_64](https://cranchecks.info/badges/flavor/r-release-windows-x86_64/PGRdup)](https://cran.r-project.org/web/checks/check_results_PGRdup.html)
-</td>
-</tr>
-<tr>
-<td style="text-align:left;padding-left: 2em;" indentlevel="1">
-r-oldrel-windows-x86_64
-</td>
-<td style="text-align:left;">
-[![CRAN check -
-r-oldrel-windows-x86_64](https://cranchecks.info/badges/flavor/r-oldrel-windows-x86_64/PGRdup)](https://cran.r-project.org/web/checks/check_results_PGRdup.html)
-</td>
-</tr>
-<tr grouplength="4">
-<td colspan="2" style="border-bottom: 1px solid;">
-<strong>[![MacOS](https://shields.io/badge/MacOS--9cf?logo=Apple&style=social)](https://cran.r-project.org/web/checks/check_results_PGRdup.html)</strong>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;padding-left: 2em;" indentlevel="1">
-r-release-macos-x86_64
-</td>
-<td style="text-align:left;">
-[![CRAN check -
-r-release-macos-x86_64](https://cranchecks.info/badges/flavor/r-release-macos-x86_64/PGRdup)](https://cran.r-project.org/web/checks/check_results_PGRdup.html)
-</td>
-</tr>
-<tr>
-<td style="text-align:left;padding-left: 2em;" indentlevel="1">
-r-oldrel-macos-x86_64
-</td>
-<td style="text-align:left;">
-[![CRAN check -
-r-oldrel-macos-x86_64](https://cranchecks.info/badges/flavor/r-oldrel-macos-x86_64/PGRdup)](https://cran.r-project.org/web/checks/check_results_PGRdup.html)
-</td>
-</tr>
-<tr>
-<td style="text-align:left;padding-left: 2em;" indentlevel="1">
-r-release-macos-arm64
-</td>
-<td style="text-align:left;">
-[![CRAN check -
-r-release-macos-arm64](https://cranchecks.info/badges/flavor/r-release-macos-arm64/PGRdup)](https://cran.r-project.org/web/checks/check_results_PGRdup.html)
-</td>
-</tr>
-<tr>
-<td style="text-align:left;padding-left: 2em;" indentlevel="1">
-r-oldrel-macos-arm64
-</td>
-<td style="text-align:left;">
-[![CRAN check -
-r-oldrel-macos-arm64](https://cranchecks.info/badges/flavor/r-oldrel-macos-arm64/PGRdup)](https://cran.r-project.org/web/checks/check_results_PGRdup.html)
-</td>
-</tr>
-</tbody>
-</table>
+[![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)
+
+|                                   |                                                                                                                                                                                                          |
+|:----------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| r-devel-linux-x86_64-debian-clang | [![CRAN check - r-devel-linux-x86_64-debian-clang](https://badges.cranchecks.info/flavor/r-devel-linux-x86_64-debian-clang/PGRdup.svg)](https://cran.r-project.org/web/checks/check_results_PGRdup.html) |
+| r-devel-linux-x86_64-debian-gcc   | [![CRAN check - r-devel-linux-x86_64-debian-gcc](https://badges.cranchecks.info/flavor/r-devel-linux-x86_64-debian-gcc/PGRdup.svg)](https://cran.r-project.org/web/checks/check_results_PGRdup.html)     |
+| r-devel-linux-x86_64-fedora-clang | [![CRAN check - r-devel-linux-x86_64-fedora-clang](https://badges.cranchecks.info/flavor/r-devel-linux-x86_64-fedora-clang/PGRdup.svg)](https://cran.r-project.org/web/checks/check_results_PGRdup.html) |
+| r-devel-linux-x86_64-fedora-gcc   | [![CRAN check - r-devel-linux-x86_64-fedora-gcc](https://badges.cranchecks.info/flavor/r-devel-linux-x86_64-fedora-gcc/PGRdup.svg)](https://cran.r-project.org/web/checks/check_results_PGRdup.html)     |
+| r-patched-linux-x86_64            | [![CRAN check - r-patched-linux-x86_64](https://badges.cranchecks.info/flavor/r-patched-linux-x86_64/PGRdup.svg)](https://cran.r-project.org/web/checks/check_results_PGRdup.html)                       |
+| r-release-linux-x86_64            | [![CRAN check - r-release-linux-x86_64](https://badges.cranchecks.info/flavor/r-release-linux-x86_64/PGRdup.svg)](https://cran.r-project.org/web/checks/check_results_PGRdup.html)                       |
+
+[![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)
+
+|                               |                                                                                                                                                                                                  |
+|:------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| r-devel-windows-ix86+x86_64   | [![CRAN check - r-devel-windows-ix86+x86_64](https://badges.cranchecks.info/flavor/r-devel-windows-ix86+x86_64/PGRdup.svg)](https://cran.r-project.org/web/checks/check_results_PGRdup.html)     |
+| r-release-windows-ix86+x86_64 | [![CRAN check - r-release-windows-ix86+x86_64](https://badges.cranchecks.info/flavor/r-release-windows-ix86+x86_64/PGRdup.svg)](https://cran.r-project.org/web/checks/check_results_PGRdup.html) |
+| r-oldrel-windows-ix86+x86_64  | [![CRAN check - r-oldrel-windows-ix86+x86_64](https://badges.cranchecks.info/flavor/r-oldrel-windows-ix86+x86_64/PGRdup.svg)](https://cran.r-project.org/web/checks/check_results_PGRdup.html)   |
+
+[![MacOS](https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=apple&logoColor=white)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)
+
+|                        |                                                                                                                                                                                    |
+|:-----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| r-release-macos-x86_64 | [![CRAN check - r-release-macos-x86_64](https://badges.cranchecks.info/flavor/r-release-macos-x86_64/PGRdup.svg)](https://cran.r-project.org/web/checks/check_results_PGRdup.html) |
+| r-oldrel-macos-x86_64  | [![CRAN check - r-oldrel-macos-x86_64](https://badges.cranchecks.info/flavor/r-oldrel-macos-x86_64/PGRdup.svg)](https://cran.r-project.org/web/checks/check_results_PGRdup.html)   |
 
 ## Citing `PGRdup`
 
@@ -372,8 +384,8 @@ citation("PGRdup")
 
     To cite the R package 'PGRdup' in publications use:
 
-      Aravind, J., Radhamani, J., Kalyani Srinivasan, Ananda Subhash, B., and Tyagi, R. K.  (2022).  PGRdup: Discover Probable
-      Duplicates in Plant Genetic Resources Collections. R package version 0.2.3.7.9000,
+      Aravind, J., Radhamani, J., Kalyani Srinivasan, Ananda Subhash, B., and Tyagi, R. K.  (2021).  PGRdup: Discover
+      Probable Duplicates in Plant Genetic Resources Collections. R package version 0.2.3.7,
       https://github.com/aravind-j/PGRdup,https://cran.r-project.org/package=PGRdup.
 
     A BibTeX entry for LaTeX users is
@@ -381,11 +393,11 @@ citation("PGRdup")
       @Manual{,
         title = {PGRdup: Discover Probable Duplicates in Plant Genetic Resources Collections},
         author = {J. Aravind and J. Radhamani and {Kalyani Srinivasan} and B. {Ananda Subhash} and Rishi Kumar Tyagi},
-        year = {2022},
-        note = {R package version 0.2.3.7.9000},
+        year = {2021},
+        note = {R package version 0.2.3.7},
         note = {https://github.com/aravind-j/PGRdup,},
         note = {https://cran.r-project.org/package=PGRdup},
       }
 
-    This free and open-source software implements academic research by the authors and co-workers. If you use it, please
-    support the project by citing the package.
+    This free and open-source software implements academic research by the authors and co-workers. If you use it,
+    please support the project by citing the package.
