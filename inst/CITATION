@@ -1,30 +1,26 @@
 citHeader("To cite the R package 'PGRdup' in publications use:")
 
-if(!exists("meta") || is.null(meta)) meta <- packageDescription("PGRdup")
-year <- sub(".*(2[[:digit:]]{3})-.*", "\\1", meta$Date)
-if (!length(year)) {
- year <- format(packageDate("PGRdup"), "%Y")
-}
-vers <- paste("R package version", meta$Version)
+year <- sub("-.*", "", meta$Date)
+vers <- sprintf("R package version %s", meta$Version)
 
-citEntry(entry  = "Manual",
+bibentry(bibtype  = "Manual",
          title  = "PGRdup: Discover Probable Duplicates in Plant Genetic Resources Collections",
-         author = personList(person(given = "J.", family = "Aravind",
-                                    email = "j.aravind@icar.gov.in",
-                                    role = c("aut", "cre"),
-									                  comment = c(ORCID = "0000-0002-4791-442X")),
-                             person(given = "J.", family = "Radhamani",
-                                    email = "jalli.radhamani@icar.gov.in",
-									                  role = "aut"),
-                             person(given = c("Kalyani", "Srinivasan"),
-                                    email = "kalyani.srinivasan@icar.gov.in",
-									                  role = "aut"),
-                             person(given = "B.", family = c("Ananda Subhash"),
-                                    email = "anandasubhash@gmail.com",
-									                  role = "aut"),
-                             person(given = c("Rishi", "Kumar"), family = "Tyagi",
-                                    email = "rishi.tyagi@icar.gov.in",
-									                  role = "aut")),
+         author = c(person(given = "J.", family = "Aravind",
+                           email = "j.aravind@icar.gov.in",
+                           role = c("aut", "cre"),
+									         comment = c(ORCID = "0000-0002-4791-442X")),
+                    person(given = "J.", family = "Radhamani",
+                           email = "jalli.radhamani@icar.gov.in",
+									         role = "aut"),
+                    person(given = c("Kalyani", "Srinivasan"),
+                           email = "kalyani.srinivasan@icar.gov.in",
+									         role = "aut"),
+                    person(given = "B.", family = c("Ananda Subhash"),
+                           email = "anandasubhash@gmail.com",
+									         role = "aut"),
+                    person(given = c("Rishi", "Kumar"), family = "Tyagi",
+                           email = "rishi.tyagi@icar.gov.in",
+									         role = "aut")),
          year = year,
          textVersion = paste(
            "Aravind, J., Radhamani, J., Kalyani Srinivasan, Ananda Subhash, B., and Tyagi, R. K.  (",
