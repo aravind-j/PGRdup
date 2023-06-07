@@ -134,7 +134,7 @@
 
 <img src="https://raw.githubusercontent.com/aravind-j/PGRdup/master/inst/extdata/PGRdup.png" align="center" alt="logo" width="750" height = "85" style = "border: solid white 10px;">
 
-###### Version : [0.2.3.8](https://aravind-j.github.io/PGRdup/articles/Introduction.html#version-history); Copyright (C) 2014-2023: [ICAR-NBPGR](http://www.nbpgr.ernet.in/); License: [GPL-2\|GPL-3](https://www.r-project.org/Licenses/)
+###### Version : [0.2.3.9](https://aravind-j.github.io/PGRdup/articles/Introduction.html#version-history); Copyright (C) 2014-2023: [ICAR-NBPGR](http://www.nbpgr.ernet.in/); License: [GPL-2\|GPL-3](https://www.r-project.org/Licenses/)
 
 ##### *Aravind, J.<sup>1</sup>, Radhamani, J.<sup>1</sup>, Kalyani Srinivasan<sup>1</sup>, Ananda Subhash, B.<sup>2</sup>, and Tyagi, R. K.<sup>1</sup>*
 
@@ -152,7 +152,7 @@ v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org
 [![Dependencies](https://tinyverse.netlify.com/badge/PGRdup)](https://cran.r-project.org/package=PGRdup)
 [![rstudio mirror
 downloads](https://cranlogs.r-pkg.org/badges/grand-total/PGRdup?color=green)](https://CRAN.R-project.org/package=PGRdup)
-[![develVersion](https://img.shields.io/badge/devel%20version-0.2.3.8-orange.svg)](https://github.com/aravind-j/PGRdup)
+[![develVersion](https://img.shields.io/badge/devel%20version-0.2.3.9-orange.svg)](https://github.com/aravind-j/PGRdup)
 [![Github Code
 Size](https://img.shields.io/github/languages/code-size/aravind-j/PGRdup.svg)](https://github.com/aravind-j/PGRdup)
 [![R-CMD-check](https://github.com/aravind-j/PGRdup/workflows/R-CMD-check/badge.svg)](https://github.com/aravind-j/PGRdup/actions)
@@ -385,7 +385,7 @@ citation("PGRdup")
     To cite the R package 'PGRdup' in publications use:
 
       Aravind, J., Radhamani, J., Kalyani Srinivasan, Ananda Subhash, B., and Tyagi, R. K.  ().  PGRdup: Discover Probable
-      Duplicates in Plant Genetic Resources Collections. R package version 0.2.3.8,
+      Duplicates in Plant Genetic Resources Collections. R package version 0.2.3.9,
       https://github.com/aravind-j/PGRdup,https://cran.r-project.org/package=PGRdup.
 
     A BibTeX entry for LaTeX users is
@@ -393,7 +393,7 @@ citation("PGRdup")
       @Manual{,
         title = {PGRdup: Discover Probable Duplicates in Plant Genetic Resources Collections},
         author = {J. Aravind and J. Radhamani and {Kalyani Srinivasan} and B. {Ananda Subhash} and Rishi Kumar Tyagi},
-        note = {R package version 0.2.3.8},
+        note = {R package version 0.2.3.9},
         note = {https://github.com/aravind-j/PGRdup,},
         note = {https://cran.r-project.org/package=PGRdup},
       }
