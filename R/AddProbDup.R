@@ -146,7 +146,7 @@ AddProbDup <- function(pdup, db, addto = c("I", "II"), max.count = 30) {
       pdup[[i]] <- as.data.table(pdup[[i]])
       pdup[[i]] <- subset(pdup[[i]], COUNT <= max.count)
       pdup[[i]][, TYPE := NULL]
-      pdup[[i]] <- pdup[[i]][, list(PRIM_ID = unlist(strsplit(ID, ", " ))),
+      pdup[[i]] <- pdup[[i]][, list(PRIM_ID = unlist(strsplit(ID, ", ", fixed = TRUE))),
                              by = list(SET_NO, IDKW, ID)]
       if (method == "b" | method == "c") {
         if (addto == "I") {
@@ -161,9 +161,9 @@ AddProbDup <- function(pdup, db, addto = c("I", "II"), max.count = 30) {
       # Aggregate according to ID
       pdup[[i]] <- pdup[[i]][, list(SET_NO = paste0(sort(unique(SET_NO)),
                                                     collapse = ", "),
-                                    IDKW = paste0(sort(unique(unlist(strsplit(IDKW, ", ")))),
+                                    IDKW = paste0(sort(unique(unlist(strsplit(IDKW, ", ", fixed = TRUE)))),
                                                   collapse = ", "),
-                                    ID = paste0(sort(unique(unlist(strsplit(ID, ", ")))),
+                                    ID = paste0(sort(unique(unlist(strsplit(ID, ", ", fixed = TRUE)))),
                                                 collapse = ", ")), by = PRIM_ID]
       setkey(pdup[[i]], PRIM_ID)
       setcolorder(pdup[[i]], c("PRIM_ID", "SET_NO", "ID", "IDKW"))

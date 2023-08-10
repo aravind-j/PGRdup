@@ -372,9 +372,9 @@ ProbDup <- function (kwic1, kwic2 = NULL, method = c("a", "b", "c"),
   kwicQ[, IDKW := paste(PRIM_ID, KEYWORD, sep = ":")]
   if (method == "a" | method == "b") {
     kwicQ <- kwicQ[, list(PRIM_ID = paste0(setdiff(sort(unique(unlist(strsplit(get("PRIM_ID"),
-                                                                               split = ", ")))), ""), collapse = ", "),
+                                                                               split = ", ", fixed = TRUE)))), ""), collapse = ", "),
                           IDKW = paste0(setdiff(sort(unique(unlist(strsplit(get("IDKW"),
-                                                                            split = ", ")))), ""), collapse = ", ")),
+                                                                            split = ", ", fixed = TRUE)))), ""), collapse = ", ")),
                    by = "KEYWORD"]
     # Id the chunks in kwic1
     M <- nrow(kwicQ)
@@ -398,9 +398,9 @@ ProbDup <- function (kwic1, kwic2 = NULL, method = c("a", "b", "c"),
     kwicS[, IDKW := paste(PRIM_ID, KEYWORD, sep = ":")]
     if (method == "b") {
       kwicS <- kwicS[, list(PRIM_ID = paste0(setdiff(sort(unique(unlist(strsplit(get("PRIM_ID"),
-                                                                                 split = ", ")))), ""), collapse = ", "),
+                                                                                 split = ", ", fixed = TRUE)))), ""), collapse = ", "),
                             IDKW = paste0(setdiff(sort(unique(unlist(strsplit(get("IDKW"),
-                                                                              split = ", ")))), ""), collapse = ", ")),
+                                                                              split = ", ", fixed = TRUE)))), ""), collapse = ", ")),
                      by = "KEYWORD"]
     }
     N <- nrow(kwicS)
@@ -410,9 +410,9 @@ ProbDup <- function (kwic1, kwic2 = NULL, method = c("a", "b", "c"),
     if (method == "c") {
       kwicQ <- as.data.table(rbind(kwicQ, kwicS))
       kwicQ <- kwicQ[, list(PRIM_ID = paste0(setdiff(sort(unique(unlist(strsplit(get("PRIM_ID"),
-                                                                                 split = ", ")))), ""), collapse = ", "),
+                                                                                 split = ", ", fixed = TRUE)))), ""), collapse = ", "),
                             IDKW = paste0(setdiff(sort(unique(unlist(strsplit(get("IDKW"),
-                                                                              split = ", ")))), ""), collapse = ", ")), by = "KEYWORD"]
+                                                                              split = ", ", fixed = TRUE)))), ""), collapse = ", ")), by = "KEYWORD"]
       M <- nrow(kwicQ)
       if (M > chunksize) {
         chunksize <- chunksize
@@ -642,9 +642,9 @@ FuzzyDup <- function(kwic1, kwic2, max.dist, useBytes,
   rm(ind_exactQ2)
   if ("FuzzydupIDKW2" %in% colnames(kwic1)) {
     kwic1[, FuzzydupIDKW := toString(unique(c(strsplit(FuzzydupIDKW,
-                                                       split = ", ")[[1]],
+                                                       split = ", ", fixed = TRUE)[[1]],
                                               strsplit(FuzzydupIDKW2,
-                                                       split = ", ")[[1]]))),
+                                                       split = ", ", fixed = TRUE)[[1]]))),
           by = IDKW]
     kwic1[, FuzzydupIDKW2 := NULL]
   }
@@ -789,7 +789,7 @@ SemanticDup <- function(kwic1, kwic2, syn, useBytes, method) {
   kwic1 <- dupsets(kwic1, "S", method = method)
   # Remove synsets with single/unique members
   kwic1 <- kwic1[!unlist(lapply(strsplit( gsub("*?\\[\\S+:", "", kwic1$IDKW),
-                                          split = ", "), function(x) length(unique(x)))) == 1, ]
+                                          split = ", ", fixed = TRUE), function(x) length(unique(x)))) == 1, ]
   return(kwic1)
 }
 
@@ -811,11 +811,11 @@ dupsets <- function(kwicout, type, method) {
       kwicout[, Ndup := NULL]
     }
     # Merge by PRIM_ID, then by ID, then add TYPE
-    kwicout <- kwicout[, list(ID = paste0(setdiff(sort(unique(unlist(strsplit(get(names(kwicout)[3]), split = ", ")))), ""),
+    kwicout <- kwicout[, list(ID = paste0(setdiff(sort(unique(unlist(strsplit(get(names(kwicout)[3]), split = ", ", fixed = TRUE)))), ""),
                                           collapse = ", "),
-                              IDKW = paste0(setdiff(sort(unique(unlist(strsplit(get(names(kwicout)[2]), split = ", ")))), ""),
+                              IDKW = paste0(setdiff(sort(unique(unlist(strsplit(get(names(kwicout)[2]), split = ", ", fixed = TRUE)))), ""),
                                             collapse = ", ")),
-                       by = "PRIM_ID"][, list(IDKW = paste0(sort(unique(unlist(strsplit(IDKW, split = ", ")))),
+                       by = "PRIM_ID"][, list(IDKW = paste0(sort(unique(unlist(strsplit(IDKW, split = ", ", fixed = TRUE)))),
                                                             collapse = ", "),
                                                      TYPE = type), by = "ID"]
     setkey(kwicout, NULL)
