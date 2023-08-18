@@ -8,13 +8,13 @@
   "codeRepository": "https://github.com/aravind-j/PGRdup",
   "issueTracker": "https://github.com/aravind-j/PGRdup/issues",
   "license": "https://spdx.org/licenses/GPL-2.0",
-  "version": "0.2.3.8",
+  "version": "0.2.3.9",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R Under development (unstable) (2023-04-28 r84338 ucrt)",
+  "runtimePlatform": "R Under development (unstable) (2023-08-09 r84924 ucrt)",
   "provider": {
     "@id": "https://cran.r-project.org",
     "@type": "Organization",
@@ -300,7 +300,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "1215.379KB",
+  "fileSize": "1161.156KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
@@ -337,7 +337,7 @@
         }
       ],
       "name": "PGRdup: Discover Probable Duplicates in Plant Genetic Resources Collections",
-      "description": ["R package version 0.2.3.8", "https://github.com/aravind-j/PGRdup,", "https://cran.r-project.org/package=PGRdup"]
+      "description": "R package version 0.2.3.9 https://github.com/aravind-j/PGRdup, https://cran.r-project.org/package=PGRdup"
     }
   ],
   "readme": "https://github.com/aravind-j/PGRdup/blob/master/README.md",

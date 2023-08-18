@@ -159,7 +159,7 @@ Size](https://img.shields.io/github/languages/code-size/aravind-j/PGRdup.svg)](h
 [![Project Status:
 Inactive](https://www.repostatus.org/badges/latest/inactive.svg)](https://www.repostatus.org/#inactive)
 [![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
-[![Last-changedate](https://img.shields.io/badge/last%20change-2023--06--08-yellowgreen.svg)](https://github.com/aravind-j/PGRdup)
+[![Last-changedate](https://img.shields.io/badge/last%20change-2023--08--18-yellowgreen.svg)](https://github.com/aravind-j/PGRdup)
 [![Rdoc](https://api.rdocumentation.org/badges/version/PGRdup)](https://rdocumentation.org/packages/PGRdup/)
 [![Zenodo
 DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.841963.svg)](https://doi.org/10.5281/zenodo.841963)
@@ -361,11 +361,11 @@ news(package='PGRdup')
 
 [![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)
 
-|                               |                                                                                                                                                                                                  |
-|:------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| r-devel-windows-ix86+x86_64   | [![CRAN check - r-devel-windows-ix86+x86_64](https://badges.cranchecks.info/flavor/r-devel-windows-ix86+x86_64/PGRdup.svg)](https://cran.r-project.org/web/checks/check_results_PGRdup.html)     |
-| r-release-windows-ix86+x86_64 | [![CRAN check - r-release-windows-ix86+x86_64](https://badges.cranchecks.info/flavor/r-release-windows-ix86+x86_64/PGRdup.svg)](https://cran.r-project.org/web/checks/check_results_PGRdup.html) |
-| r-oldrel-windows-ix86+x86_64  | [![CRAN check - r-oldrel-windows-ix86+x86_64](https://badges.cranchecks.info/flavor/r-oldrel-windows-ix86+x86_64/PGRdup.svg)](https://cran.r-project.org/web/checks/check_results_PGRdup.html)   |
+|                          |                                                                                                                                                                                        |
+|:-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| r-devel-windows-x86_64   | [![CRAN check - r-devel-windows-x86_64](https://badges.cranchecks.info/flavor/r-devel-windows-x86_64/PGRdup.svg)](https://cran.r-project.org/web/checks/check_results_PGRdup.html)     |
+| r-release-windows-x86_64 | [![CRAN check - r-release-windows-x86_64](https://badges.cranchecks.info/flavor/r-release-windows-x86_64/PGRdup.svg)](https://cran.r-project.org/web/checks/check_results_PGRdup.html) |
+| r-oldrel-windows-x86_64  | [![CRAN check - r-oldrel-windows-x86_64](https://badges.cranchecks.info/flavor/r-oldrel-windows-x86_64/PGRdup.svg)](https://cran.r-project.org/web/checks/check_results_PGRdup.html)   |
 
 [![MacOS](https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=apple&logoColor=white)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)
 
@@ -384,19 +384,16 @@ citation("PGRdup")
 
     To cite the R package 'PGRdup' in publications use:
 
-      Aravind, J., Radhamani, J., Kalyani Srinivasan, Ananda Subhash, B., and Tyagi, R. K.  ().  PGRdup: Discover Probable
-      Duplicates in Plant Genetic Resources Collections. R package version 0.2.3.9,
-      https://github.com/aravind-j/PGRdup,https://cran.r-project.org/package=PGRdup.
+      Aravind, J., Radhamani, J., Kalyani Srinivasan, Ananda Subhash, B., and Tyagi, R. K.  ().  PGRdup: Discover Probable Duplicates in Plant
+      Genetic Resources Collections. R package version 0.2.3.9, https://github.com/aravind-j/PGRdup,https://cran.r-project.org/package=PGRdup.
 
     A BibTeX entry for LaTeX users is
 
       @Manual{,
         title = {PGRdup: Discover Probable Duplicates in Plant Genetic Resources Collections},
         author = {J. Aravind and J. Radhamani and {Kalyani Srinivasan} and B. {Ananda Subhash} and Rishi Kumar Tyagi},
-        note = {R package version 0.2.3.9},
-        note = {https://github.com/aravind-j/PGRdup,},
-        note = {https://cran.r-project.org/package=PGRdup},
+        note = {R package version 0.2.3.9 https://github.com/aravind-j/PGRdup, https://cran.r-project.org/package=PGRdup},
       }
 
-    This free and open-source software implements academic research by the authors and co-workers. If you use it, please
-    support the project by citing the package.
+    This free and open-source software implements academic research by the authors and co-workers. If you use it, please support the project
+    by citing the package.

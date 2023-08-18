@@ -10,7 +10,7 @@ license:
 - GPL-2.0-only
 - GPL-3.0-only
 title: 'PGRdup: Discover Probable Duplicates in Plant Genetic Resources Collections'
-version: 0.2.3.8
+version: 0.2.3.9
 abstract: Provides functions to aid the identification of probable/possible duplicates
   in Plant Genetic Resources (PGR) collections using 'passport databases' comprising
   of information records of each constituent sample. These include methods for cleaning
@@ -52,10 +52,7 @@ preferred-citation:
   - family-names: Tyagi
     given-names: Rishi Kumar
     email: rishi.tyagi@icar.gov.in
-  notes:
-  - R package version 0.2.3.8
-  - https://github.com/aravind-j/PGRdup,
-  - https://cran.r-project.org/package=PGRdup
+  notes: R package version 0.2.3.9 https://github.com/aravind-j/PGRdup, https://cran.r-project.org/package=PGRdup
 repository: https://CRAN.R-project.org/package=PGRdup
 repository-code: https://github.com/aravind-j/PGRdup
 url: https://cran.r-project.org/package=PGRdup

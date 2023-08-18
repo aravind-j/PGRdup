@@ -1,5 +1,8 @@
 # PGRdup 0.2.3.9
 
+## OTHER NOTES: 
+* Fixed `CITATION`.
+
 # PGRdup 0.2.3.8
 
 ## OTHER NOTES:
