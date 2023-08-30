@@ -39,6 +39,16 @@ For large number of exceptions and/or large data.frame computation of
 keyword counts may take some time.
 }
 \examples{
+
+\dontshow{
+threads_dt <- data.table::getDTthreads()
+threads_OMP <- Sys.getenv("OMP_THREAD_LIMIT")
+data.table::setDTthreads(2)
+
+data.table::setDTthreads(2)
+Sys.setenv(`OMP_THREAD_LIMIT` = 2)
+}
+
 # Load PGR passport database
 GN <- GN1000
 
@@ -60,6 +70,12 @@ GNKWCouts <- KWCounts(GN, GNfields, exep)
 bp <- barplot(table(GNKWCouts$COUNT),
               xlab = "Word count", ylab = "Frequency", col = "#CD5555")
 text(bp, 0, table(GNKWCouts$COUNT),cex=1,pos=3)
+
+\dontshow{
+data.table::setDTthreads(threads_dt)
+Sys.setenv(`OMP_THREAD_LIMIT` = threads_OMP)
+}
+
 }
 \seealso{
 \code{\link[stringi]{stri_count}}

@@ -42,6 +42,16 @@
 #'   phonetic and semantic probable duplicate sets according to the instructions
 #'   specified under clerical review.
 #' @examples
+#' 
+#' \dontshow{
+#' threads_dt <- data.table::getDTthreads()
+#' threads_OMP <- Sys.getenv("OMP_THREAD_LIMIT")
+#' data.table::setDTthreads(2)
+#' 
+#' data.table::setDTthreads(2)
+#' Sys.setenv(`OMP_THREAD_LIMIT` = 2)
+#' }
+#' 
 #' \dontrun{
 #'
 #' # Load PGR passport database
@@ -107,6 +117,12 @@
 #' lapply(GNdup2, nrow)
 #' 
 #' }
+#' 
+#' \dontshow{
+#' data.table::setDTthreads(threads_dt)
+#' Sys.setenv(`OMP_THREAD_LIMIT` = threads_OMP)
+#' }
+#' 
 #' @seealso \code{\link[PGRdup]{ProbDup}}, \code{\link[PGRdup]{ReviewProbDup}}
 #' @import data.table
 #' @importFrom stringi stri_count_fixed

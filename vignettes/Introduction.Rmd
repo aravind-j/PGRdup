@@ -49,6 +49,15 @@ out_type <- ifelse(identical (out_type, vector(mode = "logical", length = 0)),
                    "latex", out_type)
 ```
 
+```{r, echo=FALSE}
+# Restrict threads for avoid elapsed threshold error in CRAN check
+threads_dt <- data.table::getDTthreads()
+threads_OMP <- Sys.getenv("OMP_THREAD_LIMIT")
+
+data.table::setDTthreads(2)
+Sys.setenv(`OMP_THREAD_LIMIT` = 2)
+```
+
 ```{r, results='asis', echo=FALSE}
 switch(out_type,
     html = {cat("<p>1. ICAR-National Bureau of Plant Genetic Resources, New Delhi, India.</p>
@@ -1283,3 +1292,9 @@ sessionInfo()
 ```
 
 ## References
+
+```{r, echo=FALSE}
+data.table::setDTthreads(threads_dt)
+Sys.setenv(`OMP_THREAD_LIMIT` = threads_OMP)
+```
+

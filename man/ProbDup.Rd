@@ -191,6 +191,16 @@ As the number of keywords in the KWIC indexes increases, the memory
   function, which is made use of here for string matching.
 }
 \examples{
+
+\dontshow{
+threads_dt <- data.table::getDTthreads()
+threads_OMP <- Sys.getenv("OMP_THREAD_LIMIT")
+data.table::setDTthreads(2)
+
+data.table::setDTthreads(2)
+Sys.setenv(`OMP_THREAD_LIMIT` = 2)
+}
+
 \dontrun{
 
 # Method "a"
@@ -294,6 +304,12 @@ GNdupc <- ProbDup(kwic1 = GN1KWIC, kwic2 = GN2KWIC, method = "c",
 GNdupc
 
 }
+
+\dontshow{
+data.table::setDTthreads(threads_dt)
+Sys.setenv(`OMP_THREAD_LIMIT` = threads_OMP)
+}
+
 }
 \references{
 van der Loo, M. P. J. 2014. "The Stringdist Package for

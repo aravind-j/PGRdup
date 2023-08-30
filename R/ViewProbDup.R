@@ -79,6 +79,16 @@
 #'   grouped together using \code{\link[gridExtra]{gridExtra-package}}.
 #'   
 #' @examples
+#' 
+#' \dontshow{
+#' threads_dt <- data.table::getDTthreads()
+#' threads_OMP <- Sys.getenv("OMP_THREAD_LIMIT")
+#' data.table::setDTthreads(2)
+#' 
+#' data.table::setDTthreads(2)
+#' Sys.setenv(`OMP_THREAD_LIMIT` = 2)
+#' }
+#' 
 #' \dontrun{
 #' 
 #' # Method "b and c"
@@ -146,7 +156,13 @@
 #'library(gridExtra)                                                    
 #'grid.arrange(GNdupcView$SummaryGrob)                          
 #' 
-#' }       
+#' }   
+#' 
+#' \dontshow{
+#' data.table::setDTthreads(threads_dt)
+#' Sys.setenv(`OMP_THREAD_LIMIT` = threads_OMP)
+#' }
+#'     
 #' @seealso \code{\link[PGRdup]{ProbDup}}, \code{\link[PGRdup]{DisProbDup}}, 
 #'   \code{\link[PGRdup]{DataClean}}, \code{\link[ggplot2]{ggplot}}, 
 #'   \code{\link[gridExtra]{gridExtra-package}}

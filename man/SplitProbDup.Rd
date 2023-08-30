@@ -22,6 +22,16 @@ A list with the the divided objects of class \code{ProbDup}
 basis of set counts.
 }
 \examples{
+
+\dontshow{
+threads_dt <- data.table::getDTthreads()
+threads_OMP <- Sys.getenv("OMP_THREAD_LIMIT")
+data.table::setDTthreads(2)
+
+data.table::setDTthreads(2)
+Sys.setenv(`OMP_THREAD_LIMIT` = 2)
+}
+
 \dontrun{
 # Load PGR passport database
 GN <- GN1000
@@ -64,6 +74,12 @@ GNdup <- ProbDup(kwic1 = GNKWIC, method = "a", excep = exep, fuzzy = TRUE,
 GNdupSplit <- SplitProbDup(GNdup, splitat = c(10, 10, 10))
 
 }
+
+\dontshow{
+data.table::setDTthreads(threads_dt)
+Sys.setenv(`OMP_THREAD_LIMIT` = threads_OMP)
+}
+
 }
 \seealso{
 \code{\link[PGRdup]{ProbDup}}, \code{\link[PGRdup]{MergeProbDup}}

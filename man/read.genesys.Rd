@@ -41,11 +41,27 @@ The argument \code{readme} can be used to print the readme file in the
 archive to console, if required.
 }
 \examples{
+
+\dontshow{
+threads_dt <- data.table::getDTthreads()
+threads_OMP <- Sys.getenv("OMP_THREAD_LIMIT")
+data.table::setDTthreads(2)
+
+data.table::setDTthreads(2)
+Sys.setenv(`OMP_THREAD_LIMIT` = 2)
+}
+
 \dontrun{
 # Import the DwC-Germplasm zip archive "genesys-accessions-filtered.zip"
 PGRgenesys <- read.genesys("genesys-accessions-filtered.zip",
                            scrub.names.space = TRUE, readme = TRUE)
 }
+
+\dontshow{
+data.table::setDTthreads(threads_dt)
+Sys.setenv(`OMP_THREAD_LIMIT` = threads_OMP)
+}
+
 }
 \seealso{
 \code{\link[data.table]{data.table}}

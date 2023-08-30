@@ -37,6 +37,16 @@
 #'   retrieved columns(fields) the prefix \code{K*} indicates the KWIC index of 
 #'   origin.
 #' @examples
+#' 
+#' \dontshow{
+#' threads_dt <- data.table::getDTthreads()
+#' threads_OMP <- Sys.getenv("OMP_THREAD_LIMIT")
+#' data.table::setDTthreads(2)
+#' 
+#' data.table::setDTthreads(2)
+#' Sys.setenv(`OMP_THREAD_LIMIT` = 2)
+#' }
+#' 
 #' \dontrun{
 #' 
 #' #' # Load PGR passport database
@@ -80,6 +90,12 @@
 #' GNdupParsed <- ParseProbDup(GNdup)
 #' 
 #' }
+#' 
+#' \dontshow{
+#' data.table::setDTthreads(threads_dt)
+#' Sys.setenv(`OMP_THREAD_LIMIT` = threads_OMP)
+#' }
+#' 
 #' @seealso 
 #'   \code{\link[PGRdup]{ProbDup}},
 #' @import data.table

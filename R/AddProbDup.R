@@ -44,6 +44,16 @@
 #' @return A data frame of the PGR passport database with the probable duplicate
 #'   sets fields added.
 #' @examples
+#' 
+#' \dontshow{
+#' threads_dt <- data.table::getDTthreads()
+#' threads_OMP <- Sys.getenv("OMP_THREAD_LIMIT")
+#' data.table::setDTthreads(2)
+#' 
+#' data.table::setDTthreads(2)
+#' Sys.setenv(`OMP_THREAD_LIMIT` = 2)
+#' }
+#' 
 #' \dontrun{
 #' 
 #' #' # Load PGR passport database
@@ -87,6 +97,12 @@
 #' GNwithdup <-  AddProbDup(pdup = GNdup, db = GN1000, addto = "I")                  
 #' 
 #' }
+#' 
+#' \dontshow{
+#' data.table::setDTthreads(threads_dt)
+#' Sys.setenv(`OMP_THREAD_LIMIT` = threads_OMP)
+#' }
+#' 
 #' @seealso \code{\link[PGRdup]{DataClean}}, \code{\link[PGRdup]{KWIC}},
 #'   \code{\link[PGRdup]{ProbDup}}
 #' @note When any primary ID/key records in the fuzzy, phonetic or semantic 

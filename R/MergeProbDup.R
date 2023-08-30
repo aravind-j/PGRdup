@@ -26,6 +26,16 @@
 #'   and semantic probable duplicate sets.
 #' @seealso \code{\link[PGRdup]{ProbDup}}, \code{\link[PGRdup]{SplitProbDup}}
 #' @examples
+#' 
+#' \dontshow{
+#' threads_dt <- data.table::getDTthreads()
+#' threads_OMP <- Sys.getenv("OMP_THREAD_LIMIT")
+#' data.table::setDTthreads(2)
+#' 
+#' data.table::setDTthreads(2)
+#' Sys.setenv(`OMP_THREAD_LIMIT` = 2)
+#' }
+#' 
 #' \dontrun{
 #' #' # Load PGR passport database
 #' GN <- GN1000
@@ -71,6 +81,12 @@
 #' GNdupMerged <- MergeProbDup(GNdupSplit[[1]], GNdupSplit[[3]])
 #' 
 #' }
+#' 
+#' \dontshow{
+#' data.table::setDTthreads(threads_dt)
+#' Sys.setenv(`OMP_THREAD_LIMIT` = threads_OMP)
+#' }
+#' 
 #' @import data.table
 #' @importFrom methods is
 #' @export

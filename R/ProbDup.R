@@ -152,6 +152,16 @@
 #'   \url{https://journal.r-project.org/archive/2014/RJ-2014-011/index.html}.
 #' @encoding UTF-8
 #' @examples
+#' 
+#' \dontshow{
+#' threads_dt <- data.table::getDTthreads()
+#' threads_OMP <- Sys.getenv("OMP_THREAD_LIMIT")
+#' data.table::setDTthreads(2)
+#' 
+#' data.table::setDTthreads(2)
+#' Sys.setenv(`OMP_THREAD_LIMIT` = 2)
+#' }
+#' 
 #' \dontrun{
 #'
 #' # Method "a"
@@ -255,6 +265,12 @@
 #' GNdupc
 #'
 #' }
+#' 
+#' \dontshow{
+#' data.table::setDTthreads(threads_dt)
+#' Sys.setenv(`OMP_THREAD_LIMIT` = threads_OMP)
+#' }
+#' 
 #' @seealso \code{\link[PGRdup]{KWIC}}, \code{\link[PGRdup]{DoubleMetaphone}}
 #'   \code{\link[stringdist:stringdist]{stringdistmatrix}},
 #'   \code{\link[utils]{adist}}, \code{\link[PGRdup]{print.ProbDup}}

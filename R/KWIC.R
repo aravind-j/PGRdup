@@ -61,6 +61,16 @@
 #'
 #' @encoding UTF-8
 #' @examples
+#' 
+#' \dontshow{
+#' threads_dt <- data.table::getDTthreads()
+#' threads_OMP <- Sys.getenv("OMP_THREAD_LIMIT")
+#' data.table::setDTthreads(2)
+#' 
+#' data.table::setDTthreads(2)
+#' Sys.setenv(`OMP_THREAD_LIMIT` = 2)
+#' }
+#' 
 #' # Load PGR passport database
 #' GN <- GN1000
 #'
@@ -88,6 +98,12 @@
 #' GN[1001,3] <- ""
 #' GNKWIC <- KWIC(GN, GNfields)
 #' }
+#' 
+#' \dontshow{
+#' data.table::setDTthreads(threads_dt)
+#' Sys.setenv(`OMP_THREAD_LIMIT` = threads_OMP)
+#' }
+#' 
 #' @import data.table
 #' @importFrom stringi stri_split_fixed
 #' @export KWIC

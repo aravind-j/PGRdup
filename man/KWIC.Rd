@@ -42,6 +42,16 @@ Cleaning of the data the input fields(columns) using the
 suggested before running this function.
 }
 \examples{
+
+\dontshow{
+threads_dt <- data.table::getDTthreads()
+threads_OMP <- Sys.getenv("OMP_THREAD_LIMIT")
+data.table::setDTthreads(2)
+
+data.table::setDTthreads(2)
+Sys.setenv(`OMP_THREAD_LIMIT` = 2)
+}
+
 # Load PGR passport database
 GN <- GN1000
 
@@ -69,6 +79,12 @@ GN[1001:1005,] <- GN[1:5,]
 GN[1001,3] <- ""
 GNKWIC <- KWIC(GN, GNfields)
 }
+
+\dontshow{
+data.table::setDTthreads(threads_dt)
+Sys.setenv(`OMP_THREAD_LIMIT` = threads_OMP)
+}
+
 }
 \references{
 Kn\enc{ü}{ue}pffer, H. 1988. "The European Barley Database of the ECP/GR:

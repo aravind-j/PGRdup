@@ -35,6 +35,16 @@ identical integers in the column \code{SPLIT} other than the default \code{0}
 are reassembled into a new set.
 }
 \examples{
+
+\dontshow{
+threads_dt <- data.table::getDTthreads()
+threads_OMP <- Sys.getenv("OMP_THREAD_LIMIT")
+data.table::setDTthreads(2)
+
+data.table::setDTthreads(2)
+Sys.setenv(`OMP_THREAD_LIMIT` = 2)
+}
+
 \dontrun{
 
 # Load PGR passport database
@@ -100,6 +110,12 @@ lapply(disGNdup, nrow)
 lapply(GNdup2, nrow)
 
 }
+
+\dontshow{
+data.table::setDTthreads(threads_dt)
+Sys.setenv(`OMP_THREAD_LIMIT` = threads_OMP)
+}
+
 }
 \seealso{
 \code{\link[PGRdup]{ProbDup}}, \code{\link[PGRdup]{ReviewProbDup}}

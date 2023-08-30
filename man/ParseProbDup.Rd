@@ -31,6 +31,16 @@ A data frame of the long/narrow form of the probable duplicate sets
 \code{ParseProbDup} converts an object of class \code{ProbDup} to a data frame for export.
 }
 \examples{
+
+\dontshow{
+threads_dt <- data.table::getDTthreads()
+threads_OMP <- Sys.getenv("OMP_THREAD_LIMIT")
+data.table::setDTthreads(2)
+
+data.table::setDTthreads(2)
+Sys.setenv(`OMP_THREAD_LIMIT` = 2)
+}
+
 \dontrun{
 
 #' # Load PGR passport database
@@ -74,6 +84,12 @@ GNdup <- ProbDup(kwic1 = GNKWIC, method = "a", excep = exep, fuzzy = TRUE,
 GNdupParsed <- ParseProbDup(GNdup)
 
 }
+
+\dontshow{
+data.table::setDTthreads(threads_dt)
+Sys.setenv(`OMP_THREAD_LIMIT` = threads_OMP)
+}
+
 }
 \seealso{
 \code{\link[PGRdup]{ProbDup}},
