@@ -117,7 +117,7 @@ Srinivasan<sup>1</sup>, Ananda Subhash, B.<sup>2</sup>, and Tyagi, R.
 K.<sup>1</sup>
 </h4>
             
-            <h4 data-toc-skip class="date">2023-08-20</h4>
+            <h4 data-toc-skip class="date">2023-08-30</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/aravind-j/PGRdup/blob/HEAD/vignettes/Introduction.Rmd" class="external-link"><code>vignettes/Introduction.Rmd</code></a></small>
       <div class="hidden name"><code>Introduction.Rmd</code></div>
@@ -166,7 +166,7 @@ probable duplicate sets. This document assumes a basic knowledge of
 <a href="https://CRAN.R-project.org/package=stringdist" class="external-link"><code>stringdist</code></a>
 and <a href="https://CRAN.R-project.org/package=stringi" class="external-link"><code>stringi</code></a>.</p>
 <p><img src="https://raw.githubusercontent.com/aravind-j/PGRdup/master/inst/extdata/PGRdup.png" align="center" alt="logo" width="750" height="85" style="border: none;"></p>
-<p><img src="Introduction_files/figure-html/unnamed-chunk-5-1.png" width="700"></p>
+<p><img src="Introduction_files/figure-html/unnamed-chunk-6-1.png" width="700"></p>
 <p><strong>Fig. 1.</strong> PGRdup workflow and associated functions</p>
 </div>
 <div class="section level2">
@@ -667,7 +667,7 @@ Number of distinct keywords : 3109</code></pre>
 4     RED   11
 5    OVER   10
 6  PURPLE   10</code></pre>
-<p><img src="Introduction_files/figure-html/unnamed-chunk-23-1.png" width="700"></p>
+<p><img src="Introduction_files/figure-html/unnamed-chunk-24-1.png" width="700"></p>
 <p><strong>Fig. 2.</strong> Word cloud of keywords retrieved</p>
 <p>The function will throw an error in case of duplicates or NULL values
 in the primary key/ID field mentioned.</p>
@@ -1404,7 +1404,7 @@ package (Fig. 3).</p>
 <span>         <span class="st">"t3 : chunksize = 500,\n     useBytes = T\n"</span>,</span>
 <span>         <span class="st">"t4 : chunksize = 1000,\n     useBytes = F\n"</span><span class="op">)</span>,</span>
 <span>       bty <span class="op">=</span> <span class="st">"n"</span>, cex <span class="op">=</span> <span class="fl">0.6</span><span class="op">)</span></span></code></pre></div>
-<p><img src="Introduction_files/figure-html/unnamed-chunk-45-1.png" width="700"></p>
+<p><img src="Introduction_files/figure-html/unnamed-chunk-46-1.png" width="700"></p>
 <p><strong>Fig. 3.</strong> CPU time with different <code>ProbDup</code>
 arguments estimated using the <code>microbenchmark</code> package.</p>
 </div>
@@ -1886,7 +1886,7 @@ generated.</code></pre>
 <code class="sourceCode R"><span><span class="co"># Plot the summary visualization</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">gridExtra</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/gridExtra/man/arrangeGrob.html" class="external-link">grid.arrange</a></span><span class="op">(</span><span class="va">GNdupcView</span><span class="op">[[</span><span class="fl">3</span><span class="op">]</span><span class="op">]</span><span class="op">)</span></span></code></pre></div>
-<p><img src="Introduction_files/figure-html/unnamed-chunk-60-1.png" width="960"></p>
+<p><img src="Introduction_files/figure-html/unnamed-chunk-61-1.png" width="960"></p>
 <p><strong>Fig. 5.</strong> Summary visualization of groundnut probable
 duplicate sets retrieved according to <code>SourceCountry</code>
 field.</p>
@@ -1935,7 +1935,7 @@ a rough indication of the completeness of the data in such fields
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/legend.html" class="external-link">legend</a></span><span class="op">(</span><span class="st">"topright"</span>, <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="st">"No. of records ="</span>,</span>
 <span>                   <span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">GN</span><span class="op">[</span><span class="op">!</span><span class="va">GN</span><span class="op">$</span><span class="va">NationalID</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="va">GND</span>, <span class="op">]</span><span class="op">)</span><span class="op">)</span>,</span>
 <span>       bty <span class="op">=</span> <span class="st">"n"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="Introduction_files/figure-html/unnamed-chunk-61-1.png" width="700"></p>
+<p><img src="Introduction_files/figure-html/unnamed-chunk-62-1.png" width="700"></p>
 <p><strong>Fig. 6.</strong> The keyword counts in the database fields
 considered for identification of probable duplicates for
 <strong>A.</strong> the entire <code>GN1000</code> dataset,
@@ -2007,11 +2007,11 @@ loaded via a namespace (and not attached):
 [34] R6_2.5.1              lifecycle_1.0.3       stringr_1.5.0        
 [37] fs_1.6.3              ragg_1.2.5            pkgconfig_2.0.3      
 [40] desc_1.4.2            pkgdown_2.0.7         bslib_0.5.1          
-[43] pillar_1.9.0          gtable_0.3.3          Rcpp_1.0.11          
+[43] pillar_1.9.0          gtable_0.3.4          Rcpp_1.0.11          
 [46] data.table_1.14.8     glue_1.6.2            systemfonts_1.0.4    
 [49] xfun_0.40             tibble_3.2.1          highr_0.10           
 [52] knitr_1.43            farver_2.1.1          htmltools_0.5.6      
-[55] igraph_1.5.1          labeling_0.4.2        rmarkdown_2.24       
+[55] igraph_1.5.1          labeling_0.4.3        rmarkdown_2.24       
 [58] compiler_4.3.1        RCurl_1.98-1.12      </code></pre>
 </div>
 <div class="section level2 unnumbered">
