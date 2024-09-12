@@ -102,13 +102,13 @@ DataClean <- function(x, fix.comma = TRUE, fix.semcol = TRUE, fix.col = TRUE,
     # Convert all strings to upper case
     x <- vapply(x, FUN = toupper, FUN.VALUE = "character")
     if (fix.comma) {
-    x <- gsub(pattern = ",", replacement = " ", x)  # Replace "," by space
+    x <- gsub(pattern = ",", replacement = " ", x, fixed = TRUE)  # Replace "," by space
     }
     if (fix.semcol) {
-    x <- gsub(pattern = ";", replacement = " ", x)  # Replace ";" by space
+    x <- gsub(pattern = ";", replacement = " ", x, fixed = TRUE)  # Replace ";" by space
     }
     if (fix.col) {
-    x <- gsub(pattern = ":", replacement = " ", x)  # Replace ":" by space
+    x <- gsub(pattern = ":", replacement = " ", x, fixed = TRUE)  # Replace ":" by space
     }
     # Replace brackets by space
     if (fix.bracket) {
