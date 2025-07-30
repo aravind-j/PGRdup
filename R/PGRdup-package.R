@@ -23,7 +23,6 @@
 #' @title The PGRdup Package
 #' @name PGRdup-package
 #' @aliases PGRdup
-#' @docType package
 #' @author J Aravind \email{aravindj@@nbpgr.ernet.in} \cr J Radhamani 
 #'   \email{radhamani@@nbpgr.ernet.in} \cr Kalyani Srinivasan 
 #'   \email{kalyani@@nbpgr.ernet.in} \cr B Ananda Subhash 
@@ -33,4 +32,5 @@
 #' @import igraph
 #' @import stringdist
 #' @importFrom stringi stri_split_fixed
-NULL
+#' @keywords internal
+"_PACKAGE"

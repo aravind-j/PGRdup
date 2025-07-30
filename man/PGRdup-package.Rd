@@ -9,6 +9,18 @@
 Functions to facilitate genebank managers in the identification of probable 
 duplicate accessions from plant genetic resources (PGR) passport databases.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://cran.r-project.org/package=PGRdup}
+  \item \url{https://github.com/aravind-j/PGRdup}
+  \item \doi{10.5281/zenodo.841963}
+  \item \url{https://aravind-j.github.io/PGRdup/}
+  \item \url{https://www.rdocumentation.org/packages/PGRdup}
+  \item Report bugs at \url{https://github.com/aravind-j/PGRdup/issues}
+}
+
+}
 \author{
 J Aravind \email{aravindj@nbpgr.ernet.in} \cr J Radhamani 
   \email{radhamani@nbpgr.ernet.in} \cr Kalyani Srinivasan 
@@ -16,3 +28,4 @@ J Aravind \email{aravindj@nbpgr.ernet.in} \cr J Radhamani
   \email{anandasubhash@gmail.com} \cr RK Tyagi
   \email{rktyagi@nbpgr.ernet.in}
 }
+\keyword{internal}
