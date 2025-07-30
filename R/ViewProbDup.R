@@ -517,7 +517,7 @@ ViewProbDup <- function(pdup, db1, db2 = NULL,
                colour = "gray23",  size = 5,  na.rm = TRUE) +
     geom_line(data = mat, aes(y = variable, x = KIND,
                               group = KIND2),
-              colour = "gray23",  size = 1,  na.rm = TRUE) +
+              colour = "gray23",  linewidth = 1,  na.rm = TRUE) +
     #coord_flip() +
     guides(shape = guide_legend(title = "Accession\nType"),
            fill = FALSE, colour = FALSE, alpha = FALSE) +
