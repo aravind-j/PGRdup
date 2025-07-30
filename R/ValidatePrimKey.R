@@ -84,7 +84,7 @@ ValidatePrimKey <- function(x, prim.key) {
   Result <- list(message1 = NULL, Duplicates = NULL, message2 = NULL,
                  NullRecords = NULL)
   # Convert NAs to empty strings
-  x[prim.key][is.na(x[, prim.key])] <- ""
+  x[prim.key][is.na(x[, prim.key]), ] <- ""
   if (is.element("TRUE", duplicated(x[prim.key]))) {
     # Check if duplicated records are there in prim.key
     Result$message1 <- "ERROR: Duplicated records found in prim.key field"
