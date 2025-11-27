@@ -146,7 +146,7 @@ KWIC <- function(x, fields, min.freq = 10) {
   # Create KWIC index using data.table
   K <-  as.list(rep(NA, length(fields)))
   for (i in 1:(length(fields))) {
-    K[[i]] <-  x[, list(KEYWORD = unlist(strsplit(get(fields[i]), " ")),
+    K[[i]] <-  x[, list(KEYWORD = unlist(strsplit(get(fields[i]), " ", fixed = TRUE)),
                         FIELD = fields[i]),
                  by = list(PRIM_ID = get(fields[1]), KWIC)]
     K[[i]] <- K[[i]][!is.na(K[[i]]$KEYWORD), ]
@@ -157,8 +157,8 @@ KWIC <- function(x, fields, min.freq = 10) {
   set(KWIC, which(is.na(KWIC[["KEYWORD"]])), "KEYWORD", "")
   KWIC <- setkey(KWIC, KEYWORD)
   # Remove all '\' from KWIC
-  KWIC[, KWIC := gsub(pattern = "([\\])", replacement = "", x = KWIC)]
-  KWIC[, KEYWORD := gsub(pattern = "([\\])", replacement = "", x = KEYWORD)]
+  KWIC[, KWIC := gsub(pattern = "\\", replacement = "", x = KWIC, fixed = TRUE)]
+  KWIC[, KEYWORD := gsub(pattern = "\\", replacement = "", x = KEYWORD, fixed = TRUE)]
   # Remove records with blank keywords
   KWIC <- subset(KWIC, KEYWORD != "")
   # Remove duplicate records
@@ -170,16 +170,16 @@ KWIC <- function(x, fields, min.freq = 10) {
   KWIC[, KEYWORD := gsub(pattern = "([.|()\\^{}+$*?]|\\[|\\])",
                          replacement = "\\\\\\1", x = KEYWORD)]
   # Highlight keywords in KWIC
-  KWIC[, KWIC := mapply(gsub, pattern = paste0(" ", KEYWORD, " "),
+  KWIC[, KWIC := mapply(gsub, fixed = TRUE, pattern = paste0(" ", KEYWORD, " "),
                         replacement = paste0(" <<", KEYWORD, ">> "), KWIC)]
   KWIC[, KWIC := gsub("^\\s+|\\s+$", "", KWIC)]
   # Unescape all Regex special characters
   KWIC[, KEYWORD := gsub(pattern = "\\\\(.)", replacement = "\\1", x = KEYWORD)]
   # Split KWIC
   KWIC[, c("KWIC_L", "KW1") := do.call(rbind.data.frame,
-                                 stri_split_fixed(KWIC, "<<", 2))][]
+                                 stri_split_fixed(KWIC, "<<", 2))]
   KWIC[, c("KWIC_KW", "KWIC_R") := do.call(rbind.data.frame,
-                                stri_split_fixed(KW1, ">>", 2))][]
+                                stri_split_fixed(KW1, ">>", 2))]
   cols <- c("KWIC_L", "KWIC_KW", "KWIC_R")
   KWIC[, (cols) := lapply(.SD, as.character), .SDcols = cols]
   KWIC[, KW1 := NULL]
@@ -192,7 +192,7 @@ KWIC <- function(x, fields, min.freq = 10) {
   #KWICIndex[[1]] <- as.data.frame(KWIC)
   KWICIndex[[1]] <- setDF(KWIC)
   # Get keyword freq
-  kwf <- as.data.frame(table(KWIC$KEYWORD))
+  kwf <- as.data.frame(table(KWIC$KEYWORD), stringsAsFactors = FALSE)
   kwf <- subset(kwf, Freq > min.freq)
   kwf <- kwf[order(-kwf$Freq), ]
   rownames(kwf) <- NULL

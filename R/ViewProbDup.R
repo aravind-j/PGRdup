@@ -303,7 +303,7 @@ ViewProbDup <- function(pdup, db1, db2 = NULL,
   if (!is.null(pdup[["DisjointDupicates"]])) {
     tryCatch(DisProbDup(pdup),
              warning = function(e) {
-               message(gsub("returned", "displayed", e$message))
+               message(gsub("returned", "displayed", e$message, fixed = TRUE))
              })
     pdup <- suppressWarnings(DisProbDup(pdup))
   } else {
@@ -314,7 +314,7 @@ ViewProbDup <- function(pdup, db1, db2 = NULL,
     if (dim(tstr[tstr$is.null == FALSE, ])[1] == 1) {
       tryCatch(DisProbDup(pdup),
       warning = function(e) {
-        message(gsub("returned", "displayed", e$message))
+        message(gsub("returned", "displayed", e$message, fixed = TRUE))
       })
       pdup <- suppressWarnings(DisProbDup(pdup))
     } else {
@@ -327,7 +327,7 @@ ViewProbDup <- function(pdup, db1, db2 = NULL,
                          extra.db1 = factor.db1, extra.db2 = factor.db2,
                          max.count, insert.blanks = FALSE),
            warning = function(e) {
-             message(gsub("merged", "used", e$message))
+             message(gsub("merged", "used", e$message, fixed = TRUE))
            })
   sets <- suppressWarnings(ReviewProbDup(pdup, db1, db2,
                                          extra.db1 = factor.db1,
