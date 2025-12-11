@@ -32,7 +32,7 @@ retrieved.}
 \item{max.count}{The maximum count of probable duplicate sets whose
 information is to be retrieved.}
 
-\item{insert.blanks}{logical. If \code{TRUE}, inserts a row of /code{NAs}
+\item{insert.blanks}{logical. If \code{TRUE}, inserts a row of \code{NAs}
 after each set.}
 }
 \value{

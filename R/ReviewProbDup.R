@@ -60,7 +60,7 @@
 #'   retrieved.
 #' @param max.count The maximum count of probable duplicate sets whose
 #'   information is to be retrieved.
-#' @param insert.blanks logical. If \code{TRUE}, inserts a row of /code{NAs}
+#' @param insert.blanks logical. If \code{TRUE}, inserts a row of \code{NAs}
 #'   after each set.
 #' @return A data frame of the long/narrow form of the probable duplicate sets
 #'   data along with associated fields from the original database(s). The core
