@@ -251,9 +251,9 @@ citation("PGRdup")
 
     To cite the R package 'PGRdup' in publications use:
 
-      Aravind, J., Radhamani, J., Kalyani Srinivasan, Ananda Subhash, B., and Tyagi, R. K.  ().
-      PGRdup: Discover Probable Duplicates in Plant Genetic Resources Collections. R package version
-      0.2.4.0, https://github.com/aravind-j/PGRdup,https://cran.r-project.org/package=PGRdup.
+      Aravind, J., Radhamani, J., Kalyani Srinivasan, Ananda Subhash, B., and Tyagi, R. K.  (2025).  PGRdup: Discover
+      Probable Duplicates in Plant Genetic Resources Collections. R package version 0.2.4.0,
+      https://github.com/aravind-j/PGRdup,https://cran.r-project.org/package=PGRdup.
 
     A BibTeX entry for LaTeX users is
 
@@ -261,7 +261,8 @@ citation("PGRdup")
         title = {PGRdup: Discover Probable Duplicates in Plant Genetic Resources Collections},
         author = {J. Aravind and J. Radhamani and {Kalyani Srinivasan} and B. {Ananda Subhash} and Rishi Kumar Tyagi},
         note = {R package version 0.2.4.0 https://github.com/aravind-j/PGRdup, https://cran.r-project.org/package=PGRdup},
+        year = {2025},
       }
 
-    This free and open-source software implements academic research by the authors and co-workers. If
-    you use it, please support the project by citing the package.
+    This free and open-source software implements academic research by the authors and co-workers. If you use it, please
+    support the project by citing the package.
