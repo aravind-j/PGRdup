@@ -1,5 +1,4 @@
-# Workflow derived from https://github.com/r-lib/actions/tree/v2-branch/run-rchk
-#                   and https://github.com/r-lib/actions/issues/494#issuecomment-1051088019
+name: rchk
 
 on:
   workflow_dispatch:
@@ -8,29 +7,29 @@ on:
   pull_request:
     branches: [main, master]
   schedule:
-    - cron:  '0 0 * * 0'
+    - cron: '0 0 * * 0'
 
-name: rchk
-
-jobs:  
+jobs:
   rchk:
     runs-on: ubuntu-latest
+
     container:
-      image: rhub/ubuntu-rchk
-      options: --user=root
+      image: rhub/rchk:latest
+
     steps:
-    - uses: actions/checkout@v4
-    - uses: r-lib/actions/run-rchk@v2
-      with:
-        setup-only: true
-    - uses: randy3k/gh-actions/r-install-deps@main
-      with:
-        cache-version: rchk-1
-    - name: Install package
-      run: |
-        remotes::install_local()
-      shell: Rscript {0}
-    - uses: r-lib/actions/run-rchk@v2
-      with:
-        run-only: true
-        
+      - name: Checkout package
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          Rscript -e 'install.packages("remotes", repos="https://cloud.r-project.org")'
+          Rscript -e 'remotes::install_deps(dependencies = c("Depends","Imports","LinkingTo","Suggests"))'
+
+      - name: Build package
+        run: |
+          R CMD build .
+
+      - name: Run rchk
+        run: |
+          PKG_TAR=$(ls *.tar.gz)
+          Rscript -e 'rchk::rchk("$PKG_TAR")'
