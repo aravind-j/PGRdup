@@ -32,4 +32,4 @@ jobs:
       - name: Run rchk
         run: |
           PKG_TAR=$(ls *.tar.gz)
-          rchk $PKG_TAR
+          rchk.sh $PKG_TAR
