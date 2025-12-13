@@ -23,11 +23,11 @@
 #' @title The PGRdup Package
 #' @name PGRdup-package
 #' @aliases PGRdup
-#' @author J Aravind \email{aravindj@@nbpgr.ernet.in} \cr J Radhamani 
-#'   \email{radhamani@@nbpgr.ernet.in} \cr Kalyani Srinivasan 
-#'   \email{kalyani@@nbpgr.ernet.in} \cr B Ananda Subhash 
+#' @author J Aravind \email{j.aravind@@icar.org.in} \cr J Radhamani 
+#'   \email{jalli.radhamani@@icar.gov.in} \cr Kalyani Srinivasan 
+#'   \email{kalyani.srinivasan@@icar.gov.in} \cr B Ananda Subhash 
 #'   \email{anandasubhash@@gmail.com} \cr RK Tyagi
-#'   \email{rktyagi@@nbpgr.ernet.in}
+#'   \email{rishi.tyagi@@icar.gov.in}
 #' @import data.table
 #' @import igraph
 #' @import stringdist

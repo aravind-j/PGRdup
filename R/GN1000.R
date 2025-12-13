@@ -33,6 +33,6 @@
 #'   \item{OtherID1}{Other ID field 1} \item{OtherID2}{Other ID field 2} 
 #'   \item{BioStatus}{Biological status} \item{SourceCountry}{Country of 
 #'   origin} \item{TransferYear}{Year of transfer} }
-#' @seealso \url{http://www.nbpgr.ernet.in:8080/PGRPortal/}
+#' @seealso \url{http://pgrportal.nbpgr.ernet.in/}
 #' 
 NULL

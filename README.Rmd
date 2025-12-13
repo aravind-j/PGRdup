@@ -23,7 +23,7 @@ devtools::load_all(".", quiet = TRUE) # quiet = T for hiding macOS compiler warn
 
 ```
 
-###### Version : [`r getNamespaceVersion("PGRdup")`](https://aravind-j.github.io/PGRdup/articles/Introduction.html#version-history); Copyright (C) 2014-`r  format(Sys.Date(), "%Y")`: [ICAR-NBPGR](http://www.nbpgr.ernet.in/); License: [GPL-2|GPL-3](https://www.r-project.org/Licenses/)
+###### Version : [`r getNamespaceVersion("PGRdup")`](https://aravind-j.github.io/PGRdup/articles/Introduction.html#version-history); Copyright (C) 2014-`r  format(Sys.Date(), "%Y")`: [ICAR-NBPGR](https://nbpgr.org.in/); License: [GPL-2|GPL-3](https://www.r-project.org/Licenses/)
 
 
 ##### *Aravind, J.^1^, Radhamani, J.^1^, Kalyani Srinivasan^1^, Ananda Subhash, B.^2^, and Tyagi, R. K.^1^*

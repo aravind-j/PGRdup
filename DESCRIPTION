@@ -3,7 +3,7 @@ Title: Discover Probable Duplicates in Plant Genetic Resources Collections
 Version: 0.2.4.0
 Authors@R: c(
     person(given = "J.", family = "Aravind",
-           email = "j.aravind@icar.gov.in",
+           email = "j.aravind@icar.org.in",
            role = c("aut", "cre"),
 		       comment = c(ORCID = "0000-0002-4791-442X")),
     person(given = "J.", family = "Radhamani",
@@ -20,7 +20,7 @@ Authors@R: c(
 		       role = "aut"),
     person("ICAR-NBGPR",
            role = "cph",
-		       comment = c(url = "www.nbpgr.ernet.in")),
+		       comment = c(url = "https://nbpgr.org.in/")),
     person(given = "Maurice", family = "Aubrey",
            email = "maurice@hevanet.com",
            comment = "Double Metaphone",
@@ -67,7 +67,7 @@ License: GPL-2 | GPL-3
 Encoding: UTF-8
 LazyData: true
 VignetteBuilder: knitr
-RoxygenNote: 7.3.3.9000
+RoxygenNote: 7.3.3
 URL: https://cran.r-project.org/package=PGRdup,
     https://github.com/aravind-j/PGRdup,
     https://doi.org/10.5281/zenodo.841963,

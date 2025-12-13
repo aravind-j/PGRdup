@@ -21,6 +21,6 @@ National Genebank at National Bureau of Plant Genetic Resources (NBPGR), New
 Delhi.
 }
 \seealso{
-\url{http://www.nbpgr.ernet.in:8080/PGRPortal/}
+\url{http://pgrportal.nbpgr.ernet.in/}
 }
 \keyword{datasets}

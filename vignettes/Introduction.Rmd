@@ -278,7 +278,7 @@ library(PGRdup)
 ```
 
 ## Data Format
-The package is essentially designed to operate on PGR passport data present in a [data frame object](http://google.com/#q=[R]+data.frame), with  each row holding one record and columns representing the attribute fields. For example, consider the dataset `GN1000` supplied along with the package.
+The package is essentially designed to operate on PGR passport data present in a [data frame object](https://www.google.com/#q=[R]+data.frame), with  each row holding one record and columns representing the attribute fields. For example, consider the dataset `GN1000` supplied along with the package.
 ```{r}
 library(PGRdup)
 # Load the dataset to the environment
@@ -291,7 +291,7 @@ head(GN1000)
 
 If the passport data exists as an excel sheet, it can be first converted to a comma-separated values (csv) file or tab delimited file and then easily imported into the `R` environment using the base functions `read.csv` and `read.table` respectively. Similarly `read_csv()` and `read_tsv()` from the [`readr`](https://CRAN.R-project.org/package=readr) package can also be used. Alternatively, the package [`readxl`](https://CRAN.R-project.org/package=readxl) can be used to directly read the data from excel. In case of large csv files, the function `fread` in the [`data.table`](https://CRAN.R-project.org/package=data.table) package can be used to rapidly load the data.
 
-If the PGR passport data is in a database management system (DBMS), the required table can be imported as a data frame into `R`. using the appropriate [`R`-database interface package](http://www.burns-stat.com/r-database-interfaces/). For example [`dbConnect`](https://CRAN.R-project.org/package=dbConnect) for MySQL, [`ROracle`](https://CRAN.R-project.org/package=ROracle) for Oracle etc.
+If the PGR passport data is in a database management system (DBMS), the required table can be imported as a data frame into `R`. using the appropriate [`R`-database interface package](https://www.burns-stat.com/r-database-interfaces/). For example [`dbConnect`](https://CRAN.R-project.org/package=dbConnect) for MySQL, [`ROracle`](https://CRAN.R-project.org/package=ROracle) for Oracle etc.
 
 The PGR data downloaded from the [genesys](https://www.genesys-pgr.org/welcome) database as a [Darwin Core - Germplasm](https://github.com/dagendresen/darwincore-germplasm) zip archive can be imported into the `R` environment as a flat file `data.frame` using the `read.genesys` function.
 
@@ -305,7 +305,7 @@ PGRgenesys <- read.genesys("genesys-accessions-filtered.zip",
 ## Data Pre-processing
 Data pre-processing is a critical step which can affect the quality of the probable duplicate sets being retrieved. It involves data standardization as well as data cleaning which can be achieved using the functions `DataClean`, `MergeKW`, `MergePrefix` and `MergeSuffix`.
 
-`DataClean` function can be used to clean the character strings in passport data fields(columns) specified as the input [character vector](http://google.com/#q=[R]+character+vector) `x` according to the conditions specified in the arguments.
+`DataClean` function can be used to clean the character strings in passport data fields(columns) specified as the input [character vector](https://www.google.com/#q=[R]+character+vector) `x` according to the conditions specified in the arguments.
 
 Commas, semicolons and colons which are sometimes used to separate multiple strings or names within the same field can be replaced with a single space using the logical arguments `fix.comma`, `fix.semcol` and `fix.col` respectively.
 ```{r}
@@ -403,7 +403,7 @@ DataClean(names)
 |TG4;U/4/47/13      |TG4 U44713           |
 |EC0021003          |EC21003              |
 
-Several common keyword string pairs or keyword prefixes and suffixes exist in fields associated with accession names in PGR passport databases. They can be merged using the functions `MergeKW`, `MergePrefix` and `MergeSuffix` respectively. The keyword string pairs, prefixes and suffixes can be supplied as a [list](http://google.com/#q=[R]+list) or a [vector](http://google.com/#q=[R]+vector) to the argument `y` in these functions.
+Several common keyword string pairs or keyword prefixes and suffixes exist in fields associated with accession names in PGR passport databases. They can be merged using the functions `MergeKW`, `MergePrefix` and `MergeSuffix` respectively. The keyword string pairs, prefixes and suffixes can be supplied as a [list](https://www.google.com/#q=[R]+list) or a [vector](https://www.google.com/#q=[R]+vector) to the argument `y` in these functions.
 
 ```{r}
 names <- c("Punjab Bold", "Gujarat- Dwarf", "Nagpur.local", "SAM COL 144",
@@ -432,7 +432,7 @@ names
 
 ```
 
-These functions can be applied over multiple columns(fields) in a data frame using the [`lapply`](http://google.com/#q=[R]+lapply) function.
+These functions can be applied over multiple columns(fields) in a data frame using the [`lapply`](https://www.google.com/#q=[R]+lapply) function.
 
 ```{r}
 # Load example dataset

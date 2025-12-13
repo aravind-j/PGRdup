@@ -6,7 +6,7 @@ vers <- sprintf("R package version %s", meta$Version)
 bibentry(bibtype  = "Manual",
          title  = "PGRdup: Discover Probable Duplicates in Plant Genetic Resources Collections",
          author = c(person(given = "J.", family = "Aravind",
-                           email = "j.aravind@icar.gov.in",
+                           email = "j.aravind@icar.org.in",
                            role = c("aut", "cre"),
 									         comment = c(ORCID = "0000-0002-4791-442X")),
                     person(given = "J.", family = "Radhamani",
