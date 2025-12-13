@@ -3,14 +3,8 @@ template:
   math-rendering: mathjax
   light-switch: true
   bslib:
-    bootswatch: united
-    primary: "#f6b9a4" # (translucent) hover colour in the navbar and sidebar
-    pkgdown-navbar-bg: "#e95420" # Background colur of navbar
-    navbar-light-color: "#f7f8f8" # Navbar text colour of items
-    navbar-light-hover-color: "#231F20" # Navbar text colour of items on hover
-    navbar-light-brand-color: "#f7f8f8" # Navbar package name text colour
-    navbar-light-brand-hover-color: "#f7f8f8" # Navbar package name text colour on hover
-    link-color: "#e95420" # Colour of links
+    bootswatch: simplex
+    pkgdown-nav-height: 60px
   params:
     ganalytics: UA-112827210-1
     

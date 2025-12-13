@@ -1,0 +1,32 @@
+
+/*
+Adjust navbar height
+*/
+.navbar {
+  min-height: 40px !important; /* Adjust as needed */
+}
+
+/*
+Adjust navbar padding
+*/
+.navbar-nav > li > a {
+  padding-top: 10px !important; 
+  padding-bottom: 10px !important; 
+}
+
+/*
+Undeline navbar text on hover
+*/
+.navbar-nav a:hover {
+  text-decoration: underline;
+}
+
+/*
+Change Version number badge on navbar
+*/
+.text-muted {
+    color: #f7f8f8 !important;
+    background-color: #9a9a9aff;
+    border: 2px solid #9a9a9aff;
+    border-radius: 5px;
+}
