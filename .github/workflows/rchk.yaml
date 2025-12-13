@@ -27,7 +27,7 @@ jobs:
 
       - name: Build package
         run: |
-          R CMD build .
+          R CMD build . --no-build-vignettes
 
       - name: Run rchk
         run: |
