@@ -22,7 +22,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          Rscript -e 'install.packages(c("remotes","knitr","rmarkdown", "XML"), repos="https://cloud.r-project.org")'
+          Rscript -e 'install.packages(c("remotes","knitr","rmarkdown", "XML", "data.table", "igraph", "stringi", "ggplot2", "gridExtra"), repos="https://cloud.r-project.org")'
           Rscript -e 'remotes::install_deps(dependencies = TRUE)'
 
       - name: Build package
