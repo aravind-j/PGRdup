@@ -4,27 +4,25 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>An Introduction to `PGRdup` Package • PGRdup</title>
-<!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
-<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png">
-<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png">
-<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png">
-<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png">
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/united/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
-<script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><!-- docsearch --><script src="../docsearch.js"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/docsearch.js/2.6.3/docsearch.min.css" integrity="sha256-QOSRU/ra9ActyXkIBbiIB144aDBdtvXBcNc3OTNuX/Q=" crossorigin="anonymous">
-<link href="../docsearch.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script><meta property="og:title" content="An Introduction to `PGRdup` Package">
-<meta property="og:description" content="PGRdup">
-<!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-112827210-1"></script><script>
+<!-- favicons --><link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+<link rel="icon" type="”image/svg+xml”" href="../favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="icon" sizes="any" href="../favicon.ico">
+<link rel="manifest" href="../site.webmanifest">
+<!-- mathjax math --><script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script><script>
+  window.MathJax = {
+    chtml: {
+      fontURL: "https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/output/chtml/fonts/woff-v2"
+    }
+  };
+</script><script src="../lightswitch.js"></script><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
+<script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
+<link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
+<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="An Introduction to `PGRdup` Package">
+<!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-112827210-1"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
@@ -32,96 +30,65 @@
   gtag('config', 'UA-112827210-1');
 </script>
 </head>
-<body data-spy="scroll" data-target="#toc">
-    
+<body>
+    <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
 
-    <div class="container template-article">
-      <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <span class="navbar-brand">
-        <a class="navbar-link" href="../index.html">PGRdup</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.3.9</span>
-      </span>
-    </div>
 
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-<li>
-  <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
-     
-    Home
-  </a>
-</li>
-<li>
-  <a href="../reference/index.html">
-    <span class="fa fa-code"></span>
-     
-    Reference
-  </a>
-</li>
-<li>
-  <a href="../articles/Introduction.html">
-    <span class="far fa-file"></span>
-     
-    Introduction
-  </a>
-</li>
-<li>
-  <a href="../news/index.html">
-    <span class="far fa-newspaper"></span>
-     
-    News
-  </a>
+    <nav class="navbar navbar-expand-lg fixed-top " aria-label="Site navigation"><div class="container">
+
+    <a class="navbar-brand me-2" href="../index.html">PGRdup</a>
+
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.4.0</small>
+
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar" class="collapse navbar-collapse ms-3">
+      <ul class="navbar-nav me-auto">
+<li class="nav-item"><a class="nav-link" href="../index.html"><span class="fa fa-home fa-lg"></span> Home</a></li>
+<li class="nav-item"><a class="nav-link" href="../reference/index.html"><span class="fa fa-code"></span> Reference</a></li>
+<li class="nav-item"><a class="nav-link" href="../articles/Introduction.html"><span class="fa far fa-file"></span> Introduction</a></li>
+<li class="nav-item"><a class="nav-link" href="../news/index.html"><span class="fa far fa-newspaper"></span> News</a></li>
+      </ul>
+<ul class="navbar-nav">
+<li class="nav-item"><form class="form-inline" role="search">
+ <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json">
+</form></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/aravind-j/augmentedRCBD"><span class="fa fab fa-github-alt"></span> Github</a></li>
+<li class="nav-item dropdown">
+  <button class="nav-link dropdown-toggle" type="button" id="dropdown-lightswitch" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true" aria-label="Light switch"><span class="fa fa-sun"></span></button>
+  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-lightswitch">
+<li><button class="dropdown-item" data-bs-theme-value="light"><span class="fa fa-sun"></span> Light</button></li>
+    <li><button class="dropdown-item" data-bs-theme-value="dark"><span class="fa fa-moon"></span> Dark</button></li>
+    <li><button class="dropdown-item" data-bs-theme-value="auto"><span class="fa fa-adjust"></span> Auto</button></li>
+  </ul>
 </li>
       </ul>
-<ul class="nav navbar-nav navbar-right">
-<li>
-  <a href="https://github.com/aravind-j/PGRdup" class="external-link">
-    <span class="fab fa-github-alt"></span>
-     
-    Github
-  </a>
-</li>
-      </ul>
-<form class="navbar-form navbar-right hidden-xs hidden-sm" role="search">
-        <div class="form-group">
-          <input type="search" class="form-control" name="search-input" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
 </div>
-      </form>
-      
-    </div>
-<!--/.nav-collapse -->
+
+
   </div>
-<!--/.container -->
-</div>
-<!--/.navbar -->
+</nav><div class="container template-article">
 
-      
 
-      </header><div class="row">
-  <div class="col-md-9 contents">
-    <div class="page-header toc-ignore">
-      <h1 data-toc-skip>An Introduction to <code>PGRdup</code>
-Package</h1>
+
+
+<div class="row">
+  <main id="main" class="col-md-9"><div class="page-header">
+
+      <h1>An Introduction to `PGRdup` Package</h1>
                         <h4 data-toc-skip class="author">Aravind,
 J.<sup>1</sup>, Radhamani, J.<sup>1</sup>, Kalyani
 Srinivasan<sup>1</sup>, Ananda Subhash, B.<sup>2</sup>, and Tyagi, R.
 K.<sup>1</sup>
 </h4>
             
-            <h4 data-toc-skip class="date">2023-08-31</h4>
+            <h4 data-toc-skip class="date">2025-12-13</h4>
       
-      <small class="dont-index">Source: <a href="https://github.com/aravind-j/PGRdup/blob/HEAD/vignettes/Introduction.Rmd" class="external-link"><code>vignettes/Introduction.Rmd</code></a></small>
-      <div class="hidden name"><code>Introduction.Rmd</code></div>
-
+      <small class="dont-index">Source: <a href="https://github.com/aravind-j/PGRdup/blob/master/vignettes/Introduction.Rmd" class="external-link"><code>vignettes/Introduction.Rmd</code></a></small>
+      <div class="d-none name"><code>Introduction.Rmd</code></div>
     </div>
 
     
@@ -166,13 +133,13 @@ probable duplicate sets. This document assumes a basic knowledge of
 <a href="https://CRAN.R-project.org/package=stringdist" class="external-link"><code>stringdist</code></a>
 and <a href="https://CRAN.R-project.org/package=stringi" class="external-link"><code>stringi</code></a>.</p>
 <p><img src="https://raw.githubusercontent.com/aravind-j/PGRdup/master/inst/extdata/PGRdup.png" align="center" alt="logo" width="750" height="85" style="border: none;"></p>
-<p><img src="Introduction_files/figure-html/unnamed-chunk-6-1.png" width="700"></p>
+<p><img src="Introduction_files/figure-html/unnamed-chunk-6-1.png" class="r-plt" width="700"></p>
 <p><strong>Fig. 1.</strong> PGRdup workflow and associated functions</p>
 </div>
 <div class="section level2">
 <h2 id="version-history">Version History<a class="anchor" aria-label="anchor" href="#version-history"></a>
 </h2>
-<p>The current version of the package is 0.2.3.9. The previous versions
+<p>The current version of the package is 0.2.4.0. The previous versions
 are as follows.</p>
 <p><strong>Table 1.</strong> Version history of <code>PGRdup</code>
 <code>R</code> package.</p>
@@ -230,6 +197,10 @@ are as follows.</p>
 <td align="left">0.2.3.7</td>
 <td align="left">2021-02-17</td>
 </tr>
+<tr class="odd">
+<td align="left">0.2.3.8</td>
+<td align="left">2023-05-23</td>
+</tr>
 </tbody>
 </table>
 <p>To know detailed history of changes use
@@ -257,7 +228,7 @@ are also installed because of the argument
 <h2 id="data-format">Data Format<a class="anchor" aria-label="anchor" href="#data-format"></a>
 </h2>
 <p>The package is essentially designed to operate on PGR passport data
-present in a <a href="http://google.com/#q=%5BR%5D+data.frame" class="external-link">data
+present in a <a href="https://www.google.com/#q=%5BR%5D+data.frame" class="external-link">data
 frame object</a>, with each row holding one record and columns
 representing the attribute fields. For example, consider the dataset
 <code>GN1000</code> supplied along with the package.</p>
@@ -265,7 +236,7 @@ representing the attribute fields. For example, consider the dataset
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://cran.r-project.org/package=PGRdup" class="external-link">PGRdup</a></span><span class="op">)</span></span></code></pre></div>
 <pre><code>
 --------------------------------------------------------------------------------
-Welcome to PGRdup version 0.2.3.9
+Welcome to PGRdup version 0.2.4.0
 
 
 # To know how to use this package type:
@@ -317,7 +288,7 @@ files, the function <code>fread</code> in the <a href="https://CRAN.R-project.or
 package can be used to rapidly load the data.</p>
 <p>If the PGR passport data is in a database management system (DBMS),
 the required table can be imported as a data frame into <code>R</code>.
-using the appropriate <a href="http://www.burns-stat.com/r-database-interfaces/" class="external-link"><code>R</code>-database
+using the appropriate <a href="https://www.burns-stat.com/r-database-interfaces/" class="external-link"><code>R</code>-database
 interface package</a>. For example <a href="https://CRAN.R-project.org/package=dbConnect" class="external-link"><code>dbConnect</code></a>
 for MySQL, <a href="https://CRAN.R-project.org/package=ROracle" class="external-link"><code>ROracle</code></a>
 for Oracle etc.</p>
@@ -339,7 +310,7 @@ standardization as well as data cleaning which can be achieved using the
 functions <code>DataClean</code>, <code>MergeKW</code>,
 <code>MergePrefix</code> and <code>MergeSuffix</code>.</p>
 <p><code>DataClean</code> function can be used to clean the character
-strings in passport data fields(columns) specified as the input <a href="http://google.com/#q=%5BR%5D+character+vector" class="external-link">character
+strings in passport data fields(columns) specified as the input <a href="https://www.google.com/#q=%5BR%5D+character+vector" class="external-link">character
 vector</a> <code>x</code> according to the conditions specified in the
 arguments.</p>
 <p>Commas, semicolons and colons which are sometimes used to separate
@@ -505,8 +476,8 @@ passport databases (Table 1).</p>
 exist in fields associated with accession names in PGR passport
 databases. They can be merged using the functions <code>MergeKW</code>,
 <code>MergePrefix</code> and <code>MergeSuffix</code> respectively. The
-keyword string pairs, prefixes and suffixes can be supplied as a <a href="http://google.com/#q=%5BR%5D+list" class="external-link">list</a> or a <a href="http://google.com/#q=%5BR%5D+vector" class="external-link">vector</a> to the argument
-<code>y</code> in these functions.</p>
+keyword string pairs, prefixes and suffixes can be supplied as a <a href="https://www.google.com/#q=%5BR%5D+list" class="external-link">list</a> or a <a href="https://www.google.com/#q=%5BR%5D+vector" class="external-link">vector</a> to the
+argument <code>y</code> in these functions.</p>
 <div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">names</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Punjab Bold"</span>, <span class="st">"Gujarat- Dwarf"</span>, <span class="st">"Nagpur.local"</span>, <span class="st">"SAM COL 144"</span>,</span>
 <span>           <span class="st">"SAM COL--280"</span>, <span class="st">"NIZAMABAD-LOCAL"</span>, <span class="st">"Dark Green Mutant"</span>,</span>
@@ -542,7 +513,7 @@ keyword string pairs, prefixes and suffixes can be supplied as a <a href="http:/
 [10] "Ugandaerect"        "SmallJapan"         "CastleCary"        
 [13] "Punjaberect"        "Improvedsmalljapan" "DarkPurple"        </code></pre>
 <p>These functions can be applied over multiple columns(fields) in a
-data frame using the <a href="http://google.com/#q=%5BR%5D+lapply" class="external-link"><code>lapply</code></a>
+data frame using the <a href="https://www.google.com/#q=%5BR%5D+lapply" class="external-link"><code>lapply</code></a>
 function.</p>
 <div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Load example dataset</span></span>
@@ -586,13 +557,14 @@ function.</p>
 <h2 id="generation-of-kwic-index">Generation of KWIC Index<a class="anchor" aria-label="anchor" href="#generation-of-kwic-index"></a>
 </h2>
 <p>The function <code>KWIC</code> generates a Key Word in Context index
-<span class="citation">(<a href="#ref-knupffer1988european" role="doc-biblioref">Knüpffer 1988</a>; <a href="#ref-kfj97" role="doc-biblioref">Knüpffer, Frese, and Jongen 1997</a>)</span> from
-the data frame of a PGR passport database based on the fields(columns)
-specified in the argument <code>fields</code> along with the keyword
-frequencies and gives the output as a list of class <code>KWIC</code>.
-The first element of the vector specified in <code>fields</code> is
-considered as the primary key or identifier which uniquely identifies
-all rows in the data frame.</p>
+<span class="citation">(<a href="#ref-knupffer1988european">Knüpffer
+1988</a>; <a href="#ref-kfj97">Knüpffer, Frese, and Jongen
+1997</a>)</span> from the data frame of a PGR passport database based on
+the fields(columns) specified in the argument <code>fields</code> along
+with the keyword frequencies and gives the output as a list of class
+<code>KWIC</code>. The first element of the vector specified in
+<code>fields</code> is considered as the primary key or identifier which
+uniquely identifies all rows in the data frame.</p>
 <p>This function fetches keywords from different fields specified, which
 can be subsequently used for matching to identify probable duplicates.
 The frequencies of the keywords retrieved can help in determining if
@@ -667,7 +639,7 @@ Number of distinct keywords : 3109</code></pre>
 4     RED   11
 5    OVER   10
 6  PURPLE   10</code></pre>
-<p><img src="Introduction_files/figure-html/unnamed-chunk-24-1.png" width="700"></p>
+<p><img src="Introduction_files/figure-html/unnamed-chunk-24-1.png" class="r-plt" width="700"></p>
 <p><strong>Fig. 2.</strong> Word cloud of keywords retrieved</p>
 <p>The function will throw an error in case of duplicates or NULL values
 in the primary key/ID field mentioned.</p>
@@ -811,19 +783,7 @@ accessions in a single PGR passport database.</li>
 <span><span class="va">GNdup</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/ProbDup.html">ProbDup</a></span><span class="op">(</span>kwic1 <span class="op">=</span> <span class="va">GNKWIC</span>, method <span class="op">=</span> <span class="st">"a"</span>, excep <span class="op">=</span> <span class="va">exep</span>, fuzzy <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>                 phonetic <span class="op">=</span> <span class="cn">FALSE</span>, semantic <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 <pre><code>Fuzzy matching</code></pre>
-<pre><code>
-  |                                                                            
-  |==================                                                    |  25%
-Block 1 / 4 |
-  |                                                                            
-  |===================================                                   |  50%
-Block 2 / 4 |
-  |                                                                            
-  |====================================================                  |  75%
-Block 3 / 4 |
-  |                                                                            
-  |======================================================================| 100%
-Block 4 / 4 |</code></pre>
+<pre><code>  |                                                                              |==================                                                    |  25%Block 1 / 4 |  |                                                                              |===================================                                   |  50%Block 2 / 4 |  |                                                                              |====================================================                  |  75%Block 3 / 4 |  |                                                                              |======================================================================| 100%Block 4 / 4 |</code></pre>
 <div class="sourceCode" id="cb66"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/class.html" class="external-link">class</a></span><span class="op">(</span><span class="va">GNdup</span><span class="op">)</span></span></code></pre></div>
 <pre><code>[1] "ProbDup"</code></pre>
@@ -841,19 +801,7 @@ Total                   378 745(Distinct:745)</code></pre>
 <span><span class="va">GNdup</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/ProbDup.html">ProbDup</a></span><span class="op">(</span>kwic1 <span class="op">=</span> <span class="va">GNKWIC</span>, method <span class="op">=</span> <span class="st">"a"</span>, excep <span class="op">=</span> <span class="va">exep</span>, fuzzy <span class="op">=</span> <span class="cn">FALSE</span>,</span>
 <span>                 phonetic <span class="op">=</span> <span class="cn">TRUE</span>, semantic <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 <pre><code>Phonetic matching</code></pre>
-<pre><code>
-  |                                                                            
-  |==================                                                    |  25%
-Block 1 / 4 |
-  |                                                                            
-  |===================================                                   |  50%
-Block 2 / 4 |
-  |                                                                            
-  |====================================================                  |  75%
-Block 3 / 4 |
-  |                                                                            
-  |======================================================================| 100%
-Block 4 / 4 |</code></pre>
+<pre><code>  |                                                                              |==================                                                    |  25%Block 1 / 4 |  |                                                                              |===================================                                   |  50%Block 2 / 4 |  |                                                                              |====================================================                  |  75%Block 3 / 4 |  |                                                                              |======================================================================| 100%Block 4 / 4 |</code></pre>
 <div class="sourceCode" id="cb73"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/class.html" class="external-link">class</a></span><span class="op">(</span><span class="va">GNdup</span><span class="op">)</span></span></code></pre></div>
 <pre><code>[1] "ProbDup"</code></pre>
@@ -930,15 +878,9 @@ databases.</p></li>
 <span>                  excep <span class="op">=</span> <span class="va">exep</span>, fuzzy <span class="op">=</span> <span class="cn">TRUE</span>, phonetic <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>                  encoding <span class="op">=</span> <span class="st">"primary"</span>, semantic <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 <pre><code>Fuzzy matching</code></pre>
-<pre><code>
-  |                                                                            
-  |======================================================================| 100%
-Block 1 / 1 |</code></pre>
+<pre><code>  |                                                                              |======================================================================| 100%Block 1 / 1 |</code></pre>
 <pre><code>Phonetic matching</code></pre>
-<pre><code>
-  |                                                                            
-  |======================================================================| 100%
-Block 1 / 1 |</code></pre>
+<pre><code>  |                                                                              |======================================================================| 100%Block 1 / 1 |</code></pre>
 <div class="sourceCode" id="cb82"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/class.html" class="external-link">class</a></span><span class="op">(</span><span class="va">GNdupb</span><span class="op">)</span></span></code></pre></div>
 <pre><code>[1] "ProbDup"</code></pre>
@@ -960,27 +902,9 @@ Total                      148 479(Distinct:383)</code></pre>
 <span>                  excep <span class="op">=</span> <span class="va">exep</span>, fuzzy <span class="op">=</span> <span class="cn">TRUE</span>, phonetic <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>                  encoding <span class="op">=</span> <span class="st">"primary"</span>, semantic <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 <pre><code>Fuzzy matching</code></pre>
-<pre><code>
-  |                                                                            
-  |=======================                                               |  33%
-Block 1 / 3 |
-  |                                                                            
-  |===============================================                       |  67%
-Block 2 / 3 |
-  |                                                                            
-  |======================================================================| 100%
-Block 3 / 3 |</code></pre>
+<pre><code>  |                                                                              |=======================                                               |  33%Block 1 / 3 |  |                                                                              |===============================================                       |  67%Block 2 / 3 |  |                                                                              |======================================================================| 100%Block 3 / 3 |</code></pre>
 <pre><code>Phonetic matching</code></pre>
-<pre><code>
-  |                                                                            
-  |=======================                                               |  33%
-Block 1 / 3 |
-  |                                                                            
-  |===============================================                       |  67%
-Block 2 / 3 |
-  |                                                                            
-  |======================================================================| 100%
-Block 3 / 3 |</code></pre>
+<pre><code>  |                                                                              |=======================                                               |  33%Block 1 / 3 |  |                                                                              |===============================================                       |  67%Block 2 / 3 |  |                                                                              |======================================================================| 100%Block 3 / 3 |</code></pre>
 <div class="sourceCode" id="cb91"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/class.html" class="external-link">class</a></span><span class="op">(</span><span class="va">GNdupc</span><span class="op">)</span></span></code></pre></div>
 <pre><code>[1] "ProbDup"</code></pre>
@@ -1046,19 +970,7 @@ to turn one string to another.</li>
 <span>                 fuzzy <span class="op">=</span> <span class="cn">TRUE</span>, max.dist <span class="op">=</span> <span class="fl">3</span>,</span>
 <span>                 phonetic <span class="op">=</span> <span class="cn">FALSE</span>, semantic <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 <pre><code>Fuzzy matching</code></pre>
-<pre><code>
-  |                                                                            
-  |==================                                                    |  25%
-Block 1 / 4 |
-  |                                                                            
-  |===================================                                   |  50%
-Block 2 / 4 |
-  |                                                                            
-  |====================================================                  |  75%
-Block 3 / 4 |
-  |                                                                            
-  |======================================================================| 100%
-Block 4 / 4 |</code></pre>
+<pre><code>  |                                                                              |==================                                                    |  25%Block 1 / 4 |  |                                                                              |===================================                                   |  50%Block 2 / 4 |  |                                                                              |====================================================                  |  75%Block 3 / 4 |  |                                                                              |======================================================================| 100%Block 4 / 4 |</code></pre>
 <div class="sourceCode" id="cb98"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">GNdup</span></span></code></pre></div>
 <pre><code>Method : a
@@ -1075,19 +987,7 @@ Total                   378 745(Distinct:745)</code></pre>
 <span>                 fuzzy <span class="op">=</span> <span class="cn">TRUE</span>, max.dist <span class="op">=</span> <span class="fl">1</span>,</span>
 <span>                 phonetic <span class="op">=</span> <span class="cn">FALSE</span>, semantic <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 <pre><code>Fuzzy matching</code></pre>
-<pre><code>
-  |                                                                            
-  |==================                                                    |  25%
-Block 1 / 4 |
-  |                                                                            
-  |===================================                                   |  50%
-Block 2 / 4 |
-  |                                                                            
-  |====================================================                  |  75%
-Block 3 / 4 |
-  |                                                                            
-  |======================================================================| 100%
-Block 4 / 4 |</code></pre>
+<pre><code>  |                                                                              |==================                                                    |  25%Block 1 / 4 |  |                                                                              |===================================                                   |  50%Block 2 / 4 |  |                                                                              |====================================================                  |  75%Block 3 / 4 |  |                                                                              |======================================================================| 100%Block 4 / 4 |</code></pre>
 <div class="sourceCode" id="cb103"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">GNdup</span></span></code></pre></div>
 <pre><code>Method : a
@@ -1116,19 +1016,7 @@ separately for alphabet and numeric characters present.</p>
 <span>                 fuzzy <span class="op">=</span> <span class="cn">TRUE</span>, force.exact <span class="op">=</span> <span class="cn">TRUE</span>, max.alpha <span class="op">=</span> <span class="fl">4</span>, max.digit <span class="op">=</span> <span class="cn">Inf</span>,</span>
 <span>                 phonetic <span class="op">=</span> <span class="cn">FALSE</span>, semantic <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 <pre><code>Fuzzy matching</code></pre>
-<pre><code>
-  |                                                                            
-  |==================                                                    |  25%
-Block 1 / 4 |
-  |                                                                            
-  |===================================                                   |  50%
-Block 2 / 4 |
-  |                                                                            
-  |====================================================                  |  75%
-Block 3 / 4 |
-  |                                                                            
-  |======================================================================| 100%
-Block 4 / 4 |</code></pre>
+<pre><code>  |                                                                              |==================                                                    |  25%Block 1 / 4 |  |                                                                              |===================================                                   |  50%Block 2 / 4 |  |                                                                              |====================================================                  |  75%Block 3 / 4 |  |                                                                              |======================================================================| 100%Block 4 / 4 |</code></pre>
 <div class="sourceCode" id="cb108"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">GNdup</span></span></code></pre></div>
 <pre><code>Method : a
@@ -1142,8 +1030,8 @@ Total                   378 745(Distinct:745)</code></pre>
 <li>
 <strong>Phonetic matching</strong> of keywords is carried out using
 the Double Metaphone phonetic algorithm which is implemented as the
-helper function <code>DoubleMetaphone</code>, <span class="citation">(<a href="#ref-p00" role="doc-biblioref">Philips 2000</a>)</span>, to
-identify keywords that have the similar pronunciation.</li>
+helper function <code>DoubleMetaphone</code>, <span class="citation">(<a href="#ref-p00">Philips 2000</a>)</span>, to identify keywords that have
+the similar pronunciation.</li>
 </ol>
 <div class="sourceCode" id="cb110"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">GNdup</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/ProbDup.html">ProbDup</a></span><span class="op">(</span>kwic1 <span class="op">=</span> <span class="va">GNKWIC</span>, method <span class="op">=</span> <span class="st">"a"</span>, excep <span class="op">=</span> <span class="va">exep</span>, </span>
@@ -1151,19 +1039,7 @@ identify keywords that have the similar pronunciation.</li>
 <span>                 phonetic <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>                 semantic <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 <pre><code>Phonetic matching</code></pre>
-<pre><code>
-  |                                                                            
-  |==================                                                    |  25%
-Block 1 / 4 |
-  |                                                                            
-  |===================================                                   |  50%
-Block 2 / 4 |
-  |                                                                            
-  |====================================================                  |  75%
-Block 3 / 4 |
-  |                                                                            
-  |======================================================================| 100%
-Block 4 / 4 |</code></pre>
+<pre><code>  |                                                                              |==================                                                    |  25%Block 1 / 4 |  |                                                                              |===================================                                   |  50%Block 2 / 4 |  |                                                                              |====================================================                  |  75%Block 3 / 4 |  |                                                                              |======================================================================| 100%Block 4 / 4 |</code></pre>
 <div class="sourceCode" id="cb113"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">GNdup</span></span></code></pre></div>
 <pre><code>Method : a
@@ -1181,19 +1057,7 @@ the <code>encoding</code> argument.</p>
 <span>                 phonetic <span class="op">=</span> <span class="cn">TRUE</span>, encoding <span class="op">=</span> <span class="st">"alternate"</span>,</span>
 <span>                 semantic <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 <pre><code>Phonetic matching</code></pre>
-<pre><code>
-  |                                                                            
-  |==================                                                    |  25%
-Block 1 / 4 |
-  |                                                                            
-  |===================================                                   |  50%
-Block 2 / 4 |
-  |                                                                            
-  |====================================================                  |  75%
-Block 3 / 4 |
-  |                                                                            
-  |======================================================================| 100%
-Block 4 / 4 |</code></pre>
+<pre><code>  |                                                                              |==================                                                    |  25%Block 1 / 4 |  |                                                                              |===================================                                   |  50%Block 2 / 4 |  |                                                                              |====================================================                  |  75%Block 3 / 4 |  |                                                                              |======================================================================| 100%Block 4 / 4 |</code></pre>
 <div class="sourceCode" id="cb118"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">GNdup</span></span></code></pre></div>
 <pre><code>Method : a
@@ -1212,19 +1076,7 @@ phonetic matching.</p>
 <span>                 phonetic <span class="op">=</span> <span class="cn">TRUE</span>, encoding <span class="op">=</span> <span class="st">"alternate"</span>, phon.min.alpha <span class="op">=</span> <span class="fl">4</span>,</span>
 <span>                 semantic <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 <pre><code>Phonetic matching</code></pre>
-<pre><code>
-  |                                                                            
-  |==================                                                    |  25%
-Block 1 / 4 |
-  |                                                                            
-  |===================================                                   |  50%
-Block 2 / 4 |
-  |                                                                            
-  |====================================================                  |  75%
-Block 3 / 4 |
-  |                                                                            
-  |======================================================================| 100%
-Block 4 / 4 |</code></pre>
+<pre><code>  |                                                                              |==================                                                    |  25%Block 1 / 4 |  |                                                                              |===================================                                   |  50%Block 2 / 4 |  |                                                                              |====================================================                  |  75%Block 3 / 4 |  |                                                                              |======================================================================| 100%Block 4 / 4 |</code></pre>
 <div class="sourceCode" id="cb123"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">GNdup</span></span></code></pre></div>
 <pre><code>Method : a
@@ -1243,19 +1095,7 @@ matching.</p>
 <span>                 phonetic <span class="op">=</span> <span class="cn">TRUE</span>, encoding <span class="op">=</span> <span class="st">"alternate"</span>, min.enc <span class="op">=</span> <span class="fl">4</span>,</span>
 <span>                 semantic <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 <pre><code>Phonetic matching</code></pre>
-<pre><code>
-  |                                                                            
-  |==================                                                    |  25%
-Block 1 / 4 |
-  |                                                                            
-  |===================================                                   |  50%
-Block 2 / 4 |
-  |                                                                            
-  |====================================================                  |  75%
-Block 3 / 4 |
-  |                                                                            
-  |======================================================================| 100%
-Block 4 / 4 |</code></pre>
+<pre><code>  |                                                                              |==================                                                    |  25%Block 1 / 4 |  |                                                                              |===================================                                   |  50%Block 2 / 4 |  |                                                                              |====================================================                  |  75%Block 3 / 4 |  |                                                                              |======================================================================| 100%Block 4 / 4 |</code></pre>
 <div class="sourceCode" id="cb128"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">GNdup</span></span></code></pre></div>
 <pre><code>Method : a
@@ -1289,19 +1129,7 @@ and the synset list are recommended.</li>
 <span>                 fuzzy <span class="op">=</span> <span class="cn">FALSE</span>, phonetic <span class="op">=</span> <span class="cn">FALSE</span>,</span>
 <span>                 semantic <span class="op">=</span> <span class="cn">TRUE</span>, syn <span class="op">=</span> <span class="va">syn</span><span class="op">)</span></span></code></pre></div>
 <pre><code>Semantic matching</code></pre>
-<pre><code>
-  |                                                                            
-  |==================                                                    |  25%
-Block 1 / 4 |
-  |                                                                            
-  |===================================                                   |  50%
-Block 2 / 4 |
-  |                                                                            
-  |====================================================                  |  75%
-Block 3 / 4 |
-  |                                                                            
-  |======================================================================| 100%
-Block 4 / 4 |</code></pre>
+<pre><code>  |                                                                              |==================                                                    |  25%Block 1 / 4 |  |                                                                              |===================================                                   |  50%Block 2 / 4 |  |                                                                              |====================================================                  |  75%Block 3 / 4 |  |                                                                              |======================================================================| 100%Block 4 / 4 |</code></pre>
 <div class="sourceCode" id="cb133"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">GNdup</span></span></code></pre></div>
 <pre><code>Method : a
@@ -1334,8 +1162,8 @@ percentage of achievement and a text-based progress bar.</p>
 <p>In case of multi-byte characters in keywords, the speed of keyword
 matching is further dependent upon the <code>useBytes</code> argument as
 described in <code>help("stringdist-encoding")</code> for the
-<code>stringdist</code> function in the namesake <a href="https://CRAN.R-project.org/package=stringdist" class="external-link">package</a> <span class="citation">(<a href="#ref-van2014stringdist" role="doc-biblioref">Loo 2014</a>)</span>, which is made use of here for
-string matching.</p>
+<code>stringdist</code> function in the namesake <a href="https://CRAN.R-project.org/package=stringdist" class="external-link">package</a> <span class="citation">(<a href="#ref-van2014stringdist">Loo 2014</a>)</span>,
+which is made use of here for string matching.</p>
 <p>The CPU time taken for retrieval of probable duplicate sets under
 different options for the arguments <code>chunksize</code> and
 <code>useBytes</code> can be visualized using the <a href="https://CRAN.R-project.org/package=microbenchmark" class="external-link"><code>microbenchmark</code></a>
@@ -1404,7 +1232,7 @@ package (Fig. 3).</p>
 <span>         <span class="st">"t3 : chunksize = 500,\n     useBytes = T\n"</span>,</span>
 <span>         <span class="st">"t4 : chunksize = 1000,\n     useBytes = F\n"</span><span class="op">)</span>,</span>
 <span>       bty <span class="op">=</span> <span class="st">"n"</span>, cex <span class="op">=</span> <span class="fl">0.6</span><span class="op">)</span></span></code></pre></div>
-<p><img src="Introduction_files/figure-html/unnamed-chunk-46-1.png" width="700"></p>
+<p><img src="Introduction_files/figure-html/unnamed-chunk-46-1.png" class="r-plt" width="700"></p>
 <p><strong>Fig. 3.</strong> CPU time with different <code>ProbDup</code>
 arguments estimated using the <code>microbenchmark</code> package.</p>
 </div>
@@ -1834,38 +1662,11 @@ accessions records.</p>
 <span>                  excep <span class="op">=</span> <span class="va">exep</span>, fuzzy <span class="op">=</span> <span class="cn">TRUE</span>, phonetic <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>                  encoding <span class="op">=</span> <span class="st">"primary"</span>, semantic <span class="op">=</span> <span class="cn">TRUE</span>, syn <span class="op">=</span> <span class="va">syn</span><span class="op">)</span></span></code></pre></div>
 <pre><code>Fuzzy matching</code></pre>
-<pre><code>
-  |                                                                            
-  |=======================                                               |  33%
-Block 1 / 3 |
-  |                                                                            
-  |===============================================                       |  67%
-Block 2 / 3 |
-  |                                                                            
-  |======================================================================| 100%
-Block 3 / 3 |</code></pre>
+<pre><code>  |                                                                              |=======================                                               |  33%Block 1 / 3 |  |                                                                              |===============================================                       |  67%Block 2 / 3 |  |                                                                              |======================================================================| 100%Block 3 / 3 |</code></pre>
 <pre><code>Phonetic matching</code></pre>
-<pre><code>
-  |                                                                            
-  |=======================                                               |  33%
-Block 1 / 3 |
-  |                                                                            
-  |===============================================                       |  67%
-Block 2 / 3 |
-  |                                                                            
-  |======================================================================| 100%
-Block 3 / 3 |</code></pre>
+<pre><code>  |                                                                              |=======================                                               |  33%Block 1 / 3 |  |                                                                              |===============================================                       |  67%Block 2 / 3 |  |                                                                              |======================================================================| 100%Block 3 / 3 |</code></pre>
 <pre><code>Semantic matching</code></pre>
-<pre><code>
-  |                                                                            
-  |=======================                                               |  33%
-Block 1 / 3 |
-  |                                                                            
-  |===============================================                       |  67%
-Block 2 / 3 |
-  |                                                                            
-  |======================================================================| 100%
-Block 3 / 3 |</code></pre>
+<pre><code>  |                                                                              |=======================                                               |  33%Block 1 / 3 |  |                                                                              |===============================================                       |  67%Block 2 / 3 |  |                                                                              |======================================================================| 100%Block 3 / 3 |</code></pre>
 <div class="sourceCode" id="cb175"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Get the summary data.frames and Grob</span></span>
 <span><span class="va">GNdupcView</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/ViewProbDup.html">ViewProbDup</a></span><span class="op">(</span><span class="va">GNdupc</span>, <span class="va">GN1</span>, <span class="va">GN2</span>, <span class="st">"SourceCountry"</span>, <span class="st">"SourceCountry"</span>,</span>
@@ -1886,7 +1687,7 @@ generated.</code></pre>
 <code class="sourceCode R"><span><span class="co"># Plot the summary visualization</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">gridExtra</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/gridExtra/man/arrangeGrob.html" class="external-link">grid.arrange</a></span><span class="op">(</span><span class="va">GNdupcView</span><span class="op">[[</span><span class="fl">3</span><span class="op">]</span><span class="op">]</span><span class="op">)</span></span></code></pre></div>
-<p><img src="Introduction_files/figure-html/unnamed-chunk-61-1.png" width="960"></p>
+<p><img src="Introduction_files/figure-html/unnamed-chunk-61-1.png" class="r-plt" width="960"></p>
 <p><strong>Fig. 5.</strong> Summary visualization of groundnut probable
 duplicate sets retrieved according to <code>SourceCountry</code>
 field.</p>
@@ -1935,7 +1736,7 @@ a rough indication of the completeness of the data in such fields
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/legend.html" class="external-link">legend</a></span><span class="op">(</span><span class="st">"topright"</span>, <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="st">"No. of records ="</span>,</span>
 <span>                   <span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">GN</span><span class="op">[</span><span class="op">!</span><span class="va">GN</span><span class="op">$</span><span class="va">NationalID</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="va">GND</span>, <span class="op">]</span><span class="op">)</span><span class="op">)</span>,</span>
 <span>       bty <span class="op">=</span> <span class="st">"n"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="Introduction_files/figure-html/unnamed-chunk-62-1.png" width="700"></p>
+<p><img src="Introduction_files/figure-html/unnamed-chunk-62-1.png" class="r-plt" width="700"></p>
 <p><strong>Fig. 6.</strong> The keyword counts in the database fields
 considered for identification of probable duplicates for
 <strong>A.</strong> the entire <code>GN1000</code> dataset,
@@ -1950,8 +1751,8 @@ considered for identification of probable duplicates for
 <pre><code>To cite the R package 'PGRdup' in publications use:
 
   Aravind, J., Radhamani, J., Kalyani Srinivasan, Ananda Subhash, B.,
-  and Tyagi, R. K.  ().  PGRdup: Discover Probable Duplicates in Plant
-  Genetic Resources Collections. R package version 0.2.3.9,
+  and Tyagi, R. K.  (2025).  PGRdup: Discover Probable Duplicates in
+  Plant Genetic Resources Collections. R package version 0.2.4.0,
   https://github.com/aravind-j/PGRdup,https://cran.r-project.org/package=PGRdup.
 
 A BibTeX entry for LaTeX users is
@@ -1959,7 +1760,8 @@ A BibTeX entry for LaTeX users is
   @Manual{,
     title = {PGRdup: Discover Probable Duplicates in Plant Genetic Resources Collections},
     author = {J. Aravind and J. Radhamani and {Kalyani Srinivasan} and B. {Ananda Subhash} and Rishi Kumar Tyagi},
-    note = {R package version 0.2.3.9 https://github.com/aravind-j/PGRdup, https://cran.r-project.org/package=PGRdup},
+    note = {R package version 0.2.4.0 https://github.com/aravind-j/PGRdup, https://cran.r-project.org/package=PGRdup},
+    year = {2025},
   }
 
 This free and open-source software implements academic research by the
@@ -1971,13 +1773,13 @@ citing the package.</code></pre>
 </h2>
 <div class="sourceCode" id="cb182"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html" class="external-link">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<pre><code>R version 4.3.1 (2023-06-16)
-Platform: x86_64-apple-darwin20 (64-bit)
-Running under: macOS Monterey 12.6.7
+<pre><code>R version 4.5.2 (2025-10-31)
+Platform: aarch64-apple-darwin20
+Running under: macOS Sequoia 15.7.2
 
 Matrix products: default
-BLAS:   /Library/Frameworks/R.framework/Versions/4.3-x86_64/Resources/lib/libRblas.0.dylib 
-LAPACK: /Library/Frameworks/R.framework/Versions/4.3-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.11.0
+BLAS:   /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib 
+LAPACK: /Library/Frameworks/R.framework/Versions/4.5-arm64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.1
 
 locale:
 [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
@@ -1989,105 +1791,83 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] PGRdup_0.2.3.9     gridExtra_2.3      wordcloud_2.6      RColorBrewer_1.1-3
-[5] diagram_1.6.5      shape_1.4.6       
+[1] PGRdup_0.2.4.0     gridExtra_2.3      wordcloud_2.6      RColorBrewer_1.1-3
+[5] diagram_1.6.5      shape_1.4.6.1     
 
 loaded via a namespace (and not attached):
- [1] sass_0.4.7            utf8_1.2.3            bitops_1.0-7         
- [4] stringi_1.7.12        digest_0.6.33         magrittr_2.0.3       
- [7] evaluate_0.21         grid_4.3.1            fastmap_1.1.1        
-[10] rprojroot_2.0.3       jsonlite_1.8.7        httr_1.4.7           
-[13] purrr_1.0.2           fansi_1.0.4           scales_1.2.1         
-[16] stringdist_0.9.10     XML_3.99-0.14         microbenchmark_1.4.10
-[19] textshaping_0.3.6     jquerylib_0.1.4       cli_3.6.1            
-[22] rlang_1.1.1           munsell_0.5.0         withr_2.5.0          
-[25] cachem_1.0.8          yaml_2.3.7            tools_4.3.1          
-[28] parallel_4.3.1        memoise_2.0.1         colorspace_2.1-0     
-[31] ggplot2_3.4.3         curl_5.0.2            vctrs_0.6.3          
-[34] R6_2.5.1              lifecycle_1.0.3       stringr_1.5.0        
-[37] fs_1.6.3              ragg_1.2.5            pkgconfig_2.0.3      
-[40] desc_1.4.2            pkgdown_2.0.7         bslib_0.5.1          
-[43] pillar_1.9.0          gtable_0.3.4          Rcpp_1.0.11          
-[46] data.table_1.14.8     glue_1.6.2            systemfonts_1.0.4    
-[49] xfun_0.40             tibble_3.2.1          highr_0.10           
-[52] knitr_1.43            farver_2.1.1          htmltools_0.5.6      
-[55] igraph_1.5.1          labeling_0.4.3        rmarkdown_2.24       
-[58] compiler_4.3.1        RCurl_1.98-1.12      </code></pre>
+ [1] sass_0.4.10          bitops_1.0-9         stringi_1.8.7       
+ [4] digest_0.6.39        magrittr_2.0.4       evaluate_1.0.5      
+ [7] grid_4.5.2           fastmap_1.2.0        jsonlite_2.0.0      
+[10] httr_1.4.7           scales_1.4.0         stringdist_0.9.15   
+[13] XML_3.99-0.20        microbenchmark_1.5.0 textshaping_1.0.4   
+[16] jquerylib_0.1.4      cli_3.6.5            rlang_1.1.6         
+[19] withr_3.0.2          cachem_1.1.0         yaml_2.3.12         
+[22] tools_4.5.2          parallel_4.5.2       ggplot2_4.0.1       
+[25] curl_7.0.0           vctrs_0.6.5          R6_2.6.1            
+[28] lifecycle_1.0.4      fs_1.6.6             ragg_1.5.0          
+[31] pkgconfig_2.0.3      desc_1.4.3           pkgdown_2.2.0       
+[34] bslib_0.9.0          pillar_1.11.1        gtable_0.3.6        
+[37] data.table_1.17.8    glue_1.8.0           Rcpp_1.1.0          
+[40] systemfonts_1.3.1    xfun_0.54            knitr_1.50          
+[43] farver_2.1.2         htmltools_0.5.9      igraph_2.2.1        
+[46] rmarkdown_2.30       labeling_0.4.3       compiler_4.5.2      
+[49] S7_0.2.1             RCurl_1.98-1.17     </code></pre>
 </div>
 <div class="section level2 unnumbered">
 <h2 class="unnumbered" id="references">References<a class="anchor" aria-label="anchor" href="#references"></a>
 </h2>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 <div id="ref-knupffer1988european" class="csl-entry">
 Knüpffer, H. 1988. <span>“The <span>European</span> <span>Barley</span>
-<span>Database</span> of the <span>ECP</span>/<span>GR</span>: An
-Introduction.”</span> <em>Die Kulturpflanze</em> 36 (1): 135–62. <a href="https://doi.org/10.1007/BF01986957" class="external-link">https://doi.org/10.1007/BF01986957</a>.
+<span>Database</span> of the <span>ECP</span>/<span>GR</span>:
+<span>An</span> Introduction.”</span> <em>Die Kulturpflanze</em> 36 (1):
+135–62. <a href="https://doi.org/10.1007/BF01986957" class="external-link">https://doi.org/10.1007/BF01986957</a>.
 </div>
 <div id="ref-kfj97" class="csl-entry">
 Knüpffer, H., L. Frese, and M. W. M. Jongen. 1997. <span>“Using Central
-Crop Databases: Searching for Duplicates and Gaps.”</span> In
-<em>Central <span>Crop</span> <span>Databases</span>: <span>Tools</span>
-for <span>Plant</span> <span>Genetic</span> <span>Resources</span>
-<span>Management</span>. <span>Report</span> of a <span>Workshop</span>,
-<span>Budapest</span>, <span>Hungary</span>, 13-16 <span>October</span>
-1996</em>, edited by E. Lipman, M. W. M. Jongen, T. J. L. van Hintum, T.
-Gass, and L. Maggioni, 67–77. Rome, Italy and Wageningen, The
-Netherlands: International Plant Genetic Resources Institute and Centre
-for Genetic Resources. <a href="https://www.bioversityinternational.org/index.php?id=244&amp;tx_news_pi1%5Bnews%5D=334&amp;cHash=3738ae238a450ff71bb1cb087687ac9c" class="external-link">https://www.bioversityinternational.org/index.php?id=244&amp;tx_news_pi1%5Bnews%5D=334&amp;cHash=3738ae238a450ff71bb1cb087687ac9c</a>.
+Crop Databases: <span>Searching</span> for Duplicates and Gaps.”</span>
+In <em>Central <span>Crop</span> <span>Databases</span>:
+<span>Tools</span> for <span>Plant</span> <span>Genetic</span>
+<span>Resources</span> <span>Management</span>. <span>Report</span> of a
+<span>Workshop</span>, <span>Budapest</span>, <span>Hungary</span>,
+13-16 <span>October</span> 1996</em>, edited by E. Lipman, M. W. M.
+Jongen, T. J. L. van Hintum, T. Gass, and L. Maggioni, 67–77. Rome,
+Italy and Wageningen, The Netherlands: International Plant Genetic
+Resources Institute and Centre for Genetic Resources. <a href="https://www.bioversityinternational.org/index.php?id=244&amp;tx_news_pi1%5Bnews%5D=334&amp;cHash=3738ae238a450ff71bb1cb087687ac9c" class="external-link">https://www.bioversityinternational.org/index.php?id=244&amp;tx_news_pi1%5Bnews%5D=334&amp;cHash=3738ae238a450ff71bb1cb087687ac9c</a>.
 </div>
 <div id="ref-van2014stringdist" class="csl-entry">
 Loo, M. P. J. van der. 2014. <span>“The Stringdist <span>Package</span>
 for <span>Approximate</span> <span>String</span>
-<span>Matching</span>.”</span> <em>R Journal</em> 6 (1): 111–22. <a href="https://journal.r-project.org/archive/2014/RJ-2014-011/index.html" class="external-link">https://journal.r-project.org/archive/2014/RJ-2014-011/index.html</a>.
+<span>Matching</span>.”</span> <em>R Journal</em> 6 (1): 111–22. <a href="https://doi.org/10.32614/RJ-2014-011" class="external-link">https://doi.org/10.32614/RJ-2014-011</a>.
 </div>
 <div id="ref-p00" class="csl-entry">
 Philips, Lawrence. 2000. <span>“The <span>Double</span>
 <span>Metaphone</span> <span>Search</span>
 <span>Algorithm</span>.”</span> <em>C/C++ Users Journal</em> 18 (6):
-38–43. <a href="https://dl.acm.org/citation.cfm?id=349124.349132" class="external-link">https://dl.acm.org/citation.cfm?id=349124.349132</a>.
+38–43. <a href="https://dl.acm.org/doi/10.5555/349124.349132" class="external-link">https://dl.acm.org/doi/10.5555/349124.349132</a>.
 </div>
 </div>
 </div>
-  </div>
-
-  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
-
-        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
-    </nav>
-</div>
-
+  </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
+    </nav></aside>
 </div>
 
 
 
-      <footer><div class="copyright">
-  <p></p>
-<p>Developed by J. Aravind, J. Radhamani, Kalyani Srinivasan, B. Ananda Subhash, Rishi Kumar Tyagi.</p>
+    <footer><div class="pkgdown-footer-left">
+  <p>Developed by J. Aravind, J. Radhamani, Kalyani Srinivasan, B. Ananda Subhash, Rishi Kumar Tyagi.</p>
 </div>
 
-<div class="pkgdown">
-  <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
+<div class="pkgdown-footer-right">
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
 </div>
 
-      </footer>
+    </footer>
 </div>
 
-  
-<script src="https://cdnjs.cloudflare.com/ajax/libs/docsearch.js/2.6.1/docsearch.min.js" integrity="sha256-GKvGqXDznoRYHCwKXGnuchvKSwmx9SRMrZOTh2g4Sb0=" crossorigin="anonymous"></script><script>
-  docsearch({
-    
-    
-    apiKey: '01238b3717a637dbd6d12ae34b5c5d48',
-    indexName: 'pgrdup',
-    inputSelector: 'input#search-input.form-control',
-    transformData: function(hits) {
-      return hits.map(function (hit) {
-        hit.url = updateHitURL(hit);
-        return hit;
-      });
-    }
-  });
-</script>
-</body>
+
+
+
+
+  </body>
 </html>
