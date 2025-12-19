@@ -1,5 +1,15 @@
 # Changelog
 
+## PGRdup 0.2.4.1
+
+## PGRdup 0.2.4.0
+
+CRAN release: 2025-12-14
+
+### OTHER NOTES:
+
+- Fixed the `checkRd` notes.
+
 ## PGRdup 0.2.3.9
 
 CRAN release: 2023-08-31
