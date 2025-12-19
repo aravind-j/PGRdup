@@ -43,8 +43,8 @@ The functions in this package are primarily built using the `R` packages
 
 ## Version History
 
-The current version of the package is 0.2.4.0. The previous versions are
-as follows.
+The current version of the package is 0.2.4.0.9000. The previous
+versions are as follows.
 
 **Table 1.** Version history of `PGRdup` `R` package.
 
@@ -63,6 +63,7 @@ as follows.
 | 0.2.3.6 | 2020-07-27 |
 | 0.2.3.7 | 2021-02-17 |
 | 0.2.3.8 | 2023-05-23 |
+| 0.2.3.9 | 2023-09-01 |
 
 To know detailed history of changes use `news(package='PGRdup')`.
 
@@ -101,7 +102,7 @@ library(PGRdup)
 ```
 
     --------------------------------------------------------------------------------
-    Welcome to PGRdup version 0.2.4.0
+    Welcome to PGRdup version 0.2.4.0.9000
 
 
     # To know how to use this package type:
@@ -1854,7 +1855,7 @@ citation("PGRdup")
 
       Aravind, J., Radhamani, J., Kalyani Srinivasan, Ananda Subhash, B.,
       and Tyagi, R. K.  (2025).  PGRdup: Discover Probable Duplicates in
-      Plant Genetic Resources Collections. R package version 0.2.4.0,
+      Plant Genetic Resources Collections. R package version 0.2.4.0.9000,
       https://github.com/aravind-j/PGRdup,https://cran.r-project.org/package=PGRdup.
 
     A BibTeX entry for LaTeX users is
@@ -1862,7 +1863,7 @@ citation("PGRdup")
       @Manual{,
         title = {PGRdup: Discover Probable Duplicates in Plant Genetic Resources Collections},
         author = {J. Aravind and J. Radhamani and {Kalyani Srinivasan} and B. {Ananda Subhash} and Rishi Kumar Tyagi},
-        note = {R package version 0.2.4.0 https://github.com/aravind-j/PGRdup, https://cran.r-project.org/package=PGRdup},
+        note = {R package version 0.2.4.0.9000 https://github.com/aravind-j/PGRdup, https://cran.r-project.org/package=PGRdup},
         year = {2025},
       }
 
@@ -1894,8 +1895,8 @@ sessionInfo()
     [1] stats     graphics  grDevices utils     datasets  methods   base     
 
     other attached packages:
-    [1] PGRdup_0.2.4.0     gridExtra_2.3      wordcloud_2.6      RColorBrewer_1.1-3
-    [5] diagram_1.6.5      shape_1.4.6.1     
+    [1] PGRdup_0.2.4.0.9000 gridExtra_2.3       wordcloud_2.6      
+    [4] RColorBrewer_1.1-3  diagram_1.6.5       shape_1.4.6.1      
 
     loaded via a namespace (and not attached):
      [1] sass_0.4.10          bitops_1.0-9         stringi_1.8.7       
@@ -1911,7 +1912,7 @@ sessionInfo()
     [31] pkgconfig_2.0.3      desc_1.4.3           pkgdown_2.2.0       
     [34] bslib_0.9.0          pillar_1.11.1        gtable_0.3.6        
     [37] data.table_1.17.8    glue_1.8.0           Rcpp_1.1.0          
-    [40] systemfonts_1.3.1    xfun_0.54            knitr_1.50          
+    [40] systemfonts_1.3.1    xfun_0.55            knitr_1.50          
     [43] farver_2.1.2         htmltools_0.5.9      igraph_2.2.1        
     [46] rmarkdown_2.30       labeling_0.4.3       compiler_4.5.2      
     [49] S7_0.2.1             RCurl_1.98-1.17     
