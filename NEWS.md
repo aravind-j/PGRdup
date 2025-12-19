@@ -1,3 +1,10 @@
+# PGRdup 0.2.4.1
+
+# PGRdup 0.2.4.0
+
+## OTHER NOTES: 
+* Fixed the `checkRd` notes.
+
 # PGRdup 0.2.3.9
 
 ## OTHER NOTES: 
