@@ -168,7 +168,7 @@ DisProbDup <- function(pdup, combine = c("F", "P", "S")) {
   for (i in 1:N) {
     if (!is.null(pdup[[i]])) {
       # Get and cast the disjoint sets by PRIM_ID
-      idlist <- strsplit(pdup[[i]]$ID, ", ")
+      idlist <- strsplit(pdup[[i]]$ID, ", ", fixed = TRUE)
       idcomb <- do.call("rbind", lapply(idlist, embed, 2))
       gg <- graph.edgelist(idcomb, directed = FALSE)
       disidlist <- split(V(gg)$name, clusters(gg)$membership)
@@ -185,7 +185,7 @@ DisProbDup <- function(pdup, combine = c("F", "P", "S")) {
       pdup[[i]] <- as.data.table(pdup[[i]])
       #pdup[[i]] <- data.table(pdup[[i]])
       pdup[[i]] <- pdup[[i]][, .(unlist(strsplit(IDKW, ", ", TRUE))), by = TYPE][,
-                               .(IDKW = toString(sort(unique(unlist(strsplit(V1, ", ")))))),
+                               .(IDKW = toString(sort(unique(unlist(strsplit(V1, ", ", fixed = TRUE)))))),
                                .(TYPE, ID = gsub(":.*", "", V1))]
       pdup[[i]] <- unique(pdup[[i]])
       setkey(pdup[[i]], ID)
