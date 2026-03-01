@@ -85,7 +85,7 @@ Srinivasan<sup>1</sup>, Ananda Subhash, B.<sup>2</sup>, and Tyagi, R.
 K.<sup>1</sup>
 </h4>
             
-            <h4 data-toc-skip class="date">2025-12-19</h4>
+            <h4 data-toc-skip class="date">2026-03-01</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/aravind-j/PGRdup/blob/master/vignettes/Introduction.Rmd" class="external-link"><code>vignettes/Introduction.Rmd</code></a></small>
       <div class="d-none name"><code>Introduction.Rmd</code></div>
@@ -133,7 +133,7 @@ probable duplicate sets. This document assumes a basic knowledge of
 <a href="https://CRAN.R-project.org/package=stringdist" class="external-link"><code>stringdist</code></a>
 and <a href="https://CRAN.R-project.org/package=stringi" class="external-link"><code>stringi</code></a>.</p>
 <p><img src="https://raw.githubusercontent.com/aravind-j/PGRdup/master/inst/extdata/PGRdup.png" align="center" alt="logo" width="750" height="85" style="border: none;"></p>
-<p><img src="Introduction_files/figure-html/unnamed-chunk-6-1.png" class="r-plt" width="700"></p>
+<p><img src="Introduction_files/figure-html/unnamed-chunk-6-1.png" class="r-plt" alt="" width="700"></p>
 <p><strong>Fig. 1.</strong> PGRdup workflow and associated functions</p>
 </div>
 <div class="section level2">
@@ -643,7 +643,7 @@ Number of distinct keywords : 3109</code></pre>
 4     RED   11
 5    OVER   10
 6  PURPLE   10</code></pre>
-<p><img src="Introduction_files/figure-html/unnamed-chunk-24-1.png" class="r-plt" width="700"></p>
+<p><img src="Introduction_files/figure-html/unnamed-chunk-24-1.png" class="r-plt" alt="" width="700"></p>
 <p><strong>Fig. 2.</strong> Word cloud of keywords retrieved</p>
 <p>The function will throw an error in case of duplicates or NULL values
 in the primary key/ID field mentioned.</p>
@@ -1236,7 +1236,7 @@ package (Fig. 3).</p>
 <span>         <span class="st">"t3 : chunksize = 500,\n     useBytes = T\n"</span>,</span>
 <span>         <span class="st">"t4 : chunksize = 1000,\n     useBytes = F\n"</span><span class="op">)</span>,</span>
 <span>       bty <span class="op">=</span> <span class="st">"n"</span>, cex <span class="op">=</span> <span class="fl">0.6</span><span class="op">)</span></span></code></pre></div>
-<p><img src="Introduction_files/figure-html/unnamed-chunk-46-1.png" class="r-plt" width="700"></p>
+<p><img src="Introduction_files/figure-html/unnamed-chunk-46-1.png" class="r-plt" alt="" width="700"></p>
 <p><strong>Fig. 3.</strong> CPU time with different <code>ProbDup</code>
 arguments estimated using the <code>microbenchmark</code> package.</p>
 </div>
@@ -1680,9 +1680,9 @@ accessions records.</p>
 of ggplot2 3.3.4.
  [36mℹ [39m The deprecated feature was likely used in the  [34mPGRdup [39m package.
   Please report the issue at  [3m [34m&lt;https://github.com/aravind-j/PGRdup/issues&gt; [39m [23m.
-This warning is displayed once every 8 hours.
-Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
-generated.</code></pre>
+ [90mThis warning is displayed once per session. [39m
+ [90mCall `lifecycle::last_lifecycle_warnings()` to see where this warning was [39m
+ [90mgenerated. [39m</code></pre>
 <div class="sourceCode" id="cb177"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># View the summary data.frames</span></span>
 <span><span class="va">GNdupcView</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span></span>
@@ -1691,7 +1691,7 @@ generated.</code></pre>
 <code class="sourceCode R"><span><span class="co"># Plot the summary visualization</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">gridExtra</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/gridExtra/man/arrangeGrob.html" class="external-link">grid.arrange</a></span><span class="op">(</span><span class="va">GNdupcView</span><span class="op">[[</span><span class="fl">3</span><span class="op">]</span><span class="op">]</span><span class="op">)</span></span></code></pre></div>
-<p><img src="Introduction_files/figure-html/unnamed-chunk-61-1.png" class="r-plt" width="960"></p>
+<p><img src="Introduction_files/figure-html/unnamed-chunk-61-1.png" class="r-plt" alt="" width="960"></p>
 <p><strong>Fig. 5.</strong> Summary visualization of groundnut probable
 duplicate sets retrieved according to <code>SourceCountry</code>
 field.</p>
@@ -1740,7 +1740,7 @@ a rough indication of the completeness of the data in such fields
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/legend.html" class="external-link">legend</a></span><span class="op">(</span><span class="st">"topright"</span>, <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="st">"No. of records ="</span>,</span>
 <span>                   <span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">GN</span><span class="op">[</span><span class="op">!</span><span class="va">GN</span><span class="op">$</span><span class="va">NationalID</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="va">GND</span>, <span class="op">]</span><span class="op">)</span><span class="op">)</span>,</span>
 <span>       bty <span class="op">=</span> <span class="st">"n"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="Introduction_files/figure-html/unnamed-chunk-62-1.png" class="r-plt" width="700"></p>
+<p><img src="Introduction_files/figure-html/unnamed-chunk-62-1.png" class="r-plt" alt="" width="700"></p>
 <p><strong>Fig. 6.</strong> The keyword counts in the database fields
 considered for identification of probable duplicates for
 <strong>A.</strong> the entire <code>GN1000</code> dataset,
@@ -1755,7 +1755,7 @@ considered for identification of probable duplicates for
 <pre><code>To cite the R package 'PGRdup' in publications use:
 
   Aravind, J., Radhamani, J., Kalyani Srinivasan, Ananda Subhash, B.,
-  and Tyagi, R. K.  (2025).  PGRdup: Discover Probable Duplicates in
+  and Tyagi, R. K.  (2026).  PGRdup: Discover Probable Duplicates in
   Plant Genetic Resources Collections. R package version 0.2.4.0.9000,
   https://github.com/aravind-j/PGRdup,https://cran.r-project.org/package=PGRdup.
 
@@ -1765,7 +1765,7 @@ A BibTeX entry for LaTeX users is
     title = {PGRdup: Discover Probable Duplicates in Plant Genetic Resources Collections},
     author = {J. Aravind and J. Radhamani and {Kalyani Srinivasan} and B. {Ananda Subhash} and Rishi Kumar Tyagi},
     note = {R package version 0.2.4.0.9000 https://github.com/aravind-j/PGRdup, https://cran.r-project.org/package=PGRdup},
-    year = {2025},
+    year = {2026},
   }
 
 This free and open-source software implements academic research by the
@@ -1779,7 +1779,7 @@ citing the package.</code></pre>
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html" class="external-link">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <pre><code>R version 4.5.2 (2025-10-31)
 Platform: aarch64-apple-darwin20
-Running under: macOS Sequoia 15.7.2
+Running under: macOS Sequoia 15.7.4
 
 Matrix products: default
 BLAS:   /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib 
@@ -1802,18 +1802,18 @@ loaded via a namespace (and not attached):
  [1] sass_0.4.10          bitops_1.0-9         stringi_1.8.7       
  [4] digest_0.6.39        magrittr_2.0.4       evaluate_1.0.5      
  [7] grid_4.5.2           fastmap_1.2.0        jsonlite_2.0.0      
-[10] httr_1.4.7           scales_1.4.0         stringdist_0.9.15   
-[13] XML_3.99-0.20        microbenchmark_1.5.0 textshaping_1.0.4   
-[16] jquerylib_0.1.4      cli_3.6.5            rlang_1.1.6         
+[10] httr_1.4.8           scales_1.4.0         stringdist_0.9.17   
+[13] XML_3.99-0.22        microbenchmark_1.5.0 textshaping_1.0.4   
+[16] jquerylib_0.1.4      cli_3.6.5            rlang_1.1.7         
 [19] withr_3.0.2          cachem_1.1.0         yaml_2.3.12         
-[22] tools_4.5.2          parallel_4.5.2       ggplot2_4.0.1       
-[25] curl_7.0.0           vctrs_0.6.5          R6_2.6.1            
-[28] lifecycle_1.0.4      fs_1.6.6             ragg_1.5.0          
+[22] tools_4.5.2          parallel_4.5.2       ggplot2_4.0.2       
+[25] curl_7.0.0           vctrs_0.7.1          R6_2.6.1            
+[28] lifecycle_1.0.5      fs_1.6.6             ragg_1.5.0          
 [31] pkgconfig_2.0.3      desc_1.4.3           pkgdown_2.2.0       
-[34] bslib_0.9.0          pillar_1.11.1        gtable_0.3.6        
-[37] data.table_1.17.8    glue_1.8.0           Rcpp_1.1.0          
-[40] systemfonts_1.3.1    xfun_0.55            knitr_1.50          
-[43] farver_2.1.2         htmltools_0.5.9      igraph_2.2.1        
+[34] bslib_0.10.0         pillar_1.11.1        gtable_0.3.6        
+[37] data.table_1.18.2.1  glue_1.8.0           Rcpp_1.1.1          
+[40] systemfonts_1.3.1    xfun_0.56            knitr_1.51          
+[43] farver_2.1.2         htmltools_0.5.9      igraph_2.2.2        
 [46] rmarkdown_2.30       labeling_0.4.3       compiler_4.5.2      
 [49] S7_0.2.1             RCurl_1.98-1.17     </code></pre>
 </div>

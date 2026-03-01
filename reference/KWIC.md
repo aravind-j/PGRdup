@@ -41,7 +41,7 @@ A list of class `KWIC` containing the following components:
 The function generates a Keyword in Context index from a data frame of a
 PGR passport database based on the fields(columns) stated in the
 arguments, using
-[`data.table`](https://rdatatable.gitlab.io/data.table/reference/data.table.html)
+[`data.table`](https://rdrr.io/pkg/data.table/man/data.table.html)
 package.
 
 The first element of vector `fields` is considered as the primary key or
@@ -68,7 +68,7 @@ Resources Institute and Centre for Genetic Resources.
 
 ## See also
 
-[`data.table`](https://rdatatable.gitlab.io/data.table/reference/data.table.html),
+[`data.table`](https://rdrr.io/pkg/data.table/man/data.table.html),
 [`print.KWIC`](https://aravind-j.github.io/PGRdup/reference/print.KWIC.md)
 
 ## Examples
