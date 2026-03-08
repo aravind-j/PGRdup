@@ -759,8 +759,8 @@ GNdup
     KWIC1 fields : NationalID CollNo DonorID OtherID1 OtherID2
      
                        No..of.Sets    No..of.Records
-    PhoneticDuplicates          99               260
-    Total                       99 260(Distinct:260)
+    PhoneticDuplicates          94               247
+    Total                       94 247(Distinct:247)
 
 2.  **Method `"b"`** : Performs string matching of keywords in the first
     KWIC index (query) with that of the keywords in the second index
@@ -851,8 +851,8 @@ GNdupb
      
                        No..of.Sets    No..of.Records
     FuzzyDuplicates            107               353
-    PhoneticDuplicates          41               126
-    Total                      148 479(Distinct:383)
+    PhoneticDuplicates          38               105
+    Total                      145 458(Distinct:368)
 
 ``` r
 # Fetch fuzzy and phonetic duplicate sets by method c
@@ -887,8 +887,8 @@ GNdupc
      
                        No..of.Sets    No..of.Records
     FuzzyDuplicates            363               724
-    PhoneticDuplicates          98               257
-    Total                      461 981(Distinct:741)
+    PhoneticDuplicates          93               244
+    Total                      456 968(Distinct:736)
 
 ### Matching Strategies
 
@@ -1040,8 +1040,8 @@ GNdup
     KWIC1 fields : NationalID CollNo DonorID OtherID1 OtherID2
      
                        No..of.Sets    No..of.Records
-    PhoneticDuplicates          99               260
-    Total                       99 260(Distinct:260)
+    PhoneticDuplicates          94               247
+    Total                       94 247(Distinct:247)
 
 Either the primary or alternate encodings can be used by specifying the
 `encoding` argument.
@@ -1066,8 +1066,8 @@ GNdup
     KWIC1 fields : NationalID CollNo DonorID OtherID1 OtherID2
      
                        No..of.Sets    No..of.Records
-    PhoneticDuplicates          98               263
-    Total                       98 263(Distinct:263)
+    PhoneticDuplicates          93               250
+    Total                       93 250(Distinct:250)
 
 The argument `phon.min.alpha` sets the limits for the number of alphabet
 characters to be present in a string for executing phonetic matching.
@@ -1092,8 +1092,8 @@ GNdup
     KWIC1 fields : NationalID CollNo DonorID OtherID1 OtherID2
      
                        No..of.Sets    No..of.Records
-    PhoneticDuplicates         304               451
-    Total                      304 451(Distinct:451)
+    PhoneticDuplicates         103               288
+    Total                      103 288(Distinct:288)
 
 Similarly `min.enc` sets the limits for the number of characters to be
 present in the encoding of a keyword for phonetic matching.
@@ -1118,8 +1118,8 @@ GNdup
     KWIC1 fields : NationalID CollNo DonorID OtherID1 OtherID2
      
                        No..of.Sets    No..of.Records
-    PhoneticDuplicates          59               156
-    Total                       59 156(Distinct:156)
+    PhoneticDuplicates          53               144
+    Total                       53 144(Distinct:144)
 
 3.  **Semantic matching** matches keywords based on a list of accession
     name synonyms supplied as list with character vectors of synonym
@@ -1145,7 +1145,7 @@ GNdup <- ProbDup(kwic1 = GNKWIC, method = "a", excep = exep,
 
     Semantic matching
 
-      |                                                                              |==================                                                    |  25%Block 1 / 4 |  |                                                                              |===================================                                   |  50%Block 2 / 4 |  |                                                                              |====================================================                  |  75%Block 3 / 4 |  |                                                                              |======================================================================| 100%Block 4 / 4 |
+      |                                                                              |===================================                                   |  50%Block 2 / 4 |  |                                                                              |====================================================                  |  75%Block 3 / 4 |  |                                                                              |======================================================================| 100%Block 4 / 4 |
 
 ``` r
 GNdup
@@ -1330,11 +1330,11 @@ GNdup
 
     KWIC1 fields : NationalID CollNo DonorID OtherID1 OtherID2
      
-                       No..of.Sets     No..of.Records
-    FuzzyDuplicates            378                745
-    PhoneticDuplicates          99                260
-    SemanticDuplicates           2                  5
-    Total                      479 1010(Distinct:762)
+                       No..of.Sets    No..of.Records
+    FuzzyDuplicates            378               745
+    PhoneticDuplicates          94               247
+    SemanticDuplicates           2                 5
+    Total                      474 997(Distinct:758)
 
 ``` r
 # Get disjoint probable duplicate sets of each kind
@@ -1347,11 +1347,11 @@ disGNdup1
 
     KWIC1 fields : NationalID CollNo DonorID OtherID1 OtherID2
      
-                       No..of.Sets     No..of.Records
-    FuzzyDuplicates            181                745
-    PhoneticDuplicates          80                260
-    SemanticDuplicates           2                  5
-    Total                      263 1010(Distinct:762)
+                       No..of.Sets    No..of.Records
+    FuzzyDuplicates            181               745
+    PhoneticDuplicates          85               247
+    SemanticDuplicates           2                 5
+    Total                      268 997(Distinct:758)
 
 ``` r
 # Get disjoint probable duplicate sets combining all the kinds of sets
@@ -1365,8 +1365,8 @@ disGNdup2
     KWIC1 fields : NationalID CollNo DonorID OtherID1 OtherID2
      
                       No..of.Sets    No..of.Records
-    DisjointDupicates         167               762
-    Total                     167 762(Distinct:762)
+    DisjointDupicates         180               758
+    Total                     180 758(Distinct:758)
 
 Once duplicate sets are retrieved they can be validated by manual
 clerical review by comparing with original PGR passport database(s)
@@ -1475,14 +1475,10 @@ new set.
 subset(RevGNdup, SET_NO==13 & TYPE=="P", select= c(IDKW, DEL, SPLIT))
 ```
 
-                                                 IDKW DEL SPLIT
-    111                         [K1]EC38607:MANFREDI1   N     0
-    112                         [K1]EC420966:MANFREDI   N     0
-    113                        [K1]EC42549:MANFREDI68   N     0
-    114                          [K1]EC42550:MANFRED1   N     0
-    115 [K1]EC552714:CHAMPAQUI, [K1]EC552714:MANFREDI   N     0
-    116                       [K1]EC573128:MANFREDI84   N     0
-    117 [K1]IC304523:CHAMPAGUE, [K1]IC304523:MANFREDI   N     0
+                        IDKW DEL SPLIT
+    114   [K1]EC4087:KANYOMA   N     0
+    115 [K1]EC514636:KANYOMA   N     0
+    116 [K1]EC613806:KANYOMA   N     0
 
 ``` r
 # Make dummy changes to the set for illustration
@@ -1493,14 +1489,10 @@ RevGNdup[c(112, 115, 117), 7] <- 2
 subset(RevGNdup, SET_NO==13 & TYPE=="P", select= c(IDKW, DEL, SPLIT))
 ```
 
-                                                 IDKW DEL SPLIT
-    111                         [K1]EC38607:MANFREDI1   N     1
-    112                         [K1]EC420966:MANFREDI   N     2
-    113                        [K1]EC42549:MANFREDI68   Y     0
-    114                          [K1]EC42550:MANFRED1   N     1
-    115 [K1]EC552714:CHAMPAQUI, [K1]EC552714:MANFREDI   N     2
-    116                       [K1]EC573128:MANFREDI84   Y     0
-    117 [K1]IC304523:CHAMPAGUE, [K1]IC304523:MANFREDI   N     2
+                        IDKW DEL SPLIT
+    114   [K1]EC4087:KANYOMA   N     1
+    115 [K1]EC514636:KANYOMA   N     2
+    116 [K1]EC613806:KANYOMA   Y     0
 
 ``` r
 # Reconstruct ProDup object
@@ -1513,11 +1505,11 @@ disGNdup1
 
     KWIC1 fields : NationalID CollNo DonorID OtherID1 OtherID2
      
-                       No..of.Sets     No..of.Records
-    FuzzyDuplicates            181                745
-    PhoneticDuplicates          80                260
-    SemanticDuplicates           2                  5
-    Total                      263 1010(Distinct:762)
+                       No..of.Sets    No..of.Records
+    FuzzyDuplicates            181               745
+    PhoneticDuplicates          85               247
+    SemanticDuplicates           2                 5
+    Total                      268 997(Distinct:758)
 
 ``` r
 # No. of sets after modifications
@@ -1529,10 +1521,10 @@ GNdup2
     KWIC1 fields : NationalID CollNo DonorID OtherID1 OtherID2
      
                        No..of.Sets    No..of.Records
-    FuzzyDuplicates            180               523
-    PhoneticDuplicates          81               258
+    FuzzyDuplicates            179               520
+    PhoneticDuplicates          84               244
     SemanticDuplicates           2                 5
-    Total                      263 786(Distinct:674)
+    Total                      265 769(Distinct:669)
 
 ## Other Functions
 
@@ -1639,11 +1631,11 @@ GNdupSplit[[1]]
 
     KWIC1 fields : NationalID CollNo DonorID OtherID1 OtherID2
      
-                       No..of.Sets     No..of.Records
-    FuzzyDuplicates            338                744
-    PhoneticDuplicates          99                260
-    SemanticDuplicates           2                  5
-    Total                      439 1009(Distinct:762)
+                       No..of.Sets    No..of.Records
+    FuzzyDuplicates            338               744
+    PhoneticDuplicates          94               247
+    SemanticDuplicates           2                 5
+    Total                      434 996(Distinct:758)
 
 ``` r
 GNdupSplit[[3]]
@@ -1669,11 +1661,11 @@ GNdupMerged
 
     KWIC1 fields : NationalID CollNo DonorID OtherID1 OtherID2
      
-                       No..of.Sets     No..of.Records
-    FuzzyDuplicates            378                745
-    PhoneticDuplicates          99                260
-    SemanticDuplicates           2                  5
-    Total                      479 1010(Distinct:762)
+                       No..of.Sets    No..of.Records
+    FuzzyDuplicates            378               745
+    PhoneticDuplicates          94               247
+    SemanticDuplicates           2                 5
+    Total                      474 997(Distinct:758)
 
 The summary of accessions according to a grouping factor field(column)
 in the original database(s) within the probable duplicate sets retrieved
@@ -1756,7 +1748,7 @@ GNdupc <- ProbDup(kwic1 = GN1KWIC, kwic2 = GN2KWIC, method = "c",
 
     Semantic matching
 
-      |                                                                              |=======================                                               |  33%Block 1 / 3 |  |                                                                              |===============================================                       |  67%Block 2 / 3 |  |                                                                              |======================================================================| 100%Block 3 / 3 |
+      |                                                                              |=======================                                               |  33%Block 1 / 3 |
 
 ``` r
 # Get the summary data.frames and Grob
@@ -1903,16 +1895,16 @@ sessionInfo()
      [4] digest_0.6.39        magrittr_2.0.4       evaluate_1.0.5      
      [7] grid_4.5.2           fastmap_1.2.0        jsonlite_2.0.0      
     [10] httr_1.4.8           scales_1.4.0         stringdist_0.9.17   
-    [13] XML_3.99-0.22        microbenchmark_1.5.0 textshaping_1.0.4   
+    [13] XML_3.99-0.22        microbenchmark_1.5.0 textshaping_1.0.5   
     [16] jquerylib_0.1.4      cli_3.6.5            rlang_1.1.7         
     [19] withr_3.0.2          cachem_1.1.0         yaml_2.3.12         
     [22] tools_4.5.2          parallel_4.5.2       ggplot2_4.0.2       
     [25] curl_7.0.0           vctrs_0.7.1          R6_2.6.1            
-    [28] lifecycle_1.0.5      fs_1.6.6             ragg_1.5.0          
+    [28] lifecycle_1.0.5      fs_1.6.7             ragg_1.5.1          
     [31] pkgconfig_2.0.3      desc_1.4.3           pkgdown_2.2.0       
     [34] bslib_0.10.0         pillar_1.11.1        gtable_0.3.6        
     [37] data.table_1.18.2.1  glue_1.8.0           Rcpp_1.1.1          
-    [40] systemfonts_1.3.1    xfun_0.56            knitr_1.51          
+    [40] systemfonts_1.3.2    xfun_0.56            knitr_1.51          
     [43] farver_2.1.2         htmltools_0.5.9      igraph_2.2.2        
     [46] rmarkdown_2.30       labeling_0.4.3       compiler_4.5.2      
     [49] S7_0.2.1             RCurl_1.98-1.17     
