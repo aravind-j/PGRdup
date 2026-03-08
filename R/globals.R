@@ -30,7 +30,8 @@ if (getRversion() >= "2.15.1")  {
       "primdup", "SemanticdupID", "SemanticdupIDKW", "Seq",
       "SET_NO", "shape", "shape2", "singles", "SPLIT",
       "TEMP", "Total", "TYPE", "V1", "value",
-      "variable", "WITHIN", "ymax", "ymin"
+      "variable", "WITHIN", "ymax", "ymin",
+      "digit", "enc", "idkw", "keyword", "synset"
     )
   )
 }
