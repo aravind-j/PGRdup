@@ -32,3 +32,4 @@
 ^codemeta\.json$
 ^cran-comments-archive\.md$
 ^vignettes/.*\.log$
+^RoughWork$
