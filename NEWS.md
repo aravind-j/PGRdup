@@ -1,5 +1,8 @@
 # PGRdup 0.2.4.1
 
+## UPDATED FUNCTIONS:
+* `ProbDup` - Updated to make the computation more memory efficient. 
+
 # PGRdup 0.2.4.0
 
 ## OTHER NOTES: 
