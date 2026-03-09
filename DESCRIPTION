@@ -40,7 +40,7 @@ Description: Provides functions to aid the identification of probable/possible
     sample records and the identification of nearly identical records with
     similar information by fuzzy, phonetic and semantic matching of keywords.
 Depends:
-    R (>= 3.0.2)
+    R (>= 4.1.0)
 Imports:
     data.table (>= 1.9.3),
     igraph,

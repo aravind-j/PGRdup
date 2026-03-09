@@ -386,12 +386,13 @@ ProbDup <- function (kwic1, kwic2 = NULL, method = c("a", "b", "c"),
   kwicQ[, PRIM_ID := gsub("([[:space:]])\\1*", "", PRIM_ID)]
   kwicQ[, PRIM_ID := paste("[K1]", PRIM_ID, sep = "")]
   kwicQ[, IDKW := paste(PRIM_ID, KEYWORD, sep = ":")]
+  
   if (method == "a" | method == "b") {
-    kwicQ <- kwicQ[, list(PRIM_ID = paste0(setdiff(sort(unique(unlist(strsplit(get("PRIM_ID"),
-                                                                               split = ", ")))), ""), collapse = ", "),
-                          IDKW = paste0(setdiff(sort(unique(unlist(strsplit(get("IDKW"),
-                                                                            split = ", ")))), ""), collapse = ", ")),
-                   by = "KEYWORD"]
+    kq_prim_id_agg <- collapse_dedup(kwicQ, by_col = "KEYWORD", val_col = "PRIM_ID")
+    kq_idkw_agg    <- collapse_dedup(kwicQ, by_col = "KEYWORD", val_col = "IDKW")
+    
+    kwicQ <- kq_prim_id_agg[kq_idkw_agg, on = "KEYWORD"]
+    
     # Id the chunks in kwic1
     M <- nrow(kwicQ)
     if (M > chunksize) {
@@ -403,6 +404,7 @@ ProbDup <- function (kwic1, kwic2 = NULL, method = c("a", "b", "c"),
     setcolorder(kwicQ, neworder = c("PRIM_ID", "KEYWORD", "IDKW", "iter"))
     setDF(kwicQ)
   }
+  
   if (method == "a") {
     kwicS <- kwicQ
     #N <- M
@@ -413,28 +415,38 @@ ProbDup <- function (kwic1, kwic2 = NULL, method = c("a", "b", "c"),
     kwicS[, PRIM_ID := paste("[K2]", PRIM_ID, sep = "")]
     kwicS[, IDKW := paste(PRIM_ID, KEYWORD, sep = ":")]
     if (method == "b") {
-      kwicS <- kwicS[, list(PRIM_ID = paste0(setdiff(sort(unique(unlist(strsplit(get("PRIM_ID"),
-                                                                                 split = ", ")))), ""), collapse = ", "),
-                            IDKW = paste0(setdiff(sort(unique(unlist(strsplit(get("IDKW"),
-                                                                              split = ", ")))), ""), collapse = ", ")),
-                     by = "KEYWORD"]
+      ks_prim_id_agg <- collapse_dedup(kwicS, by_col = "KEYWORD", 
+                                       val_col = "PRIM_ID")
+      ks_idkw_agg    <- collapse_dedup(kwicS, by_col = "KEYWORD", 
+                                       val_col = "IDKW")
+      
+      kwicS <- ks_prim_id_agg[ks_idkw_agg, on = "KEYWORD"]
     }
+    
     N <- nrow(kwicS)
+    
     #kwicS[, iter:= rep(1:M, each = chunksize, length.out = N)]
     setcolorder(kwicS, neworder = c("PRIM_ID", "KEYWORD", "IDKW"))
     setDF(kwicS)
+    
     if (method == "c") {
       kwicQ <- as.data.table(rbind(kwicQ, kwicS))
-      kwicQ <- kwicQ[, list(PRIM_ID = paste0(setdiff(sort(unique(unlist(strsplit(get("PRIM_ID"),
-                                                                                 split = ", ")))), ""), collapse = ", "),
-                            IDKW = paste0(setdiff(sort(unique(unlist(strsplit(get("IDKW"),
-                                                                              split = ", ")))), ""), collapse = ", ")), by = "KEYWORD"]
+      
+      kq_prim_id_agg <- collapse_dedup(kwicQ, by_col = "KEYWORD", 
+                                       val_col = "PRIM_ID")
+      kq_idkw_agg    <- collapse_dedup(kwicQ, by_col = "KEYWORD", 
+                                       val_col = "IDKW")
+      
+      kwicQ <- kq_prim_id_agg[kq_idkw_agg, on = "KEYWORD"]
+  
       M <- nrow(kwicQ)
+      
       if (M > chunksize) {
         chunksize <- chunksize
       } else {
         chunksize <- M
       }
+      
       kwicQ[, iter := rep(1:M, each = chunksize, length.out = M)]
       setcolorder(kwicQ, neworder = c("PRIM_ID", "KEYWORD", "IDKW", "iter"))
       kwicS <- kwicQ
@@ -899,23 +911,33 @@ dupsets <- function(kwicout, type, method) {
       kwicout[, Ndup := NULL]
     }
     # Merge by PRIM_ID, then by ID, then add TYPE
-    kwicout <- kwicout[, list(ID = paste0(setdiff(sort(unique(unlist(strsplit(get(names(kwicout)[3]), split = ", ")))), ""),
-                                          collapse = ", "),
-                              IDKW = paste0(setdiff(sort(unique(unlist(strsplit(get(names(kwicout)[2]), split = ", ")))), ""),
-                                            collapse = ", ")),
-                       by = "PRIM_ID"][, list(IDKW = paste0(sort(unique(unlist(strsplit(IDKW, split = ", ")))),
-                                                            collapse = ", "),
-                                              TYPE = type), by = "ID"]
+    # group by PRIM_ID
+    id_agg   <- collapse_dedup(kwicout, by_col = "PRIM_ID", 
+                               val_col = names(kwicout)[3])
+    idkw_agg <- collapse_dedup(kwicout, by_col = "PRIM_ID", 
+                               val_col = names(kwicout)[2])
+    
+    kwicout <- id_agg[idkw_agg, on = "PRIM_ID"]
+    setnames(kwicout, names(kwicout)[2:3], c("ID", "IDKW"))
+    
+    # group by ID
+    idkw_agg2 <- collapse_dedup(kwicout, by_col = "ID", 
+                                val_col = "IDKW")
+    
+    kwicout <- idkw_agg2[, TYPE := type]
     setkey(kwicout, NULL)
     kwicout <- unique(kwicout)
+    
     # Add SET_NO
     setkey(kwicout, "ID")
     kwicout[, SET_NO := as.factor(ID)]
     kwicout[, SET_NO := as.numeric(SET_NO)]
     setkey(kwicout, "SET_NO")
+    
     # Add count
     kwicout[, COUNT := stri_count_fixed(ID, ",") + 1]
     kwicout <- subset(kwicout, COUNT != 1)
+    
     # Finalise output
     setcolorder(kwicout, c("SET_NO", "TYPE", "ID", "IDKW", "COUNT"))
     setkey(kwicout, "SET_NO")
@@ -941,4 +963,28 @@ fix.syn <- function(syn) {
   x <- subset(x, duplicated(x) == FALSE)
   names(x) <- paste0("SM", seq_along(x))
   return(x)
+}
+
+collapse_dedup <- function(dt, by_col, val_col) {
+  max_tokens <- max(stringi::stri_count_fixed(dt[[val_col]], ",") + 1L,
+                    na.rm = TRUE)
+  
+  split_cols <- paste0(val_col, "_", seq_len(max_tokens))
+  dt <- copy(dt)  # avoid modifying in place
+  dt[, (split_cols) := tstrsplit(get(val_col), ", ", fixed = TRUE,
+                                 fill = NA, type.convert = FALSE)]
+  
+  long <- melt(dt[, c(by_col, split_cols), with = FALSE],
+               id.vars      = by_col,
+               measure.vars = split_cols,
+               value.name   = val_col,
+               variable.name = "token_no",
+               na.rm        = TRUE)
+  
+  # Drop empty strings 
+  long <- long[get(val_col) != "" & !is.na(get(val_col))]
+  
+  long[, .(out = paste(sort(unique(get(val_col))), collapse = ", ")),
+       by = by_col] |>
+    setnames("out", val_col)
 }
