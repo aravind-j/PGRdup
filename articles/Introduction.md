@@ -43,8 +43,8 @@ The functions in this package are primarily built using the `R` packages
 
 ## Version History
 
-The current version of the package is 0.2.4.0.9000. The previous
-versions are as follows.
+The current version of the package is 0.3.0. The previous versions are
+as follows.
 
 **Table 1.** Version history of `PGRdup` `R` package.
 
@@ -102,7 +102,7 @@ library(PGRdup)
 ```
 
     --------------------------------------------------------------------------------
-    Welcome to PGRdup version 0.2.4.0.9000
+    Welcome to PGRdup version 0.3.0
 
 
     # To know how to use this package type:
@@ -1847,7 +1847,7 @@ citation("PGRdup")
 
       Aravind, J., Radhamani, J., Kalyani Srinivasan, Ananda Subhash, B.,
       and Tyagi, R. K.  (2026).  PGRdup: Discover Probable Duplicates in
-      Plant Genetic Resources Collections. R package version 0.2.4.0.9000,
+      Plant Genetic Resources Collections. R package version 0.3.0,
       https://github.com/aravind-j/PGRdup,https://cran.r-project.org/package=PGRdup.
 
     A BibTeX entry for LaTeX users is
@@ -1855,7 +1855,7 @@ citation("PGRdup")
       @Manual{,
         title = {PGRdup: Discover Probable Duplicates in Plant Genetic Resources Collections},
         author = {J. Aravind and J. Radhamani and {Kalyani Srinivasan} and B. {Ananda Subhash} and Rishi Kumar Tyagi},
-        note = {R package version 0.2.4.0.9000 https://github.com/aravind-j/PGRdup, https://cran.r-project.org/package=PGRdup},
+        note = {R package version 0.3.0 https://github.com/aravind-j/PGRdup, https://cran.r-project.org/package=PGRdup},
         year = {2026},
       }
 
@@ -1869,12 +1869,12 @@ citation("PGRdup")
 sessionInfo()
 ```
 
-    R version 4.5.2 (2025-10-31)
+    R version 4.5.3 (2026-03-11)
     Platform: aarch64-apple-darwin20
     Running under: macOS Sequoia 15.7.4
 
     Matrix products: default
-    BLAS:   /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib 
+    BLAS:   /Library/Frameworks/R.framework/Versions/4.5-arm64/Resources/lib/libRblas.0.dylib 
     LAPACK: /Library/Frameworks/R.framework/Versions/4.5-arm64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.1
 
     locale:
@@ -1887,27 +1887,27 @@ sessionInfo()
     [1] stats     graphics  grDevices utils     datasets  methods   base     
 
     other attached packages:
-    [1] PGRdup_0.2.4.0.9000 gridExtra_2.3       wordcloud_2.6      
-    [4] RColorBrewer_1.1-3  diagram_1.6.5       shape_1.4.6.1      
+    [1] PGRdup_0.3.0       gridExtra_2.3      wordcloud_2.6      RColorBrewer_1.1-3
+    [5] diagram_1.6.5      shape_1.4.6.1     
 
     loaded via a namespace (and not attached):
      [1] sass_0.4.10          bitops_1.0-9         stringi_1.8.7       
-     [4] digest_0.6.39        magrittr_2.0.4       evaluate_1.0.5      
-     [7] grid_4.5.2           fastmap_1.2.0        jsonlite_2.0.0      
+     [4] digest_0.6.39        magrittr_2.0.5       evaluate_1.0.5      
+     [7] grid_4.5.3           fastmap_1.2.0        jsonlite_2.0.0      
     [10] httr_1.4.8           scales_1.4.0         stringdist_0.9.17   
-    [13] XML_3.99-0.22        microbenchmark_1.5.0 textshaping_1.0.5   
-    [16] jquerylib_0.1.4      cli_3.6.5            rlang_1.1.7         
+    [13] XML_3.99-0.23        microbenchmark_1.5.0 textshaping_1.0.5   
+    [16] jquerylib_0.1.4      cli_3.6.6            rlang_1.2.0         
     [19] withr_3.0.2          cachem_1.1.0         yaml_2.3.12         
-    [22] tools_4.5.2          parallel_4.5.2       ggplot2_4.0.2       
-    [25] curl_7.0.0           vctrs_0.7.1          R6_2.6.1            
-    [28] lifecycle_1.0.5      fs_1.6.7             ragg_1.5.1          
+    [22] tools_4.5.3          parallel_4.5.3       ggplot2_4.0.2       
+    [25] curl_7.0.0           vctrs_0.7.3          R6_2.6.1            
+    [28] lifecycle_1.0.5      fs_2.0.1             ragg_1.5.2          
     [31] pkgconfig_2.0.3      desc_1.4.3           pkgdown_2.2.0       
     [34] bslib_0.10.0         pillar_1.11.1        gtable_0.3.6        
     [37] data.table_1.18.2.1  glue_1.8.0           Rcpp_1.1.1          
-    [40] systemfonts_1.3.2    xfun_0.56            knitr_1.51          
-    [43] farver_2.1.2         htmltools_0.5.9      igraph_2.2.2        
-    [46] rmarkdown_2.30       labeling_0.4.3       compiler_4.5.2      
-    [49] S7_0.2.1             RCurl_1.98-1.17     
+    [40] systemfonts_1.3.2    xfun_0.57            knitr_1.51          
+    [43] farver_2.1.2         htmltools_0.5.9      igraph_2.2.3        
+    [46] rmarkdown_2.31       labeling_0.4.3       compiler_4.5.3      
+    [49] S7_0.2.1             RCurl_1.98-1.18     
 
 ## References
 

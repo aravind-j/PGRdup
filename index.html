@@ -24,13 +24,13 @@
 <script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Discover Probable Duplicates in Plant Genetic Resources Collections">
 <meta name="description" content="Provides functions to aid the identification of probable/possible duplicates in Plant Genetic Resources (PGR) collections using passport databases comprising of information records of each constituent sample. These include methods for cleaning the data, creation of a searchable Key Word in Context (KWIC) index of keywords associated with sample records and the identification of nearly identical records with similar information by fuzzy, phonetic and semantic matching of keywords.">
 <meta property="og:description" content="Provides functions to aid the identification of probable/possible duplicates in Plant Genetic Resources (PGR) collections using passport databases comprising of information records of each constituent sample. These include methods for cleaning the data, creation of a searchable Key Word in Context (KWIC) index of keywords associated with sample records and the identification of nearly identical records with similar information by fuzzy, phonetic and semantic matching of keywords.">
-<!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-112827210-1"></script><script>
+<!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-1PSRFPDL68"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-112827210-1');
-</script>
+  gtag('config', 'G-1PSRFPDL68');
+</script><!-- Google tag (gtag.js) -->
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -40,7 +40,7 @@
 
     <a class="navbar-brand me-2" href="index.html">PGRdup</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.4.0.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -76,8 +76,8 @@
 <div class="row">
   <main id="main" class="col-md-9"><p><img src="https://raw.githubusercontent.com/aravind-j/PGRdup/master/inst/extdata/PGRdup.png" align="center" alt="logo" width="750" height="85" style="border: solid white 10px;"></p>
 <div class="section level6">
-<h6 id="version--02409000-copyright-c-2014-2025-icar-nbpgr-license-gpl-2gpl-3">Version : <a href="https://aravind-j.github.io/PGRdup/articles/Introduction.html#version-history">0.2.4.0.9000</a>; Copyright (C) 2014-2025: <a href="https://nbpgr.org.in/" class="external-link">ICAR-NBPGR</a>; License: <a href="https://www.r-project.org/Licenses/" class="external-link">GPL-2|GPL-3</a>
-<a class="anchor" aria-label="anchor" href="#version--02409000-copyright-c-2014-2025-icar-nbpgr-license-gpl-2gpl-3"></a>
+<h6 id="version--030-copyright-c-2014-2026-icar-nbpgr-license-gpl-2gpl-3">Version : <a href="https://aravind-j.github.io/PGRdup/articles/Introduction.html#version-history">0.3.0</a>; Copyright (C) 2014-2026: <a href="https://nbpgr.org.in/" class="external-link">ICAR-NBPGR</a>; License: <a href="https://www.r-project.org/Licenses/" class="external-link">GPL-2|GPL-3</a>
+<a class="anchor" aria-label="anchor" href="#version--030-copyright-c-2014-2026-icar-nbpgr-license-gpl-2gpl-3"></a>
 </h6>
 </div>
 <div class="section level5">
@@ -89,7 +89,7 @@
 <li>Centre for Development of Advanced Computing, Thiruvananthapuram, Kerala, India</li>
 </ol>
 <hr>
-<p><a href="https://cran.r-project.org/" class="external-link"><img src="https://img.shields.io/badge/R%3E%3D-3.0.2-6666ff.svg?logo=R" alt="minimal R version"></a> <a href="https://www.gnu.org/licenses/gpl-3.0" class="external-link"><img src="https://img.shields.io/badge/License-GPL%20v3-blue.svg" alt="License: GPL v3"></a> <a href="https://cran.r-project.org/package=PGRdup" class="external-link"><img src="https://www.r-pkg.org/badges/version-last-release/PGRdup" alt="CRAN_Status_Badge"></a> <a href="https://cran.r-project.org/package=PGRdup" class="external-link"><img src="https://tinyverse.netlify.app/status/PGRdup" alt="Dependencies"></a> <a href="https://CRAN.R-project.org/package=PGRdup" class="external-link"><img src="https://cranlogs.r-pkg.org/badges/grand-total/PGRdup?color=green" alt="rstudio mirror downloads"></a> <a href="https://github.com/aravind-j/PGRdup" class="external-link"><img src="https://img.shields.io/badge/devel%20version-0.2.4.0.9000-orange.svg" alt="develVersion"></a> <a href="https://github.com/aravind-j/PGRdup" class="external-link"><img src="https://img.shields.io/github/languages/code-size/aravind-j/PGRdup.svg" alt="Github Code Size"></a> <a href="https://github.com/aravind-j/PGRdup/actions" class="external-link"><img src="https://github.com/aravind-j/PGRdup/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a> <a href="https://www.repostatus.org/#inactive" class="external-link"><img src="https://www.repostatus.org/badges/latest/inactive.svg" alt="Project Status: Inactive"></a> <a href="https://lifecycle.r-lib.org/articles/stages.html#stable" class="external-link"><img src="https://img.shields.io/badge/lifecycle-stable-brightgreen.svg" alt="lifecycle"></a> <a href="https://github.com/aravind-j/PGRdup" class="external-link"><img src="https://img.shields.io/badge/last%20change-2025--12--19-yellowgreen.svg" alt="Last-changedate"></a> <a href="https://www.rdocumentation.org/packages/PGRdup/" class="external-link"><img src="https://api.rdocumentation.org/badges/version/PGRdup" alt="Rdoc"></a> <a href="https://doi.org/10.5281/zenodo.841963" class="external-link"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.841963.svg" alt="Zenodo DOI"></a> <a href="https://aravind-j.github.io/PGRdup/"><img src="https://img.shields.io/website-up-down-green-red/https/aravind-j.github.io/PGRdup.svg" alt="Website - pkgdown"></a> <a href="https://github.com/aravind-j/google-analytics-beacon" class="external-link"><img src="https://pro-pulsar-193905.appspot.com/UA-112827210-2/welcome-page" alt="."></a> <!-- [![packageversion](https://img.shields.io/badge/Package%20version-0.2.3.3-orange.svg)](https://github.com/aravind-j/PGRdup) --> <!-- [![GitHub Download Count](https://github-basic-badges.herokuapp.com/downloads/aravind-j/PGRdup/total.svg)] --></p>
+<p><a href="https://cran.r-project.org/" class="external-link"><img src="https://img.shields.io/badge/R%3E%3D-3.0.2-6666ff.svg?logo=R" alt="minimal R version"></a> <a href="https://www.gnu.org/licenses/gpl-3.0" class="external-link"><img src="https://img.shields.io/badge/License-GPL%20v3-blue.svg" alt="License: GPL v3"></a> <a href="https://cran.r-project.org/package=PGRdup" class="external-link"><img src="https://www.r-pkg.org/badges/version-last-release/PGRdup" alt="CRAN_Status_Badge"></a> <a href="https://cran.r-project.org/package=PGRdup" class="external-link"><img src="https://tinyverse.netlify.app/status/PGRdup" alt="Dependencies"></a> <a href="https://CRAN.R-project.org/package=PGRdup" class="external-link"><img src="https://cranlogs.r-pkg.org/badges/grand-total/PGRdup?color=green" alt="rstudio mirror downloads"></a> <a href="https://github.com/aravind-j/PGRdup" class="external-link"><img src="https://img.shields.io/badge/devel%20version-0.2.4.0.9000-orange.svg" alt="develVersion"></a> <a href="https://github.com/aravind-j/PGRdup" class="external-link"><img src="https://img.shields.io/github/languages/code-size/aravind-j/PGRdup.svg" alt="Github Code Size"></a> <a href="https://github.com/aravind-j/PGRdup/actions" class="external-link"><img src="https://github.com/aravind-j/PGRdup/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a> <a href="https://www.repostatus.org/#inactive" class="external-link"><img src="https://www.repostatus.org/badges/latest/inactive.svg" alt="Project Status: Inactive"></a> <a href="https://lifecycle.r-lib.org/articles/stages.html#stable" class="external-link"><img src="https://img.shields.io/badge/lifecycle-stable-brightgreen.svg" alt="lifecycle"></a> <a href="https://github.com/aravind-j/PGRdup" class="external-link"><img src="https://img.shields.io/badge/last%20change-2026--04--17-yellowgreen.svg" alt="Last-changedate"></a> <a href="https://www.rdocumentation.org/packages/PGRdup/" class="external-link"><img src="https://api.rdocumentation.org/badges/version/PGRdup" alt="Rdoc"></a> <a href="https://doi.org/10.5281/zenodo.841963" class="external-link"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.841963.svg" alt="Zenodo DOI"></a> <a href="https://aravind-j.github.io/PGRdup/"><img src="https://img.shields.io/website-up-down-green-red/https/aravind-j.github.io/PGRdup.svg" alt="Website - pkgdown"></a> <!-- [![.](https://pro-pulsar-193905.appspot.com/UA-112827210-2/welcome-page)](https://github.com/aravind-j/google-analytics-beacon) --> <a href="https://pgrdup-gh.goatcounter.com/" class="external-link"><img src="https://pgrdup-gh.goatcounter.com/count?p=/test" alt="GoatCounter"></a> <!-- [![packageversion](https://img.shields.io/badge/Package%20version-0.2.3.3-orange.svg)](https://github.com/aravind-j/PGRdup) --> <!-- [![GitHub Download Count](https://github-basic-badges.herokuapp.com/downloads/aravind-j/PGRdup/total.svg)] --></p>
 <hr>
 </div>
 <div class="section level2">
@@ -305,22 +305,21 @@
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/citation.html" class="external-link">citation</a></span><span class="op">(</span><span class="st">"PGRdup"</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb5"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>To cite the R package <span class="st">'PGRdup'</span> <span class="cf">in</span> publications use<span class="sc">:</span></span>
 <span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>  Aravind, J., Radhamani, J., Kalyani Srinivasan, Ananda Subhash, B., and Tyagi, R.</span>
-<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>  <span class="fu">K.</span>  (<span class="dv">2025</span>).  PGRdup<span class="sc">:</span> Discover Probable Duplicates <span class="cf">in</span> Plant Genetic Resources</span>
-<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>  Collections. R package version <span class="dv">0</span>.<span class="dv">2</span>.<span class="dv">4</span>.<span class="fl">0.9000</span>,</span>
-<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a>  https<span class="sc">:</span><span class="er">//</span>github.com<span class="sc">/</span>aravind<span class="sc">-</span>j<span class="sc">/</span>PGRdup,https<span class="sc">:</span><span class="er">//</span>cran.r<span class="sc">-</span>project.org<span class="sc">/</span>package<span class="ot">=</span>PGRdup.</span>
-<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a></span>
-<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a>A BibTeX entry <span class="cf">for</span> LaTeX users is</span>
-<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a></span>
-<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a>  <span class="sc">@</span>Manual{,</span>
-<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a>    title <span class="ot">=</span> {PGRdup<span class="sc">:</span> Discover Probable Duplicates <span class="cf">in</span> Plant Genetic Resources Collections},</span>
-<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a>    author <span class="ot">=</span> {J. Aravind and J. Radhamani and {Kalyani Srinivasan} and B. {Ananda Subhash} and Rishi Kumar Tyagi},</span>
-<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a>    note <span class="ot">=</span> {R package version <span class="dv">0</span>.<span class="dv">2</span>.<span class="dv">4</span>.<span class="fl">0.9000</span> https<span class="sc">:</span><span class="er">//</span>github.com<span class="sc">/</span>aravind<span class="sc">-</span>j<span class="sc">/</span>PGRdup, https<span class="sc">:</span><span class="er">//</span>cran.r<span class="sc">-</span>project.org<span class="sc">/</span>package<span class="ot">=</span>PGRdup},</span>
-<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a>    year <span class="ot">=</span> {<span class="dv">2025</span>},</span>
-<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a>  }</span>
-<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a></span>
-<span id="cb5-17"><a href="#cb5-17" tabindex="-1"></a>This free and open<span class="sc">-</span>source software implements academic research by the authors and</span>
-<span id="cb5-18"><a href="#cb5-18" tabindex="-1"></a>co<span class="sc">-</span>workers. If you use it, please support the project by citing the package.</span></code></pre></div>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>  Aravind, J., Radhamani, J., Kalyani Srinivasan, Ananda Subhash, B., and Tyagi, R. <span class="fu">K.</span>  (<span class="dv">2026</span>).  PGRdup<span class="sc">:</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>  Discover Probable Duplicates <span class="cf">in</span> Plant Genetic Resources Collections. R package version <span class="dv">0</span>.<span class="dv">2</span>.<span class="dv">4</span>.<span class="fl">0.9000</span>,</span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>  https<span class="sc">:</span><span class="er">//</span>github.com<span class="sc">/</span>aravind<span class="sc">-</span>j<span class="sc">/</span>PGRdup,https<span class="sc">:</span><span class="er">//</span>cran.r<span class="sc">-</span>project.org<span class="sc">/</span>package<span class="ot">=</span>PGRdup.</span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a>A BibTeX entry <span class="cf">for</span> LaTeX users is</span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a>  <span class="sc">@</span>Manual{,</span>
+<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a>    title <span class="ot">=</span> {PGRdup<span class="sc">:</span> Discover Probable Duplicates <span class="cf">in</span> Plant Genetic Resources Collections},</span>
+<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a>    author <span class="ot">=</span> {J. Aravind and J. Radhamani and {Kalyani Srinivasan} and B. {Ananda Subhash} and Rishi Kumar Tyagi},</span>
+<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a>    note <span class="ot">=</span> {R package version <span class="dv">0</span>.<span class="dv">2</span>.<span class="dv">4</span>.<span class="fl">0.9000</span> https<span class="sc">:</span><span class="er">//</span>github.com<span class="sc">/</span>aravind<span class="sc">-</span>j<span class="sc">/</span>PGRdup, https<span class="sc">:</span><span class="er">//</span>cran.r<span class="sc">-</span>project.org<span class="sc">/</span>package<span class="ot">=</span>PGRdup},</span>
+<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a>    year <span class="ot">=</span> {<span class="dv">2026</span>},</span>
+<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a>  }</span>
+<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a></span>
+<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a>This free and open<span class="sc">-</span>source software implements academic research by the authors and co<span class="sc">-</span>workers. If you use</span>
+<span id="cb5-17"><a href="#cb5-17" tabindex="-1"></a>it, please support the project by citing the package.</span></code></pre></div>
 </div>
 
   </main><aside class="col-md-3"><div class="links">
@@ -380,7 +379,6 @@
 
 
 
-
-
-  </body>
+  <script data-goatcounter="https://pgrdup.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
 </html>

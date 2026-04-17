@@ -1,6 +1,6 @@
 # Changelog
 
-## PGRdup 0.2.4.1
+## PGRdup 0.3.0
 
 ### UPDATED FUNCTIONS:
 
