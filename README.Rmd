@@ -53,7 +53,8 @@ cat(paste("[![develVersion](https://img.shields.io/badge/devel%20version-", dver
 [![Rdoc](https://api.rdocumentation.org/badges/version/PGRdup)](https://www.rdocumentation.org/packages/PGRdup/)
 [![Zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.841963.svg)](https://doi.org/10.5281/zenodo.841963)
 [![Website - pkgdown](https://img.shields.io/website-up-down-green-red/https/aravind-j.github.io/PGRdup.svg)](https://aravind-j.github.io/PGRdup/)
-[![.](https://pro-pulsar-193905.appspot.com/UA-112827210-2/welcome-page)](https://github.com/aravind-j/google-analytics-beacon)
+<!-- [![.](https://pro-pulsar-193905.appspot.com/UA-112827210-2/welcome-page)](https://github.com/aravind-j/google-analytics-beacon) -->
+[![GoatCounter](https://pgrdup-gh.goatcounter.com/count?p=/test)](https://pgrdup-gh.goatcounter.com/)
 <!-- [![packageversion](https://img.shields.io/badge/Package%20version-0.2.3.3-orange.svg)](https://github.com/aravind-j/PGRdup) -->
 <!-- [![GitHub Download Count](https://github-basic-badges.herokuapp.com/downloads/aravind-j/PGRdup/total.svg)] -->
 
