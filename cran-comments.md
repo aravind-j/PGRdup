@@ -9,3 +9,4 @@
 
 ### R CMD check results
 * There were no ERRORs or WARNINGs.
+* In win-builder, there was a NOTE on possibly invalid urls for the links http://pgrportal.nbpgr.ernet.in/, https://nbpgr.org.in/ and https://dl.acm.org/doi/10.5555/349124.349132 which are false positives.
