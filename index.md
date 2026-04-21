@@ -25,7 +25,7 @@ Size](https://img.shields.io/github/languages/code-size/aravind-j/PGRdup.svg)](h
 [![Project Status:
 Inactive](https://www.repostatus.org/badges/latest/inactive.svg)](https://www.repostatus.org/#inactive)
 [![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
-[![Last-changedate](https://img.shields.io/badge/last%20change-2026--04--17-yellowgreen.svg)](https://github.com/aravind-j/PGRdup)
+[![Last-changedate](https://img.shields.io/badge/last%20change-2026--04--21-yellowgreen.svg)](https://github.com/aravind-j/PGRdup)
 [![Rdoc](https://api.rdocumentation.org/badges/version/PGRdup)](https://www.rdocumentation.org/packages/PGRdup/)
 [![Zenodo
 DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.841963.svg)](https://doi.org/10.5281/zenodo.841963)

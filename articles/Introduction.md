@@ -1900,10 +1900,10 @@ sessionInfo()
     [19] withr_3.0.2          cachem_1.1.0         yaml_2.3.12         
     [22] tools_4.5.3          parallel_4.5.3       ggplot2_4.0.2       
     [25] curl_7.0.0           vctrs_0.7.3          R6_2.6.1            
-    [28] lifecycle_1.0.5      fs_2.0.1             ragg_1.5.2          
+    [28] lifecycle_1.0.5      fs_2.1.0             ragg_1.5.2          
     [31] pkgconfig_2.0.3      desc_1.4.3           pkgdown_2.2.0       
     [34] bslib_0.10.0         pillar_1.11.1        gtable_0.3.6        
-    [37] data.table_1.18.2.1  glue_1.8.0           Rcpp_1.1.1          
+    [37] data.table_1.18.2.1  glue_1.8.1           Rcpp_1.1.1          
     [40] systemfonts_1.3.2    xfun_0.57            knitr_1.51          
     [43] farver_2.1.2         htmltools_0.5.9      igraph_2.2.3        
     [46] rmarkdown_2.31       labeling_0.4.3       compiler_4.5.3      
