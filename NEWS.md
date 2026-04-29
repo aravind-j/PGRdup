@@ -1,3 +1,5 @@
+# PGRdup 0.3.1
+
 # PGRdup 0.3.0
 
 ## UPDATED FUNCTIONS:
