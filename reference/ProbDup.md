@@ -131,13 +131,13 @@ and set counts:
 
 Each data frame has the following columns:
 
-|          |                                                                                                         |
-|----------|---------------------------------------------------------------------------------------------------------|
-| `SET_NO` | The set number.                                                                                         |
-| `TYPE`   | The type of probable duplicate set. 'F' for fuzzy, 'P' for phonetic and 'S' for semantic matching sets. |
-| `ID`     | The primary IDs of records of accessions comprising a set.                                              |
-| `ID:KW`  | The 'matching' keywords along with the IDs.                                                             |
-| `COUNT`  | The number of elements in a set.                                                                        |
+|  |  |
+|----|----|
+| `SET_NO` | The set number. |
+| `TYPE` | The type of probable duplicate set. 'F' for fuzzy, 'P' for phonetic and 'S' for semantic matching sets. |
+| `ID` | The primary IDs of records of accessions comprising a set. |
+| `ID:KW` | The 'matching' keywords along with the IDs. |
+| `COUNT` | The number of elements in a set. |
 
 The prefix `[K*]` indicates the KWIC index of origin of the KEYWORD or
 PRIM_ID.
@@ -270,6 +270,7 @@ String Matching." *R Journal* 6 (1):111-22.
 ## Examples
 
 ``` r
+
 
 if (FALSE) { # \dontrun{
 

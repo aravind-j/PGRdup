@@ -56,16 +56,16 @@ A data frame of the long/narrow form of the probable duplicate sets data
 along with associated fields from the original database(s). The core
 columns in the resulting data frame are as follows:
 
-|           |                                                                                                                              |
-|-----------|------------------------------------------------------------------------------------------------------------------------------|
-| `SET_NO`  | The set number.                                                                                                              |
-| `TYPE`    | The type of probable duplicate set. 'F' for fuzzy, 'P' for phonetic and 'S' for semantic matching sets.                      |
-| `K[*]`    | The KWIC index or database of origin of the record. The `method` is specified within the square brackets in the column name. |
-| `PRIM_ID` | The primary ID of the accession record from which the set could be identified.                                               |
-| `IDKW`    | The 'matching' keywords along with the IDs.                                                                                  |
-| `DEL`     | Column to indicate whether record has to be deleted or not.                                                                  |
-| `SPLIT`   | Column to indicate whether record has to be branched and assembled into new set.                                             |
-| `COUNT`   | The number of elements in a set.                                                                                             |
+|  |  |
+|----|----|
+| `SET_NO` | The set number. |
+| `TYPE` | The type of probable duplicate set. 'F' for fuzzy, 'P' for phonetic and 'S' for semantic matching sets. |
+| `K[*]` | The KWIC index or database of origin of the record. The `method` is specified within the square brackets in the column name. |
+| `PRIM_ID` | The primary ID of the accession record from which the set could be identified. |
+| `IDKW` | The 'matching' keywords along with the IDs. |
+| `DEL` | Column to indicate whether record has to be deleted or not. |
+| `SPLIT` | Column to indicate whether record has to be branched and assembled into new set. |
+| `COUNT` | The number of elements in a set. |
 
 For the retrieved columns(fields) the prefix `K*` indicates the KWIC
 index of origin.
@@ -128,6 +128,7 @@ which may be safely ignored.
 ## Examples
 
 ``` r
+
 
 if (FALSE) { # \dontrun{
 

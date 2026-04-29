@@ -1,6 +1,10 @@
 # Changelog
 
+## PGRdup 0.3.1
+
 ## PGRdup 0.3.0
+
+CRAN release: 2026-04-21
 
 ### UPDATED FUNCTIONS:
 

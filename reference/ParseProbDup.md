@@ -29,14 +29,14 @@ ParseProbDup(pdup, max.count = 30, insert.blanks = TRUE)
 A data frame of the long/narrow form of the probable duplicate sets data
 with the following core columns:
 
-|           |                                                                                                                              |
-|-----------|------------------------------------------------------------------------------------------------------------------------------|
-| `SET_NO`  | The set number.                                                                                                              |
-| `TYPE`    | The type of probable duplicate set. 'F' for fuzzy, 'P' for phonetic and 'S' for semantic matching sets.                      |
-| `K`       | The KWIC index or database of origin of the record. The `method` is specified within the square brackets in the column name. |
-| `PRIM_ID` | The primary ID of the accession record from which the set could be identified.                                               |
-| `IDKW`    | The 'matching' keywords along with the IDs.                                                                                  |
-| `COUNT`   | The number of elements in a set.                                                                                             |
+|  |  |
+|----|----|
+| `SET_NO` | The set number. |
+| `TYPE` | The type of probable duplicate set. 'F' for fuzzy, 'P' for phonetic and 'S' for semantic matching sets. |
+| `K` | The KWIC index or database of origin of the record. The `method` is specified within the square brackets in the column name. |
+| `PRIM_ID` | The primary ID of the accession record from which the set could be identified. |
+| `IDKW` | The 'matching' keywords along with the IDs. |
+| `COUNT` | The number of elements in a set. |
 
 For the retrieved columns(fields) the prefix `K*` indicates the KWIC
 index of origin.
@@ -48,6 +48,7 @@ index of origin.
 ## Examples
 
 ``` r
+
 
 if (FALSE) { # \dontrun{
 

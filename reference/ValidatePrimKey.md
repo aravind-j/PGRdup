@@ -25,12 +25,12 @@ ValidatePrimKey(x, prim.key)
 
 A list with containing the following components:
 
-|               |                                                                                                            |
-|---------------|------------------------------------------------------------------------------------------------------------|
-| `message1`    | Indicates whether duplicated values were encountered in `prim.key` field(column) of data frame `x` or not. |
-| `Duplicates`  | A data frame of the records with duplicated prim.key values if they were encountered.                      |
-| `message2`    | Indicates whether NULL values were encountered in `prim.key` field(column) of data frame `x` or not.       |
-| `NullRecords` | A data frame of the records with NULL prim.key values if they were encountered.                            |
+|  |  |
+|----|----|
+| `message1` | Indicates whether duplicated values were encountered in `prim.key` field(column) of data frame `x` or not. |
+| `Duplicates` | A data frame of the records with duplicated prim.key values if they were encountered. |
+| `message2` | Indicates whether NULL values were encountered in `prim.key` field(column) of data frame `x` or not. |
+| `NullRecords` | A data frame of the records with NULL prim.key values if they were encountered. |
 
 ## Details
 

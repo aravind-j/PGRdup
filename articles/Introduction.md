@@ -43,8 +43,8 @@ The functions in this package are primarily built using the `R` packages
 
 ## Version History
 
-The current version of the package is 0.3.0. The previous versions are
-as follows.
+The current version of the package is 0.3.0.9000. The previous versions
+are as follows.
 
 **Table 1.** Version history of `PGRdup` `R` package.
 
@@ -64,6 +64,7 @@ as follows.
 | 0.2.3.7 | 2021-02-17 |
 | 0.2.3.8 | 2023-05-23 |
 | 0.2.3.9 | 2023-09-01 |
+| 0.2.4.0 | 2025-12-14 |
 
 To know detailed history of changes use `news(package='PGRdup')`.
 
@@ -72,6 +73,7 @@ To know detailed history of changes use `news(package='PGRdup')`.
 The package can be installed using the following functions:
 
 ``` r
+
 # Install from CRAN
 install.packages('PGRdup', dependencies=TRUE)
 ```
@@ -86,6 +88,7 @@ installed because of the argument `dependencies=TRUE`.
 Then the package can be loaded using the function
 
 ``` r
+
 library(PGRdup)
 ```
 
@@ -98,11 +101,13 @@ holding one record and columns representing the attribute fields. For
 example, consider the dataset `GN1000` supplied along with the package.
 
 ``` r
+
 library(PGRdup)
 ```
 
+
     --------------------------------------------------------------------------------
-    Welcome to PGRdup version 0.3.0
+    Welcome to PGRdup version 0.3.0.9000
 
 
     # To know how to use this package type:
@@ -121,6 +126,7 @@ library(PGRdup)
     --------------------------------------------------------------------------------
 
 ``` r
+
 # Load the dataset to the environment
 data(GN1000)
 # Show the class of the object
@@ -130,6 +136,7 @@ class(GN1000)
     [1] "data.frame"
 
 ``` r
+
 # View the first few records in the data frame
 head(GN1000)
 ```
@@ -176,6 +183,7 @@ zip archive can be imported into the `R` environment as a flat file
 `data.frame` using the `read.genesys` function.
 
 ``` r
+
 # Import the DwC-Germplasm zip archive "genesys-accessions-filtered.zip"
 PGRgenesys <- read.genesys("genesys-accessions-filtered.zip",
                            scrub.names.space = TRUE, readme = TRUE)
@@ -199,6 +207,7 @@ single space using the logical arguments `fix.comma`, `fix.semcol` and
 `fix.col` respectively.
 
 ``` r
+
 x <- c("A 14; EC 1697", "U 4-4-28; EC 21078; A 32", "PI 262801:CIAT 9075:GKP 9553/90",
        "NCAC 16049, PI 261987, RCM 493-3")
 x
@@ -208,6 +217,7 @@ x
     [3] "PI 262801:CIAT 9075:GKP 9553/90"  "NCAC 16049, PI 261987, RCM 493-3"
 
 ``` r
+
 # Replace ',', ':' and ';' with space
 DataClean(x, fix.comma=TRUE, fix.semcol=TRUE, fix.col=TRUE,
           fix.bracket=FALSE, fix.punct=FALSE, fix.space=FALSE, fix.sep=FALSE,
@@ -222,6 +232,7 @@ brackets including parenthesis, square brackets and curly brackets with
 space.
 
 ``` r
+
 x <- c("(NRCG-1738)/(NFG649)", "26-5-1[NRCG-2528]", "Ah 1182 {NRCG-4340}")
 x
 ```
@@ -229,6 +240,7 @@ x
     [1] "(NRCG-1738)/(NFG649)" "26-5-1[NRCG-2528]"    "Ah 1182 {NRCG-4340}" 
 
 ``` r
+
 # Replace parenthesis, square brackets and curly brackets with space
 DataClean(x, fix.comma=FALSE, fix.semcol=FALSE, fix.col=FALSE,
           fix.bracket=TRUE,
@@ -241,6 +253,7 @@ The logical argument `fix.punct` can be used to remove all punctuation
 from the data.
 
 ``` r
+
 x <- c("#26-6-3-1", "Culture No. 857", "U/4/47/13")
 x
 ```
@@ -248,6 +261,7 @@ x
     [1] "#26-6-3-1"       "Culture No. 857" "U/4/47/13"      
 
 ``` r
+
 # Remove punctuation
 DataClean(x, fix.comma=FALSE, fix.semcol=FALSE, fix.col=FALSE, fix.bracket=FALSE,
           fix.punct=TRUE,
@@ -261,6 +275,7 @@ newline, vertical tab, form feed and carriage return to spaces and
 finally convert multiple spaces to single space.
 
 ``` r
+
 x <- c("RS   1", "GKSPScGb 208  PI 475855")
 x
 ```
@@ -268,6 +283,7 @@ x
     [1] "RS   1"                  "GKSPScGb 208  PI 475855"
 
 ``` r
+
 # Replace all space characters to space and convert multiple spaces to single space
 DataClean(x, fix.comma=FALSE, fix.semcol=FALSE, fix.col=FALSE,
           fix.bracket=FALSE, fix.punct=FALSE,
@@ -282,6 +298,7 @@ of alphabetic characters separated from a series of digits by a space
 character.
 
 ``` r
+
 x <- c("NCAC 18078", "AH 6481", "ICG 2791")
 x
 ```
@@ -289,6 +306,7 @@ x
     [1] "NCAC 18078" "AH 6481"    "ICG 2791"  
 
 ``` r
+
 # Merge alphabetic character separated from a series of digits by a space
 DataClean(x, fix.comma=FALSE, fix.semcol=FALSE, fix.col=FALSE,
           fix.bracket=FALSE, fix.punct=FALSE, fix.space=FALSE,
@@ -302,6 +320,7 @@ DataClean(x, fix.comma=FALSE, fix.semcol=FALSE, fix.col=FALSE,
 fields to facilitate matching to identify probable duplicates.
 
 ``` r
+
 x <- c("EC 0016664", "EC0001690")
 x
 ```
@@ -309,6 +328,7 @@ x
     [1] "EC 0016664" "EC0001690" 
 
 ``` r
+
 # Remove leading zeros
 DataClean(x, fix.comma=FALSE, fix.semcol=FALSE, fix.col=FALSE,
           fix.bracket=FALSE, fix.punct=FALSE, fix.space=FALSE, fix.sep=FALSE,
@@ -322,6 +342,7 @@ messy data existing in fields associated with accession names in PGR
 passport databases (Table 1).
 
 ``` r
+
 names <- c("S7-12-6", "ICG-3505", "U 4-47-18;EC 21127", "AH 6481", "RS   1",
            "AK 12-24", "2-5 (NRCG-4053)", "T78, Mwitunde", "ICG 3410",
            "#648-4 (Gwalior)", "TG4;U/4/47/13", "EC0021003")
@@ -334,6 +355,7 @@ names
     [10] "#648-4 (Gwalior)"   "TG4;U/4/47/13"      "EC0021003"         
 
 ``` r
+
 # Clean the data
 DataClean(names)
 ```
@@ -369,6 +391,7 @@ prefixes and suffixes can be supplied as a
 in these functions.
 
 ``` r
+
 names <- c("Punjab Bold", "Gujarat- Dwarf", "Nagpur.local", "SAM COL 144",
            "SAM COL--280", "NIZAMABAD-LOCAL", "Dark Green Mutant",
            "Dixie-Giant", "Georgia- Bunch", "Uganda-erect", "Small Japan",
@@ -384,6 +407,7 @@ names
     [13] "Punjab erect"         "Improved small japan" "Dark Purple"         
 
 ``` r
+
 # Merge pairs of strings
 y1 <- list(c("Gujarat", "Dwarf"), c("Castle", "Cary"), c("Small", "Japan"),
            c("Big", "Japan"), c("Mani", "Blanco"), c("Uganda", "Erect"),
@@ -413,6 +437,7 @@ frame using the [`lapply`](https://www.google.com/#q=%5BR%5D+lapply)
 function.
 
 ``` r
+
 # Load example dataset
 GN <- GN1000
 
@@ -430,6 +455,7 @@ head(GN[GNfields])
     6   EC100716                        ICG-3150          ARGENTINE
 
 ``` r
+
 # Clean the data
 GN[GNfields] <- lapply(GN[GNfields], function(x) DataClean(x))
 y1 <- list(c("Gujarat", "Dwarf"), c("Castle", "Cary"), c("Small", "Japan"),
@@ -458,9 +484,9 @@ head(GN[GNfields])
 ## Generation of KWIC Index
 
 The function `KWIC` generates a Key Word in Context index ([Knüpffer
-1988](#ref-knupffer1988european); [Knüpffer, Frese, and Jongen
-1997](#ref-kfj97)) from the data frame of a PGR passport database based
-on the fields(columns) specified in the argument `fields` along with the
+1988](#ref-knupffer1988european); [Knüpffer et al. 1997](#ref-kfj97))
+from the data frame of a PGR passport database based on the
+fields(columns) specified in the argument `fields` along with the
 keyword frequencies and gives the output as a list of class `KWIC`. The
 first element of the vector specified in `fields` is considered as the
 primary key or identifier which uniquely identifies all rows in the data
@@ -473,6 +499,7 @@ further data pre-processing is required and also to decide whether any
 common keywords can be exempted from matching (Fig. 2).
 
 ``` r
+
 # Load example dataset
 GN <- GN1000
 
@@ -502,6 +529,7 @@ class(GNKWIC)
     [1] "KWIC"
 
 ``` r
+
 GNKWIC
 ```
 
@@ -510,6 +538,7 @@ GNKWIC
     Number of distinct keywords : 3109
 
 ``` r
+
 # Retrieve the KWIC index from the KWIC object
 KWIC <- GNKWIC[[1]]
 KWIC <- KWIC[order(KWIC$KEYWORD, decreasing = TRUE),]
@@ -540,6 +569,7 @@ head(KWIC[,c("PRIM_ID", "KWIC_L", "KWIC_KW", "KWIC_R")], n = 10)
     1735  X V11 = ICG1769 =  = SB XI X VII
 
 ``` r
+
 # Retrieve the keyword frequencies from the KWIC object
 KeywordFreq <- GNKWIC[[2]]
 head(KeywordFreq)
@@ -561,6 +591,7 @@ The function will throw an error in case of duplicates or NULL values in
 the primary key/ID field mentioned.
 
 ``` r
+
 GN <- GN1000
 GN[GNfields] <- lapply(GN[GNfields], function(x) DataClean(x))
 # Generate dummy duplicates for illustration
@@ -585,6 +616,7 @@ GN[1001:1005,]
     1005             COMET  Landrace United States of America         2004
 
 ``` r
+
 GNKWIC <- KWIC(GN, GNfields, min.freq=1)
 ```
 
@@ -596,6 +628,7 @@ The erroneous records can be identified using the helper function
 `ValidatePrimKey`.
 
 ``` r
+
 # Validate the primary key/ID field for duplication or existence of NULL values
 ValidatePrimKey(x = GN, prim.key = "NationalID")
 ```
@@ -635,6 +668,7 @@ ValidatePrimKey(x = GN, prim.key = "NationalID")
     1002      NCS      NC5  Landrace United States of America         2004    TRUE
 
 ``` r
+
 # Remove the offending records
 GN <- GN[-c(1001:1005), ]
 # Validate again
@@ -673,6 +707,7 @@ following three methods as specified by the `method` argument.
     PGR passport database.
 
 ``` r
+
 # Load example dataset
 GN <- GN1000
 
@@ -699,6 +734,7 @@ GNKWIC <- KWIC(GN, GNfields)
 ```
 
 ``` r
+
 # Specify the exceptions as a vector
 exep <- c("A", "B", "BIG", "BOLD", "BUNCH", "C", "COMPANY", "CULTURE",
          "DARK", "E", "EARLY", "EC", "ERECT", "EXOTIC", "FLESH", "GROUNDNUT",
@@ -717,12 +753,14 @@ GNdup <- ProbDup(kwic1 = GNKWIC, method = "a", excep = exep, fuzzy = TRUE,
       |                                                                              |==================                                                    |  25%Block 1 / 4 |  |                                                                              |===================================                                   |  50%Block 2 / 4 |  |                                                                              |====================================================                  |  75%Block 3 / 4 |  |                                                                              |======================================================================| 100%Block 4 / 4 |
 
 ``` r
+
 class(GNdup)
 ```
 
     [1] "ProbDup"
 
 ``` r
+
 GNdup
 ```
 
@@ -735,6 +773,7 @@ GNdup
     Total                   378 745(Distinct:745)
 
 ``` r
+
 # Fetch phonetic duplicates by method 'a'
 GNdup <- ProbDup(kwic1 = GNKWIC, method = "a", excep = exep, fuzzy = FALSE,
                  phonetic = TRUE, semantic = FALSE)
@@ -745,12 +784,14 @@ GNdup <- ProbDup(kwic1 = GNKWIC, method = "a", excep = exep, fuzzy = FALSE,
       |                                                                              |==================                                                    |  25%Block 1 / 4 |  |                                                                              |===================================                                   |  50%Block 2 / 4 |  |                                                                              |====================================================                  |  75%Block 3 / 4 |  |                                                                              |======================================================================| 100%Block 4 / 4 |
 
 ``` r
+
 class(GNdup)
 ```
 
     [1] "ProbDup"
 
 ``` r
+
 GNdup
 ```
 
@@ -772,6 +813,7 @@ GNdup
     accessions from among two PGR passport databases.
 
 ``` r
+
 # Load PGR passport databases
 GN1 <- GN1000[!grepl("^ICG", GN1000$DonorID), ]
 GN1$DonorID <- NULL
@@ -834,12 +876,14 @@ GNdupb <- ProbDup(kwic1 = GN1KWIC, kwic2 = GN2KWIC, method = "b",
       |                                                                              |======================================================================| 100%Block 1 / 1 |
 
 ``` r
+
 class(GNdupb)
 ```
 
     [1] "ProbDup"
 
 ``` r
+
 GNdupb
 ```
 
@@ -855,6 +899,7 @@ GNdupb
     Total                      145 458(Distinct:368)
 
 ``` r
+
 # Fetch fuzzy and phonetic duplicate sets by method c
 GNdupc <- ProbDup(kwic1 = GN1KWIC, kwic2 = GN2KWIC, method = "c",
                   excep = exep, fuzzy = TRUE, phonetic = TRUE,
@@ -870,12 +915,14 @@ GNdupc <- ProbDup(kwic1 = GN1KWIC, kwic2 = GN2KWIC, method = "c",
       |                                                                              |=======================                                               |  33%Block 1 / 3 |  |                                                                              |===============================================                       |  67%Block 2 / 3 |  |                                                                              |======================================================================| 100%Block 3 / 3 |
 
 ``` r
+
 class(GNdupc)
 ```
 
     [1] "ProbDup"
 
 ``` r
+
 GNdupc
 ```
 
@@ -900,6 +947,7 @@ GNdupc
     another.
 
 ``` r
+
 # Load example dataset
 GN <- GN1000
 
@@ -943,6 +991,7 @@ GNdup <- ProbDup(kwic1 = GNKWIC, method = "a", excep = exep,
       |                                                                              |==================                                                    |  25%Block 1 / 4 |  |                                                                              |===================================                                   |  50%Block 2 / 4 |  |                                                                              |====================================================                  |  75%Block 3 / 4 |  |                                                                              |======================================================================| 100%Block 4 / 4 |
 
 ``` r
+
 GNdup
 ```
 
@@ -958,6 +1007,7 @@ The maximum distance to be considered for a match can be specified by
 `max.dist` argument.
 
 ``` r
+
 GNdup <- ProbDup(kwic1 = GNKWIC, method = "a", excep = exep, 
                  fuzzy = TRUE, max.dist = 1,
                  phonetic = FALSE, semantic = FALSE)
@@ -968,6 +1018,7 @@ GNdup <- ProbDup(kwic1 = GNKWIC, method = "a", excep = exep,
       |                                                                              |==================                                                    |  25%Block 1 / 4 |  |                                                                              |===================================                                   |  50%Block 2 / 4 |  |                                                                              |====================================================                  |  75%Block 3 / 4 |  |                                                                              |======================================================================| 100%Block 4 / 4 |
 
 ``` r
+
 GNdup
 ```
 
@@ -994,6 +1045,7 @@ than `max.digit`, matching will be carried out separately for alphabet
 and numeric characters present.
 
 ``` r
+
 GNdup <- ProbDup(kwic1 = GNKWIC, method = "a", excep = exep, 
                  fuzzy = TRUE, force.exact = TRUE, max.alpha = 4, max.digit = Inf,
                  phonetic = FALSE, semantic = FALSE)
@@ -1004,6 +1056,7 @@ GNdup <- ProbDup(kwic1 = GNKWIC, method = "a", excep = exep,
       |                                                                              |==================                                                    |  25%Block 1 / 4 |  |                                                                              |===================================                                   |  50%Block 2 / 4 |  |                                                                              |====================================================                  |  75%Block 3 / 4 |  |                                                                              |======================================================================| 100%Block 4 / 4 |
 
 ``` r
+
 GNdup
 ```
 
@@ -1021,6 +1074,7 @@ GNdup
     keywords that have the similar pronunciation.
 
 ``` r
+
 GNdup <- ProbDup(kwic1 = GNKWIC, method = "a", excep = exep, 
                  fuzzy = FALSE,
                  phonetic = TRUE,
@@ -1032,6 +1086,7 @@ GNdup <- ProbDup(kwic1 = GNKWIC, method = "a", excep = exep,
       |                                                                              |==================                                                    |  25%Block 1 / 4 |  |                                                                              |===================================                                   |  50%Block 2 / 4 |  |                                                                              |====================================================                  |  75%Block 3 / 4 |  |                                                                              |======================================================================| 100%Block 4 / 4 |
 
 ``` r
+
 GNdup
 ```
 
@@ -1047,6 +1102,7 @@ Either the primary or alternate encodings can be used by specifying the
 `encoding` argument.
 
 ``` r
+
 GNdup <- ProbDup(kwic1 = GNKWIC, method = "a", excep = exep, 
                  fuzzy = FALSE,
                  phonetic = TRUE, encoding = "alternate",
@@ -1058,6 +1114,7 @@ GNdup <- ProbDup(kwic1 = GNKWIC, method = "a", excep = exep,
       |                                                                              |==================                                                    |  25%Block 1 / 4 |  |                                                                              |===================================                                   |  50%Block 2 / 4 |  |                                                                              |====================================================                  |  75%Block 3 / 4 |  |                                                                              |======================================================================| 100%Block 4 / 4 |
 
 ``` r
+
 GNdup
 ```
 
@@ -1073,6 +1130,7 @@ The argument `phon.min.alpha` sets the limits for the number of alphabet
 characters to be present in a string for executing phonetic matching.
 
 ``` r
+
 GNdup <- ProbDup(kwic1 = GNKWIC, method = "a", excep = exep, 
                  fuzzy = FALSE,
                  phonetic = TRUE, encoding = "alternate", phon.min.alpha = 4,
@@ -1084,6 +1142,7 @@ GNdup <- ProbDup(kwic1 = GNKWIC, method = "a", excep = exep,
       |                                                                              |==================                                                    |  25%Block 1 / 4 |  |                                                                              |===================================                                   |  50%Block 2 / 4 |  |                                                                              |====================================================                  |  75%Block 3 / 4 |  |                                                                              |======================================================================| 100%Block 4 / 4 |
 
 ``` r
+
 GNdup
 ```
 
@@ -1099,6 +1158,7 @@ Similarly `min.enc` sets the limits for the number of characters to be
 present in the encoding of a keyword for phonetic matching.
 
 ``` r
+
 GNdup <- ProbDup(kwic1 = GNKWIC, method = "a", excep = exep, 
                  fuzzy = FALSE,
                  phonetic = TRUE, encoding = "alternate", min.enc = 4,
@@ -1110,6 +1170,7 @@ GNdup <- ProbDup(kwic1 = GNKWIC, method = "a", excep = exep,
       |                                                                              |==================                                                    |  25%Block 1 / 4 |  |                                                                              |===================================                                   |  50%Block 2 / 4 |  |                                                                              |====================================================                  |  75%Block 3 / 4 |  |                                                                              |======================================================================| 100%Block 4 / 4 |
 
 ``` r
+
 GNdup
 ```
 
@@ -1132,6 +1193,7 @@ GNdup
     original database fields and the synset list are recommended.
 
 ``` r
+
 # Specify the synsets as a list
 syn <- list(c("CHANDRA", "AH 114"), c("TG-1", "VIKRAM"))
 
@@ -1148,6 +1210,7 @@ GNdup <- ProbDup(kwic1 = GNKWIC, method = "a", excep = exep,
       |                                                                              |===================================                                   |  50%Block 2 / 4 |  |                                                                              |====================================================                  |  75%Block 3 / 4 |  |                                                                              |======================================================================| 100%Block 4 / 4 |
 
 ``` r
+
 GNdup
 ```
 
@@ -1192,6 +1255,7 @@ visualized using the
 package (Fig. 3).
 
 ``` r
+
 # Load example dataset
 GN <- GN1000
 
@@ -1228,6 +1292,7 @@ syn <- lapply(syn, DataClean)
 ```
 
 ``` r
+
 timings <- microbenchmark::microbenchmark(
   # Fetch duplicate sets with default chunk.size
   t1 = ProbDup(kwic1 = GNKWIC, method = "a", excep = exep,
@@ -1252,6 +1317,7 @@ timings <- microbenchmark::microbenchmark(
 ```
 
 ``` r
+
 plot(timings, col = c("#1B9E77", "#D95F02", "#7570B3", "#E7298A"),
      xlab = "Expression", ylab = "Time")
 legend("topright", c("t1 : chunksize = 1000,\n     useBytes = T (default)\n",
@@ -1280,6 +1346,7 @@ returned in the output as an additional data frame `DisjointDupicates`
 in an object of class `ProbDup`.
 
 ``` r
+
 # Load example dataset
 GN <- GN1000
 
@@ -1322,6 +1389,7 @@ GNdup <- ProbDup(kwic1 = GNKWIC, method = "a", excep = exep, fuzzy = TRUE,
 ```
 
 ``` r
+
 # Initial number of sets
 GNdup
 ```
@@ -1337,6 +1405,7 @@ GNdup
     Total                      474 997(Distinct:758)
 
 ``` r
+
 # Get disjoint probable duplicate sets of each kind
 disGNdup1 <- DisProbDup(GNdup, combine = NULL)
 # # Number of sets after combining intersecting sets
@@ -1354,6 +1423,7 @@ disGNdup1
     Total                      268 997(Distinct:758)
 
 ``` r
+
 # Get disjoint probable duplicate sets combining all the kinds of sets
 disGNdup2 <- DisProbDup(GNdup, combine = c("F", "P", "S"))
 # Number of sets after combining intersecting sets
@@ -1414,6 +1484,7 @@ this column other than the default `0` can be used to indicate that they
 are to be removed and assembled into a new set.
 
 ``` r
+
 # Load the original database and clean the Primary ID/key field
 GN1000 <- GN1000
 GN1000$NationalID <- DataClean(GN1000$NationalID)
@@ -1425,6 +1496,7 @@ RevGNdup <- ReviewProbDup(pdup = disGNdup1, db1 = GN1000,
 ```
 
 ``` r
+
 head(RevGNdup)
 ```
 
@@ -1451,6 +1523,7 @@ head(RevGNdup)
     6 United States of America             2001
 
 ``` r
+
 # Examine and review the duplicate sets using edit function
 RevGNdup <- edit(RevGNdup)
 
@@ -1471,6 +1544,7 @@ in the column `SPLIT` other than the default `0` are reassembled into a
 new set.
 
 ``` r
+
 # The original set data
 subset(RevGNdup, SET_NO==13 & TYPE=="P", select= c(IDKW, DEL, SPLIT))
 ```
@@ -1481,6 +1555,7 @@ subset(RevGNdup, SET_NO==13 & TYPE=="P", select= c(IDKW, DEL, SPLIT))
     116 [K1]EC613806:KANYOMA   N     0
 
 ``` r
+
 # Make dummy changes to the set for illustration
 RevGNdup[c(113, 116), 6] <- "Y"
 RevGNdup[c(111, 114), 7] <- 1
@@ -1495,6 +1570,7 @@ subset(RevGNdup, SET_NO==13 & TYPE=="P", select= c(IDKW, DEL, SPLIT))
     116 [K1]EC613806:KANYOMA   Y     0
 
 ``` r
+
 # Reconstruct ProDup object
 GNdup2 <- ReconstructProbDup(RevGNdup)
 # Initial no. of sets
@@ -1512,6 +1588,7 @@ disGNdup1
     Total                      268 997(Distinct:758)
 
 ``` r
+
 # No. of sets after modifications
 GNdup2
 ```
@@ -1538,6 +1615,7 @@ This function which will transform a `ProbDup` object into a single data
 frame.
 
 ``` r
+
 # Convert 'ProbDup' object to a long form data frame of sets
 GNdupParsed <- ParseProbDup(GNdup)
 head(GNdupParsed)
@@ -1562,6 +1640,7 @@ such as `SET_NO`, `ID` and `IDKW` are added based on the `PRIM_ID`
 field(column).
 
 ``` r
+
 # Loading original database
 GN2 <- GN1000
 
@@ -1580,6 +1659,7 @@ The function `SplitProbDup` can be used to split an object of class
 reviewing separately the sets with larger set counts.
 
 ``` r
+
 # Load PGR passport database
 GN <- GN1000
 
@@ -1622,6 +1702,7 @@ GNdup <- ProbDup(kwic1 = GNKWIC, method = "a", excep = exep, fuzzy = TRUE,
 ```
 
 ``` r
+
 # Split the probable duplicate sets
 GNdupSplit <- SplitProbDup(GNdup, splitat = c(10, 10, 10))
 GNdupSplit[[1]]
@@ -1638,6 +1719,7 @@ GNdupSplit[[1]]
     Total                      434 996(Distinct:758)
 
 ``` r
+
 GNdupSplit[[3]]
 ```
 
@@ -1653,6 +1735,7 @@ Alternatively, two different `ProbDup` objects can be merged together
 using the function `MergeProbDup`.
 
 ``` r
+
 GNdupMerged <- MergeProbDup(GNdupSplit[[1]], GNdupSplit[[3]])
 GNdupMerged
 ```
@@ -1674,6 +1757,7 @@ The resulting plot can be used to examine the extent of probable
 duplication within and between groups of accessions records.
 
 ``` r
+
 # Load PGR passport databases
 GN1 <- GN1000[!grepl("^ICG", GN1000$DonorID), ]
 GN1$DonorID <- NULL
@@ -1733,6 +1817,7 @@ syn <- list(c("CHANDRA", "AH114"), c("TG1", "VIKRAM"))
 ```
 
 ``` r
+
 GNdupc <- ProbDup(kwic1 = GN1KWIC, kwic2 = GN2KWIC, method = "c",
                   excep = exep, fuzzy = TRUE, phonetic = TRUE,
                   encoding = "primary", semantic = TRUE, syn = syn)
@@ -1751,6 +1836,7 @@ GNdupc <- ProbDup(kwic1 = GN1KWIC, kwic2 = GN2KWIC, method = "c",
       |                                                                              |=======================                                               |  33%Block 1 / 3 |
 
 ``` r
+
 # Get the summary data.frames and Grob
 GNdupcView <- ViewProbDup(GNdupc, GN1, GN2, "SourceCountry", "SourceCountry",
                          max.count = 30, select = c("INDIA", "USA"), order = "type",
@@ -1766,12 +1852,14 @@ GNdupcView <- ViewProbDup(GNdupc, GN1, GN2, "SourceCountry", "SourceCountry",
      [90mgenerated. [39m
 
 ``` r
+
 # View the summary data.frames
 GNdupcView[[1]]
 GNdupcView[[2]]
 ```
 
 ``` r
+
 # Plot the summary visualization
 library(gridExtra)
 grid.arrange(GNdupcView[[3]])
@@ -1789,6 +1877,7 @@ rough indication of the completeness of the data in such fields
 (Fig. 3).
 
 ``` r
+
 # Compute the keyword counts for the whole data
 GNKWCouts <- KWCounts(GN, GNfields, exep)
 
@@ -1840,6 +1929,7 @@ unique records alone.
 ## Citing `PGRdup`
 
 ``` r
+
 citation("PGRdup")
 ```
 
@@ -1847,7 +1937,7 @@ citation("PGRdup")
 
       Aravind, J., Radhamani, J., Kalyani Srinivasan, Ananda Subhash, B.,
       and Tyagi, R. K.  (2026).  PGRdup: Discover Probable Duplicates in
-      Plant Genetic Resources Collections. R package version 0.3.0,
+      Plant Genetic Resources Collections. R package version 0.3.0.9000,
       https://github.com/aravind-j/PGRdup,https://cran.r-project.org/package=PGRdup.
 
     A BibTeX entry for LaTeX users is
@@ -1855,7 +1945,7 @@ citation("PGRdup")
       @Manual{,
         title = {PGRdup: Discover Probable Duplicates in Plant Genetic Resources Collections},
         author = {J. Aravind and J. Radhamani and {Kalyani Srinivasan} and B. {Ananda Subhash} and Rishi Kumar Tyagi},
-        note = {R package version 0.3.0 https://github.com/aravind-j/PGRdup, https://cran.r-project.org/package=PGRdup},
+        note = {R package version 0.3.0.9000 https://github.com/aravind-j/PGRdup, https://cran.r-project.org/package=PGRdup},
         year = {2026},
       }
 
@@ -1866,16 +1956,17 @@ citation("PGRdup")
 ## Session Info
 
 ``` r
+
 sessionInfo()
 ```
 
-    R version 4.5.3 (2026-03-11)
-    Platform: aarch64-apple-darwin20
+    R version 4.6.0 (2026-04-24)
+    Platform: aarch64-apple-darwin23
     Running under: macOS Sequoia 15.7.4
 
     Matrix products: default
-    BLAS:   /Library/Frameworks/R.framework/Versions/4.5-arm64/Resources/lib/libRblas.0.dylib 
-    LAPACK: /Library/Frameworks/R.framework/Versions/4.5-arm64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.1
+    BLAS:   /Library/Frameworks/R.framework/Versions/4.6/Resources/lib/libRblas.0.dylib 
+    LAPACK: /Library/Frameworks/R.framework/Versions/4.6/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.1
 
     locale:
     [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
@@ -1887,27 +1978,27 @@ sessionInfo()
     [1] stats     graphics  grDevices utils     datasets  methods   base     
 
     other attached packages:
-    [1] PGRdup_0.3.0       gridExtra_2.3      wordcloud_2.6      RColorBrewer_1.1-3
+    [1] PGRdup_0.3.0.9000  gridExtra_2.3      wordcloud_2.6      RColorBrewer_1.1-3
     [5] diagram_1.6.5      shape_1.4.6.1     
 
     loaded via a namespace (and not attached):
      [1] sass_0.4.10          bitops_1.0-9         stringi_1.8.7       
      [4] digest_0.6.39        magrittr_2.0.5       evaluate_1.0.5      
-     [7] grid_4.5.3           fastmap_1.2.0        jsonlite_2.0.0      
+     [7] grid_4.6.0           fastmap_1.2.0        jsonlite_2.0.0      
     [10] httr_1.4.8           scales_1.4.0         stringdist_0.9.17   
     [13] XML_3.99-0.23        microbenchmark_1.5.0 textshaping_1.0.5   
     [16] jquerylib_0.1.4      cli_3.6.6            rlang_1.2.0         
     [19] withr_3.0.2          cachem_1.1.0         yaml_2.3.12         
-    [22] tools_4.5.3          parallel_4.5.3       ggplot2_4.0.2       
-    [25] curl_7.0.0           vctrs_0.7.3          R6_2.6.1            
+    [22] tools_4.6.0          parallel_4.6.0       ggplot2_4.0.3       
+    [25] curl_7.1.0           vctrs_0.7.3          R6_2.6.1            
     [28] lifecycle_1.0.5      fs_2.1.0             ragg_1.5.2          
     [31] pkgconfig_2.0.3      desc_1.4.3           pkgdown_2.2.0       
     [34] bslib_0.10.0         pillar_1.11.1        gtable_0.3.6        
-    [37] data.table_1.18.2.1  glue_1.8.1           Rcpp_1.1.1          
+    [37] data.table_1.18.2.1  glue_1.8.1           Rcpp_1.1.1-1.1      
     [40] systemfonts_1.3.2    xfun_0.57            knitr_1.51          
-    [43] farver_2.1.2         htmltools_0.5.9      igraph_2.2.3        
-    [46] rmarkdown_2.31       labeling_0.4.3       compiler_4.5.3      
-    [49] S7_0.2.1             RCurl_1.98-1.18     
+    [43] farver_2.1.2         htmltools_0.5.9      igraph_2.3.0        
+    [46] rmarkdown_2.31       labeling_0.4.3       compiler_4.6.0      
+    [49] S7_0.2.2             RCurl_1.98-1.18     
 
 ## References
 
@@ -1919,9 +2010,9 @@ Knüpffer, H., L. Frese, and M. W. M. Jongen. 1997. “Using Central Crop
 Databases: Searching for Duplicates and Gaps.” In *Central Crop
 Databases: Tools for Plant Genetic Resources Management. Report of a
 Workshop, Budapest, Hungary, 13-16 October 1996*, edited by E. Lipman,
-M. W. M. Jongen, T. J. L. van Hintum, T. Gass, and L. Maggioni, 67–77.
-Rome, Italy and Wageningen, The Netherlands: International Plant Genetic
-Resources Institute and Centre for Genetic Resources.
+M. W. M. Jongen, T. J. L. van Hintum, T. Gass, and L. Maggioni.
+International Plant Genetic Resources Institute and Centre for Genetic
+Resources.
 <https://www.bioversityinternational.org/index.php?id=244&tx_news_pi1%5Bnews%5D=334&cHash=3738ae238a450ff71bb1cb087687ac9c>.
 
 Loo, M. P. J. van der. 2014. “The Stringdist Package for Approximate

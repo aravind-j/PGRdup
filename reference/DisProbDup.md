@@ -50,6 +50,7 @@ in an object of class `ProbDup`
 
 ``` r
 
+
 if (FALSE) { # \dontrun{
 
 # Load PGR passport database

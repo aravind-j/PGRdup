@@ -55,6 +55,7 @@ keyword counts may take some time.
 
 ``` r
 
+
 # Load PGR passport database
 GN <- GN1000
 

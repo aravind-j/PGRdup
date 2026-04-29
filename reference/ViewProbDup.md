@@ -68,11 +68,11 @@ ViewProbDup(
 
 A list containing the following objects:
 
-|               |                                                                                                                        |
-|---------------|------------------------------------------------------------------------------------------------------------------------|
-| `Summary1`    | The summary `data.frame` of number of accessions per factor level.                                                     |
-| `Summary2`    | The summary `data.frame` of number of accessions and sets per each type of sets classified according to factor levels. |
-| `SummaryGrob` | A grid graphical object (Grob) of the summary visualization plot. Can be plotted using the `grid.arrange` function     |
+|  |  |
+|----|----|
+| `Summary1` | The summary `data.frame` of number of accessions per factor level. |
+| `Summary2` | The summary `data.frame` of number of accessions and sets per each type of sets classified according to factor levels. |
+| `SummaryGrob` | A grid graphical object (Grob) of the summary visualization plot. Can be plotted using the `grid.arrange` function |
 
 ## Note
 
@@ -124,6 +124,7 @@ grouped together using
 ## Examples
 
 ``` r
+
 
 if (FALSE) { # \dontrun{
 

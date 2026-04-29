@@ -30,11 +30,11 @@ KWIC(x, fields, min.freq = 10)
 
 A list of class `KWIC` containing the following components:
 
-|               |                                                                                                      |
-|---------------|------------------------------------------------------------------------------------------------------|
-| `KWIC`        | The KWIC index in the form of a data frame.                                                          |
-| `KeywordFreq` | A data frame of the keywords detected with frequency greater than `min.freq`.                        |
-| `Fields`      | A character vector with the names of the PGR database fields from which the keywords were extracted. |
+|  |  |
+|----|----|
+| `KWIC` | The KWIC index in the form of a data frame. |
+| `KeywordFreq` | A data frame of the keywords detected with frequency greater than `min.freq`. |
+| `Fields` | A character vector with the names of the PGR database fields from which the keywords were extracted. |
 
 ## Details
 
@@ -74,6 +74,7 @@ Resources Institute and Centre for Genetic Resources.
 ## Examples
 
 ``` r
+
 
 # Load PGR passport database
 GN <- GN1000
